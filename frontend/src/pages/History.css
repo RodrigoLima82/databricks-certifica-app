@@ -1,0 +1,54 @@
+.hist-title { font-size: 23px; font-weight: 800; }
+.hist-sub { margin: 4px 0 22px; }
+.hist-empty { padding: 40px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.hist-table-wrap { padding: 6px 8px; overflow-x: auto; }
+.hist-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.hist-table th {
+  text-align: left; padding: 12px 14px; color: var(--db-text-secondary);
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid var(--db-border);
+}
+.hist-table td { padding: 13px 14px; border-bottom: 1px solid var(--db-border); }
+.hist-table tr:last-child td { border-bottom: none; }
+.hist-badge { display: inline-flex; align-items: center; gap: 5px; font-weight: 700; font-size: 12px; padding: 3px 10px; border-radius: 20px; }
+.hist-badge.ok { background: var(--db-success-bg); color: var(--db-success); }
+.hist-badge.no { background: var(--db-error-bg); color: var(--db-error); }
+.hist-rep { display: inline-flex; align-items: center; gap: 5px; color: var(--db-warning); font-weight: 600; }
+
+/* Admin KPIs */
+.adm-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
+.adm-kpi { padding: 18px 20px; display: flex; align-items: center; gap: 14px; }
+.adm-kpi div { display: flex; flex-direction: column; }
+.adm-kpi b { font-size: 24px; font-weight: 800; }
+.adm-kpi span { color: var(--db-text-muted); font-size: 12px; }
+@media (max-width: 640px) { .adm-kpis { grid-template-columns: 1fr; } }
+
+/* Admin row clickable + drill-down */
+.adm-row-click { cursor: pointer; transition: background 0.12s ease; }
+.adm-row-click:hover { background: var(--db-orange-pale); }
+.au-back { margin-bottom: 12px; }
+.au-list { display: flex; flex-direction: column; gap: 10px; }
+.au-attempt { padding: 0; overflow: hidden; }
+.au-attempt-head {
+  width: 100%; display: flex; align-items: center; gap: 14px; padding: 14px 18px;
+  background: none; border: none; text-align: left; font-size: 13px;
+}
+.au-attempt-head:hover { background: var(--db-bg); }
+.au-cert { font-weight: 700; flex: 1; }
+.au-date { color: var(--db-text-muted); }
+.au-score b { font-size: 15px; }
+.au-answers { padding: 8px 18px 18px; border-top: 1px solid var(--db-border); display: flex; flex-direction: column; gap: 14px; }
+.au-q { padding-top: 6px; }
+.au-q-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.au-q-text { font-size: 14px; line-height: 1.5; margin-bottom: 10px; }
+
+/* Export buttons (admin user detail) */
+.au-title-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+.au-attempt-bar { display: flex; align-items: center; gap: 8px; padding-right: 12px; }
+.au-attempt-bar .au-attempt-head { flex: 1; }
+.au-exports { display: flex; gap: 6px; flex-shrink: 0; }
+.au-exp-btn {
+  display: inline-flex; align-items: center; gap: 5px; padding: 6px 11px; font-size: 12px;
+  font-weight: 600; border: 1px solid var(--db-border); border-radius: var(--radius);
+  background: var(--db-surface); color: var(--db-text-secondary);
+}
+.au-exp-btn:hover:not(:disabled) { border-color: var(--db-orange); color: var(--db-orange); }

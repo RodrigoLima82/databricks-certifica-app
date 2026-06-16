@@ -1,0 +1,47 @@
+command:
+  - sh
+  - -c
+  - uvicorn app.main:app --host 0.0.0.0 --port ${DATABRICKS_APP_PORT:-8080}
+
+env:
+  - name: MOCK_MODE
+    value: "false"
+
+  # ── Lakebase Autoscaling (Postgres) ──────────────────────────────────────
+  # A senha é gerada em runtime via OAuth (LAKEBASE_ENDPOINT) com a identidade do app.
+  - name: LAKEBASE_ENDPOINT
+    value: "projects/databricks-certifica/branches/production/endpoints/primary"
+  - name: PGHOST
+    value: "<endpoint-host>.database.cloud.databricks.com"
+  - name: PGPORT
+    value: "5432"
+  - name: PGDATABASE
+    value: "databricks_postgres"
+  # PGUSER = client_id do service principal do app (role criada no Lakebase)
+  - name: PGUSER
+    value: "<app-service-principal-client-id>"
+  - name: PGSSLMODE
+    value: "require"
+  - name: PGSCHEMA
+    value: "databricks_certifica"
+
+  # ── Geração via LLM (Foundation Model API) ───────────────────────────────
+  - name: LLM_ENDPOINT
+    value: "databricks-claude-opus-4-8"
+
+
+  # ── Autenticação (JWT) ────────────────────────────────────────────────────
+  - name: ENABLE_JWT_AUTH
+    value: "true"
+  # ⚠️ NÃO commitar o segredo real. Gere com `openssl rand -hex 32` e configure no deploy.
+  - name: JWT_SECRET
+    value: "CHANGE_ME_use_openssl_rand_hex_32"
+  - name: ADMIN_EMAIL
+    value: "<admin@exemplo.com>"
+  - name: ALLOW_SELF_REGISTER
+    value: "true"
+  - name: PASS_MARK
+    value: "70"
+
+  - name: CORS_ORIGINS
+    value: "https://*.databricksapps.com,https://*.cloud.databricks.com"

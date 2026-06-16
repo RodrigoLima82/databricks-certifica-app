@@ -1,0 +1,23 @@
+.fc { max-width: 880px; margin: 0 auto; }
+.fc-empty { text-align: center; padding: 40px 0; }
+.fc-filter { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 18px; }
+.fc-filter button {
+  padding: 6px 13px; border-radius: 18px; border: 1px solid var(--db-border);
+  background: var(--db-surface); font-size: 12px; font-weight: 600; color: var(--db-text-secondary);
+}
+.fc-filter button.on { background: var(--db-orange-pale); border-color: var(--db-orange); color: var(--db-warning); }
+.fc-counter { text-align: center; color: var(--db-text-muted); font-size: 13px; margin-bottom: 12px; font-weight: 600; }
+
+.fc-card { perspective: 1200px; height: 300px; cursor: pointer; }
+.fc-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s; transform-style: preserve-3d; }
+.fc-card.flipped .fc-inner { transform: rotateY(180deg); }
+.fc-front, .fc-back {
+  position: absolute; inset: 0; backface-visibility: hidden; border-radius: var(--radius-lg);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 30px; text-align: center; box-shadow: var(--shadow-md); border: 1px solid var(--db-border);
+}
+.fc-front { background: var(--db-surface); border-left: 4px solid var(--db-orange); }
+.fc-back { background: var(--db-orange-pale); transform: rotateY(180deg); border-left: 4px solid var(--db-orange); }
+.fc-front p, .fc-back p { font-size: 18px; font-weight: 600; line-height: 1.5; }
+.fc-hint { position: absolute; top: 16px; color: var(--db-text-muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.fc-nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 20px; }

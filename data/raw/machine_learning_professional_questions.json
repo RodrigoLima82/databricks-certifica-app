@@ -1,0 +1,1879 @@
+[
+  {
+    "id": "ml_prof_001",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "What is the primary advantage of using Delta tables over traditional data lake file formats for ML experimentation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Better compression ratios",
+      "ACID transactions and time travel capabilities",
+      "Faster initial data loading",
+      "Automatic feature scaling"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta tables provide ACID transactions, schema enforcement, and time travel queries which are critical for iterative ML experimentation and data versioning.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_002",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "Which command allows you to query a previous version of a Delta table using a specific version number?",
+    "question_type": "multiple_choice",
+    "options": [
+      "spark.read.format('delta').option('versionAsOf', 5).load(path)",
+      "spark.read.delta(path).version(5)",
+      "spark.read.format('delta').load(path, version=5)",
+      "spark.read.format('delta').timeTravel(5).load(path)"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "The versionAsOf option allows you to specify a version number to query historical states of Delta tables, enabling reproducible ML experiments.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_003",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "What is the difference between fs.write_table() with mode='overwrite' versus fs.merge() in Databricks Feature Store?",
+    "question_type": "multiple_choice",
+    "options": [
+      "No difference, both perform the same operation",
+      "Overwrite replaces all data, merge performs upsert operations based on primary keys",
+      "Merge is faster than overwrite",
+      "Overwrite only works with small datasets"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "fs.write_table() with overwrite replaces all existing data, while fs.merge() performs update and insert operations based on primary keys, making it ideal for incremental updates.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_004",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "In MLflow, what information does a model signature capture?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Model training parameters only",
+      "Schema of input and output data for the model",
+      "Model performance metrics",
+      "MLflow run metadata"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Model signatures define the schema of input and output data for a model, ensuring that future inputs match expected formats and helping prevent serving errors.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_005",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "Which MLflow function should you use to automatically log parameters, metrics, and models for supported ML frameworks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "mlflow.log_model()",
+      "mlflow.sklearn.autolog()",
+      "mlflow.start_run()",
+      "mlflow.log_param()"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Autologging functions like mlflow.sklearn.autolog() automatically capture parameters, metrics, and models for supported frameworks, reducing manual logging overhead.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_006",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "What is required to create nested runs in MLflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use a different experiment for each run",
+      "Start a parent run first, then start child runs with nested=True",
+      "Use separate MLflow clients",
+      "Configure nested mode in MLflow settings"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Nested runs require starting a parent run first using mlflow.start_run(), then within that context, start child runs by specifying nested=True.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_007",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "When using Hyperopt with MLflow for hyperparameter tuning, how are individual trials tracked?",
+    "question_type": "multiple_choice",
+    "options": [
+      "As separate experiments",
+      "As nested runs under the main tuning run",
+      "As tags in a single run",
+      "Hyperopt trials are not tracked in MLflow"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When integrated with MLflow, each Hyperopt trial is recorded as a nested run under the main hyperparameter tuning run, allowing easy comparison of results.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_008",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "What is the primary purpose of logging artifacts in MLflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To store model weights only",
+      "To save additional context like plots, feature importance, and metadata files",
+      "To backup experiment data",
+      "To compress model files"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Artifacts in MLflow store additional context beyond parameters and metrics, including visualizations, feature importance files, SHAP plots, and metadata that support reproducibility and explainability.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_009",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "How do you programmatically retrieve the best model from a completed Hyperopt optimization logged in MLflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use hyperopt.fmin() return value",
+      "Search MLflow runs and sort by the target metric",
+      "Use mlflow.get_best_model()",
+      "Hyperopt automatically registers the best model"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "You need to programmatically search through MLflow runs using mlflow.search_runs() and sort by your target metric to identify the best performing trial from the hyperparameter optimization.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_010",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "What happens when you call DESCRIBE HISTORY on a Delta table?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Shows current table schema",
+      "Returns metadata about each commit including timestamps and version numbers",
+      "Lists all files in the table",
+      "Shows performance statistics"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "DESCRIBE HISTORY returns metadata about each commit to the Delta table, including user operations, timestamps, and version numbers, which is essential for understanding data lineage in ML workflows.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_011",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "In Feature Store, what is the purpose of specifying primary_keys when creating a feature table?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To improve query performance only",
+      "To define how features are joined and enable proper merging/updating of records",
+      "To enforce data types",
+      "To enable automatic feature scaling"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Primary keys in Feature Store define how features are uniquely identified and joined, enabling proper merge operations for incremental updates and ensuring feature consistency across training and inference.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_012",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "Which approach is recommended for handling large-scale feature engineering that needs to be applied consistently across training and inference?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Store preprocessing steps separately from the model",
+      "Include preprocessing logic directly in the MLflow model using custom PythonModel classes",
+      "Apply preprocessing only during training",
+      "Use external preprocessing services"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Including preprocessing logic in the MLflow model using custom PythonModel classes ensures consistency between training and inference, reducing training-serving skew.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_013",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "What is the benefit of using Delta table time travel for ML experimentation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Faster query performance",
+      "Ability to reproduce experiments with exact historical data states",
+      "Automatic data cleaning",
+      "Reduced storage costs"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Time travel allows you to query exact historical states of data, enabling reproducible experiments by ensuring you can always access the same data version used for training a specific model.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_014",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "When should you use mlflow.log_artifact() versus mlflow.log_model()?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use log_artifact() for any file, log_model() specifically for trained ML models",
+      "They are interchangeable",
+      "Use log_model() for all files",
+      "Use log_artifact() only for images"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "mlflow.log_artifact() is for general files like plots, data files, or configurations, while mlflow.log_model() is specifically designed for trained ML models with additional metadata and serving capabilities.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_015",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "How can you ensure an MLflow experiment is reproducible across different environments?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use the same random seed only",
+      "Log model signatures, input examples, and environment information",
+      "Only use default parameters",
+      "Run experiments on the same cluster"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Reproducibility requires logging model signatures for input validation, input examples for reference, environment information for dependencies, and comprehensive parameter tracking.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_016",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What is the primary advantage of using the pyfunc MLflow flavor?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Faster model inference",
+      "Framework-agnostic interface that works with any Python model",
+      "Smaller model file sizes",
+      "Automatic hyperparameter tuning"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The pyfunc flavor provides a framework-agnostic interface that allows any Python model to be loaded and served uniformly, regardless of the underlying ML library used.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_017",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "In Databricks Model Registry, what is the difference between 'Staging' and 'Production' stages?",
+    "question_type": "multiple_choice",
+    "options": [
+      "No functional difference, just naming convention",
+      "Staging is for testing and validation, Production is for stable models serving live workloads",
+      "Staging models are automatically deleted",
+      "Production models cannot be updated"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Staging stage is used for testing, validation, and internal evaluation, while Production stage indicates the model has been approved and is ready for live, customer-facing workloads.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_018",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What happens when you transition a model version to 'Archived' stage?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The model is permanently deleted",
+      "The model is retained for historical purposes but not meant to be served",
+      "The model is automatically retrained",
+      "The model becomes read-only"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Archived stage retains the model version for historical or regulatory compliance purposes but indicates it's no longer relevant for active serving or deployment.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_019",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "How do you programmatically register a new version of an existing model in the Model Registry?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Create a new model with a different name",
+      "Call mlflow.register_model() with the same model name but new model_uri",
+      "Use client.update_model_version()",
+      "Delete the old model first"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Calling mlflow.register_model() with the same model name but a new model_uri (from a different run) creates a new version under the existing registered model.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_020",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What information can you add to a registered model version using metadata?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only performance metrics",
+      "Descriptions, tags, and additional contextual information",
+      "Only training parameters",
+      "Metadata cannot be added to model versions"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "You can add descriptions, tags, and other contextual information to both registered models and specific model versions to help users understand differences and origins.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_021",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What triggers a Model Registry webhook?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Model training completion",
+      "Specific events like model version registration or stage transitions",
+      "Scheduled intervals",
+      "Manual user clicks only"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Model Registry webhooks are triggered by specific events such as model version registration, stage transitions, or model updates, enabling automated workflows.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_022",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What is the primary advantage of using job clusters over all-purpose clusters for automated model lifecycle tasks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Better model accuracy",
+      "Cost efficiency and isolation - they spin up when needed and shut down after completion",
+      "Faster training times",
+      "More memory available"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Job clusters are cost-efficient because they start when needed and terminate after completion, plus they provide isolation ensuring each job gets a fresh environment without cross-run contamination.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_023",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "How do you configure a Databricks Job to trigger when a model transitions from Staging to Production?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use a scheduled job that checks model status",
+      "Create a webhook in Model Registry that points to the job's trigger endpoint",
+      "Manually trigger the job after each transition",
+      "Jobs cannot be triggered by model transitions"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "You create a webhook in Model Registry for the MODEL_VERSION_TRANSITIONED_STAGE event that sends HTTP requests to trigger a specific Databricks Job when stage transitions occur.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_024",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What code block would trigger a webhook listening for MODEL_VERSION_TRANSITIONED_STAGE?",
+    "question_type": "multiple_choice",
+    "options": [
+      "mlflow.log_model()",
+      "client.transition_model_version_stage()",
+      "mlflow.register_model()",
+      "client.create_model_version()"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The client.transition_model_version_stage() function changes a model's stage, which triggers webhooks listening for MODEL_VERSION_TRANSITIONED_STAGE events.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_025",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What is required for HTTP webhooks to work with external systems?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The webhook URL must be localhost",
+      "The webhook URL must be publicly accessible or at least accessible to the Databricks environment",
+      "Webhooks only work with Databricks internal systems",
+      "No special requirements"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "HTTP webhooks require a publicly accessible endpoint or at least one accessible to the Databricks environment to send POST requests with model event details.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_026",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "How do you list all existing webhooks in Model Registry?",
+    "question_type": "multiple_choice",
+    "options": [
+      "client.get_webhooks()",
+      "client.list_webhooks()",
+      "mlflow.list_webhooks()",
+      "Webhooks cannot be listed programmatically"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The client.list_webhooks() method returns details of all existing webhooks, including their IDs, event triggers, and target URLs.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_027",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What is the benefit of including preprocessing logic in a custom PythonModel class?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Faster model loading",
+      "End-to-end pipeline in one artifact, reducing training-serving skew",
+      "Smaller model size",
+      "Automatic feature selection"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Including preprocessing in a custom PythonModel ensures the entire prediction pipeline is packaged together, maintaining consistency between training and serving environments.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_028",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "How do you delete a webhook in Model Registry?",
+    "question_type": "multiple_choice",
+    "options": [
+      "client.remove_webhook(id)",
+      "client.delete_webhook(id)",
+      "client.destroy_webhook(id)",
+      "Webhooks cannot be deleted"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The client.delete_webhook(id) method permanently removes a webhook using its unique identifier, stopping it from triggering future events.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_029",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What does the MLflow Model Context object provide in custom PythonModel classes?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Training parameters only",
+      "Access to model artifacts, schema info, and environmental information",
+      "Model performance metrics",
+      "Context cannot be accessed"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Context object provides access to model artifacts, data schema information, and environmental details that can be used to dynamically configure logic or resources in custom models.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_030",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "Why is automated testing important in ML CI/CD pipelines?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To reduce training time",
+      "To ensure changes in data processing, features, or models don't break functionality or degrade performance",
+      "To improve model accuracy automatically",
+      "Testing is not needed for ML pipelines"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Automated testing ensures that changes in data processing, feature engineering, or model architecture don't break existing functionality or degrade model performance, maintaining pipeline integrity.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_031",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "Why is batch deployment considered appropriate for the vast majority of ML use cases?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It's easier to implement",
+      "Most predictive workloads are not time-sensitive and batch processing is cost-effective and scalable",
+      "Batch models are more accurate",
+      "It requires less infrastructure"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Many business problems like daily forecasts, churn calculations, or weekly recommendations don't require millisecond latency, making batch processing more cost-effective by leveraging efficient scheduled cluster usage.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_032",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "What is the typical workflow for batch deployment?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Load model, generate predictions, store results for later use",
+      "Train model, deploy immediately, serve online",
+      "Load data, train model, validate results",
+      "Create API endpoint, serve requests, log responses"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Batch deployment involves loading input data, applying the model to generate predictions on large datasets, then storing these precomputed results for downstream consumption.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_033",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "How can you leverage precomputed batch predictions for quasi-real-time serving?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Recompute predictions on every request",
+      "Store predictions in fast-access tables for quick lookup by downstream applications",
+      "Batch predictions cannot be used for real-time serving",
+      "Use streaming deployment instead"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Precomputed batch predictions can be stored in fast-access tables or key-value stores, allowing downstream applications to quickly query recent predictions without recomputing them.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_034",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "What is the correct way to load a registered model for batch inference?",
+    "question_type": "multiple_choice",
+    "options": [
+      "spark.read.load('models:/ModelName/Production')",
+      "model = load_model('models:/ModelName/Production')",
+      "model = mlflow.get_model('ModelName', 'Production')",
+      "model = spark.model('ModelName')"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The load_model function with the models:/ URI format is the correct way to load registered models, specifying either a stage like 'Production' or a specific version number.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_035",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "How do you deploy a single-node model for parallel batch inference using Spark?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use model.predict() directly on Spark DataFrame",
+      "Create a Spark UDF using mlflow.pyfunc.spark_udf() and apply it to DataFrame columns",
+      "Convert model to Spark MLlib format",
+      "Single-node models cannot be parallelized"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "mlflow.pyfunc.spark_udf() wraps single-node Python models as Spark UDFs, enabling distributed parallel inference across cluster nodes while keeping the original model code unchanged.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_036",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "What is Z-ordering and how does it help with reading predictions from large tables?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A data compression technique",
+      "A data organization technique that co-locates related information to enable efficient data skipping during reads",
+      "A model optimization technique",
+      "A cluster configuration setting"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Z-ordering reorganizes data to cluster related information together, enabling efficient data skipping when reading predictions filtered by specific columns, improving query performance and reducing costs.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_037",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "What is the benefit of using the score_batch operation in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Faster model training",
+      "Built-in method that simplifies batch inference with Feature Store integration and consistency guarantees",
+      "Better model accuracy",
+      "Automatic hyperparameter tuning"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "score_batch provides a streamlined approach to batch inference, automatically fetching features from Feature Store when needed and ensuring consistent logic between training and inference.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_039",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "Why must complex business logic be handled within streaming deployments rather than externally?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Streaming is faster than batch processing",
+      "Real-time decisions require immediate action on predictions, data quality checks, and contextual feature enrichment within the stream",
+      "External logic is not supported",
+      "It's a Databricks requirement"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Real-time use cases like fraud detection or dynamic pricing require immediate action on predictions, so complex logic for data quality, enrichment, and decision-making must be embedded in the streaming pipeline.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_040",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "How does Structured Streaming handle out-of-order data arrival?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Ignores late data",
+      "Uses event-time processing with watermarking to handle late and out-of-order events correctly",
+      "Automatically reorders all data",
+      "Only processes data in arrival order"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Structured Streaming uses event-time processing rather than ingestion time, and watermarking to define thresholds for how late data can arrive while still being processed correctly.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_041",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "What is a key difference between batch and streaming deployment pipeline code?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Different model formats are required",
+      "Use readStream instead of read, and writeStream instead of write for continuous processing",
+      "Streaming requires different ML algorithms",
+      "Batch pipelines are always faster"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The primary code difference is using readStream and writeStream instead of read and write, enabling continuous processing of data as it arrives rather than one-time batch processing.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_042",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "When is real-time inference preferred over batch deployment?",
+    "question_type": "multiple_choice",
+    "options": [
+      "When you have large datasets",
+      "When you need immediate responses for small numbers of records and fast prediction computations are required",
+      "When model accuracy is more important",
+      "When using complex models"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Real-time inference is preferred when you need millisecond-latency responses for individual records or small batches, such as fraud detection, web recommendations, or chatbot responses.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_043",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "What are JIT (Just-In-Time) features in real-time deployment?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Features computed during training only",
+      "Features computed on-the-fly at prediction time to reflect the current state",
+      "Pre-computed batch features",
+      "Features that are cached permanently"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "JIT features are computed at prediction time to capture the most current state, such as user's current session behavior or recent transaction patterns, ensuring predictions use up-to-date context.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_044",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "How do you query different stages of a model in Databricks Model Serving?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use different model names",
+      "Send REST requests to endpoints configured for specific stages (Production vs Staging)",
+      "Stages cannot be queried separately",
+      "Only Production models can be served"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Model Serving allows you to configure endpoints for different stages and send REST requests to query models in Production for live traffic or Staging for testing and canary deployments.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_045",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "Why are cloud-provided RESTful services in containers considered best for production-grade real-time deployments?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They are cheapest option",
+      "They provide containerized deployments with load balancing, standard HTTP interfaces, and CI/CD integration for high-demand, low-latency scenarios",
+      "They are easiest to set up",
+      "They work only with Databricks models"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Container-based RESTful deployments provide reliability, scalability, and maintainability through load balancing, standard interfaces, and automated deployment strategies that pure batch or streaming solutions cannot match.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_046",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "What is the difference between feature drift and label drift?",
+    "question_type": "multiple_choice",
+    "options": [
+      "No difference, they are the same concept",
+      "Feature drift affects input distributions, label drift affects target variable distributions",
+      "Feature drift is more serious than label drift",
+      "Label drift only occurs in classification problems"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Feature drift occurs when input feature distributions change over time, while label drift occurs when the target variable distribution changes, both of which can impact model performance differently.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_047",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "Which scenario would most likely cause feature drift?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Model training on wrong data",
+      "Seasonal changes in customer purchasing behavior affecting feature distributions",
+      "Server downtime",
+      "Database corruption"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Seasonal changes can significantly alter feature distributions - for example, 'number_of_items_in_cart' may be much higher during holidays, causing the model to see different input patterns than during training.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_048",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "What is concept drift and why is it particularly challenging?",
+    "question_type": "multiple_choice",
+    "options": [
+      "When model accuracy decreases",
+      "Changes in the relationship between input features and target labels, even if individual distributions seem stable",
+      "When new features are added",
+      "When training data is corrupted"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Concept drift occurs when the relationship between features and labels changes - features that were predictive may no longer be, even though the features and labels individually appear statistically similar to training data.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_049",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "What is a simple approach for detecting numerical feature drift?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Train a new model and compare accuracy",
+      "Compare summary statistics (mean, standard deviation) between current and reference data",
+      "Use deep learning models",
+      "Visual inspection only"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Comparing summary statistics like mean, median, and standard deviation between current production data and training/reference data provides a simple baseline for detecting significant shifts in numerical features.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_050",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "For categorical features, which simple checks can indicate drift?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only check the number of categories",
+      "Monitor changes in mode, count of unique values, and missing value rates",
+      "Categorical drift cannot be detected",
+      "Only use statistical tests"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Simple categorical drift indicators include changes in the most frequent category (mode), appearance of new categories or disappearance of old ones, and changes in missing value rates.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_051",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "Why are statistical tests like Kolmogorov-Smirnov preferred over simple summary statistics for detecting drift?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They are faster to compute",
+      "They can detect finer-grained distribution changes that summary statistics might miss",
+      "They are easier to interpret",
+      "They work only on large datasets"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Statistical tests like K-S test can detect subtle distribution changes in shape, location, and scale that simple summary statistics might miss, such as bimodal distributions shifting modes.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_052",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "What does the Jensen-Shannon Divergence measure and what are its key properties?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Model accuracy over time",
+      "Similarity between two probability distributions, bounded between 0 and 1",
+      "Feature importance rankings",
+      "Training convergence"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Jensen-Shannon Divergence measures similarity between probability distributions, with 0 indicating identical distributions and higher values indicating greater divergence, bounded between 0 and 1.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_053",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "When would you use a Chi-square test for drift detection?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only for numerical features",
+      "For categorical data to test whether frequency distributions of categories have changed significantly",
+      "For model performance testing",
+      "Chi-square tests are not used for drift detection"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Chi-square tests are ideal for categorical features to detect whether the frequency distribution of categories has changed significantly, such as when certain categories become more or less frequent over time.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_054",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "What is a typical workflow for comprehensive drift monitoring?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only monitor model performance metrics",
+      "Store baseline data, run simple checks, apply statistical tests if anomalies detected, monitor concept drift via performance, trigger alerts",
+      "Run statistical tests continuously on all features",
+      "Drift monitoring is not necessary"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A comprehensive workflow involves storing training distributions as baseline, running simple checks first, applying advanced statistical tests when anomalies are detected, monitoring performance for concept drift, and triggering alerts for investigation.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_055",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "When should you consider retraining a model due to drift?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Immediately when any drift is detected",
+      "When significant, persistent drift is confirmed that invalidates model assumptions or reduces performance on recent data",
+      "Only when accuracy drops below 50%",
+      "Retraining is never necessary"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Retraining should be considered when you confirm significant, persistent drift that either invalidates the model's assumptions or demonstrably reduces performance on recent data, not just any minor statistical variation.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_056",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "How should you validate that an updated model performs better after addressing drift?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Compare training accuracy only",
+      "Split recent data into validation sets, compare performance metrics, and use A/B testing in production with statistical significance testing",
+      "Only use the new model immediately",
+      "Validation is not necessary"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Proper validation requires splitting recent data for validation comparison, gradual A/B testing in production, and statistical significance testing to confirm improvements are real and not due to chance.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_057",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "Which type of drift would be indicated by stable input distributions but declining model performance?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Feature drift",
+      "Label drift",
+      "Concept drift",
+      "No drift is occurring"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "When input distributions remain stable but model performance declines, it indicates concept drift - the relationship between features and labels has changed even though individual distributions appear normal.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_058",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "What advantage does the Kolmogorov-Smirnov test have over Jensen-Shannon Divergence?",
+    "question_type": "multiple_choice",
+    "options": [
+      "K-S test is always more accurate",
+      "K-S test provides hypothesis testing with p-values to indicate statistical significance",
+      "K-S test works only on categorical data",
+      "K-S test is faster to compute"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The K-S test provides a formal hypothesis testing framework with p-values to indicate whether differences are statistically significant, while JSD provides a continuous similarity measure without significance testing.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_059",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "In what scenario would you expect both feature drift and label drift to occur simultaneously?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Never, they are mutually exclusive",
+      "During major external changes like economic shifts or policy changes that affect both input patterns and target outcomes",
+      "Only during model training",
+      "When using wrong algorithms"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Major external changes like economic downturns, pandemics, or regulatory changes can simultaneously affect both how input features are distributed and how target variables behave, causing both types of drift.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_060",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "What is the limitation of using only summary statistics for drift detection?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Summary statistics are too slow to compute",
+      "They may miss subtle changes in distribution shape, such as bimodal distributions shifting modes",
+      "They only work on small datasets",
+      "They are too sensitive to outliers"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Summary statistics like mean and standard deviation can miss important distributional changes such as a bimodal distribution where the modes shift positions, even though the overall mean remains similar.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_061",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "Which of the following are valid strategies for advanced hyperparameter tuning in Databricks using Hyperopt? Select all that apply.",
+    "question_type": "multiple_select",
+    "options": [
+      "Using hp.uniform() for continuous search spaces",
+      "Using hp.choice() for discrete categorical parameters",
+      "Parallelizing trials with SparkTrials across a cluster",
+      "Using fmin() with TPE algorithm for Bayesian optimization",
+      "Storing each trial result as a separate MLflow experiment"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Hyperopt supports hp.uniform() for continuous ranges and hp.choice() for discrete options; SparkTrials enables parallel distributed trials; fmin() with algo=tpe.suggest implements Bayesian optimization. Each trial is logged as a nested MLflow run under one experiment — not a separate experiment.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_062",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "What is the main purpose of SHAP (SHapley Additive exPlanations) values in ML experimentation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To speed up model training",
+      "To provide consistent and locally accurate feature attribution scores for individual predictions",
+      "To replace cross-validation",
+      "To automatically select features"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "SHAP values provide theoretically grounded feature attributions based on game theory; they indicate how much each feature contributed to a specific prediction relative to a baseline; enabling both local (per-prediction) and global (aggregate) model explainability.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_063",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "In the context of MLflow autologging for distributed deep learning with Horovod on Databricks; which statement is correct?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Autologging captures metrics from all workers automatically",
+      "Only the chief/rank-0 worker should log metrics to avoid duplicate entries in the MLflow run",
+      "All workers must log to separate experiments",
+      "Horovod does not integrate with MLflow"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "In Horovod distributed training; only rank-0 (the chief worker) should call MLflow logging functions; otherwise every worker independently logs identical or conflicting metrics; resulting in duplicated and inconsistent run data.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_064",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "Which of the following correctly describes the difference between mlflow.evaluate() and manual metric logging?",
+    "question_type": "multiple_choice",
+    "options": [
+      "mlflow.evaluate() is only for regression tasks",
+      "mlflow.evaluate() automatically computes a standard suite of metrics and logs artifacts like confusion matrices; whereas manual logging requires explicit code for each metric",
+      "Manual logging is always more accurate",
+      "mlflow.evaluate() requires GPU resources"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "mlflow.evaluate() streamlines model assessment by automatically computing relevant metrics (accuracy; F1; AUC for classifiers; RMSE; MAE for regressors) and logging artifacts such as confusion matrices and residual plots; reducing boilerplate compared to manual metric-by-metric logging.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_065",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "True or False: In Databricks Feature Store; a feature table can be used for both offline training and online serving without duplicating the feature computation logic.",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "True. Databricks Feature Store decouples feature computation from consumption; the same feature table can serve offline batch training pipelines and online real-time serving endpoints; ensuring consistency and eliminating redundant computation logic.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_066",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "Which of the following are best practices for a production-grade MLflow Model Registry workflow? Select all that apply.",
+    "question_type": "multiple_select",
+    "options": [
+      "Tagging model versions with training dataset version and git commit hash",
+      "Requiring at least one approver before transitioning a model to Production",
+      "Using webhooks to trigger automated CI/CD pipelines on stage transitions",
+      "Archiving old Production versions immediately after promoting a new one",
+      "Never storing preprocessing code inside the registered model"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Best practices include: tagging versions with data lineage and code provenance; requiring human approval gates; using webhooks for automation; and archiving superseded versions to keep the registry clean. Storing preprocessing inside the model is actually recommended to prevent training-serving skew — so option 4 is incorrect.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_067",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What is the purpose of model aliases in the MLflow Model Registry (introduced in MLflow 2.x)?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To rename models permanently",
+      "To assign human-readable pointers like 'champion' or 'challenger' to specific model versions that can be updated without changing application code",
+      "To create copies of models",
+      "To merge multiple models into one"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Model aliases provide stable named references (e.g. 'champion') that decouple application code from version numbers; when a new version becomes the champion; you update the alias rather than changing every downstream consumer's code.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_068",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "True or False: When using MLflow Model Signatures; passing data with mismatched schema to a served model endpoint will always cause an HTTP 500 error regardless of enforcement settings.",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "False. Schema enforcement behavior depends on configuration; with enforcement enabled MLflow raises a clear validation error early; but without strict enforcement some models may silently coerce or pass through mismatched inputs; making early enforcement the best practice rather than a guaranteed behavior.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_069",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What is the recommended approach for implementing a champion/challenger model testing strategy in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Replace the production model entirely with the challenger immediately",
+      "Deploy the challenger to Staging; route a small percentage of traffic using A/B testing; compare metrics over a statistically significant period; then promote if challenger wins",
+      "Test only on historical data before deployment",
+      "Use the challenger only during off-peak hours"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A robust champion/challenger strategy deploys the challenger alongside the champion; gradually routes live traffic to both; collects real-world performance metrics; and only promotes the challenger after achieving statistical significance — minimizing risk and ensuring genuine improvement.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_070",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "Which of the following accurately describe canary deployment for ML models? Select all that apply.",
+    "question_type": "multiple_select",
+    "options": [
+      "A small percentage of traffic is initially routed to the new model version",
+      "Canary deployments allow gradual rollout with the ability to roll back quickly if issues arise",
+      "The canary model must outperform the champion on all metrics before receiving any traffic",
+      "Traffic shifting can be automated based on real-time performance thresholds",
+      "Canary deployments require separate serving infrastructure from the production model"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Canary deployments route a small initial traffic slice to the new version; allow rapid rollback; and can automate traffic increases based on live metric thresholds. The canary does not need to prove superiority before receiving any traffic — that is the point of the canary test. They also do not inherently require separate infrastructure.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_072",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "When deploying a Horovod-trained distributed deep learning model for batch inference in Databricks; which approach is most appropriate?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Re-run Horovod training during inference",
+      "Save only rank-0 worker's model; register it in MLflow Model Registry; and load it as a standard pyfunc model for batch inference using spark_udf()",
+      "Use all worker checkpoints equally",
+      "Distributed training models cannot be used for inference"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "After distributed Horovod training; only the rank-0 model is the authoritative artifact; it is saved; registered in MLflow; and loaded as a pyfunc model; then wrapped as a Spark UDF for parallelized batch inference — standard single-model inference does not require re-running distributed training.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_073",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "What distinguishes an online feature store lookup from batch feature retrieval during model serving?",
+    "question_type": "multiple_choice",
+    "options": [
+      "There is no difference in how features are retrieved",
+      "Online lookup queries a low-latency key-value store in real time during each prediction request; while batch retrieval reads from a Delta table on a schedule",
+      "Online lookup is always less accurate",
+      "Batch retrieval is faster than online lookup"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Online feature stores (e.g. backed by Redis or DynamoDB) are optimized for sub-millisecond lookups by entity key during live inference; whereas batch retrieval reads Delta tables periodically and is unsuitable for real-time latency requirements.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_074",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "In an A/B testing deployment for ML models; what statistical concept determines when you have enough data to declare a winner?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Mean squared error comparison",
+      "Statistical significance via hypothesis testing (p-value below a threshold such as 0.05) combined with sufficient sample size to achieve desired power",
+      "The first model to reach 90% accuracy wins",
+      "Visual inspection of metric charts"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A/B testing requires formal hypothesis testing: collect sufficient samples to achieve the desired statistical power; compute a test statistic comparing the two variants; and only declare a winner when the p-value drops below the pre-set significance threshold (commonly 0.05); preventing premature or false conclusions.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_075",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "Which metrics are most directly useful for detecting model performance degradation in a production classification model? Select all that apply.",
+    "question_type": "multiple_select",
+    "options": [
+      "Precision and recall on recent labeled ground-truth data",
+      "Area under the ROC curve computed on a recent holdout window",
+      "Prediction confidence score distribution over time",
+      "Raw input feature variance",
+      "Training loss from the original training run"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Precision; recall; and AUC on recent labeled data directly measure current predictive quality. Monitoring the distribution of confidence scores can reveal silent degradation when ground truth labels are delayed. Raw input feature variance and original training loss do not directly indicate current production performance.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_076",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "What is the primary purpose of LIME (Local Interpretable Model-agnostic Explanations) in production model monitoring?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To retrain models automatically",
+      "To approximate a complex model's behavior locally around a specific prediction using a simple interpretable surrogate model; helping identify which features drove that prediction",
+      "To detect data drift",
+      "To optimize model serving latency"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "LIME perturbs the input around a specific instance; observes how the black-box model's predictions change; and fits a simple local linear model to explain that single prediction; making it valuable for auditing individual high-stakes decisions in production.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_077",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "What is population stability index (PSI) and when is it used in model monitoring?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A measure of model accuracy",
+      "A statistical measure that quantifies the shift in a variable's distribution between a reference and current dataset; commonly used to flag input drift that may require model retraining",
+      "A metric for evaluating clustering models",
+      "A measure of training data quality"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "PSI compares the distribution of a feature (or model score) between a baseline period and a current period using bin-level frequency comparisons; PSI < 0.1 indicates minimal shift; 0.1-0.2 suggests moderate shift warranting investigation; and > 0.2 signals significant drift requiring action.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_078",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "Which of the following represent valid automated responses to detected data drift in a production ML pipeline? Select all that apply.",
+    "question_type": "multiple_select",
+    "options": [
+      "Triggering an automated retraining job using recent data",
+      "Sending an alert to the ML engineering team for manual review",
+      "Rolling back to a previously validated model version if performance drops below a threshold",
+      "Immediately shutting down the serving endpoint",
+      "Increasing the model's learning rate dynamically"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Automated drift responses include triggering retraining jobs; alerting engineers; and executing rollback policies — these maintain service quality safely. Shutting down the endpoint disrupts production unnecessarily and dynamically changing learning rate post-deployment is not a valid online serving strategy.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_079",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "How does feature importance monitoring differ from data drift detection in production ML systems?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They are the same concept",
+      "Data drift detection measures changes in input distributions; while feature importance monitoring tracks whether the relative contribution of each feature to model predictions has shifted; indicating model behavior change even when raw distributions appear stable"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Data drift watches the statistical properties of raw inputs; feature importance monitoring (e.g. tracking mean absolute SHAP values over time) detects whether the model is weighting features differently — a model may show stable input distributions yet rely on different features due to subtle interaction changes; making both monitoring approaches complementary.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_080",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "What is the recommended strategy for implementing automated model retraining pipelines in Databricks to minimize downtime and risk?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Manually retrain models when accuracy drops",
+      "Use Databricks Workflows to orchestrate: data validation; retraining; evaluation against champion; staging registration; automated tests; and conditional promotion — with rollback capability at each stage",
+      "Delete the old model before training the new one",
+      "Retrain on the full historical dataset every time"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A robust automated retraining pipeline uses Databricks Workflows to chain steps with conditional logic: validate data quality; trigger retraining; compare challenger vs champion on a holdout set; register to Staging if challenger wins; run integration tests; and only then promote to Production — each stage can halt or rollback on failure; ensuring zero-downtime safe model updates.",
+    "difficulty": 5,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_081",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "Your team is running dozens of hyperparameter tuning trials for an XGBoost model using Hyperopt on Databricks. A stakeholder asks you to compare the top five runs by F1 score and retrieve the exact parameters used. What is the most efficient approach?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Export all run artifacts to a shared drive and open them manually",
+      "Use the MLflow Tracking UI to filter runs by the F1 metric; sort descending; select the top five; and compare them side-by-side — MLflow automatically logs Hyperopt parameters and metrics for each trial",
+      "Rerun the top five configurations from memory and record the results in a spreadsheet",
+      "Query the Spark event log for hyperparameter values"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Because Hyperopt trials on Databricks are automatically logged to MLflow Tracking; you can filter; sort; and compare any subset of runs directly in the UI. This avoids manual bookkeeping and guarantees that the exact parameters; metrics; and artifacts for every trial are reproducible.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_082",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "A data scientist discovers that computing a set of complex rolling-window features at inference time causes p99 latency to exceed the 200 ms SLA. The same features are already materialized in Databricks Feature Store. What should the team do?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Remove the rolling-window features from the model entirely",
+      "Switch the model to batch-only serving so latency does not matter",
+      "Configure the model's serving logic to perform a point-in-time lookup from the online Feature Store at inference time instead of computing the features on the fly",
+      "Cache the features in a local Python dictionary on the serving node"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The Databricks Feature Store supports online lookups that return pre-computed feature values in low-latency key-value reads. By replacing on-the-fly computation with a Feature Store lookup; the team preserves feature richness while meeting the latency SLA — this is a core Feature Store design pattern.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_083",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "Your organization needs to train a 3-billion-parameter language model on a multi-node GPU cluster in Databricks. Which approach correctly leverages the platform's distributed training capabilities?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use pandas UDFs to distribute model weights across workers",
+      "Use TorchDistributor to launch PyTorch Distributed Data Parallel (DDP) training across the cluster nodes; letting Databricks manage process group initialization and GPU assignment",
+      "Train on a single node and manually copy checkpoints to other nodes",
+      "Convert the model to scikit-learn so it can use Spark MLlib"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "TorchDistributor is the Databricks-native utility for launching multi-node PyTorch DDP jobs. It automatically handles inter-process communication setup; GPU-to-worker mapping; and fault tolerance — eliminating the need for manual cluster scripting while enabling efficient large-model training.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_084",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "A compliance audit requires your team to reproduce the exact training dataset that was used to build a model six months ago. The underlying Delta table has received daily appends since then. How do you retrieve that historical snapshot?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Ask the data engineering team to rebuild the table from raw logs",
+      "Use Delta Lake time travel by querying the table with AS OF TIMESTAMP or VERSION AS OF to read the exact snapshot that existed on the training date; and confirm the version matches the one logged in the MLflow run",
+      "Restore the table from a backup stored in cloud object storage",
+      "Run the ETL pipeline again with the same date filter"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Lake's time travel feature retains historical versions of a table; allowing exact-point-in-time reads. When the training job logs the Delta version or timestamp in MLflow; the audit team can deterministically reproduce the training data without rebuilding or restoring anything.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_085",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "question_text": "You are logging a multi-input model to MLflow that accepts both a numerical feature vector and a variable-length text field. Some downstream consumers need to validate input schemas before calling the model. What is the best practice?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Skip schema logging because the model handles validation internally",
+      "Define an MLflow model signature that specifies a ColSpec schema with typed columns for both the numeric features and the text field; and log it with mlflow.pyfunc.log_model",
+      "Log the model without a signature and document the expected schema in a wiki page",
+      "Create two separate registered models — one for numeric inputs and one for text"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "MLflow model signatures formally declare the expected input and output schemas. By including both the numeric columns and the text column in a single ColSpec signature; downstream serving endpoints and CI pipelines can automatically validate payloads before inference; reducing runtime errors.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_086",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "A junior ML engineer registers a new model version in Unity Catalog and wants to push it directly to the Production alias. Your organization requires that every model pass integration tests and a business-metric review before serving traffic. What is the correct workflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Allow the engineer to set the Production alias immediately to speed up delivery",
+      "Register the model version; assign it the Challenger alias; run automated integration tests and a business-metric evaluation against the current Champion; and only reassign the Production alias after all gates pass",
+      "Delete the current production model and replace it with the new version",
+      "Keep both versions serving traffic simultaneously without any gating"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A gated promotion workflow ensures that no untested model reaches production. Assigning the Challenger alias first lets automated and manual checks run against the Champion; only after passing all gates is the Production alias moved — this is the recommended Unity Catalog promotion pattern.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_087",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "Your fraud detection model has been in production for three months. A newly trained challenger model shows a 2% lift in recall on the holdout set but a 0.5% drop in precision. The business stakeholder values catching more fraud even if a few more legitimate transactions are flagged. How should you evaluate promotion?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Reject the challenger because precision decreased",
+      "Promote the challenger immediately based on the recall improvement alone",
+      "Run the challenger in shadow mode on live traffic; compare both recall and precision along with the downstream dollar impact of false positives versus missed fraud; and present the cost-benefit analysis to the stakeholder before promoting",
+      "Choose whichever model has the higher AUC regardless of business context"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Metric improvements must be evaluated in business context. Shadow-mode deployment lets you measure real-world cost trade-offs — the dollar value of catching additional fraud versus the cost of extra false-positive reviews — giving the stakeholder data-driven evidence to approve or reject promotion.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_088",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "Your company's model validation pipeline must automatically reject any model version whose test-set AUC drops below 0.85 or whose inference latency exceeds 50 ms on a standard benchmark. Where should these gates be implemented?",
+    "question_type": "multiple_choice",
+    "options": [
+      "In the notebook where the data scientist trains the model",
+      "As validation steps in the Databricks Workflow that runs after model registration and before the Production alias is assigned; so that failing gates block promotion automatically",
+      "In the serving endpoint's auto-scaling configuration",
+      "As post-deployment alerts that roll back the model after it fails"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Automated validation gates belong in the CI/CD workflow between registration and promotion. Placing them in a Databricks Workflow step ensures that any model version that fails AUC or latency thresholds is blocked before it can serve production traffic; shifting quality control left.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_089",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "A healthcare ML team must retain every model version ever deployed for regulatory audits spanning seven years. New model versions are released monthly. What versioning strategy in Unity Catalog best supports this requirement?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Overwrite the same registered model entry each month and rely on notebook version control for history",
+      "Keep every model version in the Unity Catalog registry; tag each with deployment_start and deployment_end dates and the corresponding Delta table version used for training; and never delete any version",
+      "Store models as pickle files in a shared folder with date-stamped filenames",
+      "Register only the current production model and archive old ones to a ZIP file"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Unity Catalog retains all registered model versions immutably. Tagging each version with deployment windows and training data versions creates a complete audit trail that satisfies regulatory requirements without relying on external storage or manual bookkeeping.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_090",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "question_text": "Your model depends on a custom Python library (v2.3) for feature engineering. When a colleague tries to load the model in a different Databricks cluster; it fails because that cluster has v2.1 of the library. What is the recommended solution?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Pin the cluster to the exact same Databricks Runtime version",
+      "Log the model with mlflow.pyfunc.log_model specifying a conda_env or pip_requirements that pins the custom library version; so the dependency is captured in the model artifact",
+      "Email the team to always install v2.3 manually",
+      "Inline the library's source code into the model's predict function"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "MLflow's environment capture (conda_env or pip_requirements) records exact dependency versions inside the model artifact. When the model is loaded or served elsewhere; MLflow recreates the environment automatically; eliminating version-mismatch failures across clusters.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_091",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "Your product team wants to test a new recommendation model against the current one with a 90/10 traffic split. After two weeks the new model must either be promoted to 100% or rolled back. How should you configure this on Databricks Model Serving?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Deploy both models as separate endpoints and use a load balancer external to Databricks",
+      "Create a single serving endpoint with two model versions and configure traffic routing to send 90% to the champion and 10% to the challenger; then use inference table metrics to evaluate and adjust the split",
+      "Ask users to manually choose which model to call",
+      "Deploy only the challenger and compare with historical champion logs"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks Model Serving supports traffic-split routing within a single endpoint. This lets you run a controlled A/B experiment; collect comparable real-time metrics in the inference table; and programmatically shift traffic or roll back without changing the endpoint URL.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_092",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "You deployed a canary release of a new model version at 5% traffic. After 24 hours the canary's error rate is 3x the baseline. What is the correct next step?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Increase the canary to 50% to gather more data",
+      "Immediately roll back the canary to 0% traffic; investigate the error logs and inference table for the root cause before any further promotion",
+      "Ignore the error rate because 5% traffic is too small to matter",
+      "Retrain the model on a larger dataset and redeploy without rollback"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A 3x error-rate increase is a clear regression signal. The safe response is to roll back the canary immediately to protect users; then investigate. Increasing traffic or ignoring the signal risks broader production impact.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_093",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "Your batch scoring job processes 50 million records nightly and finishes in 2 hours on a CPU cluster. A stakeholder now wants the same predictions available within 200 ms per request for a customer-facing API. What deployment change is needed?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Run the same batch job more frequently throughout the day",
+      "Deploy the model to a Databricks Model Serving real-time endpoint backed by appropriate compute; and have the API call the endpoint per request — reserving the nightly batch job for non-latency-sensitive downstream consumers",
+      "Increase the batch cluster size to reduce the 2-hour window",
+      "Store all 50 million predictions in a key-value cache and serve from there"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Real-time sub-200 ms latency requires an online serving endpoint. Databricks Model Serving provides auto-scaled real-time inference. The batch job can continue for bulk consumers; but the API must hit the real-time endpoint to meet the latency SLA.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_094",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "You are deploying a computer-vision model that performs inference on high-resolution images. CPU-based serving yields a p95 latency of 1.2 seconds; well above the 300 ms target. What is the most appropriate infrastructure change?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Resize images to 10x10 pixels to speed up CPU inference",
+      "Switch the serving endpoint to GPU-backed instances so the model can leverage GPU-accelerated tensor operations; and verify that p95 latency meets the 300 ms target",
+      "Add more CPU nodes behind a load balancer",
+      "Rewrite the model in pure SQL for faster execution"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Computer-vision models are heavily matrix-operation-bound. GPU instances accelerate these computations by orders of magnitude. Switching to GPU-backed serving on Databricks typically brings latency well below CPU levels; directly addressing the 300 ms requirement.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_095",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "question_text": "Your team serves three related NLP models (sentiment; entity extraction; and topic classification) that are always called together for each request. Currently each model has its own endpoint; tripling network round-trips. How can you reduce latency and cost?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Merge the three models into one monolithic model",
+      "Package all three models behind a single custom pyfunc wrapper that calls each model in sequence and returns a combined response; then serve that wrapper as one endpoint",
+      "Deploy them on the same cluster but keep three separate endpoints",
+      "Cache results indefinitely so models are never called more than once per input"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A custom pyfunc wrapper consolidates the three models into a single serving endpoint. This eliminates two extra network round-trips per request; reduces endpoint management overhead; and allows the wrapper to optimize internal execution order — a recommended multi-model serving pattern.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_096",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "After a partner starts sending address data in a new format; your model's accuracy drops even though the target variable distribution has not changed. When you check the input feature distributions you see significant shifts. Is this concept drift or data drift; and what should you do?",
+    "question_type": "multiple_choice",
+    "options": [
+      "This is concept drift — retrain immediately on the new labels",
+      "This is data drift — the relationship between features and target is unchanged but input distributions shifted; so you should work with the partner to fix the upstream schema or retrain the model on data that includes the new format",
+      "This is neither drift — accuracy fluctuations are normal",
+      "This is label drift — update the target variable definition"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When input feature distributions change but the underlying relationship between features and target remains the same; it is data drift. The correct response is to address the source of the distribution shift (upstream schema change) and retrain on representative data if needed.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_097",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "Your monitoring dashboard shows that the PSI for the top feature in your credit-scoring model jumped from 0.08 last month to 0.27 this month. What should you investigate first?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Nothing — PSI values fluctuate and 0.27 is acceptable",
+      "Immediately retrain the model without investigation",
+      "Examine the feature's distribution breakdown by time segment and data source to identify whether the shift is caused by a real population change; a data pipeline bug; or a seasonal effect — then decide on corrective action",
+      "Increase the PSI threshold to 0.30 so the alert stops firing"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "A PSI above 0.25 signals significant distribution shift. Before retraining; you must diagnose the root cause: a pipeline bug requires a data fix; a seasonal effect may be transient; and a genuine population shift may require retraining or feature re-engineering. Blind retraining can mask upstream issues.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_098",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "Your model's accuracy has been slowly declining over three months. You want to set up an automated retraining trigger rather than relying on manual checks. Which design is most robust?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Schedule retraining every week regardless of performance",
+      "Configure a Databricks Workflow that runs daily evaluation against labeled ground-truth data; triggers retraining only when a rolling-window metric (e.g. AUC) falls below a predefined threshold for N consecutive evaluation periods; and includes a validation gate before promotion",
+      "Retrain only when a stakeholder files a support ticket",
+      "Monitor only data drift and retrain whenever any feature PSI exceeds 0.1"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A robust retraining trigger combines metric-based monitoring with a persistence criterion (N consecutive periods below threshold) to avoid reacting to transient noise. Including a validation gate ensures the retrained model actually improves before promotion; closing the automation loop safely.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_099",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "After deploying a new model version; SHAP-based feature importance monitoring shows that the feature 'customer_tenure' has jumped from rank 8 to rank 1; displacing 'transaction_amount'. Model accuracy appears unchanged. What does this indicate and what action should you take?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Ignore it because accuracy is stable",
+      "Investigate the shift — the model may be relying on a proxy or spurious correlation through customer_tenure; which could cause fragile predictions under future distribution changes even though current accuracy is stable",
+      "Remove customer_tenure from the model immediately",
+      "This always means the model has improved its understanding of the data"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A sudden large shift in feature importance ranking — even with stable accuracy — can indicate that the model is exploiting a spurious or unstable signal. Investigating the root cause (data leakage; collinearity shift; or genuine pattern change) is essential to ensure long-term model robustness.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_prof_100",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "question_text": "Your inference table monitoring shows that the p99 latency of your real-time endpoint has increased from 120 ms to 450 ms over the past week; and the HTTP 5xx error rate has risen from 0.01% to 0.8%. Model accuracy on sampled predictions remains normal. What should you investigate? Select all that apply.",
+    "question_type": "multiple_select",
+    "options": [
+      "Check whether input payload sizes have increased due to upstream changes",
+      "Review the serving endpoint's compute utilization and auto-scaling configuration",
+      "Examine whether a recent model version change introduced heavier preprocessing logic",
+      "Ignore the latency increase since model accuracy is fine",
+      "Check if a Databricks platform incident is affecting the serving infrastructure"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Latency and error-rate degradation with stable accuracy points to an infrastructure or pipeline issue rather than a model-quality issue. Larger payloads; resource exhaustion; heavier preprocessing; or platform incidents can all cause these symptoms. Each must be investigated to restore SLA compliance.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  }
+]

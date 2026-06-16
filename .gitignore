@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+backend/.venv/
+backend/.env
+backend/static/
+backend/.databricks/
+# Node
+node_modules/
+frontend/dist/
+# OS
+.DS_Store
+backend/.env.azure
+
+# docs/ (guias, decks HTML gerados) — não versionar
+docs/
+# treinamento/ (labs + ppt + screenshots) — fica no repo treinamento_ml
+treinamento/

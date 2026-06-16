@@ -1,0 +1,91 @@
+/* Databricks Certifica — Design System */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinning { animation: spin 0.8s linear infinite; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+:root {
+  --db-orange: #FF3621;
+  --db-orange-light: #ff8c3a;
+  --db-orange-pale: #fff3e8;
+  --db-bg: #f8f9fa;
+  --db-surface: #ffffff;
+  --db-border: #e6e6e6;
+  --db-text: #1a1a1a;
+  --db-text-secondary: #666666;
+  --db-text-muted: #9e9e9e;
+  --db-success: #2e7d32;
+  --db-success-bg: #e8f5e9;
+  --db-warning: #e65100;
+  --db-warning-bg: #fff3e0;
+  --db-error: #c62828;
+  --db-error-bg: #ffebee;
+  --db-info: #1565c0;
+  --db-info-bg: #e3f2fd;
+  --sidebar-width: 240px;
+  --sidebar-collapsed: 56px;
+  --header-height: 56px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 10px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-size: 14px;
+  color: var(--db-text);
+  background: var(--db-bg);
+  -webkit-font-smoothing: antialiased;
+}
+#root { height: 100%; }
+::selection { background: var(--db-orange); color: #fff; }
+:focus-visible { outline: 2px solid var(--db-orange); outline-offset: 2px; }
+a { color: var(--db-orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { cursor: pointer; font-family: inherit; }
+button:disabled { cursor: not-allowed; opacity: 0.55; }
+
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-thumb { background: #d0d0d0; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #b0b0b0; }
+
+/* ── Botões ─────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; justify-content: center;
+  padding: 10px 18px; border-radius: var(--radius); border: 1px solid var(--db-border);
+  background: var(--db-surface); color: var(--db-text); font-weight: 600; font-size: 14px;
+  transition: all 0.15s ease;
+}
+.btn:hover:not(:disabled) { border-color: var(--db-orange); color: var(--db-orange); }
+.btn-primary {
+  background: var(--db-orange); color: #fff; border-color: var(--db-orange);
+}
+.btn-primary:hover:not(:disabled) { background: #e85f00; color: #fff; }
+.btn-lg { padding: 13px 26px; font-size: 15px; }
+
+/* ── Cards ──────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--db-surface); border: 1px solid var(--db-border);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow);
+}
+
+/* ── Badges ─────────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-block; padding: 3px 9px; border-radius: 20px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.3px;
+}
+.badge-associate { background: var(--db-info-bg); color: var(--db-info); }
+.badge-professional { background: var(--db-orange-pale); color: var(--db-warning); }
+.badge-ai { background: #ede7f6; color: #6a1b9a; }
+
+/* ── Misc ───────────────────────────────────────────────────────────────── */
+.page { animation: fadeIn 0.25s ease; }
+.muted { color: var(--db-text-secondary); }
+.spinner {
+  width: 32px; height: 32px; border: 3px solid var(--db-border);
+  border-top-color: var(--db-orange); border-radius: 50%;
+  animation: spin 0.8s linear infinite; margin: 40px auto;
+}

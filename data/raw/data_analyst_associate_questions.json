@@ -1,0 +1,2111 @@
+[
+  {
+    "id": "da_assoc_001",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "What is the primary audience for Databricks SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Data Engineers",
+      "Data Analysts and BI Analysts",
+      "DevOps Engineers",
+      "Machine Learning Engineers"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to section 1.1, the primary audience for Databricks SQL is Data analysts and BI analysts who want to run SQL queries, build dashboards, and share insights. Data Engineers are listed as a side audience who may use it for quick data checks, test queries, or to support data analysts.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_002",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "Which of the following is a benefit of using Databricks SQL for in-Lakehouse platform data processing?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Unified platform that eliminates the need to move data between systems",
+      "Required data migration to external systems",
+      "Simplified security with no access controls",
+      "Limited to small queries only"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "As stated in section 1.3, one of the key benefits of Databricks SQL is providing a unified platform that eliminates the need to move data between systems, as queries run directly on Lakehouse tables (Delta Lake). Other benefits include scalability, performance optimization, and collaboration.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_003",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "What does the Schema Browser in Databricks SQL display?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only table names",
+      "Only column names",
+      "Databases, tables, columns, and data types",
+      "Cluster configurations"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "According to section 1.6, the Schema Browser helps users explore databases, tables, columns, and data types, allowing users to quickly reference table structures, supported data types, and relationships among tables.",
+    "difficulty": 1,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_004",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "What is a Databricks SQL dashboard used for?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Monitoring cluster performance",
+      "Writing SQL code",
+      "Displaying results of multiple queries at once",
+      "Creating new databases"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "As mentioned in section 1.7, Databricks SQL dashboards are a place to display the results of multiple queries at once, containing multiple visualizations (charts, tables, counters) based on different SQL queries.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_005",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "What happens when you configure a dashboard to automatically refresh more frequently than the SQL warehouse's auto-stop time?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The refresh will fail",
+      "The warehouse will restart, adding latency",
+      "The auto-stop feature will be disabled",
+      "The dashboard will display cached data only"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to section 4.17, if the warehouse automatically stops sooner than the refresh interval, a subsequent refresh triggers a warehouse restart, adding to latency.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_006",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "What is the primary purpose of Databricks SQL endpoints/warehouses?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Store data files",
+      "Execute queries and handle concurrency",
+      "Create data visualizations",
+      "Perform data transformations only"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 1.10 states that SQL Endpoints/Warehouses are compute clusters optimized for SQL workloads that execute queries, handle concurrency, and provide elasticity for analytics workloads.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_007",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "What is an advantage of Serverless Databricks SQL endpoints/warehouses?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Lower cost than standard clusters",
+      "Higher performance for large workloads",
+      "Quick-starting with near-instant startup times",
+      "Ability to customize underlying hardware"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "According to section 1.11, Serverless Endpoints are managed entirely by Databricks, allowing near-instant startup times. They're useful for rapid development and minimal overhead for ad-hoc analytics.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_008",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "What is the trade-off between cluster size and cost for Databricks SQL endpoints/warehouses?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Larger clusters provide faster queries but at higher cost",
+      "Larger clusters cost less but are slower",
+      "Cluster size has no impact on query performance",
+      "Cluster size only affects data storage capacity"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Section 1.12 explains that larger clusters provide faster queries but at a higher cost, while smaller clusters have a lower cost but may lead to slower queries or concurrency limits.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_009",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "What is Partner Connect in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A social networking platform for Databricks users",
+      "A tool for implementing simple integrations with other data products",
+      "A feature for connecting multiple Databricks workspaces",
+      "A community forum for sharing SQL queries"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 1.13 describes Partner Connect as a tool for implementing simple integrations with a number of other data products, simplifying integration with popular third-party tools like Fivetran and Rivery with quick setup wizards.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_010",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "In the medallion architecture, which layer is most commonly used by data analysts using Databricks SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Bronze",
+      "Silver",
+      "Gold",
+      "Platinum"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "According to section 1.22, the Gold layer is the most common layer for data analysts using Databricks SQL, as it typically has business logic baked in, providing simplified data sets for BI and ad-hoc queries.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_011",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "What is a benefit of working with streaming data in Databricks SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Simplified data management",
+      "Real-time insights and up-to-date dashboards",
+      "Elimination of data quality issues",
+      "Reduced resource consumption"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 1.23 lists real-time insights, up-to-date dashboards, and immediate anomaly detection as benefits of working with streaming data.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_012",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "What feature of the Lakehouse allows mixing batch and streaming workloads?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Partner Connect",
+      "Serverless endpoints",
+      "Delta Lake with Structured Streaming",
+      "Data Explorer"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "As stated in section 1.24, Delta Lake with Structured Streaming unifies streaming and batch processing on the same data, simplifying architecture and enabling near real-time analytics.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_013",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "What is Delta Lake in the Databricks ecosystem?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A visualization tool",
+      "A storage layer that brings ACID transactions to data lakes",
+      "A query processing engine",
+      "A data ingestion tool"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to section 2.1, Delta Lake is an open-source storage layer that brings ACID transactions, schema enforcement, and time travel to data lakes, providing reliability, performance optimizations, and governance features.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_014",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "What information is stored in Delta Lake table metadata?",
+    "question_type": "multiple_choice",
+    "options": [
+      "User access history only",
+      "Query performance metrics",
+      "Schema definitions, partitioning info, and transaction logs",
+      "BI dashboard configurations"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 2.2 explains that Delta Lake table metadata includes schema definitions, partitioning info, version history, and transaction logs, which underpins features like time travel and schema evolution.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_015",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "What happens to the underlying data when you drop a managed table in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Data is retained indefinitely",
+      "Data is moved to a backup location",
+      "Data is removed",
+      "Data becomes read-only"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "As stated in section 2.5 and 2.6, for managed tables, Databricks handles both data (files) and metadata, and dropping the table removes the data. This is in contrast to unmanaged tables where data remains even after dropping the table.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_016",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "What is the key difference between managed and unmanaged tables in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Unmanaged tables cannot be queried using SQL",
+      "Managed tables are faster to query",
+      "In unmanaged tables, data remains even after dropping the table",
+      "Unmanaged tables do not support ACID transactions"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 2.6 contrasts managed and unmanaged tables, noting that for unmanaged tables, data remains even after dropping the table, while for managed tables, data is removed if the table is dropped. Unmanaged tables specify file location, while Databricks stores managed table data in the default storage location.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_017",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "How can you identify if a table is managed or unmanaged in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Check if the table name has a special prefix",
+      "Look for the LOCATION clause in the DDL",
+      "Check the table owner",
+      "Review query history"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to section 2.7, one way to identify if a table is unmanaged is to check if the DDL included a LOCATION clause, which indicates an unmanaged (external) table. If the DDL did not include a LOCATION clause and used the default database, it is likely managed.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_018",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "What is the purpose of the LOCATION keyword when creating a database in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Specifies which cluster to use",
+      "Sets the geographic region for data storage",
+      "Explicitly sets where the underlying data files are stored",
+      "Determines query routing"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 2.8 explains that the LOCATION keyword in a CREATE DATABASE statement explicitly sets where the underlying data files are stored, overriding the default Databricks-managed storage path.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_019",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "What is the difference between a view and a temp view in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Views contain actual data while temp views are just queries",
+      "Views persist beyond session/cluster restarts while temp views do not",
+      "Temp views provide better performance",
+      "Views can only be created by administrators"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to section 2.10 and 2.11, views are permanent objects stored in the database metadata and survive cluster restarts, while temp views exist only within the current session or until the cluster restarts and do not persist beyond that.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_020",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "Which tool in Databricks allows you to explore, preview, and secure data?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Schema Browser",
+      "Partner Connect",
+      "Data Explorer",
+      "Query Editor"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 2.12 identifies Data Explorer as the GUI in Databricks for browsing and managing databases, tables, and permissions, allowing users to preview data without writing a query and adjust user/group permissions.",
+    "difficulty": 1,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_021",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "Who can change access rights to a table using Data Explorer?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only system administrators",
+      "Any user with read access",
+      "Table owners",
+      "Only database owners"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "According to section 2.15, table owners can grant/revoke privileges (SELECT, MODIFY, OWN) using Data Explorer for access control at the table, schema, or catalog level.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_022",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "What is a responsibility of a table owner in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Writing all queries against the table",
+      "Performing backups manually",
+      "Ensuring correct permissions and data compliance",
+      "Paying for storage costs separately"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 2.16 lists governance (ensuring correct permissions and data compliance), maintenance (vacuuming old versions, updating schema, managing performance), and data quality as responsibilities of a table owner.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_023",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "What does Delta Lake's 'Time Travel' feature allow you to do?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Schedule future queries",
+      "Query and rollback to previous versions of a table",
+      "Predict future data trends",
+      "Accelerate query performance"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "As mentioned in section 2.3, Time Travel in Delta Lake can retain previous versions of a table, allowing queries (and rollbacks) at past states. The retention period is configurable based on business needs.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_024",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "Which statement about PII data handling in Databricks is correct?",
+    "question_type": "multiple_choice",
+    "options": [
+      "PII data cannot be stored in Databricks",
+      "PII requires specific Databricks tools like data masking and restricted access",
+      "PII data is automatically encrypted by default",
+      "PII data must always be stored in managed tables"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 2.17 mentions that handling PII (Personally Identifiable Information) requires tools such as data masking, encryption, restricted access, and auditing, which are available in Databricks. Best practices include securing data at rest and in transit, and limiting access to only those who need it.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_025",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "Which SQL statement is used for upserts (insert, update, or delete records based on matching conditions) in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "INSERT INTO",
+      "UPDATE",
+      "MERGE INTO",
+      "COPY INTO"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "According to section 3.3, MERGE INTO is used for upserts, which involves inserting, updating, or deleting records based on matching conditions, commonly used in Slowly Changing Dimensions or streaming merges.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_026",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "What is a benefit of using subqueries in Databricks SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They always improve query performance",
+      "They allow reusing query logic or intermediate results",
+      "They require fewer permissions to execute",
+      "They enable cross-database joins"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 3.4 states that subqueries allow reusing query logic or intermediate results, making queries simpler and more modular.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_027",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "Which JOIN type returns all rows from both tables, matching where possible?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Inner Join",
+      "Left Outer Join",
+      "Right Outer Join",
+      "Full Outer Join"
+    ],
+    "correct_answers": [
+      3
+    ],
+    "explanation": "As described in section 3.5, a Full (Outer) Join returns all rows from both tables, matching where possible. Inner Join returns only matching rows, Left Join returns all rows from the left table plus matches from right, and Right Join returns all rows from right plus matches from left.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_028",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "Which SQL feature is best for hierarchical aggregations (e.g., Country → Region → Total)?",
+    "question_type": "multiple_choice",
+    "options": [
+      "CUBE",
+      "ROLLUP",
+      "GROUP BY",
+      "WINDOW"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to section 3.9, ROLLUP is good for hierarchical aggregations, such as Country → Region → Total, generating aggregations from the most specific to the grand total.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_029",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "Which window function feature allows you to analyze data across a sliding time period?",
+    "question_type": "multiple_choice",
+    "options": [
+      "PARTITION BY",
+      "ROWS BETWEEN",
+      "ORDER BY",
+      "RANGE BETWEEN"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 3.10 provides an example of using window functions for time data, including the ROWS BETWEEN clause which defines the sliding window, such as 'ROWS BETWEEN 3 PRECEDING AND CURRENT ROW' for a moving aggregate.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_030",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "What is a benefit of having ANSI SQL as the standard in the Lakehouse?",
+    "question_type": "multiple_choice",
+    "options": [
+      "ANSI SQL is faster than proprietary SQL dialects",
+      "It requires fewer computational resources",
+      "Interoperability and familiar syntax for BI tools",
+      "It supports more data types"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 3.11 mentions interoperability with BI tools and data professionals, and ease of migration (simple to port existing SQL queries and logic from other platforms) as benefits of having ANSI SQL as the standard in the Lakehouse.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_031",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "What is the purpose of higher-order Spark SQL functions like transform() and filter()?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To improve query security",
+      "To perform complex transformations on arrays/maps directly in SQL",
+      "To connect to external data sources",
+      "To create automated workflows"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to section 3.14, higher-order functions like transform() and filter() are used for complex transformations on arrays/maps directly in SQL for improved speed and less overhead than multiple joins.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_032",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "When should you consider using User-Defined Functions (UDFs) in Databricks SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "For every data transformation",
+      "Only when handling PII data",
+      "When specialized logic is not covered by built-in functions",
+      "When querying external data sources"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 3.15 states that UDFs can handle specialized logic not covered by built-in functions, although it also recommends keeping UDFs small and considering vectorized or built-in functions first for performance reasons.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_033",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "What does the CUBE operator do in SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Restricts the result set to a subset of rows",
+      "Generates all possible combinations of group-by columns",
+      "Performs mathematical cube operations on numeric columns",
+      "Creates 3D visualizations"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 3.8 explains that CUBE generates all possible combinations of group-by columns for more complete breakdowns of the data, which can lead to more rows than ROLLUP but offers a more complete analysis.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_034",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "Which of these is a common method to handle nested data formats in Databricks SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Always flattening the data during ingestion",
+      "Using specialized NoSQL queries",
+      "Using functions like explode() or get_json_object()",
+      "Converting all data to CSV format"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 3.7 mentions that functions like explode(), get_json_object(), or JSON_PARSE() help flatten or parse nested fields when managing nested data formats and sources within tables.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_035",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "What is typically found in the Silver layer of the medallion architecture?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Raw, unfiltered data",
+      "Cleaned but not fully curated data",
+      "Final analytical datasets",
+      "Machine learning models"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to section 3.12 and the medallion architecture in section 1.21, the Silver Layer contains cleaned, filtered, and possibly joined data, often used as intermediate data sets for transformation, unlike Bronze (raw data) or Gold (aggregated, business-ready data).",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_036",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "How can query history improve development in Databricks SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "By automatically optimizing all queries",
+      "By allowing re-running previous queries and analyzing performance",
+      "By predicting future query needs",
+      "By storing backup data"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 3.13 states that Query History allows re-running previous queries, analyzing performance, and versioning, which can reduce development time and help with query optimization.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_037",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "Which visualization type would be best for displaying a single key performance indicator (KPI) in Databricks SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Line chart",
+      "Pie chart",
+      "Counter",
+      "Scatter plot"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "According to section 4.2, a Counter visualization displays a single numeric value (KPIs), while other visualization types like Table, Details, and Pivot are used for different purposes.",
+    "difficulty": 1,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_038",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "How does visualization formatting affect data presentation in Databricks SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It has no impact on data interpretation",
+      "It only affects loading time",
+      "Proper formatting improves comprehension and guides focus",
+      "Formatting can only be applied to certain visualization types"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 4.3 explains that proper formatting (labels, legends, color choices) improves comprehension, and good design can emphasize trends or comparisons to guide stakeholder focus in the visualization.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_039",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "Which visualization type is best suited for showing trends over time?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Bar chart",
+      "Line chart",
+      "Pie chart",
+      "Table"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to section 4.6, line charts are best for showing trends over time, while bar charts are better for comparisons across categories, pie charts for proportions, and scatter plots for relationships between metrics.",
+    "difficulty": 1,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_040",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "What feature allows a dashboard to be dynamic, letting end users input or select filters?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Auto-refresh",
+      "Query parameters",
+      "Custom CSS",
+      "Pivot tables"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 4.10 describes parameterization (query parameters) as a feature that allows dashboards to be dynamic, letting end users input or select filters that apply to all queries in the dashboard.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_041",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "How can you create a dynamic dropdown parameter in a Databricks SQL dashboard?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Manually entering all possible values",
+      "Using a 'Query Based Dropdown List' from another query's distinct output",
+      "Importing values from an external file",
+      "Using regular expressions"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 4.12 identifies the 'Query Based Dropdown List' as a way to create a query parameter from the distinct output of a different query, creating dynamic dropdown values (e.g., distinct list of countries from a 'locations' table).",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_042",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "What happens when users without direct access to underlying queries view a shared dashboard?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They see an error message",
+      "They must request access first",
+      "They can view results using the owner's credentials",
+      "They see only partial data"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "According to section 4.15, users without permission to all queries, databases, and endpoints can refresh a dashboard using the owner's credentials, allowing them to see results they wouldn't normally have access to, with careful governance to avoid unauthorized data exposure.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_043",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "What is a consideration when configuring a dashboard refresh schedule?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Dashboards can only be refreshed manually",
+      "If refresh rate is less than Warehouse's 'Auto Stop', subsequent refreshes will trigger warehouse restart",
+      "Refresh schedules can only be set for business hours",
+      "Every visualization must have its own refresh schedule"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 4.17 points out that if the refresh rate is less than the Warehouse's 'Auto Stop' time, a subsequent refresh triggers a warehouse restart, adding to latency.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_044",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "How are alert notifications typically sent in Databricks SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only through SMS",
+      "Through email or integrated messaging platforms like Slack",
+      "Only through mobile app notifications",
+      "Alerts can only be viewed in the Databricks interface"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 4.19 mentions that notifications are sent via email or possibly other channels (Slack, Teams if integrated) with details on the alert condition and query results.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_045",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "What is a benefit of sharing dashboards via direct link in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "No authentication required",
+      "Real-time data and interactive features",
+      "Works offline",
+      "Can be viewed by anyone on the internet"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to section 4.14, direct links provide real-time data and interactive features, though they require Databricks account access, unlike exported static reports which are portable but contain static data.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_046",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "Which dashboard feature allows all visualizations to maintain a consistent look?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Auto-formatting",
+      "Dashboard themes/styling",
+      "Visualization locking",
+      "Template enforcement"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 4.9 mentions Dashboard Theme/Styling as a way to change the colors of all visualizations in a dashboard, using built-in color palette settings or overriding them in each visualization's settings.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_047",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "When configuring a basic alert in Databricks SQL, what must be defined?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Machine learning model to predict thresholds",
+      "Threshold values and alert recipients",
+      "Dashboard backups",
+      "Alert expiration date"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 4.18 states that alert configuration requires setting threshold values, defining alert recipients, and choosing the frequency (every refresh or once daily).",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_048",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "What can customizable tables in Databricks SQL do as visualizations?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Generate automatic summaries only",
+      "Display images and media files",
+      "Adjust column ordering, rename fields, and set highlight rules",
+      "Connect to external APIs"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "According to section 4.5, customizable tables allow you to adjust column ordering, rename fields, set highlight rules, or conditionally format cells to create more intuitive data tables.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_049",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "What is the difference between discrete and continuous statistics?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Discrete data can only be negative, continuous can be any value",
+      "Discrete data is countable with finite values, continuous data is measurable on a continuum",
+      "Discrete statistics require less computation",
+      "Continuous statistics are more accurate"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 5.1 explains that discrete data is countable with finite values (e.g., number of sales, count of customers), while continuous data is measurable on a continuum (e.g., revenue, temperatures, distances).",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_050",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "Which of the following is a descriptive statistic?",
+    "question_type": "multiple_choice",
+    "options": [
+      "P-value",
+      "Confidence interval",
+      "Standard deviation",
+      "Regression coefficient"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "According to section 5.2, standard deviation is one of the descriptive statistics (along with mean, median, mode, and variance) used to summarize and understand datasets' central tendency and spread.",
+    "difficulty": 1,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_051",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "Which statistical measure is more robust to outliers?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Mean",
+      "Median",
+      "Mode",
+      "Range"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 5.4 compares statistical measures and states that the mean can be skewed by outliers, while the median is more robust to outliers. This makes median a better choice for understanding central tendency in datasets with extreme values.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_052",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "What is data enhancement in analytics applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Improving data security",
+      "Adding derived columns or combining data from various sources",
+      "Increasing data storage capacity",
+      "Accelerating query performance"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 5.5 describes data enhancement as adding derived columns, geocoding addresses, or combining data from various sources to enrich existing datasets to improve analytical value.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_053",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "In which scenario would data enhancement be particularly beneficial?",
+    "question_type": "multiple_choice",
+    "options": [
+      "When data storage is limited",
+      "When query performance is slow",
+      "When enriching retail sales data with weather information",
+      "When data needs to be archived"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 5.7 provides an example where retail analytics could benefit from adding weather data to store sales to uncover correlations in foot traffic and weather patterns.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_054",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "What is data blending in analytics?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Converting data to a different format",
+      "Combining related but separate data sources into a single dataset",
+      "Anonymizing sensitive data",
+      "Compressing data for storage efficiency"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 5.8 defines data blending as combining related but separate data sources into a single dataset, using techniques like SQL joins or unions with standardized columns.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_055",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "In which scenario would data blending be most beneficial?",
+    "question_type": "multiple_choice",
+    "options": [
+      "When working with a single data source",
+      "When data must remain isolated for compliance",
+      "When merging CRM data with financial data for a holistic customer view",
+      "When data needs to be backed up"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 5.9 suggests that merging CRM data (customer interactions) with financial data (invoices, payments) to provide a holistic customer view is a scenario where data blending would be beneficial.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_056",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "What is 'last-mile ETL' in the context of data analytics?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Data transportation logistics",
+      "Final transformations to tailor data for a specific BI report or model",
+      "Initial data cleaning steps",
+      "Data archiving processes"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Section 5.10 describes last-mile ETL as the final transformations to tailor data for a specific BI report or data science model, such as calculating final KPIs, normalizing values, or pivoting data.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_057",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "Which statistical moment provides insight into the symmetry of a distribution?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Mean (1st moment)",
+      "Variance (2nd moment)",
+      "Skewness (3rd moment)",
+      "Kurtosis (4th moment)"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Section 5.3 mentions skewness (3rd moment) as one of the key moments of statistical distributions, which provides insight into the symmetry (or asymmetry) of a distribution.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_058",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "What is the relationship between variance and standard deviation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They measure different properties and are unrelated",
+      "Standard deviation is the square of variance",
+      "Variance is the squared measure of spread, standard deviation is its square root",
+      "Standard deviation can only be calculated if variance is positive"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "According to section 5.4, variance is the squared measure of spread, while standard deviation is the square root of variance, making it more interpretable in the same units as the data.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_059",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "Which of the following would be an example of a continuous data type?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Number of customers",
+      "Product categories",
+      "Revenue amount",
+      "Employee ID numbers"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Based on section 5.1, revenue amount would be an example of continuous data as it is measurable on a continuum, unlike number of customers (discrete), product categories (categorical), or employee ID numbers (discrete).",
+    "difficulty": 1,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_060",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "Which layer in the medallion architecture contains raw, unfiltered data?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Bronze",
+      "Silver",
+      "Gold",
+      "Platinum"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "According to section 1.21, the Bronze layer in the medallion architecture contains raw, unfiltered data. Silver contains cleaned, filtered data, and Gold contains aggregated or domain-specific data ready for analytics.",
+    "difficulty": 1,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_061",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "Which SQL clause defines the window frame for a window function calculation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "PARTITION BY",
+      "ORDER BY",
+      "ROWS BETWEEN",
+      "GROUP BY"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The ROWS BETWEEN clause defines the physical window frame for a window function by specifying which rows to include in each calculation. PARTITION BY divides rows into groups; ORDER BY sets the sort order within each partition; GROUP BY is used for standard aggregations rather than window functions.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_062",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "What does the ROW_NUMBER() window function return?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The total count of rows in the table",
+      "A unique sequential integer for each row within its partition",
+      "The rank with gaps for tied values",
+      "The cumulative sum up to the current row"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "ROW_NUMBER() assigns a unique sequential integer to each row within its partition ordered by the specified ORDER BY clause. Unlike RANK() it never produces gaps or ties — every row gets a distinct number even when values are identical.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_063",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "What is the primary advantage of using a Common Table Expression (CTE) over a subquery?",
+    "question_type": "multiple_choice",
+    "options": [
+      "CTEs are always faster than subqueries",
+      "CTEs can reference external tables",
+      "CTEs improve readability and can be referenced multiple times in the same query",
+      "CTEs automatically cache results"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "A CTE defined with the WITH clause can be named and referenced multiple times in the main query; this avoids repeating complex subquery logic and makes the SQL easier to read and maintain. Performance is not guaranteed to be better — that depends on the optimizer.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_064",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "Which statement correctly describes a recursive CTE?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A CTE that references an external API",
+      "A CTE that calls itself to process hierarchical or iterative data",
+      "A CTE that is automatically refreshed on a schedule",
+      "A CTE that spans multiple SQL statements"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A recursive CTE contains two parts joined by UNION ALL: an anchor member that returns the base result set and a recursive member that references the CTE itself. This structure is ideal for traversing hierarchical data such as org charts or bill-of-materials trees.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_065",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "Which Databricks SQL warehouse type is managed entirely by Databricks and starts almost instantly without requiring cluster setup?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Classic warehouse",
+      "Pro warehouse",
+      "Serverless warehouse",
+      "High-concurrency warehouse"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Serverless SQL warehouses run on compute managed by Databricks in the Databricks cloud account rather than the customer cloud account. They start in seconds because the underlying infrastructure is pre-provisioned and shared; there is no cluster spin-up delay for users.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_066",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "What is the key difference between a Pro SQL warehouse and a Classic SQL warehouse in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Pro warehouses support only Python; Classic warehouses support SQL",
+      "Pro warehouses support more advanced features such as query federation and Photon; Classic warehouses offer basic SQL execution",
+      "Pro warehouses are cheaper than Classic warehouses",
+      "Classic warehouses can auto-scale; Pro warehouses cannot"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Pro SQL warehouses include all features of Classic warehouses and additionally support Databricks-specific capabilities such as query federation to external data sources and Photon-accelerated execution. Classic warehouses provide standard SQL execution without those enhanced features.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_067",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "Which of the following best describes the Query History feature in Databricks SQL?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A feature that automatically rewrites slow queries",
+      "A log that records executed queries with duration; user; and status information",
+      "A tool for predicting future query costs",
+      "A dashboard showing real-time warehouse utilization"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Query History stores a record of all queries run against a SQL warehouse including the query text; the user who ran it; start time; duration; and whether it succeeded or failed. Analysts use it to re-run previous queries; diagnose slow executions; and audit data access.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_068",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "Which alert condition in Databricks SQL triggers a notification when a query result crosses a defined threshold?",
+    "question_type": "multiple_choice",
+    "options": [
+      "When the dashboard is opened",
+      "When the query result value is greater than; less than; or equal to a threshold",
+      "When a new user is added to the workspace",
+      "When a warehouse is restarted"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks SQL alerts evaluate a single numeric column from a query result against a user-defined threshold using operators such as greater than; less than; or equal to. When the condition is met the alert fires and sends notifications to configured destinations.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_069",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "What visualization type is most appropriate for comparing the proportion of sales across five product categories?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Line chart",
+      "Scatter plot",
+      "Pie or donut chart",
+      "Histogram"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Pie and donut charts are designed to show part-to-whole relationships; making them ideal for displaying how each category contributes to a total. Line charts show trends over time; scatter plots show correlations between two numeric variables; and histograms show frequency distributions.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_070",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "When should you avoid using a pie chart in a Databricks SQL dashboard?",
+    "question_type": "multiple_choice",
+    "options": [
+      "When there are exactly two categories",
+      "When the data is from a Delta table",
+      "When there are more than five or six categories making slices hard to distinguish",
+      "When the dashboard uses a dark theme"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Pie charts become difficult to read when there are many thin slices. Best practice is to use a pie chart only when there are five or fewer categories; switching to a bar chart when there are more segments so viewers can more easily compare values.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_071",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "Which of the following are valid uses of window functions in Databricks SQL? (Select all that apply)",
+    "question_type": "multiple_select",
+    "options": [
+      "Calculating a running total",
+      "Assigning a rank within a partition",
+      "Replacing GROUP BY aggregations entirely",
+      "Computing a moving average",
+      "Identifying the first and last values in an ordered partition"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Window functions compute values across a set of rows related to the current row without collapsing rows as GROUP BY does. Valid uses include running totals (SUM OVER); ranking (RANK/DENSE_RANK/ROW_NUMBER); moving averages (AVG OVER ROWS BETWEEN); and first/last value access (FIRST_VALUE/LAST_VALUE). Window functions cannot fully replace GROUP BY because they do not reduce the number of output rows.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_072",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "Which of the following statements about Databricks SQL query optimization are correct? (Select all that apply)",
+    "question_type": "multiple_select",
+    "options": [
+      "Filtering early in the query reduces data scanned",
+      "Selecting only needed columns improves performance",
+      "Using SELECT * is recommended for all queries",
+      "Partitioned tables benefit from filters on the partition column",
+      "Caching a query result can speed up repeated executions"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Pushing filters early (predicate pushdown) reduces the amount of data read from storage. Selecting only needed columns avoids reading unnecessary data. Filtering on partition columns (partition pruning) skips entire data partitions. Result caching allows repeated queries to return instantly from cache. Using SELECT * reads all columns and hurts performance when only a subset is needed.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_073",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "Which of the following are features of Unity Catalog that are relevant to data analysts? (Select all that apply)",
+    "question_type": "multiple_select",
+    "options": [
+      "Centralized governance for tables across multiple workspaces",
+      "Fine-grained access control at the table and column level",
+      "Automatic data ingestion from external sources",
+      "Data lineage tracking",
+      "A three-level namespace: catalog.schema.table"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Unity Catalog provides centralized governance (single metastore across workspaces); fine-grained permissions (table-; column-; and row-level security); data lineage showing how data flows between tables; and a three-level namespace (catalog.schema.table). Automatic data ingestion is not a Unity Catalog feature — ingestion is handled by other tools such as Auto Loader or COPY INTO.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_074",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "In Unity Catalog what is the correct order of the three-level namespace from outermost to innermost?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Schema → Catalog → Table",
+      "Table → Schema → Catalog",
+      "Catalog → Schema → Table",
+      "Workspace → Catalog → Schema"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Unity Catalog organizes data in three levels: Catalog (the outermost container grouping schemas); Schema (a namespace within a catalog grouping tables and views); and Table (the innermost object). A fully qualified reference looks like: catalog_name.schema_name.table_name.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_075",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "True or False: In Databricks Unity Catalog an analyst can query a table without being granted SELECT privilege on that specific table or its parent schema.",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "False. Unity Catalog enforces fine-grained access control. An analyst must be granted at least USE CATALOG on the catalog; USE SCHEMA on the schema; and SELECT on the table (or a parent object that grants inherited SELECT) before they can query the table. Absence of any of these privileges results in a permission denied error.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_076",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "True or False: A Common Table Expression (CTE) defined using the WITH clause persists as a database object after the query finishes executing.",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "False. A CTE exists only for the duration of the single SQL statement in which it is defined. It is not stored in the database catalog and cannot be referenced by other queries or sessions. To persist reusable query logic you would create a view or a table instead.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_077",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "Which of the following are examples of last-mile ETL transformations typically performed before delivering data to a BI dashboard? (Select all that apply)",
+    "question_type": "multiple_select",
+    "options": [
+      "Calculating final KPIs such as revenue per user",
+      "Pivoting rows into columns for a report layout",
+      "Loading raw log files into the Bronze layer",
+      "Normalizing metric values to a common scale",
+      "Filtering data to the specific time range required by the report"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Last-mile ETL refers to the final set of transformations that shape data for a specific report or consumer. This includes computing derived metrics; reshaping data (pivoting); normalizing values; and scoping the dataset to what the report needs. Loading raw files into Bronze is an ingestion step that happens much earlier in the pipeline.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_078",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "What is the purpose of data blending when compared to a standard SQL JOIN?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Data blending always produces better performance than a SQL JOIN",
+      "Data blending combines data from heterogeneous sources that may not share a common key or live in the same system",
+      "Data blending is only available in Databricks notebooks",
+      "Data blending replaces the need for ETL pipelines entirely"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Data blending refers to combining data from different systems or formats — for example merging a CSV export from a CRM with a Delta Lake table — where a direct SQL JOIN may not be possible because the sources reside in different systems or use different schemas. It complements rather than replaces ETL pipelines.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_079",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "Which of the following best practices should be followed when designing a Databricks SQL dashboard for business stakeholders? (Select all that apply)",
+    "question_type": "multiple_select",
+    "options": [
+      "Use descriptive titles and axis labels on all charts",
+      "Add a text widget explaining key metrics and context",
+      "Include as many visualizations as possible to show all available data",
+      "Use consistent color schemes across related charts",
+      "Limit the dashboard to the most relevant KPIs for the audience"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Effective dashboards for business stakeholders follow these best practices: clear titles and labels help viewers understand the data without guessing; context text widgets explain what metrics mean; consistent colors reduce cognitive load; and focusing on a small set of relevant KPIs prevents information overload. Packing a dashboard with every available chart makes it harder to extract insights.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_080",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "Which feature of Databricks SQL allows analysts to pause query execution and resume it later without losing their work?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Query parameters",
+      "Saved queries",
+      "Query scheduling",
+      "Query snippets"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Saved queries in Databricks SQL let analysts write; name; and save SQL statements in the Query Editor so they can be reopened; edited; and re-executed in future sessions. This is distinct from query parameters (dynamic filters); scheduling (automated execution); and snippets (reusable SQL fragments).",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_081",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "An analyst discovers that the orders table contains duplicate rows due to a data pipeline bug. She needs to keep only the most recent record for each order_id based on the updated_at timestamp. Which approach best solves this problem?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use GROUP BY order_id with MAX(updated_at) and select all columns directly",
+      "Write a CTE using ROW_NUMBER() partitioned by order_id and ordered by updated_at DESC; then filter to row number 1",
+      "Use DISTINCT on order_id to remove duplicates",
+      "Delete all rows and reload the data from the source"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "ROW_NUMBER() partitioned by order_id and ordered by updated_at DESC assigns 1 to the latest record for each order. Filtering to row_number = 1 in an outer query keeps exactly one row per order_id. GROUP BY with MAX would require additional joins to retrieve all columns; DISTINCT on order_id alone does not guarantee which row is kept; and deleting all rows is unnecessarily destructive.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_082",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "A data engineering team is building a new analytics pipeline. The raw source files are provided by an external vendor and stored in Azure Blob Storage. The team wants Databricks to query the data but needs the files to remain in the vendor-controlled storage location even if the table definition is removed. Which table type should they use?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Managed table with default storage",
+      "Unmanaged (external) table with a LOCATION clause",
+      "Temporary view",
+      "Delta Live Table"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "An unmanaged (external) table created with a LOCATION clause stores metadata in the metastore but leaves the data files at the specified external path. Dropping the table removes only the metadata; the underlying files remain untouched in the vendor-controlled storage. A managed table would store a copy in Databricks-managed storage and delete it upon drop.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_083",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "A finance manager asks an analyst to build a dashboard widget that shows how the company's monthly revenue has changed over the past 12 months and highlights the overall trend. Which visualization type is the most appropriate?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Pie chart",
+      "Counter",
+      "Line chart",
+      "Pivot table"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Line charts are designed to display trends over time by connecting data points along a continuous axis. A pie chart shows part-to-whole proportions at a single point in time; a counter displays one aggregate number; and a pivot table is better for detailed cross-tabulation than trend spotting.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_084",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "An analyst notices that her daily report query takes over 10 minutes to run. The query uses SELECT * from a large Delta table partitioned by event_date but does not include a WHERE clause on event_date. Which of the following steps would most likely improve performance? (Select all that apply)",
+    "question_type": "multiple_select",
+    "options": [
+      "Add a WHERE clause filtering on event_date to enable partition pruning",
+      "Replace SELECT * with only the columns needed for the report",
+      "Increase the SQL warehouse cluster size to the maximum available",
+      "Move the query to a notebook instead of the SQL editor",
+      "Cache the query result if the same query runs repeatedly"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      4
+    ],
+    "explanation": "Filtering on the partition column (event_date) enables partition pruning so only relevant files are scanned. Selecting only needed columns reduces I/O. Caching avoids re-executing the same query. Increasing cluster size may help but is expensive and does not address the root cause. Moving the query to a notebook does not change execution performance.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_085",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "A retail analyst is calculating the average order value across all stores. A few stores have abnormally high order values due to bulk corporate purchases that skew the mean significantly. Which statistical measure should the analyst report instead to give leadership a more representative picture of a typical order?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Mode",
+      "Median",
+      "Variance",
+      "Range"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The median is the middle value in an ordered dataset and is resistant to extreme outliers. Unlike the mean; it is not pulled toward abnormally high or low values. Mode indicates the most frequent value (not necessarily central); variance quantifies spread rather than central tendency; and range only shows the distance between extremes.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_086",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "An analyst accidentally ran an UPDATE statement that set the status column to NULL for all rows in the gold.customers table. The table is stored in Delta Lake format and the previous version was written two hours ago. What is the fastest way to recover the correct data?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Restore the table from an external backup system",
+      "Use Delta Lake Time Travel to query or restore the previous table version",
+      "Re-run the entire ETL pipeline from Bronze to Gold",
+      "Ask the database administrator to roll back the transaction log manually"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Lake Time Travel allows querying previous table versions using VERSION AS OF or TIMESTAMP AS OF syntax and can restore a table to a prior state with RESTORE TABLE. This is the fastest recovery method because it uses the existing transaction log without needing external backups or a full pipeline re-run.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_087",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "A data analyst maintains a customer_dim table that tracks customer addresses. When a customer moves; the old address row should be marked as inactive and a new row inserted with the current address. The source system provides a daily feed of changed addresses. Which SQL operation best supports this slowly changing dimension (SCD) pattern?",
+    "question_type": "multiple_choice",
+    "options": [
+      "INSERT INTO … SELECT",
+      "CREATE OR REPLACE TABLE",
+      "MERGE INTO with matched and not-matched clauses",
+      "UPDATE … SET followed by a separate INSERT"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "MERGE INTO matches source rows against target rows on a key. For matched rows (existing customers) it can UPDATE the old record to set it inactive; and for not-matched rows (or via a second MATCHED clause for the new address) it can INSERT the new active record — all in a single atomic statement. Separate UPDATE and INSERT statements require two passes and lack atomicity.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_088",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "An analyst shares a dashboard with the marketing team via a direct link. Several marketing users do not have SELECT access to the underlying tables. What will happen when these users open the dashboard and click Refresh?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The dashboard will display an access denied error for every visualization",
+      "The dashboard will refresh using the dashboard owner's credentials so users can see the results",
+      "The dashboard will show only visualizations based on tables the user can access",
+      "The marketing users will be prompted to request table permissions before any data loads"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "In Databricks SQL; users without direct table access can refresh a shared dashboard using the owner's credentials. This means they see the query results as if the owner ran the queries. Administrators should apply careful governance to avoid unintended data exposure through this credential delegation.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_089",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "A junior analyst is writing a query and is unsure which layer of the medallion architecture to use. The analyst needs data that has already been cleaned and deduplicated but wants individual transaction-level records rather than pre-aggregated summaries. Which layer is the best fit?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Bronze — raw ingested data",
+      "Silver — cleaned and conformed data",
+      "Gold — aggregated business-level data",
+      "Any layer; there is no practical difference"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Silver layer contains cleaned; filtered; and conformed data while still retaining individual records. Bronze holds raw; unfiltered data that may contain duplicates and quality issues. Gold typically contains aggregated or business-logic-enriched datasets designed for BI consumption. For detailed; clean transaction records the Silver layer is the best fit.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_090",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "An analyst needs to write a complex report that first calculates total revenue per region; then ranks the regions; and finally filters to the top 5. The same intermediate result (revenue per region) is referenced in multiple parts of the final query. What is the best approach?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Write the revenue calculation as a subquery and copy-paste it wherever it is needed",
+      "Define a CTE with the WITH clause and reference it by name in subsequent query steps",
+      "Create a permanent table to store the intermediate result",
+      "Use a temporary view that persists after the session ends"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A CTE defined with the WITH clause lets the analyst name the intermediate result and reference it multiple times in the same statement without duplicating logic. This improves readability and maintainability. Creating a permanent table for a one-off report is unnecessary overhead; and temporary views do not persist after the session — they also cannot be referenced multiple times within a single SELECT statement the way a CTE can.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_091",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "A data analyst runs a dashboard query every morning that scans a 2 TB Delta table. The query takes 15 minutes on a Small SQL warehouse. The analyst's manager asks her to reduce the runtime to under 5 minutes without changing the query logic. Which action is most likely to achieve this goal?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Switch to a Medium or Large SQL warehouse to add more compute resources",
+      "Move the table from Delta format to Parquet format",
+      "Convert the SQL warehouse from Pro to Classic type",
+      "Add an ORDER BY clause to help the query optimizer"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Scaling up the SQL warehouse size increases the number of clusters and compute power available for the query. Since the query logic cannot change; adding compute is the most direct way to reduce wall-clock time. Converting to Parquet would lose Delta features without guaranteed speedup; warehouse type (Pro vs Classic) does not directly affect raw performance; and ORDER BY adds work rather than reducing it.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_092",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "A team of five analysts shares a single SQL warehouse. During peak hours (9–11 AM); analysts report long queue times because only one query runs at a time. The workspace administrator wants to allow concurrent queries without creating additional warehouses. What should the administrator configure?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Increase the warehouse auto-stop timeout",
+      "Enable multi-cluster scaling on the warehouse",
+      "Reduce the warehouse cluster size to free resources",
+      "Set the warehouse channel to Preview"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Multi-cluster scaling allows a SQL warehouse to spin up additional clusters to handle concurrent queries. This directly addresses queue times by distributing queries across clusters. Adjusting auto-stop timeout only affects idle shutdown behavior; reducing cluster size would make performance worse; and the Preview channel controls software versions rather than concurrency.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_093",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "An analyst has been asked to set up a new Databricks SQL workspace for the finance team. The finance team needs to query sensitive PII data and requires row-level security so each analyst sees only their department's records. Which Databricks feature should the analyst recommend during workspace setup?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Column masking on the SQL warehouse",
+      "Dynamic views with conditional expressions based on current_user()",
+      "Restricting warehouse access through IP allow-lists",
+      "Creating separate physical tables per department"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Dynamic views use conditional logic (e.g.; CASE WHEN current_user() = ... ) to filter rows based on the identity of the querying user. This enforces row-level security without duplicating data. Column masking hides column values rather than rows; IP allow-lists control network access not data access; and separate tables create maintenance overhead and data duplication.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_094",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "question_text": "A data analyst notices that a query she wrote last month now runs three times slower. She wants to investigate what changed. She opens Query History in Databricks SQL. Which combination of information available in Query History would best help her diagnose the regression?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The query text and the user who ran it",
+      "The execution duration over time and the rows scanned per execution",
+      "The dashboard name and the visualization type",
+      "The warehouse name and the warehouse creation date"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Query History records execution duration; rows scanned; bytes read; and other performance metrics for each run. Comparing these metrics across executions lets the analyst see whether data volume increased or a plan change occurred. The query text and user identity do not explain performance changes; dashboard and visualization metadata are unrelated to execution; and warehouse creation date is static information.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_095",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "A product manager asks an analyst to build a dashboard showing monthly active users (MAU) over the past 12 months. The stakeholder wants to quickly see the trend and identify any month where MAU dropped. Which chart type is the most appropriate?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Pie chart",
+      "Scatter plot",
+      "Line chart",
+      "Heat map"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "A line chart excels at showing trends over sequential time periods. It allows viewers to quickly spot increases; decreases; and anomalies in MAU across months. Pie charts show part-to-whole relationships for a single point in time; scatter plots are for correlating two variables; and heat maps are better for showing density across two categorical dimensions.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_096",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "An analyst configures an alert on a Databricks SQL query that checks whether daily revenue drops below $10;000. The alert should notify the sales Slack channel immediately when the threshold is breached. Which configuration ensures the alert fires correctly?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Set the alert trigger to 'Value is below 10000' with a Slack notification destination and a refresh schedule of every 1 minute",
+      "Set the alert trigger to 'Value is below 10000' with a Slack notification destination and a refresh schedule of every 15 minutes",
+      "Create a dashboard filter for revenue < 10000 and share the dashboard link in Slack",
+      "Write a notebook job that queries revenue and sends a Slack message via webhook"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks SQL alerts evaluate a query on a schedule and fire when the condition is met. A 15-minute refresh is a reasonable balance between timeliness and resource usage. A 1-minute refresh would be excessive and wasteful for a daily revenue metric. Dashboard filters do not trigger notifications; and a custom notebook job adds unnecessary complexity when built-in alerts suffice.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_097",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "A VP of Marketing requests a single dashboard view that compares campaign spend versus conversions across five marketing channels. She wants to see both metrics side by side for each channel. Which visualization approach best meets this requirement?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A grouped bar chart with channel on the x-axis and two bars (spend and conversions) per channel",
+      "A single pie chart with slices for each channel's spend",
+      "Two separate line charts — one for spend and one for conversions",
+      "A scatter plot with spend on the x-axis and conversions on the y-axis"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "A grouped bar chart with two bars per channel allows direct comparison of spend and conversions for each channel side by side. A pie chart cannot show two different metrics simultaneously; separate line charts make comparison harder because the viewer must look back and forth; a scatter plot shows correlation but obscures the per-channel comparison the VP requested.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_098",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "An analyst builds a dashboard and needs to share it with an external auditor who has a Databricks account with Viewer permissions. The auditor should see the data but must not be able to modify queries or edit visualizations. What is the correct sharing approach?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Grant the auditor CAN EDIT permission on the dashboard",
+      "Grant the auditor CAN RUN permission on the dashboard",
+      "Grant the auditor CAN MANAGE permission on the dashboard",
+      "Publish the dashboard and provide the auditor with the published URL using their Viewer role"
+    ],
+    "correct_answers": [
+      3
+    ],
+    "explanation": "Publishing a dashboard creates a read-only view that Viewers can access. CAN EDIT would allow modifications; CAN RUN would let the auditor execute queries (more than needed); and CAN MANAGE would give full control. The published dashboard with Viewer permissions provides the least-privilege access appropriate for an external auditor.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_099",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "question_text": "A finance team relies on a dashboard that shows yesterday's revenue figures every morning at 8 AM. The underlying query takes 4 minutes to run. The analyst wants the dashboard to be pre-loaded with fresh data when the team opens it. What should the analyst configure?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Set a dashboard scheduled refresh to run daily at 7:50 AM",
+      "Ask each team member to click Refresh when they open the dashboard",
+      "Set the SQL warehouse auto-stop to Never so it is always warm",
+      "Enable query result caching and do nothing else"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "A scheduled refresh at 7:50 AM ensures the query runs and results are cached before the team opens the dashboard at 8 AM. Asking users to refresh manually introduces a 4-minute wait each morning. Keeping the warehouse always on wastes resources and does not guarantee fresh results. Query result caching alone only helps if someone has already run the query recently.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_100",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "A sales analyst needs to rank each salesperson within their region by total quarterly revenue and display the rank alongside the revenue. Salespeople with the same revenue should receive the same rank; and the next rank should skip accordingly. Which SQL window function should the analyst use?",
+    "question_type": "multiple_choice",
+    "options": [
+      "ROW_NUMBER() OVER (PARTITION BY region ORDER BY revenue DESC)",
+      "RANK() OVER (PARTITION BY region ORDER BY revenue DESC)",
+      "DENSE_RANK() OVER (PARTITION BY region ORDER BY revenue DESC)",
+      "NTILE(4) OVER (PARTITION BY region ORDER BY revenue DESC)"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "RANK() assigns the same rank to tied values and then skips the next rank(s). For example; two salespeople tied at rank 2 both receive rank 2; and the next salesperson gets rank 4. ROW_NUMBER() would assign different numbers to ties; DENSE_RANK() would not skip (the next would be rank 3); and NTILE() divides into buckets rather than ranking.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_101",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "An analyst must produce a monthly executive report that first calculates total orders per product category; then computes each category's percentage of overall orders; and finally returns only categories exceeding 10% share. The analyst wants the query to be readable and avoid repeating subqueries. What is the best approach?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use nested subqueries in the FROM clause",
+      "Use a CTE (WITH clause) to define total orders per category; then reference it in subsequent CTEs for percentage calculation and filtering",
+      "Create a permanent table for intermediate results",
+      "Use a UNION ALL to combine the steps"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "CTEs allow the analyst to break the problem into logical named steps — first computing category totals; then calculating percentages; then filtering. Each CTE references the previous one by name; making the query readable and maintainable. Nested subqueries would be harder to read; permanent tables are unnecessary overhead; and UNION ALL combines row sets rather than building sequential logic.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_102",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "An e-commerce company maintains a product_inventory table in Delta Lake. A daily feed from suppliers provides updated prices and new products. Existing products should have their price updated; and new products should be inserted. The analyst needs an atomic operation. Which SQL pattern is correct?",
+    "question_type": "multiple_choice",
+    "options": [
+      "INSERT OVERWRITE product_inventory SELECT * FROM daily_feed",
+      "MERGE INTO product_inventory USING daily_feed ON product_inventory.product_id = daily_feed.product_id WHEN MATCHED THEN UPDATE SET price = daily_feed.price WHEN NOT MATCHED THEN INSERT *",
+      "DELETE FROM product_inventory; INSERT INTO product_inventory SELECT * FROM daily_feed",
+      "UPDATE product_inventory SET price = (SELECT price FROM daily_feed WHERE daily_feed.product_id = product_inventory.product_id)"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "MERGE INTO provides atomic upsert behavior — it matches on product_id; updates the price for existing products; and inserts new products in a single statement. INSERT OVERWRITE would replace all data including products not in the feed; DELETE then INSERT is not atomic; and the UPDATE approach only handles existing rows and ignores new products.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_103",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "A data analyst is investigating a slow query that joins three large tables. Before rewriting the query; she wants to understand how the optimizer plans to execute it. Which SQL command should she run to see the execution plan?",
+    "question_type": "multiple_choice",
+    "options": [
+      "ANALYZE TABLE on each of the three tables",
+      "EXPLAIN followed by the full SELECT query",
+      "DESCRIBE EXTENDED on the result table",
+      "SHOW PARTITIONS on each table"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "EXPLAIN displays the query execution plan — including join strategies; scan types; and filter pushdowns — without actually running the query. This lets the analyst identify bottlenecks such as full table scans or broadcast joins on large tables. ANALYZE TABLE computes statistics but does not show a plan; DESCRIBE EXTENDED shows table metadata; and SHOW PARTITIONS lists partition values.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_104",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "question_text": "An analyst calculates the average deal size from an opportunities table. The deal_amount column contains NULL values for deals still in negotiation. The analyst runs SELECT AVG(deal_amount) FROM opportunities and gets a result that seems higher than expected. What is the most likely reason?",
+    "question_type": "multiple_choice",
+    "options": [
+      "AVG() treats NULL values as zero; which lowers the result",
+      "AVG() skips NULL values entirely; so only rows with actual amounts are averaged",
+      "AVG() converts NULL to the column default value before computing",
+      "The query fails with an error when NULLs are present"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "SQL aggregate functions like AVG() ignore NULL values. This means the denominator of the average only includes rows where deal_amount is not NULL. If many low-value deals are still NULL (in negotiation); the average is computed from the higher completed deal amounts only; producing a result that appears inflated. The analyst should use COALESCE(deal_amount; 0) if NULLs should count as zero.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_105",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "A retail analyst needs to combine online sales data stored in a Delta table with in-store sales data provided as a monthly CSV upload. Both sources share a customer_id field. The analyst wants a unified view of total customer spend. Which approach is most appropriate in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Export the Delta table to CSV and merge the two CSVs in a spreadsheet",
+      "Load the CSV into a Delta table using COPY INTO; then JOIN the two tables in SQL",
+      "Use a Python notebook to read both files with pandas and skip SQL entirely",
+      "Create a dashboard that shows two separate visualizations side by side"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Loading the CSV into a Delta table with COPY INTO and then joining via SQL leverages Databricks' optimized engine; supports large data volumes; and maintains a governed data asset. Exporting to a spreadsheet does not scale; using pandas alone misses Delta Lake benefits; and side-by-side visualizations do not actually blend the data at the row level.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_106",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "A marketing analyst is asked to determine whether a recent email campaign significantly increased website signups compared to the previous period. She has signup counts for 30 days before and 30 days after the campaign. Which statistical approach is most appropriate?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Calculate the mean signups for each period and report the difference",
+      "Perform a hypothesis test (e.g.; t-test) comparing the two periods to assess statistical significance",
+      "Compute the standard deviation of signups across both periods combined",
+      "Build a linear regression model with signups as the dependent variable"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A hypothesis test such as a two-sample t-test evaluates whether the observed difference in means is statistically significant or could have occurred by chance. Simply reporting the difference in means does not account for variability; standard deviation alone measures spread but not significance; and a regression model is more complex than needed for comparing two groups.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_107",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "question_text": "A SaaS company wants to understand user retention. The product team asks an analyst to show what percentage of users who signed up in January are still active in each subsequent month through June. Which analytical technique should the analyst use?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Funnel analysis tracking conversion steps",
+      "Cohort analysis grouping users by signup month and measuring retention over time",
+      "RFM segmentation based on recency; frequency; and monetary value",
+      "Time-series forecasting of active user counts"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Cohort analysis groups users by a shared characteristic (signup month) and tracks their behavior over subsequent periods. This directly answers the retention question by showing the percentage of the January cohort still active each month. Funnel analysis tracks sequential steps rather than time-based retention; RFM segments users for marketing targeting; and time-series forecasting predicts future values rather than analyzing historical retention patterns.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_108",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "An analytics engineer is building a new data pipeline. Raw clickstream data arrives as JSON from a Kafka stream. The engineer must decide which medallion architecture layer to land this data in first. The priority is to capture every event without any transformation so it can be reprocessed later if business logic changes. Which layer is correct?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Gold layer — to make it immediately available for BI dashboards",
+      "Silver layer — to store it in a cleaned and structured format",
+      "Bronze layer — to store the raw data as-is for reprocessing",
+      "A separate staging area outside the medallion architecture"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The Bronze layer is designed to hold raw; unprocessed data exactly as it arrives from the source. This preserves the original data for reprocessing if transformation logic changes later. Landing raw data directly in Silver or Gold would skip the raw preservation step; and a staging area outside the architecture would bypass the governance benefits of the medallion pattern.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_109",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "A data engineer runs VACUUM on a Delta table with the default 7-day retention threshold every night. An analyst reports that her time-travel query using VERSION AS OF from 10 days ago suddenly fails. What is the most likely cause?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The VACUUM command deleted the data files for versions older than 7 days",
+      "The Delta transaction log automatically expires after 24 hours",
+      "Time travel only works with TIMESTAMP AS OF and not VERSION AS OF",
+      "The analyst's SQL warehouse does not support time travel"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "VACUUM removes data files that are no longer referenced by versions within the retention period. With the default 7-day retention; files backing versions older than 7 days are deleted. The transaction log entries may still exist; but the underlying data files are gone; causing the time-travel query to fail. To support longer time travel; the retention threshold must be increased before running VACUUM.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "da_assoc_110",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "question_text": "A data quality engineer is designing automated checks for a Silver-layer patient records table in a healthcare company. The table must satisfy three rules: patient_id is never NULL; date_of_birth is not in the future; and email contains an @ symbol. Which approach provides the most robust automated data quality enforcement?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Add comments to the table DDL documenting the expected rules",
+      "Use Delta Lake CHECK constraints (also known as Delta constraints) to enforce the rules at write time",
+      "Run a daily SQL query that counts violations and emails the results to the team",
+      "Create a Gold-layer view that filters out invalid rows before analysts query them"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Lake CHECK constraints (e.g.; ALTER TABLE ADD CONSTRAINT) enforce rules at write time; rejecting any insert or update that violates the constraint. This prevents bad data from entering the table in the first place. Documentation does not enforce anything; a daily query detects problems after the fact; and a Gold-layer filter hides rather than prevents invalid data.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  }
+]

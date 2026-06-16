@@ -1,0 +1,1916 @@
+[
+  {
+    "id": "de_prof_001",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "How does Delta Lake use the transaction log to guarantee atomicity?",
+    "question_type": "multiple_choice",
+    "options": [
+      "By locking files during writes",
+      "By using append-only ordered commits to the transaction log",
+      "By using a centralized metadata server",
+      "By requiring all operations to be performed sequentially"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Lake guarantees atomicity through an append-only transaction log where each commit is represented by a small JSON or parquet file that captures what changed. The transaction log records operations such as file additions, deletions, schema changes, and metadata updates in an ordered sequence. When a writer finishes a transaction, it writes a new commit file to the log. If the commit file appears atomically, then readers either see the table before the commit or after it—never a partial state, thereby ensuring atomicity.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_002",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "What is the primary mechanism behind Delta Lake's Optimistic Concurrency Control?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It locks files during writes to prevent conflicts",
+      "It assumes transactions won't conflict and validates at commit time",
+      "It uses a centralized lock manager to coordinate writes",
+      "It requires writers to obtain exclusive access before writing"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Lake uses Optimistic Concurrency Control, which optimistically assumes that multiple writers can operate in parallel without conflicts. Instead of locking, writers proceed with their changes and then, at commit time, Delta Lake reads the transaction log to check if another writer has modified the same parts of the table since the writer started. If a conflict is detected, the commit fails, and the writer must retry with a fresh snapshot.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_003",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "What types of operations might cause conflicts in Delta Lake's Optimistic Concurrency Control?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Two readers accessing the same data simultaneously",
+      "Two writers modifying completely different partitions",
+      "Two writers trying to modify the same data files concurrently",
+      "A reader accessing data while another reader uses a different filter"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "In Delta Lake, conflicts typically occur when two writers try to modify or rewrite the same data files (e.g., the same partition of a table) concurrently. Other common conflict scenarios include concurrent schema changes or metadata-heavy operations. Readers don't conflict with other readers or writers due to snapshot isolation, and writers modifying different partitions generally don't conflict unless they're changing metadata that affects the entire table.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_004",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "What is the main difference between a shallow clone and a deep clone in Delta Lake?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Shallow clone copies only metadata while deep clone copies both metadata and data files",
+      "Shallow clone works only on small tables while deep clone works on large tables",
+      "Shallow clone maintains a link to source while deep clone is completely independent",
+      "Shallow clone is read-only while deep clone allows writes"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "The main difference between shallow and deep clones in Delta Lake is that a shallow clone copies only the metadata of the source Delta table and creates references to the same underlying data files, without physically duplicating them. A deep clone, on the other hand, physically copies both the underlying data files and the transaction log to a new location, creating a fully independent copy of the table.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_005",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "Which Delta Lake indexing optimization technique helps with multi-column filtering?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Partitioning",
+      "Bloom filters",
+      "File optimization",
+      "Z-ordering"
+    ],
+    "correct_answers": [
+      3
+    ],
+    "explanation": "Z-ordering is a multi-dimensional clustering technique that helps improve data locality for queries that filter on multiple columns. It places related data close together on storage, reducing I/O by clustering related data. After writing or updating a table, you can run OPTIMIZE ... ZORDER BY (col1, col2) to rearrange data files. This is especially beneficial for columns frequently used in filter predicates across multiple dimensions.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_006",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "What is the primary benefit of Bloom filters in Delta Lake?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They compress data to reduce storage costs",
+      "They allow for more efficient file pruning during queries",
+      "They guarantee unique values in a column",
+      "They improve write performance for large datasets"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The primary benefit of Bloom filters in Delta Lake is that they enable more efficient file pruning during queries. A Bloom filter is a probabilistic data structure attached to files that allows for fast checking of whether a file might contain certain values. If a bloom filter indicates that a file does not contain values of interest, that file can be skipped during query execution, reducing the amount of data that needs to be read.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_007",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "What are appropriate file sizes when optimizing Delta tables for performance?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Many small files (1-10MB) for maximum parallelism",
+      "Medium-sized files (~100MB) for balanced performance",
+      "Large files (~1GB) for efficient read operations",
+      "Very large files (>10GB) to minimize metadata overhead"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "When optimizing Delta tables, consolidating many small files into fewer larger files of an optimal size (commonly ~1GB) improves read efficiency and reduces metadata overhead. Too many small files degrade query performance due to overhead in listing and opening files, while excessively large files can reduce parallelism. The OPTIMIZE command can be used with or without Z-Ordering to achieve well-sized, efficient data files, typically around 1GB in size.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_008",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "What is a key consideration when choosing columns for partitioning in Delta Lake?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Always choose high-cardinality columns for maximum pruning",
+      "Choose columns with moderate cardinality that appear in WHERE clauses",
+      "Avoid using date/time columns for partitioning",
+      "Always partition by multiple columns to improve performance"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When choosing partition columns in Delta Lake, it's important to select columns with moderate cardinality that frequently appear in WHERE clauses. Too few distinct values (low cardinality) result in skewed, large partitions, while too many (high cardinality) lead to many small files and overhead. The chosen column should distribute data relatively evenly. Finding a balance between pruning efficiency and manageability is key.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_009",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "What does the OPTIMIZE command do in Delta Lake?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Updates statistics for the query optimizer",
+      "Consolidates small files into larger ones",
+      "Removes duplicate records from the table",
+      "Creates new indexes automatically"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The OPTIMIZE command in Delta Lake consolidates many small files into fewer larger files of an optimal size (commonly ~1GB). This process, also known as compaction, improves read efficiency and reduces metadata overhead. Running OPTIMIZE with or without Z-Ordering can achieve well-sized, efficient data files. It does not update statistics (that's handled by the transaction log), remove duplicates, or create indexes.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_010",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "When would you choose NOT to partition data in Delta Lake?",
+    "question_type": "multiple_choice",
+    "options": [
+      "When data volume is small (under 1GB)",
+      "When no single column is a good partition candidate",
+      "When using Z-Ordering on the table",
+      "When the table is only used for batch processing"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "You might choose not to partition data in Delta Lake when no single column is a good partition candidate - for instance, when there's no column with appropriate cardinality or when queries are complex and filter on multiple columns with no clear pattern. In such cases, relying on Z-Ordering can still cluster data effectively. While partitioning provides coarse pruning by skipping entire directories, Z-Ordering can partially compensate for this by improving data locality.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_011",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "How do you enable Change Data Feed (CDF) in Delta Lake?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Set a table property when creating or altering the table",
+      "Use a special write mode when writing to the table",
+      "Enable it at the database level for all tables",
+      "It's automatically enabled for all Delta tables"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "To enable Change Data Feed (CDF) in Delta Lake, you set a table property when creating or altering a Delta table. You can enable it by running: ALTER TABLE myDeltaTable SET TBLPROPERTIES (delta.enableChangeDataFeed = true); or at creation time with: CREATE TABLE myDeltaTable (...) TBLPROPERTIES (delta.enableChangeDataFeed = true);. Once enabled, you can read changes using the table_changes function or options like readChangeFeed.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_012",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "What happens if you try to write data that violates a schema constraint in Delta Lake?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The write succeeds but the violating records are marked as corrupt",
+      "The write fails with an error",
+      "The write succeeds but the violating records are automatically filtered out",
+      "The write succeeds and the schema is automatically updated to accommodate the new data"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "If you try to write data that violates a schema constraint in Delta Lake (such as a NOT NULL constraint or a CHECK constraint), the write operation fails with an error. Delta Lake enforces schemas at write time. If a column doesn't match the expected data type or required columns are missing, the write fails. This strict enforcement helps maintain data quality and prevents accidental schema drift or data corruption.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_013",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What is the primary difference between coalesce and repartition in Spark?",
+    "question_type": "multiple_choice",
+    "options": [
+      "coalesce increases partitions while repartition decreases them",
+      "coalesce avoids a full shuffle while repartition always performs a full shuffle",
+      "coalesce preserves partitioning while repartition changes it",
+      "coalesce works only on RDDs while repartition works on DataFrames"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The primary difference between coalesce and repartition in Spark is that coalesce tries to minimize data movement by avoiding a full shuffle when reducing the number of partitions, while repartition always performs a full shuffle (unless it's a no-op). Coalesce merges existing partitions without redistributing data evenly, which can lead to skew if drastically reducing partitions. Repartition, on the other hand, ensures data is evenly distributed across the specified number of partitions but at the cost of a full shuffle.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_014",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "When would you use repartitionByRange instead of standard repartition?",
+    "question_type": "multiple_choice",
+    "options": [
+      "When you need to reduce the number of partitions quickly",
+      "When you want to distribute data evenly by value ranges of specified columns",
+      "When working with streaming data",
+      "When you want to avoid a shuffle operation"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "You would use repartitionByRange instead of standard repartition when you want to distribute data evenly by value ranges of specified columns. This is particularly useful when performing operations like sort-merge joins or range queries, as it ensures each partition contains a range of values based on the specified column(s). This pre-sorts or pre-clusters data according to a certain key or set of keys, potentially optimizing downstream operations that rely on sorted or range-based data distribution.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_015",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What is the purpose of the rebalance operation in Spark?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To reduce the number of partitions without shuffling",
+      "To evenly redistribute data across partitions without specifying keys",
+      "To sort data within each partition",
+      "To change the partitioning scheme of a DataFrame"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The purpose of the rebalance operation in Spark is to evenly redistribute data across the specified number of partitions without specifying particular keys. It's useful after a filter or other transformation that might result in an uneven distribution. Rebalance performs a full shuffle to achieve a uniform distribution and avoid skew, but unlike repartition or repartitionByRange, it doesn't provide control over partitioning by key or range.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_016",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "How can you control the size of output part-files when writing a Spark DataFrame to disk?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use a file format that automatically compresses data",
+      "Set the target file size in the write options",
+      "Adjust the number of output partitions before writing",
+      "Use the coalesce method after writing"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "To control the size of output part-files when writing a Spark DataFrame to disk, you should adjust the number of output partitions before writing. Since each partition typically becomes one output file (for file formats like Parquet), you can control the approximate file size by using df.repartition(n) or df.coalesce(n) to define how many output partitions Spark will have before calling df.write(...). By choosing n based on total data size and desired file size, you can achieve appropriately sized part-files.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_017",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What is the most efficient approach for Type 1 updates in a Delta Lake table?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Delete and reinsert the entire record",
+      "Use the MERGE INTO command",
+      "Use INSERT OVERWRITE with a predicate",
+      "Use a combination of DELETE and INSERT"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The most efficient approach for Type 1 updates (overwriting existing records) in a Delta Lake table is to use the MERGE INTO command. This allows you to atomically update existing rows and optionally insert new ones if they don't exist, all in a single transaction. The MERGE operation is optimized in Delta Lake to maintain ACID guarantees while providing better performance than separate DELETE and INSERT operations or full table overwrites, especially for large tables with selective updates.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_018",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "How does watermarking help in stateful streaming operations?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It ensures all events arrive in perfect order",
+      "It bounds state size by allowing old state to be discarded",
+      "It guarantees exactly-once processing semantics",
+      "It prevents duplicate records in the output"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "In stateful streaming operations, watermarking helps bound the size of the state by defining a threshold for how long to wait for late data. Watermarking tells Spark to drop state for keys that haven't received new data within a given threshold, preventing indefinite growth of state for old keys. Without watermarks, state would grow unbounded as new keys are continuously processed, eventually leading to memory issues or degraded performance in long-running streaming jobs.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_019",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What is the purpose of broadcast in a stream-static join?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To reduce network traffic between nodes",
+      "To distribute the static dataset to all workers for local lookups",
+      "To ensure the streaming data is processed in order",
+      "To limit the amount of data processed in each micro-batch"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The purpose of broadcast in a stream-static join is to distribute a copy of the entire static dataset to all worker nodes. This is done when the static dataset is small enough to fit in memory. Broadcasting allows lookups to be performed locally on each executor without shuffling data, which significantly improves join performance. This pattern is particularly useful when enriching a streaming dataset with relatively small reference or dimension data.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_020",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What approach can be used to deduplicate data in Structured Streaming?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use distinct() on the streaming DataFrame",
+      "Use dropDuplicates() with watermarking",
+      "Use a stateless filter operation",
+      "Use MERGE operation at the sink"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To deduplicate data in Structured Streaming, you can use dropDuplicates() with watermarking. This is a stateful operation where Spark keeps track of keys seen so far, along with a watermark to remove old keys from state. For example: `stream_df.withWatermark(\"eventTime\", \"10 minutes\").dropDuplicates([\"key\", \"eventTime\"])`. The watermark allows Spark to eventually clean up state for old events, preventing unbounded state growth while still effectively deduplicating the stream.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_021",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "How does Change Data Feed (CDF) help with propagating deletes?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It automatically removes deleted records from downstream tables",
+      "It explicitly records deletions with _change_type = 'delete'",
+      "It uses VACUUM to clean up deleted records",
+      "It provides a separate deletion log"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Change Data Feed (CDF) in Delta Lake helps with propagating deletes by explicitly recording deleted records in the feed with _change_type = 'delete'. This gives you explicit information about which rows were removed from the source table. Without CDF, identifying which records were deleted between versions would be complex. With CDF enabled, you can easily identify these deleted records and apply the same deletions to downstream consumers, maintaining consistency across your data pipeline.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_022",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What problem does proper partitioning solve when archiving or deleting data?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It prevents data loss during deletion operations",
+      "It enables removal of data at the directory level without scanning all data",
+      "It automatically compresses old data",
+      "It maintains table statistics after deletions"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Proper partitioning solves the problem of efficiently archiving or deleting data by enabling operations at the directory level without scanning all data. For example, if data is partitioned by date, removing data older than a certain date can be done by simply dropping entire partition directories (e.g., `ALTER TABLE myDeltaTable DROP PARTITION (date < '2023-01-01')`). Without partitioning, you'd need to read the entire dataset, filter rows, and rewrite it—a more costly operation, especially for large datasets.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_023",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "How do 'smalls' (tiny files) impact Spark query performance?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They improve parallel processing capabilities",
+      "They decrease storage costs but increase compute time",
+      "They create file listing overhead and excessive tasks",
+      "They only impact performance when using cloud storage"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "'Smalls' (tiny files) negatively impact Spark query performance by creating file listing overhead and excessive tasks. Each Spark job starts by listing files in the input directories, and thousands of small files make this process slow. Spark creates one task per partition/file chunk, so many small files lead to many small tasks, increasing overhead and management complexity. This results in wasted CPU and memory resources as executors spend more time on overhead rather than productive data processing.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_024",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What pattern is recommended for Stream-Static joins in Spark?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Load static data at the beginning of each micro-batch",
+      "Use broadcast to distribute static data to all workers",
+      "Store static data in external databases",
+      "Convert static data to a stream before joining"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "For Stream-Static joins in Spark, the recommended pattern is to use broadcast to distribute static data to all workers. When the static dataset is small enough, broadcasting it to all executors allows lookups to become local operations without shuffling data. This significantly improves performance as it eliminates network transfer during the join operation. The pattern typically involves: loading the static data once, broadcasting it using functions like broadcast(), and then joining it with the streaming DataFrame.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_025",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What is the Bronze-Silver-Gold pattern in Data Lakehouse architecture?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A naming convention for different storage tiers",
+      "A data modeling paradigm for dimension tables",
+      "A multi-hop architecture for data quality and refinement",
+      "A backup strategy for critical datasets"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The Bronze-Silver-Gold pattern in Data Lakehouse architecture is a multi-hop architecture for data quality and refinement. It organizes data processing into layers: Bronze (raw ingested data, append-only), Silver (cleansed, filtered, and conformed data), and Gold (aggregated or feature-engineered data for reporting, analytics, ML). This pattern allows for incremental quality improvements and transformations as data moves through the layers, with each layer serving different use cases and users.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_026",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "How do you handle schema evolution in Structured Streaming pipelines?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Restart the stream with each schema change",
+      "Use schema inference and mergeSchema options",
+      "Create a new stream for each schema version",
+      "Schema changes are not supported in Structured Streaming"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To handle schema evolution in Structured Streaming pipelines, you can use schema inference and mergeSchema options. When reading from a source like Delta Lake, you can set the option \"mergeSchema\" to \"true\" to allow the schema to evolve as new columns are added. For more complex changes, you might need to use a more flexible schema (like storing data in a semi-structured column) or implement logic to handle different schema versions. Proper schema management is crucial for long-running streaming applications.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_027",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What is the best practice for checkpoint locations in Structured Streaming?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use local file system for fastest performance",
+      "Use a new location for each stream restart",
+      "Use a stable location in cloud storage",
+      "Avoid checkpointing for better throughput"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The best practice for checkpoint locations in Structured Streaming is to use a stable location in cloud storage (like S3, ADLS, or GCS). Checkpoints contain critical information about the stream's progress, so they need to be persistent and accessible even if the cluster is terminated and restarted. Using cloud storage ensures durability and accessibility. It's also important to use a dedicated location for each streaming query and not to delete checkpoints if you want to resume processing from where it left off.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_028",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What is the benefit of foreachBatch in Structured Streaming?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It allows processing each record individually",
+      "It enables custom output operations on micro-batches",
+      "It automatically handles exactly-once semantics",
+      "It increases streaming throughput"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The foreachBatch function in Structured Streaming enables custom output operations on micro-batches. It gives you access to each micro-batch as a DataFrame, allowing you to perform complex operations that aren't directly supported by the streaming API, such as calling MERGE statements, multi-table transactions, or custom write logic. This is particularly useful for implementing CDC patterns, SCD Type 2 updates, or when you need to apply custom business logic before writing to multiple destinations.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_029",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "How can you control processing time in Structured Streaming?",
+    "question_type": "multiple_choice",
+    "options": [
+      "By increasing the number of partitions",
+      "By configuring trigger intervals",
+      "By using a rate limiter source",
+      "By adjusting watermark durations"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "In Structured Streaming, you can control processing time by configuring trigger intervals. Triggers determine how frequently micro-batches are processed. Options include: trigger(processingTime='1 second') for processing every second, trigger(once=True) for processing all available data once and then stopping, or trigger(continuous='1 second') for continuous processing with approximately 1-second intervals. Adjusting trigger intervals allows you to balance between latency requirements and resource utilization.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_030",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What happens if a Delta Lake checkpoint is lost or corrupted?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The table becomes unusable and must be recreated",
+      "Delta automatically rebuilds the checkpoint from the transaction log",
+      "Only data since the last checkpoint is lost",
+      "The stream must be reprocessed from the beginning"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "If a Delta Lake checkpoint is lost or corrupted, Delta automatically rebuilds the checkpoint from the transaction log. Delta Lake's transaction log contains a complete history of all changes made to the table. The checkpoint files are simply optimizations that help speed up table loading by providing a snapshot of table state at certain points. If these checkpoints are missing, Delta can reconstruct the entire table state by replaying the transaction log, though it may take longer initially.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_031",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "What is the primary objective of data transformations when promoting data from bronze to silver?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Maximize compression and minimize storage costs",
+      "Improve query performance through indexing",
+      "Cleanse standardize and enrich data for easier consumption",
+      "Convert data to a proprietary format for security"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The primary objective of data transformations when promoting data from bronze to silver is to cleanse, standardize, and enrich the data for easier consumption. This includes removing invalid or corrupt records, deduplicating records, applying standardized formats, harmonizing schemas from different sources, and potentially enriching the data with reference data lookups. By the time data reaches the silver layer, it should be cleaner, more consistently formatted, and ready for broader consumption by downstream analysts or data products.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_032",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "How does Delta Lake's Change Data Feed address difficulties with propagating updates?",
+    "question_type": "multiple_choice",
+    "options": [
+      "By automatically updating downstream tables",
+      "By explicitly marking rows that were inserted updated or deleted",
+      "By maintaining a separate audit log",
+      "By requiring full table scans to detect changes"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Lake's Change Data Feed (CDF) addresses difficulties with propagating updates by explicitly marking rows that were inserted, updated, or deleted. Once enabled, CDF captures all row-level changes with a _change_type field indicating whether a row was inserted, updated (represented as a delete followed by an insert), or deleted. This eliminates the need to manually compute differences between table versions or rely on timestamp-based detection, making it much simpler to sync changes to downstream systems with minimal complexity.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_033",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "Why would you use a multiplex bronze table in a lakehouse architecture?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To reduce storage costs through compression",
+      "To enforce strict schema validation on ingestion",
+      "To simplify ingestion logic for multiple sources into a single table",
+      "To increase query performance for reporting"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "A multiplex bronze table is used in a lakehouse architecture to simplify ingestion logic for multiple sources into a single table. Instead of creating a separate bronze table for each source, you store all raw events together, differentiating them by source identifiers, event types, or metadata columns. This approach simplifies ingestion logic, ensures a consistent schema for metadata, reduces operational overhead, and provides a unified 'landing zone' in your data lake where data from multiple distinct sources or event types is ingested.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_034",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "What is a common pitfall when trying to productionalize streaming workloads?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Using too many clusters",
+      "Schema evolution challenges and tiny files",
+      "Over-partitioning the output data",
+      "Using Spark Structured Streaming instead of traditional batch"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Schema evolution challenges and tiny files are common pitfalls when productionalizing streaming workloads. As source systems evolve, they may introduce new fields, optional columns, or variant schemas, leading to schema drift and requiring frequent manual schema management. Additionally, streaming jobs often write many small files, especially with high-frequency micro-batches, resulting in performance degradation due to the 'small files problem.' Proper schema handling and file compaction strategies are needed to address these issues.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_035",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "What is the best practice for handling duplicates when processing data from bronze to silver?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Allow duplicates and handle them in the gold layer",
+      "Use primary keys in the bronze table to prevent duplicates",
+      "Apply deduplication with watermarking or MERGE operations",
+      "Manually delete duplicates after they're detected"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The best practice for handling duplicates when processing data from bronze to silver is to apply deduplication using watermarking (for streaming) or MERGE operations (for batch). For structured streaming, you can use `withWatermark(\"event_time\", \"10 minutes\").dropDuplicates([\"primary_key\"])` to deduplicate based on a key column and an event-time column. For batch processing, you can use Delta MERGE to ensure only one record exists per key. This prevents duplicate data from affecting downstream analytics and reporting.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_036",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "How can data quality be enforced in Delta Lake?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only through external validation tools",
+      "Using schema enforcement constraints and custom validations",
+      "By limiting write access to administrators",
+      "Through automated data correction on write"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Data quality in Delta Lake can be enforced through a combination of schema enforcement, constraints, and custom validations. Delta Lake enforces schemas at write time, preventing invalid data types or missing required columns. You can add constraints like NOT NULL or CHECK constraints to tables to ensure data meets certain conditions. For complex business rules, you can implement custom validations using Spark transformations or Delta Live Tables expectations. This multi-layered approach helps maintain data integrity and quality.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_037",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "Without foreign key constraints how can referential integrity be maintained in Delta Lake?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It's not possible to maintain referential integrity",
+      "Using application-level validation during ETL processes",
+      "By avoiding joins between tables",
+      "Through database-level triggers"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Without native foreign key constraints in Delta Lake, referential integrity can be maintained using application-level validation during ETL processes. This includes pre-validating incoming data during the Silver step to ensure foreign key columns reference existing keys in dimension tables, implementing merging logic that only inserts facts if the referenced dimension key exists, and running periodic integrity checks to identify orphaned records. These ETL controls ensure consistent data despite the lack of a native relational constraint mechanism.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_038",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "What is the purpose of adding constraints to Delta Lake tables?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To improve query performance",
+      "To prevent bad data from being written",
+      "To compress data more efficiently",
+      "To enable ACID transactions"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The purpose of adding constraints to Delta Lake tables is to prevent bad data from being written. Constraints like NOT NULL and CHECK enforce data quality rules at the storage level, ensuring that data meets specific conditions before being written. For example, constraining a column to be non-null or ensuring a value is within a certain range helps maintain data integrity. If a write operation attempts to violate these constraints, Delta Lake will throw an error, preventing the bad data from being persisted.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_039",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "What are the trade-offs of normalized data models in a data lakehouse?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Higher storage costs but faster query performance",
+      "Reduced redundancy but potential join overhead",
+      "Better compression but more complex schemas",
+      "Simpler maintenance but limited analytical capabilities"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The main trade-offs of normalized data models in a data lakehouse are reduced redundancy but potential join overhead. Storing repeated attributes in lookup tables (normalization) reduces data redundancy and improves consistency, as changes only need to be made in one place. However, this requires joins when querying, which can increase query complexity and potentially latency. In some cases, denormalizing (embedding attributes directly into larger tables) might improve performance for join-heavy queries at the cost of storage efficiency and update complexity.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_040",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "How are Slowly Changing Dimension (SCD) Type 2 tables implemented in Delta Lake?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Using automatic CDC capture",
+      "By overwriting old records with new values",
+      "Using MERGE to add new versions and update valid-to timestamps",
+      "By creating a separate history table for each dimension"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "SCD Type 2 tables are implemented in Delta Lake using MERGE operations to add new versions and update valid-to timestamps. For each change, the implementation typically involves: (1) marking the old record as expired by setting valid_to = current_timestamp() and current_flag = false, and (2) inserting a new row as the latest version with valid_from = current_timestamp(), current_flag = true, and valid_to = null. This preserves the full history by adding new rows for changes rather than overwriting existing data.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_041",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "What is the difference between SCD Type 1 and SCD Type 2 implementations?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Type 1 uses streaming while Type 2 uses batch processing",
+      "Type 1 overwrites old values while Type 2 preserves history with new rows",
+      "Type 1 is for dimension tables while Type 2 is for fact tables",
+      "Type 1 is Delta-specific while Type 2 works with any format"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The key difference between SCD Type 1 and Type 2 implementations is that Type 1 overwrites old values with new values without preserving history, while Type 2 preserves full history by adding new rows for changes and marking old versions as expired. In Type 1, a MERGE operation simply updates the existing record in place. In Type 2, a more complex MERGE both updates the status of existing records and inserts new records with effective dates/validity flags to maintain the historical timeline of changes.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_042",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "How would you implement quality checks between bronze and silver tables?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use database constraints only",
+      "Manually review samples of data",
+      "Apply validation rules in transformation code with error handling",
+      "Quality cannot be checked during ETL processes"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "To implement quality checks between bronze and silver tables, you would apply validation rules in transformation code with appropriate error handling. This might include: checking schema conformance (casting fields and handling errors), filtering out records that don't meet business rules, using Data Quality frameworks like Delta Live Tables expectations or custom Spark checks, and potentially tagging records with a validation_status column. Records that fail validation could be routed to a quarantine table for later review rather than being rejected entirely.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_043",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "How can data masking be implemented using dynamic views?",
+    "question_type": "multiple_choice",
+    "options": [
+      "By encrypting sensitive columns in the base table",
+      "By using conditional logic based on the current user's permissions",
+      "By creating separate copies of tables for different user groups",
+      "By requiring users to provide a decryption key"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Data masking can be implemented using dynamic views through conditional logic based on the current user's permissions. Dynamic views in Databricks allow you to define a view whose output varies depending on the user querying it. For masking, you can use functions like current_user() and is_member() inside CASE statements to return either the actual data for authorized users or masked versions (like 'xxxxx@masked.com' instead of the real email) for unauthorized users, all without duplicating data or changing the base table.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_044",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "What function is commonly used in dynamic views to check user permissions?",
+    "question_type": "multiple_choice",
+    "options": [
+      "has_permission()",
+      "check_access()",
+      "is_member()",
+      "user_has_role()"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The is_member() function is commonly used in dynamic views to check user permissions. This function returns TRUE if the current user belongs to the specified group. For example, `is_member('data_analyst')` will return true only if the current user is in the 'data_analyst' group. This allows you to conditionally return different data or apply different masking rules based on group membership, enabling fine-grained access control without duplicating data.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_045",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "How can row-level access control be implemented in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "By physically partitioning data into separate tables",
+      "By using dynamic views with filtering predicates based on user groups",
+      "By requiring separate databases for each department",
+      "Row-level security isn't possible in Databricks"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Row-level access control can be implemented in Databricks using dynamic views with filtering predicates based on user groups. For example, you can create a view that includes WHERE clauses like `WHERE (region = 'EUROPE' AND is_member('sales_europe')) OR (region = 'AMERICA' AND is_member('sales_america'))`. This ensures users only see rows relevant to their region, department, or role, based on their group membership. Different users querying the same view will automatically see different subsets of data.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_046",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "What is the difference between column-level security and data masking?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Column-level security restricts access while masking alters the visible values",
+      "Column-level security is for numeric data while masking is for text",
+      "Column-level security works at database level while masking works at application level",
+      "They are different terms for the same technique"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "The key difference between column-level security and data masking is that column-level security restricts access to certain columns (users either see them or don't), while data masking alters the visible values of sensitive data. Column-level security might return NULL or completely hide a salary column from unauthorized users, whereas masking might show partial values (like last 4 digits of SSN) or transformed values (like 'xxxxx@masked.com' instead of real email addresses) while preserving the column's presence in results.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_047",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "How do dynamic views handle different user access levels for the same data?",
+    "question_type": "multiple_choice",
+    "options": [
+      "By creating physical copies for each access level",
+      "By using conditional logic referencing current_user() or group membership",
+      "By requiring separate logins for different access levels",
+      "By encrypting data differently for each access level"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Dynamic views handle different user access levels for the same data by using conditional logic that references current_user() or group membership functions like is_member(). When a user queries the view, these functions evaluate based on the current user's identity and group memberships. The view definition contains CASE statements or similar logic that returns different results (full data, partially masked data, or no data) depending on the user's access level, without creating multiple copies of the data.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_048",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "What considerations are important when implementing dynamic views for security?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Dynamic views increase storage requirements significantly",
+      "User and group management must be correctly configured for proper access control",
+      "Dynamic views can only mask text data not numeric values",
+      "Each dynamic view requires its own dedicated compute resources"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When implementing dynamic views for security, a critical consideration is that user and group management must be correctly configured for proper access control. Dynamic views rely on group memberships and user identities to determine access levels. Ensure your Databricks environment (Unity Catalog or workspace SCIM integration) correctly assigns users to groups. Other considerations include performance impacts of complex conditional logic, testing views by logging in as different users, and documenting masking rules or filters for data consumers.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_049",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "question_text": "What elements in the Spark UI are most useful for identifying data skew?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Storage tab and environment variables",
+      "Tasks page showing execution times across tasks in a stage",
+      "Cluster manager and worker nodes list",
+      "SQL tab query plans"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Tasks page in the Spark UI is most useful for identifying data skew. It shows detailed information about individual tasks within a stage, including their execution times, input sizes, and processing rates. If some tasks run significantly longer than others in the same stage, it's a strong indicator of data skew - certain partitions contain disproportionately more data than others. This page allows you to identify exactly which tasks are processing more data and taking longer, helping pinpoint skew issues.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_050",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "question_text": "How can you identify the cause of slow-running tasks in the Spark UI?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Check the cluster configuration page only",
+      "Examine task metrics like GC time shuffle read/write sizes and execution time",
+      "Look at the job submission timestamp",
+      "Review only the driver logs"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To identify the cause of slow-running tasks in the Spark UI, you should examine task metrics such as garbage collection (GC) time, shuffle read/write sizes, and execution time. High GC times suggest memory pressure, possibly requiring increased executor memory. Large shuffle read/write sizes indicate heavy data movement, which might be reduced through better partitioning. Comparing execution times across tasks helps identify skew. The Spark UI provides these metrics for each task, making it possible to diagnose specific performance bottlenecks.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_051",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "question_text": "What metrics should be monitored to control costs in production streaming jobs?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only total cluster uptime",
+      "Processing time input rates and trigger intervals",
+      "Only storage usage of output data",
+      "Number of concurrent users accessing the data"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To control costs in production streaming jobs, you should monitor processing time, input rates, and trigger intervals. Processing time tells you how efficiently each batch is processed - increasing times may indicate need for scaling or optimization. Input rates show data volume trends, helping right-size clusters. Trigger intervals determine how frequently micro-batches run - longer intervals may reduce compute costs but increase latency. Other important metrics include memory usage, executor utilization, and any unnecessary shuffling operations.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_052",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "question_text": "How can you identify if a cluster is properly sized using Ganglia UI?",
+    "question_type": "multiple_choice",
+    "options": [
+      "By checking only the storage allocation",
+      "By monitoring CPU memory utilization and network I/O over time",
+      "By counting the number of running applications",
+      "By examining only job completion times"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "You can identify if a cluster is properly sized using Ganglia UI (or similar metrics systems) by monitoring CPU, memory utilization, and network I/O over time. If CPU utilization is consistently very high (>90%), the cluster might be undersized for compute. If memory usage frequently approaches limits, causing garbage collection pressure, more memory may be needed. Conversely, if resources are consistently underutilized, the cluster may be oversized. Network I/O patterns can reveal if data movement is a bottleneck requiring network optimization.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_053",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "question_text": "What information in the Spark UI helps identify shuffle bottlenecks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The login page",
+      "Only the list of completed jobs",
+      "Stage timelines showing shuffle read/write metrics and task skew",
+      "Only the environment tab"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "In the Spark UI, stage timelines showing shuffle read/write metrics and task skew are crucial for identifying shuffle bottlenecks. The Stages page shows shuffle read and write sizes for each stage, while the Tasks page shows detailed metrics for individual tasks, including time spent fetching shuffle data. If tasks spend a significant amount of time in shuffle read or there's high variability in task duration, it suggests shuffle bottlenecks, potentially due to data skew, poor partitioning, or network issues.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_054",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "question_text": "How can you monitor streaming query progress in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only through custom application logs",
+      "Using the Structured Streaming UI tab and streaming metrics",
+      "Only by checking output data manually",
+      "Stream monitoring is not possible"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "In Databricks, you can monitor streaming query progress using the Structured Streaming UI tab and streaming metrics. The Structured Streaming tab in the Spark UI shows detailed information about streaming queries, including input rates, processing rates, batch durations, and end-to-end latency. Additionally, you can set up alerts and monitoring for streaming queries in the Databricks Jobs UI to detect increased processing time or other issues. These tools provide comprehensive visibility into streaming pipeline performance.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_055",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "question_text": "How do you transition from notebook dependencies to Python file dependencies?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Delete all notebooks and restart with Python files",
+      "Extract reusable logic into Python modules and import them",
+      "Convert each notebook cell into a separate Python file",
+      "Run notebooks from within Python files"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To transition from notebook dependencies to Python file dependencies, you should extract reusable logic (utility functions, transformations, common validations) into Python modules that can be imported directly. Instead of relying on %run commands to include code from other notebooks, move shared logic into .py files organized in a well-structured directory. These modules can then be version-controlled, tested independently, and imported using standard Python import statements. This approach improves modularity, testability, and maintainability of your code.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_056",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "question_text": "What is the advantage of using Python wheels over direct imports?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Wheels automatically parallelize code execution",
+      "Wheels provide better isolation and version control for dependencies",
+      "Wheels are the only way to use Python in Databricks",
+      "Direct imports don't work in Databricks"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The advantage of using Python wheels over direct imports is that wheels provide better isolation and version control for dependencies. Wheels are pre-compiled distributions that create a clear separation of environments, allowing for controlled deployments with specific versions of libraries. They allow for consistent installation across clusters and environments, simplify dependency management, and enable proper CI/CD workflows with tested package versions. While less flexible for rapid iteration, wheels provide stability and reproducibility in production environments.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_057",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "question_text": "What steps are involved in repairing a failed Databricks job?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Always restart the cluster and rerun from scratch",
+      "Identify failure cause using logs fix the issue and rerun the job",
+      "Manually copy successful results and run only failed portions",
+      "Failed jobs can't be repaired and must be recreated"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Repairing a failed Databricks job involves identifying the failure cause using logs, fixing the issue, and rerunning the job. The process typically includes: reviewing job run history, logs, and error messages in the Databricks jobs UI; diagnosing the root cause (schema changes, missing files, cluster configuration issues, etc.); fixing the underlying problem (updating code, adjusting configurations); and then using the 'repair' option in the UI to rerun failed tasks while skipping successfully completed ones in multi-task jobs.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_058",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "question_text": "How do you configure task dependencies in a multi-task job?",
+    "question_type": "multiple_choice",
+    "options": [
+      "By setting specific start times for each task",
+      "By specifying which tasks must complete successfully before a downstream task starts",
+      "By running all tasks on separate clusters",
+      "Multi-task dependencies cannot be configured"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "In a multi-task job, you configure task dependencies by specifying which tasks must complete successfully before a downstream task starts. In the Databricks Jobs UI, after adding multiple tasks (notebooks, scripts, SQL queries, etc.), you explicitly define the dependency relationships between them. For example, you might specify that a 'Transform' task can only start after an 'Ingest' task completes successfully. This controls the execution order and ensures data is ready before subsequent steps run.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_059",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "question_text": "What is the Databricks CLI command to run a job?",
+    "question_type": "multiple_choice",
+    "options": [
+      "databricks jobs execute",
+      "databricks jobs run-now",
+      "databricks jobs start",
+      "databricks run job"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Databricks CLI command to run a job is `databricks jobs run-now`. The complete command would be `databricks jobs run-now --job-id <id>`, where `<id>` is the ID of the job you want to run. You can optionally pass parameters to the job if it's parameterized. This command triggers an immediate execution of the specified job, regardless of its schedule settings. After running this command, you can monitor the job's progress using `databricks runs list` or `databricks runs get`.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_060",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "question_text": "How can you clone a job using the REST API?",
+    "question_type": "multiple_choice",
+    "options": [
+      "POST to /api/2.1/jobs/clone with the source job ID",
+      "Use GET to retrieve job config and POST to create a new job",
+      "PATCH the existing job with a new name",
+      "Cloning is only possible through the UI"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To clone a job using the REST API, you first use GET to retrieve the configuration of the existing job, then POST that configuration to create a new job. The process involves: (1) Retrieve the job configuration using GET /api/2.1/jobs/get?job_id=<job_id>, (2) Optionally modify the returned JSON configuration as needed, and (3) Submit the configuration as the payload in a POST request to /api/2.1/jobs/create. This creates a new job with the same or similar configuration as the original job.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_061",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "Which SCD Type 2 strategy in Delta Lake uses the MERGE statement to track historical changes?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Append-only inserts with version columns",
+      "Using MERGE with an is_current flag and effective date columns",
+      "Using REPLACE WHERE to overwrite historical records",
+      "Using COPY INTO with deduplication logic"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "SCD Type 2 in Delta Lake is typically implemented using MERGE. The pattern includes columns such as effective_start_date; effective_end_date; and is_current (or is_active). When a change is detected for an existing record; the MERGE statement first UPDATES the existing active row by setting is_current = false and effective_end_date = current_date; then INSERTs a new row with the updated values; is_current = true; and a new effective_start_date. This preserves full history while allowing efficient queries for current state.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_062",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "What is the key difference between a Slowly Changing Dimension Type 1 and Type 3?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Type 1 keeps unlimited history while Type 3 keeps only two versions",
+      "Type 1 overwrites old values with no history; Type 3 adds a separate column for the previous value",
+      "Type 1 uses surrogate keys while Type 3 uses natural keys",
+      "Type 1 applies only to numeric columns while Type 3 applies to all data types"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "SCD Type 1 simply overwrites the existing record with the new value; discarding all historical information. There is no record of what the value was before the update. SCD Type 3; by contrast; adds an additional column (e.g. previous_value or old_value) alongside the current value column. This retains exactly one level of history—the most recent prior value—but does not support tracking more than two states. Type 2 is the approach that maintains full history with multiple rows per entity.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_063",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "In a medallion architecture; what is the primary purpose of the Gold layer?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Raw ingestion from source systems with schema-on-read",
+      "Cleaned and conformed data with standardized schemas",
+      "Aggregated; business-level data optimized for analytics and reporting",
+      "Temporary staging for intermediate transformations"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The Gold layer in the medallion architecture (Bronze-Silver-Gold) is the business-level aggregation layer. It contains curated; aggregated; and highly refined datasets optimized for specific analytics use cases; BI dashboards; and reporting. Data at this layer is typically pre-joined; pre-aggregated; and shaped to match business entities such as daily revenue; customer lifetime value; or product performance metrics. It is the layer most directly consumed by business analysts and BI tools.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_064",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "Which of the following best describes a Data Vault modeling approach?",
+    "question_type": "multiple_select",
+    "options": [
+      "It separates business keys (Hubs); relationships (Links); and descriptive attributes (Satellites)",
+      "It is optimized for auditing and tracking historical changes",
+      "It uses a star schema with fact and dimension tables",
+      "It supports parallel loading of all entities with no dependencies",
+      "It was designed specifically for agile data warehouse development"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Data Vault modeling separates concerns into three entity types: Hubs (business keys); Links (relationships between Hubs); and Satellites (descriptive attributes and history). A key advantage is that Hubs and Links have no direct dependencies on each other; enabling parallel loading of data without complex dependency chains. Data Vault was specifically designed to support agile and incremental data warehouse development and naturally captures full history in Satellites. It is NOT a star schema—that describes dimensional (Kimball) modeling.",
+    "difficulty": 5,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_065",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "True or False: In Delta Live Tables; a live table defined with CREATE OR REFRESH STREAMING TABLE must consume from a streaming source.",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "True. In Delta Live Tables; a STREAMING TABLE (defined with CREATE OR REFRESH STREAMING TABLE) is designed to process data incrementally from an append-only streaming source such as Auto Loader; Kafka; or another streaming Delta table. It maintains state across pipeline runs and processes only new records. In contrast; a LIVE TABLE (or MATERIALIZED VIEW) recomputes from scratch on each pipeline run and can consume from batch or streaming sources. Using STREAMING TABLE with a non-streaming source will result in an error.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_066",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What does the Change Data Feed (CDF) _change_type column value 'update_preimage' represent?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The new value of a row after an UPDATE operation",
+      "The old value of a row before an UPDATE operation",
+      "A row that was deleted during a MERGE operation",
+      "A row inserted via streaming ingest"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When Change Data Feed is enabled on a Delta table; each UPDATE operation generates two rows in the change data feed: one with _change_type = 'update_preimage' representing the row values BEFORE the update; and one with _change_type = 'update_postimage' representing the row values AFTER the update. This allows downstream consumers to compute the exact delta of what changed. INSERT operations produce 'insert' records and DELETE operations produce 'delete' records with no corresponding postimage.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_067",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "Which Spark join strategy is automatically chosen when one side of the join is smaller than the broadcast threshold?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Sort-merge join",
+      "Shuffle hash join",
+      "Broadcast hash join",
+      "Cartesian join"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "When one side of a join is smaller than the broadcast threshold (default 10MB; configurable via spark.sql.autoBroadcastJoinThreshold); Spark's query optimizer automatically selects a broadcast hash join. In this strategy; the smaller dataset is broadcast to all executor nodes; so each executor can perform the join locally without shuffling the larger dataset across the network. This eliminates an expensive shuffle operation and significantly speeds up the join. You can also hint a broadcast join explicitly using broadcast() or the BROADCAST hint.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_068",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "When using Structured Streaming with foreachBatch; which of the following statements are correct?",
+    "question_type": "multiple_select",
+    "options": [
+      "foreachBatch allows applying batch DataFrame operations to streaming micro-batches",
+      "foreachBatch provides exactly-once semantics by default without idempotent writes",
+      "The function receives a DataFrame and a batch ID as arguments",
+      "You can write to multiple sinks within a single foreachBatch function",
+      "foreachBatch is only compatible with Kafka sources"
+    ],
+    "correct_answers": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "foreachBatch is a powerful sink option in Structured Streaming that lets you apply arbitrary batch DataFrame transformations and writes to each micro-batch. The function receives two arguments: the micro-batch DataFrame and the batch ID (batchId). Because you receive a standard batch DataFrame; you can write to multiple sinks; apply complex transformations; or call batch-specific APIs. However; foreachBatch does NOT automatically provide exactly-once semantics—you must implement idempotent writes using the batchId to achieve exactly-once behavior. It works with any streaming source; not just Kafka.",
+    "difficulty": 5,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_069",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "What is the purpose of watermarking in Spark Structured Streaming?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To limit the size of micro-batches processed per trigger",
+      "To define how late data can arrive and still be included in aggregations",
+      "To set a maximum duration for streaming queries",
+      "To compress intermediate state stored in the checkpoint location"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Watermarking in Spark Structured Streaming defines the maximum allowed lateness for event-time data. It tells Spark how long to wait for late-arriving data before closing a time window and finalizing its aggregation. For example; specifying a watermark of 10 minutes on an event-time column means Spark will include late records up to 10 minutes behind the current watermark. Records arriving later than the watermark are dropped. Watermarking is essential for stateful operations like windowed aggregations and stream-stream joins to bound state size.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_070",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "Which of the following are valid use cases for Databricks Asset Bundles (DABs)?",
+    "question_type": "multiple_select",
+    "options": [
+      "Packaging and deploying notebooks; jobs; and pipelines as versioned code",
+      "Managing Databricks SQL warehouses via infrastructure-as-code",
+      "Defining environment-specific configurations (dev; staging; prod) within a single project",
+      "Replacing the Databricks REST API entirely",
+      "Enabling CI/CD deployment of Databricks resources through Git-based workflows"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Databricks Asset Bundles (DABs) allow teams to define Databricks resources—including jobs; Delta Live Tables pipelines; notebooks; SQL warehouses; and more—as YAML-based infrastructure-as-code. They support multiple deployment targets (dev; staging; prod) with overrides; and integrate natively with CI/CD pipelines via CLI commands like 'databricks bundle deploy'. DABs do NOT replace the REST API—they use the REST API under the hood. This makes them the recommended approach for modern GitOps-style Databricks deployment.",
+    "difficulty": 5,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_071",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "What is the primary advantage of using Delta Live Tables (DLT) over manually orchestrated Spark jobs for pipeline development?",
+    "question_type": "multiple_choice",
+    "options": [
+      "DLT pipelines always run faster than equivalent Spark jobs",
+      "DLT automatically handles dependency resolution; retries; and data quality enforcement",
+      "DLT removes the need for any SQL or Python knowledge",
+      "DLT pipelines can only run in serverless mode"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Live Tables (DLT) provides a declarative framework where you define what data transformations should produce rather than how to orchestrate them. DLT automatically infers the dependency graph between tables; handles retries on failure; manages incremental processing state; and enforces data quality rules via CONSTRAINT declarations. This eliminates the need to manually write orchestration logic; dependency management; or complex retry handling. Manually orchestrated pipelines require explicit scheduling; error handling; and wiring of dependencies.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_072",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "True or False: Databricks Repos supports running notebooks directly from a pull request branch without merging to the main branch.",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "True. Databricks Repos integrates with Git providers (GitHub; GitLab; Azure DevOps; Bitbucket) and allows users to check out any branch—including feature branches or pull request branches—directly within the workspace. Engineers can run notebooks and jobs against code in a PR branch to validate changes before merging. This enables pre-merge testing and review directly within the Databricks environment without requiring a full CI pipeline for exploratory validation.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_073",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "What is the difference between row-level security and column-level security in Unity Catalog?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Row-level security is enforced via views while column-level security uses table grants",
+      "Row-level security filters rows based on user attributes; column-level security restricts access to specific columns",
+      "Row-level security applies only to external tables; column-level security applies to managed tables",
+      "They are equivalent and interchangeable in Unity Catalog"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "In Unity Catalog; row-level security (RLS) restricts which rows a user can see based on their identity or group membership. It is typically implemented using views that embed filter predicates referencing IS_ACCOUNT_GROUP_MEMBER() or CURRENT_USER() functions. Column-level security (CLS) restricts access to specific columns—users without UNMASK or SELECT grants on a column will see NULL or masked values. Both can be combined for fine-grained access control. They address orthogonal dimensions of data access: vertical (columns) vs. horizontal (rows).",
+    "difficulty": 5,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_074",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "Which Unity Catalog feature allows sharing data with external organizations without copying data?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Delta Sharing",
+      "Data replication via COPY INTO",
+      "Cross-account S3 bucket policies",
+      "External table federation"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Delta Sharing is an open protocol implemented in Unity Catalog that enables secure real-time data sharing across organizations without copying the underlying data. A data provider creates a share containing Delta tables and grants recipients access. Recipients can access the data using their own tools (Databricks; Power BI; pandas; etc.) via a sharing endpoint. The data remains in the provider's storage; eliminating data duplication and ensuring recipients always access the latest version. Delta Sharing is vendor-agnostic and supports non-Databricks consumers.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_075",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "Which of the following correctly describes how Unity Catalog lineage tracking works?",
+    "question_type": "multiple_select",
+    "options": [
+      "Unity Catalog automatically captures column-level lineage for SQL queries",
+      "Lineage is captured for queries run on SQL warehouses and all-purpose clusters with Unity Catalog enabled",
+      "Python DataFrame operations always capture full column-level lineage automatically",
+      "Lineage data can be queried via the Catalog Explorer or REST API",
+      "Lineage tracking requires manual annotation by the data engineer"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Unity Catalog automatically captures table-level and column-level lineage for SQL queries executed on SQL warehouses or clusters with Unity Catalog enabled. This includes tracking which upstream tables and columns contributed to each downstream table or column. Lineage can be viewed in the Catalog Explorer UI or accessed programmatically via the Lineage REST API. However; Python DataFrame operations do not always produce full column-level lineage—complex transformations may only capture table-level lineage. Lineage tracking is automatic and requires no manual annotation.",
+    "difficulty": 5,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_076",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "question_text": "What is the purpose of the Databricks Query History in the SQL warehouse monitoring workflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It stores the results of all queries for 30 days",
+      "It provides metrics such as execution time; rows scanned; and bytes read for SQL queries",
+      "It allows replaying queries to test performance improvements",
+      "It archives queries to external storage for compliance"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Databricks Query History provides detailed execution metrics for queries run against SQL warehouses. For each query; it captures metrics including total execution time; compilation time; execution time; queue time; rows produced; bytes read from cache; bytes read from cloud storage; and the query plan. Engineers use this to identify slow queries; diagnose performance bottlenecks; and understand resource consumption patterns. It is accessible via the SQL warehouse UI; the Monitoring tab; or programmatically via the Query History API.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_077",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "question_text": "Which Databricks feature allows you to set alerts when a SQL query result meets a specific threshold condition?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Databricks Jobs notifications",
+      "Databricks SQL Alerts",
+      "Cluster event logs",
+      "Delta table CONSTRAINTS"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks SQL Alerts allow you to schedule a SQL query to run on a defined interval and trigger a notification when the query result meets a specified condition (e.g. 'value > 1000' or 'count = 0'). Alerts can notify via email; Slack; PagerDuty; or webhooks. They are useful for monitoring data quality (e.g. alert when null count exceeds threshold); pipeline health (e.g. alert when row count drops to zero); or business KPIs. Alerts are configured within Databricks SQL and are associated with a SQL warehouse.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_078",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "question_text": "What information is captured in the Spark UI's SQL tab that is most useful for diagnosing a slow query?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The cluster autoscaling history during the query",
+      "The physical query plan with stage-level metrics including shuffle bytes and spill",
+      "The notebook cell execution order",
+      "The number of active concurrent users"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Spark UI SQL tab displays the physical query plan as a DAG (directed acyclic graph) with detailed stage-level metrics. Key metrics include: number of output rows; bytes read and written; shuffle read and write bytes; spill to disk (which indicates memory pressure); and time spent in each physical operator. This allows engineers to identify problematic stages such as large shuffles; data skew (indicated by uneven task durations); or excessive spill. The query plan helps pinpoint whether the bottleneck is in a join; aggregation; or scan operation.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_079",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "question_text": "What is the recommended strategy for running integration tests against Databricks notebooks in a CI/CD pipeline?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Manually run notebooks before each merge and review output visually",
+      "Use the Databricks REST API or CLI to submit notebook runs as jobs and assert on exit values or output tables",
+      "Copy notebooks to local environments and run them with mock data",
+      "Integration testing of notebooks is not possible in CI/CD pipelines"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The recommended strategy is to use the Databricks REST API or Databricks CLI (or tools like databricks-cli or the Asset Bundles CLI) to submit notebook runs as jobs in an ephemeral test cluster. The CI pipeline triggers the job via 'databricks jobs run-now' or 'databricks bundle run'; waits for completion; and then asserts on the outcome—either the job exit code; written output tables; or Delta table contents. Tools like nutter or dbx also provide frameworks for parameterized notebook testing. This enables automated; repeatable integration testing without manual intervention.",
+    "difficulty": 5,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_080",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "question_text": "Which of the following are best practices for implementing CI/CD with Databricks using Git-based workflows?",
+    "question_type": "multiple_select",
+    "options": [
+      "Store all notebook and job configuration code in a Git repository",
+      "Use separate Databricks workspaces or catalogs for dev; staging; and production environments",
+      "Deploy directly to production from a local developer machine",
+      "Use Databricks Asset Bundles or equivalent IaC tools to manage deployments",
+      "Run automated tests on feature branches before merging to main"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Best practices for Databricks CI/CD include: keeping all code (notebooks; job configs; pipeline definitions) in version control; using separate environments (workspaces or Unity Catalog namespaces) for dev/staging/prod to isolate changes; leveraging infrastructure-as-code tools like Databricks Asset Bundles to ensure repeatable and reviewable deployments; and running automated tests on feature branches via CI pipelines before merging. Deploying directly from a local developer machine to production bypasses governance controls; version tracking; and test gates—this is an anti-pattern that introduces risk and reduces auditability.",
+    "difficulty": 5,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_081",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "A data engineer notices that a DELETE operation on a large Delta table completed successfully but downstream consumers still see stale data when querying historical versions. Upon inspecting the Delta transaction log; the engineer finds hundreds of JSON and checkpoint files. What is the most likely cause and recommended resolution?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The DELETE did not commit because of a concurrent write conflict",
+      "The transaction log has too many files causing slow metadata resolution; and the engineer should run OPTIMIZE on the table",
+      "A checkpoint file is corrupted and must be manually deleted from cloud storage",
+      "The downstream consumers are using time travel to read an older version that predates the DELETE; the engineer should verify query timestamps and advise consumers to read the current version"
+    ],
+    "correct_answers": [
+      3
+    ],
+    "explanation": "In this scenario the DELETE committed successfully; so the data was logically removed from the current table version. However; downstream consumers using Delta time travel (via VERSION AS OF or TIMESTAMP AS OF) can still access data from prior versions. The large number of transaction log files is normal for a table with many commits; and OPTIMIZE affects data files rather than log files. The resolution is to verify whether consumers are querying an older version and redirect them to the current version. If old versions must be physically purged; the engineer should run VACUUM to remove the underlying data files for expired versions.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_082",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "Two concurrent Databricks jobs append data to the same Delta table using INSERT INTO. Occasionally one job fails with a ConcurrentAppendException. The engineer needs both jobs to succeed without data loss. Which approach best resolves this concurrency conflict?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Switch both jobs to use MERGE INTO instead of INSERT INTO",
+      "Enable Delta table isolation level serializable and retry the failed job",
+      "Partition the table and ensure each job writes to a separate partition so their file sets do not conflict",
+      "Disable optimistic concurrency by setting spark.databricks.delta.retryWriteConflict.enabled to false"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Delta Lake uses optimistic concurrency control. A ConcurrentAppendException occurs when two operations add files to the same partition or to an unpartitioned table simultaneously and Delta cannot guarantee isolation. By partitioning the table and ensuring each job targets a different partition; the operations modify disjoint file sets and can commit without conflict. MERGE INTO would not inherently solve the problem because it also reads and writes the same data files. Disabling retry would make failures worse. Serializable isolation increases strictness but does not prevent the underlying conflict.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_083",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "A data engineering team needs to create an exact copy of a 5 TB production Delta table in a development workspace for testing. They want the copy to be fast; cost-effective; and completely independent of the source table for future writes. Which clone strategy should the engineer choose?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use DEEP CLONE to create a full independent copy of data and metadata",
+      "Use SHALLOW CLONE to create a metadata-only copy that references the source data files",
+      "Use SHALLOW CLONE first; then run OPTIMIZE on the clone to materialize the data",
+      "Use CREATE TABLE AS SELECT (CTAS) to copy the data into a new table"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "DEEP CLONE copies both the Delta metadata and the underlying data files; creating a fully independent table. This is the correct choice when the team needs to write to the clone without affecting the source and without depending on the source files remaining available. SHALLOW CLONE would be faster and cheaper initially; but it only copies metadata and references the original data files—if the source runs VACUUM; the clone could break. CTAS works but does not preserve Delta history or table properties. SHALLOW CLONE followed by OPTIMIZE does not fully materialize all data files.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_084",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "question_text": "A production Delta table receives continuous streaming writes and retains 30 days of time-travel history via the delta.deletedFileRetentionDuration property. The storage costs are growing rapidly. The engineer wants to run VACUUM to reclaim space but is concerned about disrupting active readers. Which precaution ensures VACUUM is safe?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Run VACUUM with a retention period of 0 hours during a maintenance window when no queries are running",
+      "Run VACUUM with a retention period greater than the longest currently-running query or time-travel window; and ensure no active readers depend on versions older than the retention threshold",
+      "Pause the streaming writes; run VACUUM; then resume the stream",
+      "Set delta.deletedFileRetentionDuration to 0 and VACUUM will automatically skip files needed by active queries"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "VACUUM removes data files no longer referenced by the current or recent Delta versions. The retention period parameter tells VACUUM to keep files that were valid within that window. If a reader is using time travel or a long-running query references files beyond the retention period; VACUUM could delete files the reader needs; causing failures. The safe approach is to set the retention period longer than both the maximum query duration and any time-travel window actively used. Setting retention to 0 hours is dangerous and requires disabling a safety check. Pausing streaming writes does not protect readers of historical versions.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_085",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "A retail company adds a new loyalty_tier column to their customer Delta table. Existing Parquet files do not contain this column. Some downstream Spark jobs that read the table using explicit schema definitions start failing with schema mismatch errors. Which Delta feature should the engineer enable to handle this schema evolution transparently?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Enable delta.columnMapping.mode = 'name' so columns are resolved by name rather than ordinal position",
+      "Add the column with ALTER TABLE ADD COLUMNS and backfill nulls using UPDATE",
+      "Enable autoMerge on the table with spark.databricks.delta.schema.autoMerge.enabled = true",
+      "Rewrite all existing Parquet files using OPTIMIZE to add the new column physically"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Column mapping mode 'name' tells Delta Lake to resolve columns by their logical name rather than their physical ordinal position in the Parquet files. This prevents schema mismatch errors when new columns are added because readers match columns by name and return null for any column not present in older files. While ALTER TABLE ADD COLUMNS registers the column in the schema; downstream jobs using explicit schemas may still fail if they rely on positional mapping. autoMerge applies during writes; not reads. Rewriting all files with OPTIMIZE is expensive and unnecessary.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_086",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "A healthcare analytics team must track the full history of patient address changes for regulatory compliance. When a patient moves; the old record must be closed with an end_date and a new record inserted with the current address. The engineer is designing the Delta table. Which SCD Type 2 implementation approach is most efficient in Delta Lake?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use MERGE with matched-and-condition clauses to update the existing row's end_date and insert the new row in a single atomic operation",
+      "Run an UPDATE to close the old record; then a separate INSERT for the new record; wrapped in a transaction",
+      "Store each version as a separate Delta table partition and union them at query time",
+      "Use Delta Change Data Feed to automatically generate the SCD Type 2 records"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Delta Lake's MERGE command supports multiple WHEN MATCHED and WHEN NOT MATCHED clauses with conditions; enabling the engineer to close the existing record (set is_current = false and end_date = current_date) and insert the new record in one atomic operation. This ensures consistency—either both changes apply or neither does. Running separate UPDATE and INSERT statements introduces a window where the table is in an inconsistent state if the job fails between the two operations. Change Data Feed captures row-level changes but does not automatically create SCD Type 2 records. Partitioning by version creates query complexity.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_087",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "An e-commerce company has a single denormalized flat table with 200 columns containing order; customer; product; and shipping data. Analysts report that dashboards are slow and queries frequently scan unnecessary data. The data engineering team is considering restructuring the data. Which modeling approach best addresses the performance issues?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Keep the flat table but add Z-ORDER indexing on the most commonly filtered columns",
+      "Decompose the flat table into a star schema with a fact_orders table and dimension tables for customer; product; and shipping",
+      "Partition the flat table by every column used in WHERE clauses",
+      "Create materialized views for each dashboard query"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A star schema decomposes the wide flat table into a central fact table (containing measures and foreign keys) and smaller dimension tables. This reduces the amount of data scanned per query because dimension lookups are small and fact table queries touch only the relevant measure columns. Analysts typically filter on dimension attributes (e.g. product category; customer region); and joining to small dimension tables is more efficient than scanning 200 columns. Z-ORDER helps but does not reduce the fundamental wide-table scan overhead. Over-partitioning creates small-file problems. Materialized views help individual queries but do not address the underlying modeling inefficiency.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_088",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "question_text": "A data engineer manages a Delta table storing IoT sensor readings from 10;000 devices. Queries almost always filter by device_id and event_date. The current table is unpartitioned and queries are slow due to full table scans. The engineer needs to choose an optimal partitioning strategy. Which approach is recommended?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Partition by device_id to ensure each device's data is isolated in its own partition",
+      "Partition by event_date at daily granularity since date-based filtering is common and produces reasonably sized partitions",
+      "Partition by both device_id and event_date to match the most common filter pattern",
+      "Partition by event_date at daily granularity and apply Z-ORDER BY device_id within each partition"
+    ],
+    "correct_answers": [
+      3
+    ],
+    "explanation": "Partitioning by event_date at daily granularity creates manageable partition sizes and enables partition pruning for date-range queries. Adding Z-ORDER BY device_id within each partition clusters the data files by device_id; enabling data skipping when queries also filter by device_id. Partitioning by device_id alone would create 10;000 partitions leading to a small-files problem. Partitioning by both device_id and event_date would create millions of tiny partitions. The combination of date partitioning plus Z-ORDER provides efficient pruning for both common filter predicates without excessive partition counts.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_089",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "A logistics company has a Structured Streaming job that ingests real-time GPS events and a nightly batch job that loads route master data. The engineer needs to enrich the GPS stream with route names from the batch table. The route table is updated once per day and is relatively small (50;000 rows). What is the most efficient approach to join streaming data with the batch reference data?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Perform a stream-stream join between the GPS stream and a stream reading the route table",
+      "Perform a stream-static join by reading the route table as a static DataFrame and joining it with the streaming DataFrame",
+      "Load the route table as a broadcast variable and use a UDF to look up route names",
+      "Write the GPS events to a Delta table first; then run a batch join with the route table"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A stream-static join is the recommended approach when joining a streaming source with a small; infrequently updated reference table. The static DataFrame (route table) is loaded once and joined with each micro-batch of the streaming GPS data. Since the route table is small (50;000 rows); it easily fits in memory and the join is efficient. Spark automatically broadcasts the smaller table. A stream-stream join adds unnecessary complexity and requires watermarks. Writing GPS events to a table first defeats the purpose of real-time processing. A broadcast variable with UDF bypasses Catalyst optimizer optimizations.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_090",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "A data engineer is building an ETL pipeline that joins a 500 million row transactions table with a 200 million row customer table and a 10 million row product table. The pipeline runs out of memory during the large join. The customer table join produces significant data skew because 5% of customers account for 60% of transactions. What is the best strategy to address this?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Increase the cluster size to provide more memory for the shuffle operation",
+      "Apply a salted join by appending a random key suffix to the skewed customer IDs in both tables to distribute the work evenly across partitions",
+      "Broadcast the customer table since it is smaller than the transactions table",
+      "Repartition the transactions table by customer_id before the join to ensure even distribution"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Data skew causes a few partitions to receive disproportionately large amounts of data during the shuffle; leading to out-of-memory errors and stragglers. A salted join appends a random integer (e.g. 0-9) to the join key in the large table and replicates the corresponding rows in the smaller table with all salt values. This distributes the hot keys across multiple partitions. Simply increasing cluster size treats the symptom rather than the root cause. Broadcasting a 200 million row table would likely exceed the broadcast threshold and fail. Repartitioning by customer_id would actually make skew worse by concentrating all rows for a hot customer into one partition.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_091",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "A streaming pipeline ingests clickstream events with event timestamps. Events can arrive up to 4 hours late due to mobile device buffering. The engineer needs to compute hourly aggregations and emit results that include late-arriving data without reprocessing the entire history. Which Structured Streaming configuration correctly handles this?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Set a watermark of 4 hours on the event timestamp column and use an append output mode with a window aggregation",
+      "Set a watermark of 4 hours on the event timestamp column and use an update output mode with a window aggregation",
+      "Disable watermarking and use complete output mode to always recompute all windows",
+      "Set a trigger interval of 4 hours so all late data arrives before processing"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A watermark of 4 hours tells Spark to wait up to 4 hours for late data before considering a window finalized. Using update output mode; Spark emits updated results for windows that received new data (including late arrivals) in each micro-batch without reprocessing the entire history. Append mode only emits results after the watermark passes the window's end; meaning results are delayed until the watermark advances. Complete mode reprocesses all data every micro-batch which is expensive. Setting the trigger interval to 4 hours would delay all results; not just handle late data.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_092",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "question_text": "A data engineer has a Delta table that receives hourly batch updates via MERGE operations. A downstream team wants to build an incremental pipeline that processes only the rows that changed (inserted; updated; or deleted) since the last run. Which Delta Lake feature enables this incremental pattern most efficiently?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Query the Delta transaction log JSON files directly to identify changed file paths",
+      "Enable Change Data Feed on the source table and read changes using table_changes() with start and end versions",
+      "Use the DESCRIBE HISTORY command to find changed partitions and re-read only those partitions",
+      "Compare the current table snapshot with a previous version using EXCEPT to find changed rows"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Change Data Feed (CDF) is a Delta Lake feature that; when enabled; records row-level changes (inserts; updates before and after images; and deletes) for each commit. Downstream consumers can read these changes using the table_changes() table-valued function; specifying a start version or timestamp. This is far more efficient than comparing full snapshots or parsing transaction log files. DESCRIBE HISTORY shows commit metadata but not row-level changes. Using EXCEPT requires reading two full table versions which is expensive for large tables.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_093",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "A financial services company uses Unity Catalog and needs to ensure that analysts in the European team can only see transactions from European countries; while US analysts see only US transactions. The underlying Delta table contains all global transactions. Which approach correctly implements row-level security?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Create separate Delta tables for each region and grant each team access only to their regional table",
+      "Create a dynamic view in Unity Catalog that filters rows based on the current_user() or is_member() function and grant analysts access to the view instead of the base table",
+      "Use column masking to hide the country column from analysts who should not see certain regions",
+      "Apply a Delta table CHECK constraint to prevent non-European analysts from reading European rows"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Dynamic views in Unity Catalog can incorporate functions like current_user() and is_member() to filter rows at query time based on the identity or group membership of the querying user. By granting analysts access only to the view (not the base table); each user sees only the rows they are authorized to access. This is the standard pattern for row-level security in Databricks. Creating separate tables duplicates data and complicates maintenance. Column masking hides column values; not rows. CHECK constraints enforce data integrity on writes; not read access.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_094",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "A regulated pharmaceutical company must demonstrate to auditors exactly who accessed which tables; when; and what queries they ran over the past 12 months. The audit team requires this information in a queryable format. Which Databricks capability satisfies this compliance requirement?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Enable verbose logging on all clusters and export Spark driver logs to cloud storage",
+      "Use Unity Catalog audit logs which capture access events; query text; and user identity; and route them to a long-term storage destination for querying",
+      "Query the Delta transaction log history for each table to reconstruct who accessed the data",
+      "Use the Query History API from SQL warehouses; which retains query records indefinitely"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Unity Catalog audit logs provide comprehensive access tracking including user identity; timestamp; accessed objects (tables; views; volumes); query text; and the action performed (SELECT; INSERT; etc.). These logs can be delivered to a cloud storage destination or a Databricks system table (system.access.audit) for long-term retention and queryable analysis. Spark driver logs contain operational details but not structured access audit information. Delta transaction log history records commits (writes) but not read access. The Query History API has limited retention (typically 30 days) and only covers SQL warehouse queries.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_095",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "question_text": "A SaaS platform stores data for multiple tenants in a single Delta table with a tenant_id column. The engineering team needs to provide each tenant's analysts with access to only their own data through Databricks SQL dashboards; without creating separate tables per tenant. Which multi-tenant data access pattern is most maintainable?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Create one dynamic view per tenant with a hardcoded WHERE tenant_id = 'X' filter",
+      "Create a single dynamic view that uses current_user() mapped to a tenant lookup table to filter rows automatically",
+      "Grant each tenant's analysts direct table access with a policy tag that filters by tenant_id",
+      "Use column-level masking to replace tenant_id values the user should not see with NULL"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A single dynamic view that maps the current user (via current_user()) to their tenant through a lookup table provides a scalable multi-tenant access pattern. When an analyst queries the view; the WHERE clause dynamically filters to their tenant's data. This approach requires maintaining only one view and one mapping table regardless of the number of tenants. Creating one view per tenant does not scale and requires ongoing maintenance. Direct table access with policy tags is not a Unity Catalog feature for row-level filtering. Column masking hides values but does not prevent users from seeing other tenants' rows.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_096",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "question_text": "A data engineer's CI/CD pipeline using Databricks Asset Bundles (DABs) fails during the deployment step with a permissions error when trying to create a job in the staging workspace. The engineer has verified that the bundle YAML configuration is correct and the job runs successfully in the development workspace. What is the most likely cause and fix?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The bundle YAML has a syntax error that only manifests in the staging environment",
+      "The service principal used for CI/CD deployment does not have CAN_MANAGE permissions on the target job folder in the staging workspace",
+      "The staging workspace has a different Databricks Runtime version installed",
+      "The engineer needs to run databricks bundle destroy first before redeploying"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks Asset Bundles deployments use a service principal (or user token) to authenticate to the target workspace. If the service principal lacks sufficient permissions (such as CAN_MANAGE on the jobs folder or workspace directory); the deployment will fail with a permissions error even though the configuration is valid. The fix is to grant the service principal the appropriate permissions in the staging workspace. Since the bundle YAML works in dev; it is unlikely to have a syntax error. Runtime version differences would cause execution failures; not deployment permission errors.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_097",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "question_text": "A data engineering team writes integration tests for a notebook that reads from a source Delta table; transforms data; and writes to a target Delta table. The tests must validate that the output schema and row counts are correct after the notebook runs. Which test design is most reliable and repeatable?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Manually inspect the target table in the Databricks UI after each test run",
+      "Use a test framework that creates temporary input tables with known test data; runs the notebook via the Databricks API; then asserts on the target table's schema and row count before cleaning up all test artifacts",
+      "Run the notebook on production data in a read-only mode and compare output to expected results",
+      "Write unit tests that mock the SparkSession and test the transformation logic without running on a cluster"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Reliable integration tests should use controlled test data (known inputs with expected outputs); execute the actual notebook end-to-end on a real cluster to catch runtime issues; and validate results programmatically. Creating temporary input tables with known data ensures deterministic results. Running via the Databricks API (or CLI) enables automation in CI pipelines. Asserting on schema and row counts verifies correctness. Cleaning up test artifacts ensures repeatability. Manual inspection is not automatable. Testing on production data is non-deterministic. Mocking SparkSession tests logic but misses integration issues like cluster configuration or Delta-specific behavior.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_098",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "question_text": "A data engineering team has three environments: dev; staging; and production. They want to promote a pipeline from staging to production only after all integration tests pass and a peer review is approved. Which environment promotion strategy enforces these gates?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use a Git branching strategy where merging to the main branch triggers automated tests and requires pull request approval; then a CI/CD pipeline deploys the bundle to production only after both gates pass",
+      "Allow any engineer to manually deploy from their local machine to production after running tests locally",
+      "Use a shared staging workspace where all engineers deploy and test simultaneously before promoting to production",
+      "Deploy to production first and roll back if tests fail in production"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "A Git-based promotion strategy with branch protection rules enforces both automated test gates and peer review. The workflow requires: (1) code changes on a feature branch; (2) CI pipeline runs integration tests on merge to staging branch; (3) pull request to main branch requires passing tests and reviewer approval; (4) merging to main triggers the CD pipeline to deploy to production. This ensures no code reaches production without passing tests and review. Manual deployment bypasses governance. Shared staging creates conflicts. Deploy-then-rollback risks production data corruption.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_099",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "question_text": "A data engineer receives complaints that a nightly aggregation job has slowed from 20 minutes to over 2 hours. The Spark UI shows that one stage takes 90% of the total execution time; with most tasks completing in seconds but a few tasks running for over an hour. The Tasks tab shows highly uneven input data sizes across tasks. What is the diagnosis and recommended fix?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The cluster is undersized and needs more worker nodes to parallelize the workload",
+      "The job is experiencing data skew; where a few partitions contain disproportionately more data than others; the engineer should enable Adaptive Query Execution (AQE) with skew join optimization or add a salted key",
+      "The Delta table needs to be compacted with OPTIMIZE to reduce the number of small files",
+      "The network is throttling shuffle data between executors; and the engineer should switch to a larger instance type"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Spark UI evidence—one slow stage; most tasks fast but a few extremely slow; and highly uneven input sizes—is the classic signature of data skew. A small number of partitions contain far more data than others; creating straggler tasks that dominate execution time. Enabling Adaptive Query Execution (AQE) with spark.sql.adaptive.skewJoin.enabled = true allows Spark to detect skewed partitions at runtime and split them into smaller sub-partitions. Alternatively; the engineer can apply a salted join key to distribute the hot keys. Adding more nodes would not help because the bottleneck is a few overloaded partitions; not overall parallelism.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_prof_100",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "question_text": "A data engineer needs to be alerted whenever the daily row count of a critical Delta table drops below 100;000 rows; indicating a potential upstream pipeline failure. The alert should trigger an email notification to the on-call team. Which Databricks feature and configuration accomplishes this?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Create a Databricks Job that runs a notebook checking row counts and sends emails via a library",
+      "Create a Databricks SQL Alert with a query that returns the daily row count; set the trigger condition to 'value < 100000'; configure the alert schedule to run daily; and add an email notification destination",
+      "Use a Delta table CONSTRAINT to prevent the table from having fewer than 100;000 rows",
+      "Configure a cluster event log alert that monitors table row counts automatically"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks SQL Alerts are purpose-built for this use case. The engineer creates a SQL query (e.g. SELECT COUNT(*) as row_count FROM table WHERE date = current_date()) and configures an alert with the condition row_count < 100000. The alert is scheduled to run at a specific time daily on a SQL warehouse. When the condition is triggered; it sends a notification to the configured destination (email; Slack; PagerDuty; or webhook). This requires no custom code and integrates with Databricks notification infrastructure. A Job-based approach works but requires more engineering effort. CHECK constraints enforce row-level data validity on writes; not table-level metrics. Cluster event logs do not monitor table contents.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  }
+]

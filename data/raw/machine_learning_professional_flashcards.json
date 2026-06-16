@@ -1,0 +1,322 @@
+[
+  {
+    "id": "fc_ml_prof_001",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is ensemble learning?",
+    "back": "Combining multiple models for better predictions",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_002",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is bagging?",
+    "back": "Training models on random subsets with replacement",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_003",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is boosting?",
+    "back": "Sequential training where models correct predecessors",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_004",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is stacking?",
+    "back": "Using meta-model to combine base model predictions",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_005",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Development",
+    "front": "What is a neural network?",
+    "back": "Network of interconnected nodes mimicking neurons",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_prof_006",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Development",
+    "front": "What is backpropagation?",
+    "back": "Algorithm for computing gradients in neural networks",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_007",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Development",
+    "front": "What is a convolutional neural network?",
+    "back": "Neural network designed for image processing",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_008",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Development",
+    "front": "What is a recurrent neural network?",
+    "back": "Neural network for sequential data",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_009",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is regularization?",
+    "back": "Techniques to prevent overfitting",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_prof_010",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is L1 regularization?",
+    "back": "Adds absolute value of coefficients to loss function",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_011",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is L2 regularization?",
+    "back": "Adds squared value of coefficients to loss function",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_012",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is dropout?",
+    "back": "Randomly deactivating neurons during training",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_013",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is early stopping?",
+    "back": "Stopping training when validation performance degrades",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_014",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Development",
+    "front": "What is feature selection?",
+    "back": "Choosing most relevant features for model",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_015",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Development",
+    "front": "What is dimensionality reduction?",
+    "back": "Reducing number of features while preserving information",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_016",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Development",
+    "front": "What is PCA?",
+    "back": "Principal Component Analysis reduces dimensions linearly",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_017",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Development",
+    "front": "What is feature importance?",
+    "back": "Measures contribution of each feature to predictions",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_018",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "front": "What is model serving latency?",
+    "back": "Time to generate prediction after receiving request",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_019",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "front": "What is batch inference?",
+    "back": "Making predictions on large datasets at once",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_prof_020",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "front": "What is real-time inference?",
+    "back": "Making predictions immediately as requests arrive",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_prof_021",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "front": "What is A/B testing for models?",
+    "back": "Comparing model performance by serving to different users",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_022",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "front": "What is model drift?",
+    "back": "Model performance degrades over time",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_023",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "front": "What is data drift?",
+    "back": "Input data distribution changes over time",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_024",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "front": "What is concept drift?",
+    "back": "Relationship between features and target changes",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_025",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "front": "What is model retraining?",
+    "back": "Training new model version with updated data",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_prof_026",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "front": "What is distributed training?",
+    "back": "Training model across multiple machines",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_027",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "front": "What is data parallelism?",
+    "back": "Splitting data across workers, each with full model",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_028",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "front": "What is model parallelism?",
+    "back": "Splitting model architecture across workers",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_029",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Deployment",
+    "front": "What is Horovod?",
+    "back": "Framework for distributed deep learning training",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_030",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "front": "What is MLOps?",
+    "back": "Practices for deploying and maintaining ML systems",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_prof_031",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "front": "What is CI/CD for ML?",
+    "back": "Automated testing and deployment of ML models",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_032",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "front": "What is model versioning?",
+    "back": "Tracking different versions of models",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_prof_033",
+    "certification_id": "machine_learning_professional",
+    "topic": "Model Lifecycle Management",
+    "front": "What is experiment tracking?",
+    "back": "Recording parameters metrics and artifacts of ML runs",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_prof_034",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is confusion matrix?",
+    "back": "Table showing true/false positives and negatives",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_prof_035",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is ROC curve?",
+    "back": "Plot of true positive vs false positive rates",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_036",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is calibration?",
+    "back": "Ensuring predicted probabilities match actual frequencies",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_037",
+    "certification_id": "machine_learning_professional",
+    "topic": "Experimentation",
+    "front": "What is SHAP?",
+    "back": "Method for explaining individual predictions",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_038",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "front": "What is time series forecasting?",
+    "back": "Predicting future values based on historical data",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_prof_039",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "front": "What is seasonality?",
+    "back": "Regular patterns that repeat over time periods",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_prof_040",
+    "certification_id": "machine_learning_professional",
+    "topic": "Solution and Data Monitoring",
+    "front": "What is ARIMA?",
+    "back": "Autoregressive Integrated Moving Average for forecasting",
+    "difficulty": 3
+  }
+]

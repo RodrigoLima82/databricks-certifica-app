@@ -1,0 +1,41 @@
+bundle:
+  name: databricks-certifica
+
+sync:
+  include:
+    - app/**
+    - app.yaml
+    - requirements.txt
+    - seed/seed_data.json
+    - static/**
+  exclude:
+    - "**/__pycache__"
+    - "**/*.pyc"
+    - ".env"
+    - ".venv/**"
+
+variables:
+  lakebase_instance:
+    description: Nome da instância Lakebase (Database Instance)
+    default: databricks-certifica-db
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://<seu-workspace>.cloud.databricks.com
+      profile: DEFAULT
+
+  prod:
+    mode: production
+    workspace:
+      host: https://<seu-workspace>.cloud.databricks.com
+      profile: DEFAULT
+
+resources:
+  apps:
+    databricks_certifica:
+      name: databricks-certifica
+      description: "Databricks Certifica — Hub de preparação para certificações Databricks"
+      source_code_path: .
