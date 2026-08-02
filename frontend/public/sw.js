@@ -19,7 +19,13 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // passthrough explícito — necessário existir um handler de fetch para a
-  // instalabilidade, mas sem cache para evitar servir conteúdo velho.
-  event.respondWith(fetch(event.request));
+  // Só interceptamos GET do mesmo origin. Qualquer outra coisa (inclusive o
+  // redirect do gateway OAuth do Databricks para outro origin) não é tocada:
+  // deixamos o navegador seguir seu fluxo normal, evitando erros de CORS.
+  const req = event.request;
+  if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) {
+    return;
+  }
+  // Passthrough sem cache; se a rede falhar, não propaga como erro não tratado.
+  event.respondWith(fetch(req).catch(() => Response.error()));
 });
