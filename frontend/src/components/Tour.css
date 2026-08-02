@@ -1,0 +1,77 @@
+/* Tutorial (tour guiado) — modal central com passos + navegação. */
+.tour-overlay {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.15s ease;
+}
+
+.tour-card {
+  position: relative;
+  width: 100%; max-width: 460px;
+  background: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px 22px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: tourPop 0.2s ease;
+}
+@keyframes tourPop { from { opacity: 0; transform: scale(0.96) translateY(8px); } to { opacity: 1; transform: none; } }
+
+.tour-close {
+  position: absolute; top: 12px; right: 12px;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: var(--radius);
+  border: 1px solid var(--brand-border); background: var(--brand-surface);
+  color: var(--brand-text-muted); cursor: pointer;
+}
+.tour-close:hover { color: var(--brand-text); border-color: var(--brand-primary); }
+
+.tour-icon {
+  width: 64px; height: 64px; margin: 4px auto 16px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--brand-primary-pale); color: var(--brand-primary);
+}
+
+.tour-title {
+  font-size: 20px; font-weight: 800; color: var(--brand-text);
+  margin: 0 0 10px;
+}
+.tour-body {
+  font-size: 14.5px; line-height: 1.55; color: var(--brand-text-secondary);
+  margin: 0 auto 20px; max-width: 40ch;
+}
+
+.tour-dots {
+  display: flex; gap: 7px; justify-content: center; margin-bottom: 20px;
+}
+.tour-dot {
+  width: 8px; height: 8px; border-radius: 50%; padding: 0;
+  border: none; background: var(--brand-border); cursor: pointer;
+  transition: background 0.15s, width 0.15s;
+}
+.tour-dot.active { width: 22px; border-radius: 5px; background: var(--brand-primary); }
+
+.tour-actions {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.tour-step { font-size: 12.5px; color: var(--brand-text-muted); }
+.tour-btns { display: flex; gap: 8px; }
+
+/* Botão do header que abre o tutorial. */
+.tour-trigger {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: 34px; padding: 0 12px; border-radius: var(--radius);
+  border: 1px solid var(--brand-border); background: var(--brand-surface);
+  color: var(--brand-text-secondary); font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.tour-trigger:hover { border-color: var(--brand-primary); color: var(--brand-primary); }
+.tour-trigger .tour-trigger-label { white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .tour-trigger .tour-trigger-label { display: none; }
+  .tour-trigger { width: 34px; padding: 0; }
+}

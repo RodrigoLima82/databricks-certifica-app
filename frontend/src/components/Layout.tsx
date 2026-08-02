@@ -1,5 +1,5 @@
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import { LayoutGrid, History, Shield, LogOut, Compass, Map } from 'lucide-react'
+import { LayoutGrid, History, Shield, LogOut, Compass, Map, HelpCircle } from 'lucide-react'
 import { useAuth } from '@/context/AuthContext'
 import { useTheme } from '@/context/ThemeContext'
 import { useT } from '@/i18n'
@@ -7,6 +7,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher'
 import ColorModeToggle from '@/components/ColorModeToggle'
 import MobileNav from '@/components/MobileNav'
 import MobileMenu from '@/components/MobileMenu'
+import Tour, { useTour } from '@/components/Tour'
 import './Layout.css'
 
 export default function Layout() {
@@ -14,6 +15,7 @@ export default function Layout() {
   const { user, logout } = useAuth()
   const { theme } = useTheme()
   const t = useT()
+  const { open: tourOpen, openTour, closeTour } = useTour()
 
   return (
     <div className="gc-layout">
@@ -45,6 +47,10 @@ export default function Layout() {
         </nav>
 
         <div className="gc-header-right">
+          <button className="tour-trigger" onClick={openTour} title={t('tour.title')}>
+            <HelpCircle size={16} />
+            <span className="tour-trigger-label">{t('tour.open')}</span>
+          </button>
           <ColorModeToggle />
           <LanguageSwitcher compact />
           {user && (
@@ -74,6 +80,7 @@ export default function Layout() {
       </footer>
 
       <MobileNav />
+      <Tour open={tourOpen} onClose={closeTour} />
     </div>
   )
 }

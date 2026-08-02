@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Menu, X, Sun, Moon, SunMoon, LogOut, Globe } from 'lucide-react'
+import { Menu, X, Sun, Moon, SunMoon, LogOut, Globe, HelpCircle } from 'lucide-react'
 import { useAuth } from '@/context/AuthContext'
 import { useColorMode, ColorMode } from '@/context/ColorModeContext'
 import { useI18n, LANGS, Lang } from '@/i18n'
 import { useT } from '@/i18n'
+import { openTourEvent } from '@/components/Tour'
 import './MobileMenu.css'
 
 /**
@@ -74,6 +75,11 @@ export default function MobileMenu() {
                 ))}
               </div>
             </div>
+
+            <button className="mm-choice" style={{ width: '100%' }}
+                    onClick={() => { setOpen(false); openTourEvent() }}>
+              <HelpCircle size={17} /> {t('tour.open')}
+            </button>
 
             {user && (
               <button className="mm-logout" onClick={() => { setOpen(false); logout() }}>
