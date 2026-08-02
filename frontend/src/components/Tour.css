@@ -1,65 +1,72 @@
-/* Tutorial (tour guiado) — modal central com passos + navegação. */
-.tour-overlay {
-  position: fixed; inset: 0; z-index: 300;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex; align-items: center; justify-content: center;
-  padding: 20px;
-  animation: fadeIn 0.15s ease;
+/* Tutorial (tour guiado) — spotlight: destaca o elemento real na tela + balão. */
+.tour-root { position: fixed; inset: 0; z-index: 300; animation: fadeIn 0.15s ease; }
+
+/* Escurece a tela inteira (passos sem alvo). */
+.tour-dim { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.55); }
+
+/* Recorte (spotlight): o box-shadow gigante escurece tudo, menos este retângulo. */
+.tour-mask {
+  position: fixed;
+  border-radius: 10px;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.55);
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+  pointer-events: auto;
+  transition: top 0.25s ease, left 0.25s ease, width 0.25s ease, height 0.25s ease;
 }
 
 .tour-card {
-  position: relative;
-  width: 100%; max-width: 460px;
+  position: fixed;
   background: var(--brand-surface);
   border: 1px solid var(--brand-border);
   border-radius: var(--radius-lg);
-  padding: 28px 26px 22px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  animation: tourPop 0.2s ease;
+  padding: 18px 18px 14px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+  animation: tourPop 0.18s ease;
 }
-@keyframes tourPop { from { opacity: 0; transform: scale(0.96) translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes tourPop { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; } }
+.tour-center { animation: tourPopC 0.18s ease; }
+@keyframes tourPopC { from { opacity: 0; } to { opacity: 1; } }
+
+/* Seta do balão apontando para o alvo. */
+.tour-arrow {
+  position: absolute; width: 12px; height: 12px;
+  background: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  transform: rotate(45deg); margin-left: -6px;
+}
+.tour-arrow-below { top: -7px; border-right: none; border-bottom: none; }
+.tour-arrow-above { bottom: -7px; border-left: none; border-top: none; }
 
 .tour-close {
-  position: absolute; top: 12px; right: 12px;
+  position: absolute; top: 10px; right: 10px;
   display: inline-flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; border-radius: var(--radius);
+  width: 30px; height: 30px; border-radius: var(--radius);
   border: 1px solid var(--brand-border); background: var(--brand-surface);
   color: var(--brand-text-muted); cursor: pointer;
 }
 .tour-close:hover { color: var(--brand-text); border-color: var(--brand-primary); }
 
+.tour-head { display: flex; align-items: center; gap: 10px; margin: 2px 30px 8px 0; }
 .tour-icon {
-  width: 64px; height: 64px; margin: 4px auto 16px;
+  flex: none; width: 38px; height: 38px; border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 50%;
   background: var(--brand-primary-pale); color: var(--brand-primary);
 }
+.tour-title { font-size: 16px; font-weight: 800; color: var(--brand-text); margin: 0; line-height: 1.25; }
+.tour-body { font-size: 13.5px; line-height: 1.5; color: var(--brand-text-secondary); margin: 0 0 16px; }
 
-.tour-title {
-  font-size: 20px; font-weight: 800; color: var(--brand-text);
-  margin: 0 0 10px;
-}
-.tour-body {
-  font-size: 14.5px; line-height: 1.55; color: var(--brand-text-secondary);
-  margin: 0 auto 20px; max-width: 40ch;
-}
-
-.tour-dots {
-  display: flex; gap: 7px; justify-content: center; margin-bottom: 20px;
-}
+.tour-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 14px; }
 .tour-dot {
-  width: 8px; height: 8px; border-radius: 50%; padding: 0;
-  border: none; background: var(--brand-border); cursor: pointer;
-  transition: background 0.15s, width 0.15s;
+  width: 7px; height: 7px; border-radius: 50%; padding: 0; border: none;
+  background: var(--brand-border); cursor: pointer; transition: width 0.15s, background 0.15s;
 }
-.tour-dot.active { width: 22px; border-radius: 5px; background: var(--brand-primary); }
+.tour-dot.active { width: 20px; border-radius: 4px; background: var(--brand-primary); }
 
-.tour-actions {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-}
-.tour-step { font-size: 12.5px; color: var(--brand-text-muted); }
-.tour-btns { display: flex; gap: 8px; }
+.tour-actions { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.tour-step { font-size: 12px; color: var(--brand-text-muted); }
+.tour-btns { display: flex; gap: 6px; }
+.tour-btn-sm { padding: 7px 14px; font-size: 13px; }
 
 /* Botão do header que abre o tutorial. */
 .tour-trigger {

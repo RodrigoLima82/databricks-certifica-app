@@ -27,16 +27,16 @@ export default function Layout() {
         </Link>
 
         <nav className="gc-nav" aria-label={t('nav.mainNav')}>
-          <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>
+          <NavLink to="/" end data-tour="program" className={({ isActive }) => isActive ? 'active' : ''}>
             <Compass size={16} /> {t('nav.program')}
           </NavLink>
-          <NavLink to="/rutas" className={({ isActive }) => isActive ? 'active' : ''}>
+          <NavLink to="/rutas" data-tour="routes" className={({ isActive }) => isActive ? 'active' : ''}>
             <Map size={16} /> {t('nav.routes')}
           </NavLink>
-          <NavLink to="/simulacros" className={({ isActive }) => isActive ? 'active' : ''}>
+          <NavLink to="/simulacros" data-tour="practice" className={({ isActive }) => isActive ? 'active' : ''}>
             <LayoutGrid size={16} /> {t('nav.simulacros')}
           </NavLink>
-          <NavLink to="/historico" className={({ isActive }) => isActive ? 'active' : ''}>
+          <NavLink to="/historico" data-tour="history" className={({ isActive }) => isActive ? 'active' : ''}>
             <History size={16} /> {t('nav.myHistory')}
           </NavLink>
           {user?.is_admin && (
@@ -46,8 +46,8 @@ export default function Layout() {
           )}
         </nav>
 
-        <div className="gc-header-right">
-          <button className="tour-trigger" onClick={openTour} title={t('tour.title')}>
+        <div className="gc-header-right" data-tour="settings">
+          <button className="tour-trigger" data-tour="help" onClick={openTour} title={t('tour.title')}>
             <HelpCircle size={16} />
             <span className="tour-trigger-label">{t('tour.open')}</span>
           </button>
