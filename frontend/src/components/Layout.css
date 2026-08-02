@@ -1,0 +1,79 @@
+.gc-layout { min-height: 100%; display: flex; flex-direction: column; }
+
+.gc-header {
+  height: var(--header-height); background: var(--brand-surface);
+  border-bottom: 1px solid var(--brand-border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; position: sticky; top: 0; z-index: 10;
+}
+.gc-brand { display: flex; align-items: center; gap: 11px; color: var(--brand-text); }
+.gc-brand:hover { text-decoration: none; }
+.gc-logo-img { height: 42px; width: auto; max-width: 200px; display: block; }
+.gc-brand-name { font-weight: 800; font-size: 17px; }
+.gc-brand-sub {
+  color: var(--brand-text-muted); font-size: 12px; border-left: 1px solid var(--brand-border);
+  padding-left: 10px; margin-left: 2px;
+}
+.gc-header-right { display: flex; align-items: center; gap: 12px; }
+.gc-user { font-size: 13px; font-weight: 600; color: var(--brand-text); max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gc-logout {
+  display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+  border: 1px solid var(--brand-border); border-radius: var(--radius); background: var(--brand-surface);
+  color: var(--brand-text-secondary);
+}
+.gc-logout:hover { border-color: var(--brand-primary); color: var(--brand-primary); }
+
+.gc-mode-toggle {
+  display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+  border: 1px solid var(--brand-border); border-radius: var(--radius); background: var(--brand-surface);
+  color: var(--brand-text-secondary);
+}
+.gc-mode-toggle:hover { border-color: var(--brand-primary); color: var(--brand-primary); }
+
+.gc-nav { display: flex; gap: 4px; }
+.gc-nav a {
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 13px; border-radius: var(--radius);
+  font-size: 13px; font-weight: 600; color: var(--brand-text-secondary);
+}
+.gc-nav a:hover { background: var(--brand-bg); color: var(--brand-primary); text-decoration: none; }
+.gc-nav a.active { background: var(--brand-primary-pale); color: var(--brand-primary); }
+@media (max-width: 720px) { .gc-nav a span, .gc-user { display: none; } }
+
+.gc-main { flex: 1; width: 100%; max-width: 1080px; margin: 0 auto; padding: 24px; }
+.gc-back {
+  display: inline-block; margin-bottom: 16px; font-size: 13px; font-weight: 600;
+  color: var(--brand-text-secondary);
+}
+.gc-back:hover { color: var(--brand-primary); text-decoration: none; }
+.gc-content { width: 100%; }
+
+.gc-footer {
+  text-align: center; color: var(--brand-text-muted); font-size: 12px;
+  padding: 20px; border-top: 1px solid var(--brand-border); background: var(--brand-surface);
+}
+
+@media (max-width: 640px) {
+  .gc-brand-sub { display: none; }
+  .gc-main { padding: 16px; }
+}
+
+/* ── Experiência mobile "app" (<= 768px) ─────────────────────────────────────
+   A navegação do topo sai e vira uma bottom tab bar (ver MobileNav). O header
+   fica enxuto (logo + usuário) e o conteúdo ganha espaço inferior para não
+   ficar escondido atrás da barra fixa. Desktop não é afetado. */
+@media (max-width: 768px) {
+  /* nav do topo dá lugar à bottom bar; controles do header vão para o menu (hamburger) */
+  .gc-header .gc-nav { display: none; }
+  .gc-header-right { display: none; }
+
+  /* header respeita a safe-area superior (notch) e fica compacto.
+     min-height (não height fixo) evita que o inset comprima o conteúdo. */
+  .gc-header { height: auto; min-height: var(--header-height); padding: 0 16px; padding-top: env(safe-area-inset-top, 0); }
+  .gc-logo-img { height: 34px; }
+
+  /* espaço para a bottom bar (56px) + safe-area inferior */
+  .gc-main { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0)); }
+
+  /* footer redundante no mobile (a barra inferior já ancora a tela) */
+  .gc-footer { display: none; }
+}

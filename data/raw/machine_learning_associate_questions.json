@@ -1,0 +1,2003 @@
+[
+  {
+    "id": "ml_assoc_001",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "When would a single-node cluster be preferred over a standard cluster in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "When working with large-scale distributed data processing",
+      "When running lightweight development or using single-node libraries like scikit-learn",
+      "When performing complex feature engineering on big data",
+      "When training distributed ML algorithms across multiple executors"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Single-node clusters are suitable for lightweight development, small-scale experimentation, or when using libraries (such as certain single-node scikit-learn models) that don't require distributed processing. Standard clusters are better for distributed workloads that require parallel processing across multiple executors.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_002",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "What is the correct sequence of steps to commit changes from a Databricks Repo to an external Git provider?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Make changes, select Repos → Pull, provide commit message",
+      "Make changes, select Repos → Commit & Push, provide commit message",
+      "Make changes, create a new branch, merge changes, then commit",
+      "Make changes, add changes to staging, commit to local repo, then push"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The workflow for committing changes to an external Git provider is: make changes in your Databricks notebook, access Repos → Commit & Push, and provide a commit message to push changes upstream. This streamlined process handles the Git operations while keeping the notebook interface simple.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_003",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "What is a key benefit of using branches when working with Git repositories in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It automatically resolves merge conflicts",
+      "It provides faster notebook execution times",
+      "It supports parallel feature development without risking conflicts on the main code base",
+      "It allows multiple users to edit the same notebook simultaneously"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Branching supports parallel feature development without risking conflicts on the main code base. This is a fundamental Git concept that Databricks repositories implement, allowing data scientists to work on different features or experiments independently without affecting the production code until ready to merge.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_004",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "When orchestrating multi-task ML workflows using Databricks jobs, what is a best practice?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Always run all tasks on a single cluster to ensure data consistency",
+      "Use job clusters for ephemeral usage and leverage cluster reuse to save costs",
+      "Avoid setting dependencies between tasks to prevent cascading failures",
+      "Run each task as a separate job to maximize parallelism"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When orchestrating ML workflows using Databricks jobs, best practices include using job clusters for ephemeral usage, separating development/test/production workflows, and leveraging cluster reuse to save costs. This approach optimizes resource utilization while maintaining the required dependencies between workflow steps.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_005",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "What is the primary purpose of using Databricks Runtime for Machine Learning?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To enable Java-based ML algorithms",
+      "To leverage pre-installed ML libraries and tuned Spark configurations",
+      "To allow integration with external ML platforms only",
+      "To run legacy ML code that isn't compatible with newer libraries"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The purpose of Databricks Runtime for Machine Learning is to leverage pre-installed libraries (scikit-learn, MLlib, XGBoost, etc.) and tuned Spark configurations. This saves setup time, ensures compatibility between libraries, and provides optimized performance for machine learning workloads.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_006",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "Which of the following is a valid method to install a Python library for all notebooks running on a cluster?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use pip install in every notebook that needs the library",
+      "Set up an init script or cluster library to install automatically on cluster start",
+      "Add the library to the global Python environment only",
+      "Import the library through remote URLs in each notebook"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "One of the recommended methods to install a Python library for all notebooks on a cluster is to set up an init script or cluster library to install automatically on cluster start. This makes the library globally available to all notebook sessions and ensures consistency across all executions.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_007",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "Which of the following steps is NOT completed by Databricks AutoML during the machine learning workflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Exploratory data analysis",
+      "Automated feature engineering",
+      "Model production deployment",
+      "Model evaluation using standard metrics"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Databricks AutoML completes exploratory data analysis, automated feature engineering, model selection and hyperparameter tuning, and model evaluation. However, it does not automatically handle model production deployment, which requires separate steps in the MLOps process. AutoML focuses on developing the best model, not deploying it.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_008",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "How can you locate the source code for the best model produced by AutoML?",
+    "question_type": "multiple_choice",
+    "options": [
+      "You cannot access the source code, only the compiled model",
+      "Within the AutoML experiment, navigate to the Best trial or Best model link",
+      "By decompiling the saved model artifacts",
+      "Only through the API, not through the UI"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To locate the source code for the best model produced by AutoML, you can navigate to the Best trial or Best model link within the AutoML experiment. AutoML typically produces notebooks in your workspace with the model's training code, making it transparent and reproducible.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_009",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "What is a primary benefit of using the Databricks Feature Store?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It only works with AutoML",
+      "It provides centralization of features, avoiding duplication and ensuring a consistent single source of truth",
+      "It only supports categorical features",
+      "It requires manual feature recalculation for each model training session"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A key benefit of the Feature Store is centralization, which helps avoid duplication and ensures a consistent single source of truth for features. Other benefits include versioning and lineage tracking (understanding how features were computed over time) and collaboration (teams can share and reuse carefully curated feature sets).",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_010",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "Which of the following is the correct method to write data to a feature store table with the intention of updating existing rows by primary key?",
+    "question_type": "multiple_choice",
+    "options": [
+      "fs.write_table(name=table_name, df=my_spark_df, mode=append)",
+      "fs.write_table(name=table_name, df=my_spark_df, mode=merge)",
+      "fs.write_table(name=table_name, df=my_spark_df, mode=overwrite)",
+      "fs.update_table(name=table_name, df=my_spark_df)"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When you want to update existing rows by primary key in a feature store table, you should use the merge mode: fs.write_table(name=table_name, df=my_spark_df, mode=merge). Overwrite replaces everything, and append adds new rows without updates to existing ones.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_011",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "When training a model with features from a feature store table, what Databricks component is used to join features to the training dataset?",
+    "question_type": "multiple_choice",
+    "options": [
+      "FeatureGenerator",
+      "FeatureLookup",
+      "FeatureJoiner",
+      "FeatureFetcher"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When training a model with features from a feature store table, you use a feature lookup object (FeatureLookup) in your training code to join features from the Feature Store with your training dataset. This ensures consistent features, trackability, and reproducibility across training.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_012",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "What is the difference between online and offline feature tables in a feature store?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Online features are for training, offline features are for inference",
+      "Online features are stored in low-latency storage for real-time inference, while offline features are typically in a data lake for batch scoring and training",
+      "Online features are categorical, offline features are numerical",
+      "Online features support versioning, offline features do not"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Offline feature tables are typically stored in a data lake or warehouse and used for batch scoring and training data, while online feature tables use low-latency storage (e.g., Redis or Cassandra) for real-time inference. This distinction optimizes for different access patterns and latency requirements.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_013",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "What is the benefit of creating feature store tables at the account level in Unity Catalog compared to the workspace level?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Account level tables are faster for querying",
+      "Account level tables provide access control across multiple workspaces, global discoverability, and centralized governance",
+      "Account level tables cannot contain sensitive data",
+      "Account level tables don't require feature lookup for training"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Account-level feature store tables in Unity Catalog provide benefits like access control across multiple workspaces, global discoverability, and centralized governance. This is particularly valuable for organizations with multiple teams or projects that need to share features across workspace boundaries.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_014",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "When registering a model in the Unity Catalog registry using MLflow, what format should the model name have?",
+    "question_type": "multiple_choice",
+    "options": [
+      "my_model",
+      "workspace://my_model",
+      "uc://catalog.schema.model_name",
+      "/catalog/schema/model_name"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "When registering a model in the Unity Catalog registry, the model name should have the format: uc://catalog.schema.model_name. This allows the model to be registered in the specified catalog and schema within Unity Catalog, enabling governance and access control.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_015",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Which MLflow Client API method would you use to find the best performing run in an experiment?",
+    "question_type": "multiple_choice",
+    "options": [
+      "find_best_run()",
+      "search_runs() with sorting by your metric",
+      "get_top_run()",
+      "best_run_metrics()"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To identify the best run using the MLflow Client API, you would query runs with search_runs(), sort by a particular metric (e.g., accuracy), and then select the run with the best performance. This flexible approach allows you to define what best means for your specific use case.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_016",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is the correct pattern for manually logging metrics in an MLflow Run?",
+    "question_type": "multiple_choice",
+    "options": [
+      "mlflow.start_run(): mlflow.metrics(metric_name, value)",
+      "with mlflow.start_run(): mlflow.log_metric(metric_name, value)",
+      "mlflow.log(metric_name, value)",
+      "mlflow.track_metric(metric_name, value)"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The correct pattern for manually logging metrics in an MLflow Run is: with mlflow.start_run(): mlflow.log_metric(metric_name, value). This allows for fine-grained control over what gets tracked and provides a clear context manager for the run's lifecycle.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_017",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is the purpose of nested runs in MLflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To organize experiments by date",
+      "To group related experiments (e.g., for hyperparameter search inside a single parent run)",
+      "To separate training and inference logging",
+      "To create hierarchical metrics"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Nested runs in MLflow let you group related experiments, such as for hyperparameter search inside a single parent run. This helps with organization and tracking related model variants, providing structure to your experimentation process.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_018",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Which method would you use to compute summary statistics on a Spark DataFrame?",
+    "question_type": "multiple_choice",
+    "options": [
+      "df.describe()",
+      "df.summary().show()",
+      "df.stats()",
+      "df.summarize()"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To compute summary statistics on a Spark DataFrame, you use: df.summary().show(). This shows count, mean, stddev, min, 25th percentile, 50th percentile, etc., providing a comprehensive overview of the numerical columns in your DataFrame.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_019",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What does dbutils.data.summarize(df) provide in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It performs correlation analysis only",
+      "It shows a convenient GUI-based or notebook-based statistical summary",
+      "It exports data summaries to CSV",
+      "It requires a paid add-on feature"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The dbutils.data.summarize(df) in Databricks offers a convenient GUI-based or notebook-based summary of the DataFrame's statistics, making exploratory analysis easier. It provides visualizations and statistics that help understand the data distribution quickly.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_020",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Which approach would you typically use to remove outliers from a Spark DataFrame based on standard deviation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "df.dropOutliers(stddev=3)",
+      "Use .filter() or .where() with conditions based on mean and standard deviation thresholds",
+      "df.removeOutliers(sigma=3)",
+      "spark.ml.feature.OutlierRemover"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To remove outliers from a Spark DataFrame based on standard deviation, you would typically identify outlier thresholds via standard deviation (e.g., μ±3σ) and then filter outliers with a .filter() or .where() clause in Spark. This is a flexible approach that allows you to define your own outlier criteria.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_021",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Why is it important to add indicator variables for missing values that have been imputed?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It makes the dataset larger and more comprehensive",
+      "It preserves the information that the original value was missing, which might be predictive",
+      "It's required by Spark ML algorithms",
+      "It improves model interpretability only"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Adding indicator variables for missing values that have been imputed preserves the information that the original value was missing, which might be predictive. For example, if age is missing, setting age_missing = 1 after imputation retains this potentially important signal that could affect predictions.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_022",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "When is replacing missing values with the mode value most appropriate?",
+    "question_type": "multiple_choice",
+    "options": [
+      "For continuous variables with normal distribution",
+      "For categorical features with strong class imbalance or if the mode is highly representative",
+      "For time-series data",
+      "For binary variables only"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Replacing missing values with the mode value is most appropriate for categorical features with strong class imbalance or if the mode is highly representative. However, this might obscure underlying patterns if the distribution is not well-represented by the mode.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_023",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is a key limitation of imputing missing values with the mean?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It can only be used with numerical data",
+      "It's computationally expensive",
+      "It's sensitive to outliers",
+      "It cannot be used in Spark DataFrames"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "A key limitation of imputing missing values with the mean is that it's sensitive to outliers, which can skew the imputation value. The median is more robust to outliers but might not reflect the actual distribution if data is skewed. This is why understanding your data distribution is critical before choosing an imputation strategy.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_024",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "In Spark ML, how would you typically implement one-hot encoding for categorical features?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use OneHotEncoder directly on string columns",
+      "Use StringIndexer + OneHotEncoderEstimator",
+      "Use categorical_encoder() function",
+      "Use df.encode() method"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "In Spark ML, one-hot encoding for categorical features is typically implemented using a StringIndexer followed by a OneHotEncoderEstimator. This two-step process first maps categorical values to indices, then converts them to one-hot encoded vectors, which can be used by ML algorithms.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_025",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Why might one-hot encoding be inefficient for tree-based models?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It increases training time unnecessarily",
+      "Tree-based models can handle categorical variables differently and often do not need many binary dummy variables",
+      "It causes overfitting in random forests",
+      "It reduces model interpretability"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "One-hot encoding can be inefficient for tree-based models because these models can handle categorical variables differently and often do not need many binary dummy variables. One-hot encoding might create very high-dimensional sparse data that can slow down training without adding predictive value for tree models.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_026",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What scenario would be most appropriate for employing log scale transformation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "When dealing with normally distributed data",
+      "When handling categorical features",
+      "When working with highly skewed continuous data that grows exponentially",
+      "When processing time-series data with seasonal patterns"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Log scale transformation is appropriate for highly skewed continuous data, multiplicative relationships, or data that grows exponentially. It helps normalize the distribution, reduce the impact of outliers, and linearize exponential relationships, making such data more suitable for many ML algorithms.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_027",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Which method for handling missing values would be most robust against outliers?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Mean imputation",
+      "Median imputation",
+      "Mode imputation",
+      "Forward fill imputation"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Median imputation is more robust against outliers compared to mean imputation. While the mean can be heavily influenced by extreme values, the median represents the middle value of the data regardless of outliers, making it a better choice when the data contains unusual extreme values.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_028",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is the correct method to split data into training and testing sets using Spark ML?",
+    "question_type": "multiple_choice",
+    "options": [
+      "df.split([0.8, 0.2])",
+      "train_df, test_df = df.randomSplit([0.8, 0.2], seed=42)",
+      "train_df, test_df = spark.ml.randomSplit(df, [0.8, 0.2])",
+      "train_df = df.sample(0.8); test_df = df.except(train_df)"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The correct method to split data using Spark ML is: train_df, test_df = df.randomSplit([0.8, 0.2], seed=42). This function splits the DataFrame into multiple random subsets based on the provided weights, with the seed ensuring reproducibility of the split.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_029",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is a potential issue to be aware of when splitting distributed data using Spark ML?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Split proportions are always exact",
+      "Data might not be perfectly balanced in each partition",
+      "The seed parameter is required",
+      "It only works with numerical data"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When splitting distributed data with Spark ML, the data might not be perfectly balanced in each partition. This can lead to slightly different proportions than requested. To mitigate this, use a seed for reproducibility and consider stratified sampling for class balance if needed.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_030",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is the difference between Spark ML Estimator and Transformer?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Estimators work with continuous data, Transformers with categorical",
+      "Estimators fit on data and produce Transformers; Transformers apply transformations",
+      "Estimators are for evaluation, Transformers for training",
+      "Estimators work on RDDs, Transformers on DataFrames"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A Spark ML Estimator is an algorithm that fits or trains on data and produces a Transformer (e.g., LogisticRegression), while a Transformer applies a transformation (e.g., VectorAssembler or a trained model). This distinction is fundamental to understanding the Spark ML API design.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_031",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is the primary benefit of using a Pipeline in Spark ML?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It always improves model accuracy",
+      "It ensures reproducible transformations and easier hyperparameter tuning",
+      "It reduces memory usage",
+      "It automatically selects the best model"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The primary benefit of using a Pipeline in Spark ML is that it ensures reproducible transformations and makes hyperparameter tuning easier. Pipelines chain multiple stages (e.g., preprocessing, feature engineering, model training) into a cohesive workflow that can be treated as a single unit.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_032",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is a common issue when developing a Spark ML Pipeline?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Pipelines cannot include custom transformers",
+      "Not vectorizing features correctly or failing to handle new categorical levels at inference time",
+      "Pipelines only work with classification models",
+      "Pipelines always require GPU acceleration"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Common issues when developing Spark ML Pipelines include not vectorizing your features correctly, failing to handle new categorical levels at inference time, and overriding pipeline stages incorrectly. These can lead to errors or poor model performance if not addressed properly.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_033",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is a key difference between Spark DataFrames and Pandas on Spark DataFrames?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Pandas on Spark doesn't support groupby operations",
+      "Spark DataFrames are fully distributed and don't maintain row order, while Pandas on Spark extends the pandas API using Spark for distribution",
+      "Spark DataFrames only work with structured data",
+      "Pandas on Spark is always faster"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A key difference is that Spark DataFrames are fully distributed, do not maintain row order, and use wide transformations, while Pandas on Spark extends the pandas API but uses Spark under the hood to distribute data processing. This provides familiar pandas syntax with Spark's scalability.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_034",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Why might Pandas API on Spark not be as fast as native Spark?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It's written in a slower programming language",
+      "The InternalFrame overhead of mapping pandas operations to Spark can make some operations slower",
+      "It doesn't support column pruning",
+      "It requires data to be converted to Arrow format first"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The usage of an InternalFrame to manage the overhead of mapping pandas operations to Spark can make Pandas API on Spark not quite as fast as native Spark for some operations. This translation layer adds some computational overhead compared to direct Spark operations.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_035",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is the correct way to convert a PySpark DataFrame to a Pandas on Spark DataFrame?",
+    "question_type": "multiple_choice",
+    "options": [
+      "pandas_df = spark_df.toPandas()",
+      "import pyspark.pandas as ps; pdf = ps.from_spark(spark_df)",
+      "pandas_df = PandasDataFrame(spark_df)",
+      "pandas_df = spark_df.as_pandas()"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The correct way to convert a PySpark DataFrame to a Pandas on Spark DataFrame is: import pyspark.pandas as ps; pdf = ps.from_spark(spark_df). To convert back, you would use pdf.to_spark(), maintaining the ability to switch between APIs as needed.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_036",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is the role of Apache Arrow in Pandas <-> Spark conversions?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It provides visualization capabilities",
+      "It's a columnar in-memory data format that helps reduce serialization overhead",
+      "It handles error checking only",
+      "It's required for SQL operations"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Apache Arrow is a columnar in-memory data format that helps reduce serialization overhead when converting between Pandas and Spark. This makes data exchange more efficient, allowing for faster data transfer between Spark processes and Python processes running Pandas.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_037",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Why are iterator UDFs preferred for processing large datasets?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They're always faster than standard UDFs",
+      "They process batches of data iteratively, reducing memory usage and enabling better scaling",
+      "They only work with numerical data",
+      "They automatically parallelize operations"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Iterator UDFs are preferred for large data because they process batches of data iteratively, reducing memory usage and enabling better scaling on large datasets. This approach prevents having to load all data into memory at once, which can be prohibitive for very large datasets.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_038",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is a benefit of using the Pandas Function API with groupby() in Spark?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It's only useful for calculating summary statistics",
+      "It allows you to train or apply group-specific models or transformations",
+      "It works exclusively with time-series data",
+      "It automatically selects the best aggregation function"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A key benefit of using the Pandas Function API with groupby() is that you can train or apply group-specific models or transformations. For example, you can use groupby().applyInPandas(...) to train specialized models per group, allowing for more customized analysis.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_039",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "What is an advantage of using random search over grid search for hyperparameter tuning?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It always finds the global optimum",
+      "It's often more efficient with a large search space",
+      "It uses less memory but more CPU",
+      "It can only be used with continuous parameters"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "An advantage of random search for hyperparameter tuning is that it's often more efficient than exhaustive grid search when dealing with a large search space. It samples parameters randomly, allowing it to explore more diverse combinations with fewer trials and often finding good solutions faster.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_040",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "How do Bayesian methods for hyperparameter tuning work?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They require a separate labeled validation set",
+      "They iteratively use prior results (model performance) to choose the next best set of hyperparameters to try",
+      "They only work with neural networks",
+      "They randomize all parameters simultaneously"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Bayesian methods for tuning hyperparameters iteratively use prior results (model performance) to choose the next best set of hyperparameters to try. This approach is more efficient than random or grid search, especially for complicated search spaces, as it learns from previous evaluations.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_041",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "Why can parallelizing sequential/iterative models be difficult?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Due to sequential dependence and the need to synchronize partial results across workers",
+      "Because they require more memory than parallel models",
+      "Due to licensing restrictions",
+      "Because they're written in different programming languages"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Parallelizing sequential/iterative models is difficult due to sequential dependence (e.g., Bayesian optimization relying on previous iteration results) and the need to ensure partial results are synchronized across workers, adding implementation complexity. This is particularly challenging for algorithms that build on previous iterations.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_042",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "When using Hyperopt with SparkTrials for hyperparameter tuning, what is the primary advantage?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It produces more accurate models",
+      "It distributes trials across the Spark cluster, enabling parallelization",
+      "It automatically selects the best algorithm",
+      "It reduces the number of required hyperparameters"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When using Hyperopt with SparkTrials for hyperparameter tuning, the primary advantage is that it distributes trials across the Spark cluster. This enables parallelization of the tuning process, making it faster even for single-node models like scikit-learn by running multiple configurations simultaneously.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_043",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "What is a key benefit of cross-validation over a simple train-validation split?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It always prevents overfitting",
+      "It provides more stable estimates by using multiple validation sets",
+      "It requires less data overall",
+      "It's always faster computationally"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A key benefit of cross-validation over a simple train-validation split is that it provides more stable estimates by using multiple validation sets. Each instance is used both for training and validation across different folds, making better use of available data and producing more reliable performance estimates.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_044",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "If you have 5 hyperparameter combinations and use 4-fold cross-validation, how many total models will be trained?",
+    "question_type": "multiple_choice",
+    "options": [
+      "5",
+      "4",
+      "9",
+      "20"
+    ],
+    "correct_answers": [
+      3
+    ],
+    "explanation": "Based on the formula provided in the documentation, the number of models trained in this scenario is (# hyperparam combinations) × (# folds) = 5 × 4 = 20 models. Each combination is trained on each of the 4 different train-validate splits, resulting in 20 total model training runs.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_045",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "What is the primary advantage of using the F1 score as an evaluation metric?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It works well for regression problems",
+      "It's good for imbalanced classes as it balances precision and recall",
+      "It's always between 0 and 1",
+      "It's the simplest metric to calculate"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The F1 score is the harmonic mean of precision and recall, making it particularly effective for imbalanced classes when both metrics matter. It balances the trade-off between false positives and false negatives, providing a single metric that accounts for both types of errors.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_046",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "Why would you need to exponentiate the RMSE when the log of the label variable is used?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To ensure the metric is positive",
+      "To convert the error metric back to the original scale for proper interpretation",
+      "To normalize the error distribution",
+      "To improve model accuracy"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "If you trained a model on log(y), the predictions and errors are in log-space. To interpret results in the original scale, you need to exponentiate. Otherwise, the RMSE value will appear artificially low and won't represent the actual error magnitude in the original units, leading to misleading performance evaluations.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_047",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "What are some difficulties associated with distributing machine learning models?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only neural networks can be distributed",
+      "Synchronizing gradient updates, large data shuffles, communication overhead, and hyperparameter search complexity",
+      "Lack of available distributed frameworks",
+      "Distributed models always perform worse than single-node models"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Challenges associated with distributing machine learning models include synchronizing gradient updates, dealing with large data shuffles, managing communication overhead, and handling hyperparameter search complexity in a distributed environment. These factors make distributing ML algorithms non-trivial.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_048",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "What is the relationship between Spark ML and scikit-learn in the context of distributed computing?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They are the same library with different names",
+      "Spark ML provides built-in distributed implementations for many algorithms, while scikit-learn is a single-node solution",
+      "scikit-learn is faster but Spark ML is more accurate",
+      "Spark ML is only for classification while scikit-learn handles regression"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Spark ML provides built-in distributed implementations for common algorithms, allowing them to scale to large datasets across clusters. In contrast, scikit-learn is primarily a single-node solution that works well for local or small datasets but doesn't naturally distribute computation without additional frameworks.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_049",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "What makes Hyperopt particularly useful for tuning single-node models in a distributed environment?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It automatically distributes training data",
+      "It can run different hyperparameter configurations in parallel using SparkTrials",
+      "It requires less memory than other optimizers",
+      "It automatically selects the most promising model architecture"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Hyperopt is particularly useful for tuning single-node models because, when combined with SparkTrials, it can run different hyperparameter configurations in parallel across multiple executors. This means even if the model itself (e.g., scikit-learn) is single-node, the tuning process can be distributed for efficiency.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_050",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "Which algorithm does Hyperopt typically use for Bayesian hyperparameter optimization?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Random Forest",
+      "Tree-structured Parzen Estimator (TPE)",
+      "Support Vector Machines",
+      "Gradient Boosting"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Hyperopt uses the Tree-structured Parzen Estimator (TPE) under the hood for Bayesian hyperparameter optimization. This approach provides more efficient search than naive methods by learning from previous trials and focusing on promising regions of the hyperparameter space.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_051",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "How does Spark scale linear regression algorithms?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It only supports mini-batch gradient descent",
+      "By using distributed gradient-based or closed-form solutions with data sharded across executors",
+      "It requires manual partitioning of data",
+      "Linear regression cannot be distributed in Spark"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Spark scales linear regression by using distributed gradient-based or closed-form solution (L-BFGS or normal equations) with data sharded across executors. This allows the algorithm to process large datasets that wouldn't fit on a single machine while maintaining mathematical equivalence to the single-node algorithm.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_052",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "How does Spark scale decision trees?",
+    "question_type": "multiple_choice",
+    "options": [
+      "By limiting tree depth",
+      "Using a distributed histogram-based approach across partitions, merging histograms to find splits",
+      "By training multiple small trees on different nodes",
+      "Decision trees cannot be effectively distributed"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Spark scales decision trees using a distributed histogram-based approach across partitions. It merges histograms to find optimal splits and builds the tree in parallel, allowing efficient training on large datasets. This approach maintains the algorithm's accuracy while enabling distribution.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_053",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "What distinguishes bagging from other ensemble methods?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It trains models sequentially to correct previous errors",
+      "It trains multiple models in parallel on different samples of data and averages/votes on predictions",
+      "It requires a meta-model to combine predictions",
+      "It can only be used with neural networks"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Bagging (Bootstrap Aggregating) trains multiple models in parallel on different samples of data, then averages or votes on predictions. Random Forest is an example of a bagging approach. This differs from boosting (sequential) and stacking (meta-model), and is particularly amenable to parallelization.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_054",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "How does boosting differ from bagging as an ensemble method?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Boosting trains models sequentially, with each new model focusing on errors of previous ones",
+      "Boosting can only be used with decision trees",
+      "Boosting always produces smaller models",
+      "Boosting cannot be distributed"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Boosting differs from bagging in that it trains models sequentially, with each new model trying to correct the errors of previous ones. Examples include Gradient Boosted Trees and XGBoost. This approach often yields strong predictive performance but can be harder to parallelize than bagging due to its sequential nature.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_055",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "What is the relationship between the number of trials in Hyperopt and model performance?",
+    "question_type": "multiple_choice",
+    "options": [
+      "More trials always guarantee better performance",
+      "More trials can lead to better hyperparameter exploration, but with diminishing returns",
+      "The number of trials has no impact on the final model quality",
+      "Fewer trials typically produce better models due to overfitting prevention"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Generally with Hyperopt, more trials can lead to better hyperparameter exploration, but there are diminishing returns eventually. At some point, additional trials may not significantly improve model performance as you've already explored the most promising regions of the hyperparameter space.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_056",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "How do you register a model in MLflow using the Client API?",
+    "question_type": "multiple_choice",
+    "options": [
+      "mlflow.models.register(model_path, name)",
+      "mlflow.register_model(model_uri=runs:/{run_id}/model, name=my_registered_model)",
+      "mlflow.client.add_model(name, run_id)",
+      "mlflow.model_registry.save(model, name)"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To register a model using the MLflow Client API, you use: mlflow.register_model(model_uri=runs:/{run_id}/model, name=my_registered_model). This enables model versioning, stage transitions, and better collaboration through the model registry.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_057",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "How would you transition a model's stage to Production using the MLflow Client API?",
+    "question_type": "multiple_choice",
+    "options": [
+      "client.set_stage(name=my_registered_model, version=version_number, stage=Production)",
+      "client.transition_model_version_stage(name=my_registered_model, version=version_number, stage=Production)",
+      "client.promote_model(name=my_registered_model, version=version_number, to_stage=Production)",
+      "client.update_model_version(name=my_registered_model, version=version_number, stage=Production)"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To transition a model's stage using the MLflow Client API, you use: client.transition_model_version_stage(name=my_registered_model, version=version_number, stage=Production). This updates the model's lifecycle stage in the registry.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_058",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "How do you promote a challenger model to a champion model using aliases in MLflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "By creating a new experiment for the champion model",
+      "By using stable pointers for champion vs. challenger that can easily be swapped without changing code references",
+      "By copying the model artifacts to a new location",
+      "By retraining the challenger model with the champion's data"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Aliases in MLflow provide stable pointers for champion vs. challenger models. You can easily swap which version is the champion without changing code references, simplifying the model promotion process while maintaining traceability.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_059",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "What is the correct way to set a tag for a model version using MLflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "mlflow.create_tag(model_name, version, key, value)",
+      "client.set_model_version_tag(name, version, key, value)",
+      "mlflow.models.add_tag(name, version, key, value)",
+      "client.tag_model(name, version, key=value)"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "To set a tag for a model version, you would use: client.set_model_version_tag(name, version, key, value). Tags provide additional metadata and searchable information about model versions, helping with organization and filtering in the model registry.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_060",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "What deployment method would you choose for low-latency, on-demand predictions?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Batch inference",
+      "Realtime serving endpoints",
+      "Streaming inference",
+      "Scheduled jobs"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "For low-latency, on-demand predictions, realtime serving endpoints are the appropriate choice. They provide low-latency REST endpoints that can be called whenever a prediction is needed, making them suitable for applications that require immediate responses, unlike batch or scheduled approaches.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_061",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "Which MLflow autologging call automatically captures parameters; metrics; and model artifacts when training a scikit-learn model?",
+    "question_type": "multiple_choice",
+    "options": [
+      "mlflow.sklearn.capture()",
+      "mlflow.autolog()",
+      "mlflow.sklearn.autolog()",
+      "mlflow.track_all()"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "mlflow.sklearn.autolog() enables automatic logging of parameters; metrics; and model artifacts specifically for scikit-learn estimators. When called before model.fit(); it captures hyperparameters; evaluation metrics such as accuracy or RMSE; and logs the trained model artifact without any manual log statements.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_062",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "What is the purpose of the MLflow Tracking Server in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To serve models as REST endpoints",
+      "To provide a centralized store for experiments; runs; parameters; metrics; and artifacts",
+      "To manage cluster autoscaling",
+      "To schedule automated retraining jobs"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The MLflow Tracking Server provides a centralized backend store for all experiment metadata including run parameters; metrics; tags; and artifact locations. In Databricks; it is fully managed; meaning you do not need to configure or maintain the server infrastructure yourself.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_063",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "Which Databricks feature allows data scientists to automatically discover and share reusable feature definitions across teams?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Delta Live Tables",
+      "Feature Store",
+      "AutoML Notebooks",
+      "MLflow Projects"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Databricks Feature Store enables teams to define; publish; and discover reusable feature pipelines. Features are registered with metadata and lineage; allowing different teams to find and reuse existing feature logic without duplication; and ensuring consistency between training and serving pipelines.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_064",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "In Databricks AutoML; what format is used to expose the generated training code to the user?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Compiled Python packages",
+      "Auto-generated Jupyter notebooks stored in the workspace",
+      "Spark SQL scripts",
+      "YAML configuration files"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks AutoML generates Python notebooks in the user workspace for each trial it runs. These notebooks contain full; editable training code so data scientists can inspect; modify; and extend the best-performing trial rather than treating AutoML as a black box.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_065",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "What does the Databricks Feature Store use as the primary key concept to ensure point-in-time correct feature retrieval during training?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Partition columns",
+      "Timestamp keys used with time-series feature tables",
+      "Row identifiers from Delta tables",
+      "Cluster partition IDs"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "For time-series or event-based features; the Databricks Feature Store supports timestamp keys that enable point-in-time correct lookups. This prevents data leakage by ensuring that during training; only feature values available before each label's timestamp are joined to the training dataset.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_066",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Which of the following correctly describes what mlflow.log_artifact() does?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Logs a scalar numeric metric",
+      "Logs a local file or directory to the MLflow artifact store",
+      "Registers a model in the model registry",
+      "Creates a new MLflow experiment"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "mlflow.log_artifact(local_path) uploads a local file or directory to the artifact store associated with the current run. This is used to save files such as plots; data samples; serialized models; or configuration files alongside the run for reproducibility and inspection.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_067",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Which MLflow component would you use to package a project so it can be reproduced by anyone with the project URI?",
+    "question_type": "multiple_choice",
+    "options": [
+      "MLflow Models",
+      "MLflow Projects",
+      "MLflow Tracking",
+      "MLflow Registry"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "MLflow Projects define a reusable and reproducible format for packaging ML code. A project includes an MLproject file specifying the entry points; parameters; and environment (conda or Docker). Anyone with the project URI can run it with mlflow run; guaranteeing reproducibility.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_068",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "When using Hyperopt's fmin() function; what does the trials object store?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only the best hyperparameter set found",
+      "The complete history of all evaluated hyperparameter sets and their associated loss values",
+      "A serialized version of the trained model",
+      "The Spark execution plan for distributed trials"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The trials object passed to fmin() accumulates the full history of every hyperparameter configuration evaluated and the corresponding loss value. Inspecting trials.results or converting it to a DataFrame allows analysis of the search trajectory; helping understand which regions of the search space were explored.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_069",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "What is the key difference between mlflow.log_metric() and mlflow.log_metrics()?",
+    "question_type": "multiple_choice",
+    "options": [
+      "log_metric supports step numbers; log_metrics does not",
+      "log_metric logs a single key-value pair; log_metrics logs multiple key-value pairs in one call",
+      "log_metrics is only available for deep learning frameworks",
+      "log_metric writes to disk while log_metrics writes to a database"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "mlflow.log_metric(key; value) logs a single metric whereas mlflow.log_metrics(dict) accepts a dictionary and logs multiple metrics in a single API call. Using log_metrics is more efficient when you have many metrics to record at once since it reduces the number of network round-trips to the tracking server.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_070",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Which statement about MLflow experiment naming conventions in Databricks is true?",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "True. In Databricks; MLflow experiments created from notebooks are automatically named using the notebook path. Experiments can also be created manually using mlflow.set_experiment('/path/to/experiment'); and the name must be unique within the workspace. Using descriptive; path-based names is a best practice for discoverability.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_071",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "Which of the following are valid strategies for distributed deep learning on Databricks? Select all that apply.",
+    "question_type": "multiple_select",
+    "options": [
+      "Using Horovod with HorovodRunner",
+      "Using TorchDistributor for PyTorch DDP",
+      "Using single-node GPU clusters only",
+      "Using DeepSpeed via Hugging Face Trainer integration",
+      "Using standard scikit-learn fit() across all workers"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Databricks supports multiple distributed deep learning strategies: Horovod via HorovodRunner for TensorFlow and PyTorch; TorchDistributor for native PyTorch Distributed Data Parallel; and DeepSpeed via Hugging Face Trainer integration for large language model training. Single-node GPU is valid but not a distributed strategy; and scikit-learn does not support cross-worker distributed training natively.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_072",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "Which of the following statements about Spark ML VectorAssembler are correct? Select all that apply.",
+    "question_type": "multiple_select",
+    "options": [
+      "It combines multiple input columns into a single vector column",
+      "It must be the first stage in every Pipeline",
+      "It supports both numeric and already-vectorized columns as inputs",
+      "It automatically handles missing values by default",
+      "It produces a DenseVector or SparseVector depending on the data"
+    ],
+    "correct_answers": [
+      0,
+      2,
+      4
+    ],
+    "explanation": "VectorAssembler merges multiple input columns (numeric scalars or existing vectors) into a single feature vector column required by Spark ML estimators. It can output DenseVector or SparseVector depending on data sparsity. It does NOT have to be the first stage; and by default it raises an error on missing values rather than handling them automatically unless you set handleInvalid.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_073",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "When using pandas_udf with PandasUDFType.SCALAR in PySpark; what does the function receive and return?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A single Python value per row",
+      "Pandas Series objects as inputs and returns a Pandas Series",
+      "Spark DataFrames as input and output",
+      "NumPy arrays as inputs and a list as output"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A scalar pandas UDF (pandas_udf with return type annotation) receives one or more Pandas Series objects corresponding to the selected DataFrame columns and must return a Pandas Series of the same length. This vectorized execution model is significantly faster than row-at-a-time Python UDFs because it leverages Apache Arrow for efficient data transfer.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_074",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "What is the role of mlflow.pyfunc when logging a custom model?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It converts scikit-learn models to ONNX format",
+      "It provides a generic Python function flavor that wraps any custom model class implementing predict()",
+      "It automatically parallelizes inference",
+      "It logs models exclusively to the Unity Catalog registry"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "mlflow.pyfunc allows you to package any custom Python model by implementing a class with a predict() method and wrapping it using mlflow.pyfunc.PythonModel. This generic flavor means the model can be loaded and invoked consistently regardless of the underlying framework; making it highly flexible for custom inference logic.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_075",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "Which of the following are characteristics of Databricks Model Serving endpoints? Select all that apply.",
+    "question_type": "multiple_select",
+    "options": [
+      "They expose models as REST APIs with auto-scaling",
+      "They support A/B traffic splitting between model versions",
+      "They require manual container management",
+      "They can serve MLflow-registered models directly",
+      "They support GPU-backed compute for inference"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Databricks Model Serving endpoints expose MLflow-registered models as managed REST APIs with auto-scaling. They support traffic splitting for A/B testing between versions; can serve models registered in MLflow or Unity Catalog directly; and support GPU-backed compute for inference-heavy workloads. Databricks manages the container infrastructure so no manual container management is required.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_076",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "In MLflow Model Registry; what does the 'Archived' stage signify?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The model is deployed to production",
+      "The model version is no longer active but is retained for historical reference",
+      "The model has been permanently deleted",
+      "The model is pending review before promotion"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Archived stage in MLflow Model Registry indicates that a model version is no longer in active use but is preserved for auditing; rollback; or historical analysis. It is distinct from deletion; which permanently removes a version. Teams typically archive older versions when they are superseded by newer ones.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_077",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "What is true about using mlflow.evaluate() for model evaluation?",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "True. mlflow.evaluate() is a built-in MLflow API that computes standard evaluation metrics for a model given a dataset and task type (e.g. classification or regression); logs those metrics and artifact visualizations (confusion matrix; ROC curve) to the active run automatically; and supports custom metrics via extra_metrics parameter.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_078",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "When deploying a model for batch inference in Databricks; which approach is most scalable for scoring millions of records?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Loading the model with mlflow.pyfunc.load_model() in a single driver node loop",
+      "Using spark_udf to broadcast the model and apply it across Spark partitions in parallel",
+      "Using a REST endpoint and calling it row by row from a notebook",
+      "Exporting the model to PMML and running it in a Java process"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Using mlflow.pyfunc.spark_udf() loads the model once per executor; broadcasts it across the cluster; and applies it as a vectorized Spark UDF over DataFrame partitions. This leverages full Spark parallelism for scoring large datasets efficiently; whereas calling a REST endpoint row-by-row introduces prohibitive network latency and a single-node loop cannot scale beyond driver memory.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_079",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "Which of the following correctly describes the difference between online and batch inference deployment patterns?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Online inference uses Spark DataFrames; batch inference uses REST APIs",
+      "Online inference serves individual or small real-time requests via a low-latency endpoint; batch inference scores large datasets periodically using distributed compute",
+      "Online inference is always cheaper than batch inference",
+      "Batch inference can only be triggered manually"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Online inference is designed for low-latency; on-demand predictions delivered through a REST endpoint where each request is answered in milliseconds. Batch inference periodically scores large volumes of data using distributed compute such as Spark; making it cost-efficient for use cases where real-time response is not required such as overnight recommendation scoring or daily churn prediction.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_080",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "Which of the following best describes the purpose of MLflow Model signatures?",
+    "question_type": "multiple_choice",
+    "options": [
+      "They encrypt model artifacts for secure storage",
+      "They define the expected input and output schema of a model; enabling validation at inference time",
+      "They specify the training hardware requirements",
+      "They control which users can access a registered model"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "An MLflow Model signature captures the input schema (column names; types; and optional shape) and output schema of a model. When the model is deployed or loaded for inference; MLflow can validate that incoming data conforms to the signature; catching schema mismatches early and preventing silent errors caused by incorrect input formats.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_081",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "A data scientist on your team is training a large gradient-boosted tree model on 50 GB of tabular data. The training job keeps failing with out-of-memory errors on a general-purpose cluster with 4 worker nodes (16 GB RAM each). Which cluster configuration change is most likely to resolve the issue?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Switch to a single-node cluster with a GPU",
+      "Increase the number of workers to 8 nodes of the same instance type",
+      "Switch to memory-optimized instances (e.g.; r-series) with 64 GB RAM per node",
+      "Reduce the Spark shuffle partition count to 10"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Memory-optimized instances provide significantly more RAM per node; which directly addresses the out-of-memory error during model training on large datasets. Simply adding more general-purpose workers may not help if each worker still lacks sufficient memory for its data partition. A single GPU node is suited for deep learning; not distributed tree-based models; and reducing shuffle partitions does not address memory limits per executor.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_082",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "A team member cloned a Databricks Repo from GitHub and made edits to a shared feature engineering notebook. When they try to commit; they see merge conflicts. The teammate is unsure how to proceed. What is the recommended workflow to resolve this?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Delete the Repo folder and re-clone from GitHub",
+      "Use the Databricks Repos conflict resolution UI to review; accept; or reject changes per conflicting file; then commit",
+      "Ask an admin to force-push the branch from the Databricks CLI",
+      "Copy the notebook to a personal folder; delete the Repo; and re-clone"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks Repos provides a built-in conflict resolution UI that shows side-by-side diffs and lets the user accept incoming or current changes per conflicting section. This is the standard Git workflow adapted for the Databricks environment. Deleting and re-cloning would lose local changes; force-pushing risks overwriting teammates' work; and copying to a personal folder breaks version control traceability.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_083",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "Your ML team runs dozens of experiments weekly across multiple projects. Experiment results are scattered across personal folders making it hard to compare runs. What is the best practice for organizing MLflow experiments in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Log all runs to the Default experiment under /Users",
+      "Create one shared MLflow experiment per project in a common workspace folder and enforce its use via team guidelines",
+      "Store experiment results in Delta tables instead of MLflow",
+      "Create a separate experiment for every individual run"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Creating one shared experiment per project in a common workspace folder centralizes all related runs; making cross-run comparison straightforward. Logging everything to the Default experiment creates clutter and makes filtering difficult. Delta tables are useful for data but do not replace MLflow's experiment tracking UI and metadata capabilities. One experiment per run defeats the purpose of experiment grouping.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_084",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "A junior data scientist asks whether they should develop their ML pipeline entirely in Databricks notebooks or use an external IDE with Databricks Repos. The project involves a complex codebase with multiple Python modules and unit tests. What guidance should you give?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use only Databricks notebooks since they provide built-in cluster access",
+      "Use an external IDE for modular code development and unit testing; syncing through Databricks Repos for execution on clusters",
+      "Avoid Databricks Repos entirely and upload .py files manually",
+      "Develop everything locally and only use Databricks for deployment"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "For complex projects with multiple modules and unit tests; an external IDE offers superior code navigation; refactoring tools; linting; and testing frameworks. Databricks Repos syncs this code to the workspace for cluster-based execution. Notebooks alone lack robust IDE features for large codebases. Manual uploads break version control; and developing entirely locally misses the benefit of Databricks-managed Spark clusters for iterative experimentation.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_085",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "Your team recently adopted Databricks Repos for version control. A colleague accidentally committed a notebook containing hardcoded database credentials to the main branch. What is the recommended immediate action?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Delete the notebook from the Repo and create a new commit",
+      "Rotate the exposed credentials immediately; then remove the sensitive data from Git history using tools like git filter-branch or BFG Repo-Cleaner",
+      "Simply overwrite the credentials with placeholder values in a new commit",
+      "Ignore it since the Repo is private"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Rotating credentials is the top priority because they are already exposed in the Git history. Even deleting the file in a new commit leaves the credentials visible in previous commits. Overwriting with placeholders does not remove historical exposure. Relying on repository privacy is insufficient because access controls can change and the credentials remain retrievable from Git history. After rotating; the team should scrub history with appropriate Git tools.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_086",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "A data scientist has been training models in a notebook but realizes none of the hyperparameters or metrics were logged. They now need to reproduce the best result from last week. How should they set up experiment tracking going forward to prevent this problem?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Save all parameters in a text file alongside the notebook",
+      "Use mlflow.autolog() at the top of training notebooks to automatically capture parameters; metrics; and artifacts for each run",
+      "Manually screenshot the notebook output after each run",
+      "Rely on notebook revision history to find old outputs"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "mlflow.autolog() automatically instruments popular ML libraries (scikit-learn; XGBoost; etc.) to capture parameters; metrics; model artifacts; and even dataset info with minimal code changes. This ensures reproducibility without relying on manual logging discipline. Text files are fragile and unstructured; screenshots are not machine-queryable; and notebook revision history does not reliably capture runtime outputs.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_087",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "An ML engineer is tuning a random forest classifier with 5 hyperparameters. Trying all combinations via grid search would require over 10;000 runs. The engineer needs an efficient tuning strategy within Databricks. Which approach is most appropriate?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Run all 10;000 grid search trials on a large cluster",
+      "Use Hyperopt with Tree-structured Parzen Estimators (TPE) to perform Bayesian optimization over the search space",
+      "Manually try 10 random configurations and pick the best",
+      "Train only with default hyperparameters to save time"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Hyperopt with TPE uses Bayesian optimization to intelligently explore the hyperparameter space; focusing on regions likely to yield improvements. This is far more sample-efficient than exhaustive grid search; which is computationally prohibitive for large spaces. Manual selection risks missing good configurations; and default hyperparameters rarely yield optimal performance for a specific dataset.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_088",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "A product manager asks the ML team to quickly build a baseline classification model for a new dataset with 50 features and a binary target. The team has limited time for feature engineering and model selection. Which Databricks tool is best suited for this?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Write a custom deep learning pipeline from scratch",
+      "Use Databricks AutoML to generate a baseline model with automatic feature processing and algorithm selection",
+      "Manually test logistic regression; random forest; and XGBoost one by one",
+      "Export the data to an external AutoML platform"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks AutoML automatically preprocesses data; tries multiple algorithms; and produces a ranked leaderboard of models along with editable source notebooks. This is ideal for rapidly establishing a baseline. Building from scratch or testing models one by one is time-consuming; and exporting to an external tool adds unnecessary friction when AutoML is built into the platform.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_089",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "Two teams in your organization are building separate models that both need the same customer-level features (e.g.; average transaction amount; days since last login). Each team computes these features independently; leading to inconsistent definitions. What Databricks feature should they adopt?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Share notebooks via email so both teams use the same code",
+      "Use Databricks Feature Store to define; store; and share features centrally with consistent definitions",
+      "Create a shared Delta table and let each team query it differently",
+      "Store features in a CSV file on shared cloud storage"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks Feature Store provides a centralized repository where features are defined once; versioned; and shared across teams and models. This eliminates inconsistency from independent computation. Sharing notebooks does not enforce a single source of truth; a shared Delta table without Feature Store governance allows divergent transformations; and CSV files lack versioning and lineage tracking.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_090",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "question_text": "A data scientist is evaluating a model on a small dataset of 2;000 records. They split it 80/20 for train/test and got an accuracy of 94%. However; a colleague warns the result may be unreliable. What validation strategy should the data scientist use instead for a more robust estimate?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Increase the test set to 50% of the data",
+      "Use k-fold cross-validation (e.g.; k=5 or k=10) to average performance across multiple train/test splits",
+      "Train on the full dataset without any test set",
+      "Repeat the random 80/20 split once more and average the two results"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "With only 2;000 records a single 80/20 split can produce a test set that is not representative; yielding unreliable metrics. K-fold cross-validation partitions the data into k folds; trains on k-1 and tests on 1 in rotation; averaging results. This reduces variance in the performance estimate. Increasing the test set shrinks the already small training set; no test set prevents evaluation; and two random splits still have high variance.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_091",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "An ML engineer notices that their model achieves 99% accuracy on the training set but only 72% on the validation set. The training and validation data come from the same distribution. What is the most likely issue and the best first step to address it?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The model is underfitting; increase model complexity",
+      "The model is overfitting; apply regularization or reduce model complexity",
+      "The validation set is corrupted; replace it",
+      "The training accuracy is a bug; retrain from scratch"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A large gap between training and validation accuracy (99% vs 72%) is a classic sign of overfitting: the model memorized training data rather than learning generalizable patterns. Regularization techniques (L1/L2 penalties; dropout; tree pruning); reducing model complexity; or gathering more training data are standard remedies. Underfitting would show poor training accuracy as well; and there is no evidence of data corruption or bugs.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_092",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "A data scientist is building a house price prediction model. The raw dataset includes a 'date_of_sale' column. A colleague suggests dropping it since tree-based models cannot use dates natively. What is a better approach?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Drop the date column as suggested",
+      "Extract meaningful features from the date such as month; year; day of week; and quarter; then drop the raw date column",
+      "Convert the date to a string and use it as a categorical feature",
+      "Keep the raw date column and let the model handle it automatically"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Extracting components like month; year; day of week; and quarter captures seasonal and temporal patterns that influence house prices (e.g.; spring selling season). Dropping the column entirely loses this signal. Converting to a string creates an extremely high-cardinality categorical feature with no ordinal meaning. Most ML frameworks cannot automatically parse raw date objects into useful features.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_093",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "A fraud detection team is building a classifier on a dataset where only 0.5% of transactions are fraudulent. They train a logistic regression model and get 99.5% accuracy. However; the model catches almost no fraud cases. What should the team do to improve fraud detection?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Celebrate the 99.5% accuracy and deploy the model",
+      "Apply class imbalance techniques such as SMOTE; class weighting; or threshold tuning; and evaluate using precision; recall; and F1 instead of accuracy",
+      "Increase the training data volume without addressing the imbalance",
+      "Switch to an unsupervised clustering model"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "With 0.5% positive rate; a model predicting 'not fraud' for everything achieves 99.5% accuracy. Accuracy is misleading here. The team should use precision; recall; and F1 as evaluation metrics and apply techniques like SMOTE (synthetic minority oversampling); class weights in the loss function; or decision threshold tuning to improve sensitivity to the minority class. Simply adding more imbalanced data does not help; and unsupervised clustering is not the standard approach for labeled fraud detection.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_094",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "A team needs to predict customer churn (binary outcome) and also provide business stakeholders with an understanding of which features drive predictions. The dataset has 30 features and 100;000 rows. Which algorithm best balances predictive power and interpretability?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Deep neural network with 10 hidden layers",
+      "Gradient-boosted trees (e.g.; XGBoost or LightGBM) combined with SHAP feature importance",
+      "K-nearest neighbors with k=5",
+      "Simple linear regression"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Gradient-boosted trees deliver strong predictive performance on tabular data and SHAP values provide principled; per-prediction feature importance that stakeholders can understand. Deep neural networks are powerful but opaque for tabular data of this size. KNN lacks built-in feature importance and scales poorly. Linear regression is interpretable but unsuitable for binary classification without modification and may underperform on complex patterns.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_095",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "After training a binary classifier; an ML engineer presents the model's ROC-AUC of 0.92 to a business stakeholder. The stakeholder asks: 'Does that mean 92% of our predictions are correct?' How should the engineer explain this metric?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Yes; 92% of predictions are correct",
+      "No; ROC-AUC of 0.92 means the model has a 92% probability of ranking a randomly chosen positive instance higher than a randomly chosen negative instance; reflecting its ability to discriminate between classes across all thresholds",
+      "No; it means the model is wrong 8% of the time on positive cases only",
+      "No; it means 92% of positive predictions are actually positive"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "ROC-AUC measures the model's ability to rank positive examples above negative examples across all classification thresholds. A value of 0.92 means there is a 92% chance that the model assigns a higher predicted probability to a randomly selected positive case than to a randomly selected negative case. It is not the same as accuracy; precision; or error rate; which are threshold-specific metrics.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_096",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "An e-commerce company needs to score product recommendations for 10 million users every night to populate a 'recommended for you' section on their website. Recommendations do not need to reflect real-time browsing behavior. Which serving pattern should the ML engineer choose?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Deploy a real-time Model Serving endpoint and call it per user at page load",
+      "Use batch inference with spark_udf to score all users nightly and write results to a Delta table",
+      "Deploy a streaming inference pipeline triggered by each user login event",
+      "Use a REST API that scores all 10 million users in a single request"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Since recommendations do not require real-time signals and must be generated for all users; batch inference is the ideal pattern. Using spark_udf distributes scoring across the cluster efficiently; and writing to a Delta table enables fast reads at serving time. A real-time endpoint would be unnecessarily expensive for pre-computable results. Streaming is overkill when a nightly schedule suffices; and no REST API can handle 10 million records in one request.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_097",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "A fintech startup deployed a fraud scoring model on a Databricks Model Serving endpoint. During a flash sale event; request volume spikes 10x and latency exceeds SLA thresholds. What configuration should the ML engineer adjust?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Increase the model version number",
+      "Configure the endpoint's auto-scaling settings to allow more concurrent instances and set a higher maximum provisioned throughput",
+      "Retrain the model on smaller data so it runs faster",
+      "Switch the model to batch inference during peak traffic"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks Model Serving supports auto-scaling configuration that controls the minimum and maximum number of concurrent instances. Increasing the max provisioned throughput and enabling aggressive scale-up policies allows the endpoint to handle traffic spikes within latency SLAs. Changing the model version does not affect scaling; retraining on smaller data degrades quality; and switching to batch defeats the real-time requirement of fraud scoring.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_098",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "An ML engineer needs to score 500 million rows in a Delta table using a registered MLflow model. Loading the model with mlflow.pyfunc.load_model() on the driver and iterating through rows is taking over 12 hours. What is the recommended approach to speed this up?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use a bigger driver node with more CPU cores",
+      "Convert the model to spark_udf using mlflow.pyfunc.spark_udf() and apply it to the Spark DataFrame for distributed scoring",
+      "Export the data to CSV and score it on an external server",
+      "Split the table into 10 parts and score them in 10 separate notebooks sequentially"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "mlflow.pyfunc.spark_udf() wraps the MLflow model as a Spark UDF; enabling distributed inference across all worker nodes. Each executor loads a copy of the model and scores its data partitions in parallel; dramatically reducing wall-clock time compared to single-driver iteration. A bigger driver still runs single-threaded scoring. CSV export adds overhead and loses Spark parallelism. Sequential notebooks do not leverage cluster parallelism either.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_099",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "An ML engineer registered a model with an MLflow signature specifying 10 input columns. When scoring new data through a serving endpoint; requests are failing with a schema validation error. The input payload contains 12 columns. What is the root cause and fix?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The model needs to be retrained with 12 features",
+      "The input payload has extra columns not in the model signature; the engineer should either remove the extra columns from the input or update the model signature to include them",
+      "The serving endpoint has a bug and needs to be redeployed",
+      "Schema validation errors are just warnings and can be ignored"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "MLflow model signatures enforce strict schema validation at inference time. If the input contains columns not defined in the signature; the request is rejected. The engineer should align the input payload with the expected schema by removing extraneous columns; or if the extra features are needed; retrain and re-log the model with an updated signature that includes all 12 columns. Redeploying without fixing the mismatch will not help; and these errors cannot be ignored as they block scoring.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_100",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "A ride-sharing company wants to deploy a new surge pricing model but needs to validate it against the current production model before full rollout. They want 10% of traffic to hit the new model and 90% to stay on the current one. How should they set this up in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Deploy both models as separate endpoints and use application-level load balancing",
+      "Use Databricks Model Serving traffic splitting to route 10% of requests to the new model version and 90% to the current version on the same endpoint",
+      "Deploy the new model to a staging environment and test it with synthetic data only",
+      "Run both models in batch mode and compare offline results"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks Model Serving natively supports traffic splitting (A/B testing) on a single endpoint; allowing the engineer to route a configurable percentage of live requests to different model versions. This provides a controlled; production-grade comparison with real traffic. Application-level load balancing adds unnecessary complexity. Synthetic data does not capture real-world patterns; and batch comparison misses latency and real-time behavior differences.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_exam_001",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "question_text": "A data scientist wants to create a feature table to use in their models. They are working in a workspace with Unity Catalog enabled and want this feature table to be stored and governed by it. What is the correct way of creating this feature table?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Create a Delta table with data in it, as usual, then use the register_table method from the FeatureStoreClient in Python to register it as a feature table in Unity Catalog.",
+      "Create an empty Delta table on Unity Catalog with the AS FEATURE STORE clause via SQL, then write data to it.",
+      "Use the create_table method of the FeatureEngineeringClient in Python to create the table, then write data to it.",
+      "Create a Delta table with data in it in Unity Catalog then use the ALTER TABLE command in SQL to configure it as a feature table with the SET AS FEATURE STORE clause."
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "No Unity Catalog usa-se o create_table do FeatureEngineeringClient (databricks-feature-engineering) para criar a feature table e então gravar os dados. O FeatureStoreClient.register_table pertence ao feature store de workspace (legado) e não existe cláusula SQL 'AS FEATURE STORE'.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_exam_002",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "A data scientist needs to impute the missing values in a continuous feature. They want to do this with the least amount of effort but with correct results. Which strategy will do this?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use sklearn SimpleImputer, which automatically selects the best methodology based on the feature distribution",
+      "Examine the distribution of the values and select the appropriate imputation upon review",
+      "Use .mean(), which is the most appropriate imputation on continuous columns",
+      "Use .mode(), which is the most appropriate imputation on continuous columns"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Para resultados corretos, examine a distribuição antes de escolher: a média é sensível a outliers/assimetria, enquanto a mediana é mais robusta. O SimpleImputer não escolhe a estratégia automaticamente, e a moda é para variáveis categóricas. Avaliar a distribuição e selecionar a imputação adequada é o caminho correto.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_exam_003",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "A data scientist is developing a model that predicts whether a customer will churn from a subscription service. The dataset is highly imbalanced, with only 10% of the instances representing customers who churn. They want the model to effectively identify the minority class without being biased towards the majority class. Which strategy directly mitigates the model's bias towards the non-churn customers due to class imbalance?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Normalize the features to ensure they are on the same scale, improving model performance.",
+      "Use cost-sensitive learning by assigning a higher misclassification cost to the minority class during model training.",
+      "Increase the size of the training dataset by collecting more data on non-churn customers.",
+      "Use a simpler model to reduce overfitting, ensuring it generalizes better to the minority class."
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Aprendizado sensível a custo (class weights / maior custo de classificação errada para a classe minoritária) ataca diretamente o viés em favor da classe majoritária. Normalizar features, coletar mais dados da classe majoritária ou simplificar o modelo não tratam o desbalanceamento.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_exam_004",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "question_text": "A data scientist is tuning a Support Vector Machine (SVM) model using 5-fold cross-validation and GridSearchCV in scikit-learn. The parameter grid includes three hyperparameters: C with values [0.1, 1, 10], kernel with choices ['linear', 'rbf'], and gamma with values [0.01, 0.1, 1]. How many different models will be trained in total?",
+    "question_type": "multiple_choice",
+    "options": [
+      "90",
+      "18",
+      "1",
+      "None of the above."
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "São 3 (C) × 2 (kernel) × 3 (gamma) = 18 combinações de hiperparâmetros. Com validação cruzada de 5 folds, cada combinação treina 5 modelos: 18 × 5 = 90 modelos no total.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "ml_assoc_exam_005",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "question_text": "A podcast platform with thousands of users implemented an anomaly detection algorithm to detect low engagement based on a 10-minute running window of user events (listening, pausing, exiting). A machine learning engineer wants to deploy this model into a production pipeline that must handle up to tens of thousands of events per second, with compute that resizes dynamically as event volume fluctuates. Which pipeline design approach meets these requirements?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Create a Delta Live Tables pipeline that applies the algorithm as a Spark UDF.",
+      "Create a Structured Streaming Job that applies the algorithm as a Spark UDF.",
+      "Create a model serving endpoint, create a Delta Live Tables pipeline that calls a custom UDF which invokes the endpoint.",
+      "Create a model serving endpoint, create a Structured Streaming job that calls a custom UDF which invokes the endpoint."
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Uma pipeline Delta Live Tables aplicando o algoritmo como Spark UDF processa o streaming de alto volume e oferece autoescala dinâmica de compute (enhanced autoscaling) conforme o volume varia. Chamar um endpoint de serving por evento adiciona latência/overhead desnecessários para esse caso de janela de 10 minutos.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  }
+]

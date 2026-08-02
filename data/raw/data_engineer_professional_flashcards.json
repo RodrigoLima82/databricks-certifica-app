@@ -1,0 +1,322 @@
+[
+  {
+    "id": "fc_de_prof_001",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "front": "What is Change Data Feed in Delta Lake?",
+    "back": "Tracks row-level changes for incremental processing",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_002",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "front": "What is Deletion Vectors?",
+    "back": "Optimized soft deletes without rewriting files",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_003",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "front": "What does CLONE do?",
+    "back": "Creates copy of table metadata with optional deep copy",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_004",
+    "certification_id": "data_engineer_professional",
+    "topic": "Databricks Tooling",
+    "front": "What is liquid clustering?",
+    "back": "Dynamic file organization that replaces partitioning and Z-order",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_005",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What is stateful streaming?",
+    "back": "Maintains state across micro-batches for aggregations",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_006",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What is deduplication in streaming?",
+    "back": "Removes duplicate records based on keys",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_007",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What is stream-stream join?",
+    "back": "Joins two streaming datasets",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_008",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What is the difference between processing time and event time?",
+    "back": "Processing time is when received, event time is when occurred",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_009",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What is adaptive query execution?",
+    "back": "Dynamically optimizes query plans during execution",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_010",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What is dynamic partition pruning?",
+    "back": "Pushes filters from dimension tables to fact tables at runtime",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_011",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What does coalesce() do for partitions?",
+    "back": "Reduces number of partitions without shuffle",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_012",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What does repartition() do?",
+    "back": "Redistributes data across partitions with full shuffle",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_013",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "front": "What is a materialized view in DLT?",
+    "back": "Live table that stores query results physically",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_014",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "front": "What is the refresh behavior of streaming tables?",
+    "back": "Continuous incremental processing",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_015",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "front": "How do you handle quarantine data in DLT?",
+    "back": "Use expectations with DROP action",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_016",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "front": "What is the @dlt.view decorator?",
+    "back": "Creates temporary view in DLT pipeline",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_017",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "front": "What is the purpose of the Bronze layer?",
+    "back": "Store raw unprocessed data",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_prof_018",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "front": "What transformations happen in Silver layer?",
+    "back": "Deduplication, cleaning, validation, standardization",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_019",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "front": "What is stored in Gold layer?",
+    "back": "Business-level aggregates and curated datasets",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_prof_020",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Modeling",
+    "front": "What is the benefit of medallion architecture?",
+    "back": "Incremental quality improvement and reprocessing flexibility",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_021",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "front": "What is row-level security?",
+    "back": "Restricts which rows users can access",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_022",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "front": "What is column-level security?",
+    "back": "Controls access to specific columns",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_023",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "front": "What is dynamic view?",
+    "back": "View that applies security based on user context",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_024",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "front": "What does DENY do?",
+    "back": "Explicitly blocks access even if granted elsewhere",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_025",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "front": "What is job clustering?",
+    "back": "Groups related tasks for efficient execution",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_026",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "front": "What is a repair run?",
+    "back": "Re-executes failed tasks in a workflow",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_027",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "front": "What are job parameters?",
+    "back": "Runtime values passed to tasks",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_prof_028",
+    "certification_id": "data_engineer_professional",
+    "topic": "Testing and Deployment",
+    "front": "What is conditional task execution?",
+    "back": "Tasks run based on upstream task outcomes",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_029",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "front": "What is a quarantine table?",
+    "back": "Stores records that fail quality checks",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_030",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "front": "What is schema enforcement?",
+    "back": "Rejects writes that don't match table schema",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_prof_031",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "front": "What is schema evolution?",
+    "back": "Allows schema changes during writes",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_prof_032",
+    "certification_id": "data_engineer_professional",
+    "topic": "Security and Governance",
+    "front": "What does CONSTRAINT CHECK do?",
+    "back": "Validates column values meet conditions",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_prof_033",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What is a correlated subquery?",
+    "back": "Subquery that references outer query columns",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_034",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What does LATERAL VIEW EXPLODE do?",
+    "back": "Flattens arrays into multiple rows",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_035",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What is a window frame?",
+    "back": "Defines subset of partition for window function",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_036",
+    "certification_id": "data_engineer_professional",
+    "topic": "Data Processing",
+    "front": "What does LAG() function do?",
+    "back": "Accesses previous row value in window",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_037",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "front": "What is bin-packing?",
+    "back": "Combines small files into optimally sized files",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_038",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "front": "What is file size tuning?",
+    "back": "Adjusting target file size for optimal performance",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_039",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "front": "What is Bloom filter?",
+    "back": "Probabilistic data structure for membership testing",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_prof_040",
+    "certification_id": "data_engineer_professional",
+    "topic": "Monitoring and Logging",
+    "front": "What is columnar pruning?",
+    "back": "Reads only required columns from Parquet files",
+    "difficulty": 1
+  }
+]

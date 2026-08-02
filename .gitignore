@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+backend/.venv/
+backend/.env
+backend/.databricks/
+# backend/static/ é a BUILD do frontend — versionada de propósito para o deploy
+# via Databricks Git folder (cliente sem CLI/npm). Regerada por `npm run build`.
+# Node
+node_modules/
+frontend/dist/
+# OS
+.DS_Store
+backend/.env.azure
+
+# docs/ (guias, decks HTML gerados) — não versionar
+docs/
+# treinamento/ (labs + ppt + screenshots) — fica no repo treinamento_ml
+treinamento/
+
+# artefactos de ejemplo
+reporte_ejemplo.pdf
+*.pdf
+
+# artefatos de deploy/scratch (não versionar)
+.deploy-seed.py
+.deploy-venv/
+.deploy-wheels/
+.isaac/

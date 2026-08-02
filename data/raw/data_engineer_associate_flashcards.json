@@ -1,0 +1,322 @@
+[
+  {
+    "id": "fc_de_assoc_001",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "front": "What is the Databricks Lakehouse Platform?",
+    "back": "Unified platform combining data lakes and data warehouses",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_002",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "front": "What is a Databricks cluster?",
+    "back": "Group of computation resources for running workloads",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_003",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "front": "What are the two types of clusters?",
+    "back": "All-purpose and Job clusters",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_004",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "front": "What is autoscaling?",
+    "back": "Automatically adjusts cluster size based on workload",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_005",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "front": "What is a Delta table?",
+    "back": "Table format that uses Parquet files with transaction log",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_006",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "front": "What does the transaction log store?",
+    "back": "Complete history of all operations on the table",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_007",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "front": "What is ACID compliance?",
+    "back": "Atomicity, Consistency, Isolation, Durability guarantees",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_008",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "front": "What does MERGE INTO do?",
+    "back": "Upserts data based on matching conditions",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_assoc_009",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "front": "How do you convert Parquet to Delta?",
+    "back": "Use CONVERT TO DELTA command",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_010",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "front": "What is Auto Loader?",
+    "back": "Incrementally loads new data files from cloud storage",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_011",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "front": "What file formats does Auto Loader support?",
+    "back": "JSON, CSV, Parquet, Avro, ORC and more",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_012",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "front": "What is schema inference in Auto Loader?",
+    "back": "Automatically detects schema from incoming data",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_013",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "front": "What does schema evolution allow?",
+    "back": "Handles changing schemas over time",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_014",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "front": "What is Structured Streaming?",
+    "back": "Stream processing engine built on Spark SQL",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_015",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "front": "What are the output modes?",
+    "back": "Append, Complete, and Update",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_016",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "front": "What is a checkpoint?",
+    "back": "Saves stream processing progress for recovery",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_017",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "front": "What is watermarking?",
+    "back": "Handles late arriving data in streaming",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_assoc_018",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "front": "What is a medallion architecture?",
+    "back": "Bronze, Silver, Gold layered data architecture",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_019",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "front": "What is the Bronze layer?",
+    "back": "Raw ingested data with minimal transformation",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_020",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "front": "What is the Silver layer?",
+    "back": "Cleaned and conformed data",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_021",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "front": "What is the Gold layer?",
+    "back": "Business-level aggregates for analytics",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_022",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "What is Delta Live Tables?",
+    "back": "Declarative framework for building data pipelines",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_023",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "What is the difference between live tables and streaming tables?",
+    "back": "Live tables: batch, streaming tables: continuous",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_assoc_024",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "What do expectations do in DLT?",
+    "back": "Define data quality rules",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_025",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "What are the expectation actions?",
+    "back": "FAIL, DROP, and WARN",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_026",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "What is data skipping?",
+    "back": "Avoids reading files that don't match query predicates",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_assoc_027",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "What does caching do?",
+    "back": "Stores data in memory for faster access",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_028",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "When should you partition data?",
+    "back": "When queries frequently filter on specific columns",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_029",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "What is the recommended partition size?",
+    "back": "Around 1GB per partition",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_de_assoc_030",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "front": "What is a metastore in Unity Catalog?",
+    "back": "Top-level container for metadata",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_031",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "front": "What is an external location?",
+    "back": "Configured path to cloud storage",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_032",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "front": "What is a storage credential?",
+    "back": "Authentication to access cloud storage",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_033",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "front": "What privilege is needed to create a schema?",
+    "back": "CREATE SCHEMA on catalog",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_034",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "What is Databricks Workflows?",
+    "back": "Orchestration service for jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_035",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "What is a task in a workflow?",
+    "back": "Individual unit of work in a job",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_036",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "What types of tasks are supported?",
+    "back": "Notebook, Python, SQL, JAR and more",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_037",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "front": "What is task dependencies?",
+    "back": "Defines execution order between tasks",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_038",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "front": "What is a Spark DataFrame?",
+    "back": "Distributed collection of data organized into named columns",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_de_assoc_039",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "front": "What does .filter() do?",
+    "back": "Filters rows based on condition",
+    "difficulty": 1
+  },
+  {
+    "id": "fc_de_assoc_040",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "front": "What is the difference between transformation and action?",
+    "back": "Transformations are lazy, actions trigger execution",
+    "difficulty": 3
+  }
+]

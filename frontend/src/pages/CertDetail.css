@@ -1,0 +1,41 @@
+.cd-header { padding: 24px; margin-bottom: 18px; border-left: 4px solid var(--brand-primary); }
+.cd-header h1 { font-size: 23px; font-weight: 800; margin: 8px 0 6px; }
+.cd-links { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+
+.cd-tabs { display: flex; gap: 4px; border-bottom: 2px solid var(--brand-border); margin-bottom: 22px; }
+.cd-tabs button {
+  display: inline-flex; align-items: center; gap: 7px; background: none; border: none;
+  padding: 12px 18px; font-size: 14px; font-weight: 600; color: var(--brand-text-secondary);
+  border-bottom: 2px solid transparent; margin-bottom: -2px;
+}
+.cd-tabs button:hover { color: var(--brand-primary); }
+.cd-tabs button.active { color: var(--brand-primary); border-bottom-color: var(--brand-primary); }
+
+.cd-overview { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.cd-topics { padding: 20px; }
+.cd-topics h3 { font-size: 15px; margin-bottom: 12px; }
+.cd-topics ul { list-style: none; }
+.cd-topics li {
+  padding: 9px 0; border-bottom: 1px solid var(--brand-border); font-size: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.cd-topics li::before { content: '•'; color: var(--brand-primary); font-weight: 800; }
+.cd-topics li:last-child { border-bottom: none; }
+.cd-overview-cards { display: flex; flex-direction: column; gap: 16px; }
+.cd-action { padding: 22px; cursor: pointer; transition: all 0.15s ease; }
+.cd-action:hover { box-shadow: var(--shadow-md); border-color: var(--brand-primary); }
+.cd-action h4 { font-size: 16px; margin: 10px 0 6px; }
+.cd-action p { font-size: 13px; }
+
+.cd-resources { grid-column: 1 / -1; padding: 20px 22px; }
+.cd-resources h3 { font-size: 15px; margin-bottom: 12px; }
+.cd-resources ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; }
+.cd-resources li { padding: 7px 0; border-bottom: 1px solid var(--brand-border); }
+.cd-resources a {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+  color: var(--brand-text); }
+.cd-resources a:hover { color: var(--brand-primary); text-decoration: none; }
+.cd-resources a svg { color: var(--brand-primary); flex-shrink: 0; }
+@media (max-width: 720px) { .cd-resources ul { grid-template-columns: 1fr; } }
+
+@media (max-width: 720px) { .cd-overview { grid-template-columns: 1fr; } }

@@ -1,0 +1,124 @@
+/* Estudiar con IA — Deep dive + Hands-on (AI Prep Guide) · visual premium */
+.sa { display: flex; flex-direction: column; gap: 22px; }
+
+/* Card con padding generoso y encabezado con barra de acento */
+.sa-block {
+  padding: 28px 30px 30px;
+  position: relative;
+  overflow: hidden;
+}
+.sa-block::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-primary-light));
+  opacity: .9;
+}
+.sa-block h3 {
+  display: flex; align-items: center; gap: 10px; margin: 0 0 6px;
+  font-size: 18px; font-weight: 700; letter-spacing: -0.01em;
+}
+.sa-block h3 > svg { color: var(--brand-primary); }
+.sa-sub {
+  color: var(--brand-text-secondary, #6b7280); font-size: 13.5px;
+  line-height: 1.6; margin: 0 0 20px; max-width: 760px;
+}
+
+/* Chips de tópico */
+.sa-topics { display: flex; flex-wrap: wrap; gap: 9px; }
+.sa-chip {
+  padding: 9px 16px; border: 1.5px solid var(--brand-border); border-radius: 999px;
+  background: var(--brand-surface); font-size: 13px; font-weight: 500;
+  color: var(--brand-text, #1f2937); cursor: pointer;
+  transition: border-color .15s, background .15s, color .15s, transform .1s, box-shadow .15s;
+}
+.sa-chip:hover:not(:disabled) {
+  border-color: var(--brand-primary); color: var(--brand-primary);
+  transform: translateY(-1px); box-shadow: var(--shadow);
+}
+.sa-chip.active {
+  background: var(--brand-primary); color: #fff; border-color: var(--brand-primary);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--brand-primary) 35%, transparent);
+}
+.sa-chip:disabled { opacity: .55; cursor: default; }
+
+.sa-loading {
+  display: flex; align-items: center; gap: 10px; margin-top: 22px;
+  color: var(--brand-text-secondary, #6b7280); font-size: 14px;
+}
+.sa-error {
+  margin-top: 18px; padding: 13px 16px; background: var(--brand-error-bg);
+  color: var(--brand-error); border-radius: var(--radius); font-size: 13px;
+  border: 1px solid color-mix(in srgb, var(--brand-error) 25%, transparent);
+}
+
+/* Deep dive — resultado */
+.sa-dd {
+  margin-top: 24px; padding-top: 24px;
+  border-top: 1px solid var(--brand-border);
+}
+.sa-dd h4 {
+  margin: 0 0 20px; font-size: 17px; font-weight: 700;
+  color: var(--brand-primary); letter-spacing: -0.01em;
+}
+.sa-dd-block {
+  display: flex; gap: 13px; margin-bottom: 18px;
+  padding: 14px 16px; border-radius: var(--radius-lg);
+  background: var(--brand-bg); border: 1px solid var(--brand-border);
+}
+.sa-dd-block > svg {
+  flex-shrink: 0; margin-top: 1px; color: var(--brand-primary);
+}
+.sa-dd-block b {
+  display: block; font-size: 11px; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--brand-text-muted, #9ca3af); margin-bottom: 5px;
+  font-weight: 700;
+}
+.sa-dd-block p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--brand-text, #1f2937); }
+.sa-code {
+  margin: 8px 0 0; padding: 16px 18px; background: #1e1e2e; color: #e4e4e7;
+  border-radius: var(--radius); font-size: 12.5px; line-height: 1.6; overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+.sa-doc { margin-top: 10px; }
+
+/* Hands-on checklist */
+.sa-progress {
+  margin: 20px 0 10px; font-size: 13px; font-weight: 700;
+  color: var(--brand-primary); letter-spacing: .01em;
+}
+.sa-tasks { list-style: none; padding: 0; margin: 0; }
+.sa-task {
+  border: 1px solid var(--brand-border); border-radius: var(--radius-lg);
+  margin-bottom: 10px; transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.sa-task:hover { border-color: var(--brand-primary-light); box-shadow: var(--shadow); }
+.sa-task label {
+  display: flex; gap: 13px; align-items: flex-start;
+  padding: 15px 17px; cursor: pointer;
+}
+.sa-task input {
+  margin-top: 2px; width: 18px; height: 18px; flex-shrink: 0;
+  accent-color: var(--brand-primary); cursor: pointer;
+}
+.sa-task-text { display: block; font-size: 14px; line-height: 1.55; color: var(--brand-text, #1f2937); }
+.sa-task.done { background: var(--brand-bg); border-color: var(--brand-border); }
+.sa-task.done .sa-task-text { text-decoration: line-through; opacity: .55; }
+.sa-task-meta { display: flex; gap: 8px; margin-top: 9px; flex-wrap: wrap; }
+.sa-task-obj {
+  font-size: 11px; font-weight: 600; padding: 3px 10px;
+  background: var(--brand-info-bg); color: var(--brand-info); border-radius: 999px;
+}
+.sa-task-min {
+  font-size: 11px; font-weight: 600; padding: 3px 10px;
+  background: var(--brand-primary-pale); color: var(--brand-primary); border-radius: 999px;
+}
+.sa-regen { margin-top: 16px; }
+
+/* ── Hands-on: "cómo hacerlo" (steps + doc oficial) ───────────────────────── */
+.sa-how { margin-top: 10px; padding-left: 30px; }
+.sa-how-toggle { display: inline-flex; align-items: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px 0; font-size: 12.5px; font-weight: 600; color: var(--brand-primary); }
+.sa-how-toggle:hover { text-decoration: underline; }
+.sa-how-steps { margin: 8px 0 4px; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.sa-how-steps li { font-size: 13px; line-height: 1.55; color: var(--brand-text-secondary, #4b5563); }
+.sa-how-doc { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 12.5px; font-weight: 600; color: var(--brand-primary); text-decoration: none; }
+.sa-how-doc:hover { text-decoration: underline; }

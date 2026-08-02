@@ -1,0 +1,1917 @@
+[
+  {
+    "id": "genai_001",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "What is the primary purpose of using delimiters in prompt engineering?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To separate different sections of code",
+      "To distinguish between instruction and context",
+      "To mark boundaries between different prompt examples",
+      "To indicate the end of a conversation"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delimiters in prompt engineering are used to distinguish between instruction and context, as explicitly mentioned in the documentation. Examples include ###, ```, {}, [], or ---. This clear separation helps the model understand which part is instruction versus the content it should work with.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_002",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "Which advanced prompting technique involves providing a few input-output examples to guide the model?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Zero-shot prompting",
+      "Few-shot prompting",
+      "Prompt chaining",
+      "Model fine-tuning"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Few-shot prompting is defined in the documentation as 'providing a few input-output examples to guide the model.' This technique helps the model understand the expected response pattern without requiring full model retraining, unlike zero-shot which provides no examples.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_003",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "Which pattern for agent reasoning is characterized by 'Thought', 'Act', and 'Observe' states?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Planning",
+      "ReAct (Reason + Act)",
+      "Multi-Agent Collaboration",
+      "Tool Use / Function Calling"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The ReAct (Reason + Act) pattern is explicitly described in the documentation as having three main states: 'Thought' (reflect on the problem), 'Act' (choose the correct tool and input format), and 'Observe' (evaluate the result and generate the next thought).",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_004",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "When decomposing a business problem for AI implementation, what's the first step?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Select appropriate models",
+      "Identify business objectives",
+      "Map tasks to specific AI models",
+      "Design the prompt templates"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation clearly states that the first step in selecting model tasks is to 'Identify Business Objectives' where you 'clearly define what the business aims to achieve.' This initial clarity is essential before proceeding to decompose the problem or select models.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_005",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "What is the benefit of prompt chaining for complex tasks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It reduces the need for model selection",
+      "It decreases overall token usage",
+      "It allows linking multiple tasks where output of one prompt serves as input for the next",
+      "It eliminates the need for data preparation"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The documentation defines prompt chaining as 'linking multiple tasks together with the output of one prompt serving as the input for the next.' This allows breaking down complex problems into manageable steps, with each step building on the previous one.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_006",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "Which frameworks are mentioned for building robust agent-based systems?",
+    "question_type": "multiple_choice",
+    "options": [
+      "TensorFlow and PyTorch",
+      "LangChain, AutoGPT, and OpenAI Function Calling",
+      "Django and Flask",
+      "React and Angular"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation specifically mentions 'LangChain, AutoGPT, and OpenAI Function Calling' as tools and frameworks for building robust agent-based systems. These frameworks provide structure for defining and using functions within prompts.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_007",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "What criteria should be considered when selecting the best LLM for an application?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only the model size",
+      "Only the inference speed",
+      "Only the model provider",
+      "Training data, fine-tuning capabilities, and performance metrics"
+    ],
+    "correct_answers": [
+      3
+    ],
+    "explanation": "The documentation states that when selecting an LLM, you should 'evaluate the attributes of various LLMs, such as their training data, fine-tuning capabilities, and performance metrics' to select the most suitable model for the application.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_008",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "What is the purpose of model cards in model selection?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To provide only marketing information",
+      "To offer transparency about training data, performance metrics, and ethical considerations",
+      "To restrict model access to authorized users",
+      "To display only technical specifications"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to the documentation, model cards 'provide transparency about the training data, performance metrics, and ethical considerations, aiding in making informed decisions about model selection.' They help users understand model capabilities and limitations.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_009",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "When selecting chain components for a model, what framework is specifically mentioned for building and managing chains?",
+    "question_type": "multiple_choice",
+    "options": [
+      "PyTorch",
+      "TensorFlow",
+      "LangChain",
+      "Hugging Face Transformers"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The documentation explicitly mentions LangChain for building chains, stating 'Use LangChain to build and manage the chain components.' Other frameworks mentioned include LLamaIndex and OpenAI Agents, but LangChain is specifically highlighted for building and managing chains.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_010",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "What chunking strategy is described as 'computationally efficient' in the documentation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Context-aware chunking",
+      "Fixed-size chunking",
+      "Windowed summarization",
+      "Metadata injection"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation describes fixed-size chunking as 'computationally efficient' while context-aware chunking is described as ensuring 'logical flow.' Fixed-size chunking divides text into chunks of a specific number of tokens, making it easier to implement and more efficient.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_011",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "Which chunking strategy maintains logical flow in document processing?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Fixed-size chunking by tokens",
+      "Random chunking",
+      "Context-aware chunking by sentence or paragraph",
+      "Compression-based chunking"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The documentation specifically mentions that context-aware chunking 'ensures logical flow,' as it divides text by natural boundaries like sentences, paragraphs, or sections using special punctuation such as periods or newlines.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_012",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "What advanced chunking strategy involves maintaining context across document sections?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Recursive chunking",
+      "Windowed summarization",
+      "Token-based segmentation",
+      "Contextual embedding"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation specifically mentions 'Windowed Summarization' as an advanced chunking strategy where 'Each chunk includes a summary of the previous chunks to maintain context across the document,' helping preserve information continuity between chunks.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_013",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "Which Python package is mentioned for OCR (Optical Character Recognition) tasks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "PyPDF",
+      "Doctr",
+      "Tesseract",
+      "OpenCV"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation specifically mentions Doctr as a package 'where OCR (Optical Character Recognition) is required to extract text.' This indicates it's a recommended tool for converting image-based text to machine-readable text.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_014",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "When assessing source documents for a RAG application, what three key criteria should be evaluated?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Size, format, and language",
+      "Age, source, and popularity",
+      "Relevance, quality, and diversity",
+      "Complexity, length, and visual elements"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The documentation explicitly mentions three key criteria for evaluating source documents: 'Relevance' (selecting documents highly relevant to the domain), 'Quality Assessment' (evaluating accuracy and reliability), and 'Diversity' (ensuring coverage of various aspects of required knowledge).",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_015",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "What is the primary purpose of chunking in RAG applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To reduce storage costs",
+      "To divide documents into manageable pieces that fit within model constraints",
+      "To improve processing speed",
+      "To simplify document formatting"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation clearly states that chunking is about 'dividing documents into manageable pieces that fit within the model's context window and constraints.' This ensures that content can be effectively processed by the model given its token limitations.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_016",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "What tool is specifically mentioned for facilitating the evaluation of retrievers and LLMs?",
+    "question_type": "multiple_choice",
+    "options": [
+      "TensorBoard",
+      "MLflow",
+      "Weights & Biases",
+      "Prometheus"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation explicitly states that 'MLflow facilitates the evaluation of retrievers and LLMs, supporting batch comparisons and scalable experimentation.' It's specifically mentioned as a tool for evaluation in the context of retrieval performance.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_017",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "What Python package would be most appropriate for extracting text from scanned PDF documents?",
+    "question_type": "multiple_choice",
+    "options": [
+      "PyPDF",
+      "Doctr",
+      "Pandas",
+      "Matplotlib"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation specifically mentions Doctr for cases 'where OCR (Optical Character Recognition) is required to extract text' from scanned documents, making it the appropriate choice for this scenario.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_018",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "What metrics are mentioned for evaluating retrieval performance in RAG applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "BLEU and ROUGE scores",
+      "Context precision, context recall, faithfulness, answer relevancy, and answer correctness",
+      "Perplexity and entropy",
+      "F1 score and accuracy"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation specifically lists 'Context Precision,' 'Context Recall,' 'Faithfulness,' 'Answer Relevancy,' and 'Answer Correctness' as the key metrics for evaluating retrieval performance in RAG applications.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_019",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What is the primary function of Retrieval-Augmented Generation (RAG) in generative AI applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To train models on new data in real-time",
+      "To combine LLMs with external knowledge bases for more contextually accurate outputs",
+      "To compress model size for faster inference",
+      "To generate multiple alternative outputs"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation describes RAG as a technique to 'combine LLMs with external knowledge bases to provide more contextually accurate outputs.' This approach enhances model responses with relevant information retrieved from external sources.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_020",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What is the purpose of prompt augmentation in RAG applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To increase the model's vocabulary",
+      "To enhance prompts by injecting relevant context from external sources",
+      "To reduce response generation time",
+      "To limit the model's creativity"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation explicitly states that prompt augmentation is used to 'enhance prompts by injecting relevant context retrieved from external sources.' This technique improves the relevance and accuracy of generated responses.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_021",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What is a key consideration when implementing LLM guardrails?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Ensuring system prompts instruct the model not to provide certain information",
+      "Always using the highest temperature setting",
+      "Minimizing context window size",
+      "Avoiding any form of output filtering"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "The documentation mentions that guardrails can be 'simple (e.g., System Prompt - instructing the model not to provide certain information) or complex (e.g., using specialized models like Llama Guard).' System prompts are a key implementation mechanism for basic guardrails.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_022",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What is the purpose of metaprompts in LLM applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To generate other prompts automatically",
+      "To minimize hallucinations and prevent leaking private data",
+      "To increase model training efficiency",
+      "To optimize token usage"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "According to the documentation, metaprompts are designed to 'minimize hallucinations' by providing clear instructions that guide the LLM to provide accurate responses without fabricating information. They also help prevent leaking private data through proper guardrails.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_023",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "When selecting an embedding model based on context length, what factor must be considered?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only the model's popularity",
+      "Only the computational cost",
+      "The expected length of source documents and queries",
+      "Only the model's release date"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The documentation states that when selecting embedding models, you must consider 'context length... to handle the expected length of source documents and queries.' This ensures the model can effectively capture and represent the necessary context.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_024",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What is the primary purpose of implementing LLM guardrails?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To increase model creativity",
+      "To prevent negative outcomes like harmful or inappropriate responses",
+      "To maximize token efficiency",
+      "To reduce computational costs"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation explicitly states that guardrails are implemented 'to prevent harmful or inappropriate responses.' They serve as protective mechanisms to ensure the model's outputs remain safe and appropriate.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_025",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "Which framework is specifically mentioned for creating multi-stage reasoning chains?",
+    "question_type": "multiple_choice",
+    "options": [
+      "TensorFlow",
+      "PyTorch",
+      "LangChain",
+      "Scikit-learn"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The documentation specifically mentions 'using LangChain for creating multi-stage reasoning chains that handle complex workflows.' This framework is designed to help build and manage chains of prompts and models for complex tasks.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_026",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What is the primary consideration when defining and ordering tools for multi-stage reasoning?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Computational efficiency",
+      "Task dependencies and logical workflow",
+      "Model size limitations",
+      "API rate limits"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When defining and ordering tools for multi-stage reasoning, the primary consideration is understanding task dependencies and creating a logical workflow. The documentation describes patterns like ReAct, Tool Use, and Planning, all of which involve understanding dependencies between tasks and creating appropriate sequences.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_027",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What is the recommended approach for controlling model outputs to prevent harmful responses?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only using the smallest possible model",
+      "Implementing guardrails like system prompts and safety filters",
+      "Avoiding all generative AI applications",
+      "Only allowing pre-defined responses"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation recommends implementing 'guardrails to prevent harmful or inappropriate responses' which can be 'simple (e.g., System Prompt) or complex (e.g., using specialized models like Llama Guard)' as well as using 'Safety Filter on Foundation Model API.'",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_028",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "In prompt engineering, what's the most effective way to request structured output from an LLM?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use a low temperature setting",
+      "Provide clear formatting instructions with examples",
+      "Increase the token limit",
+      "Apply aggressive truncation"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation emphasizes that for structured output, you should provide clear formatting instructions with examples such as 'Return the output as a JSON object. The output should look like {'Title': 'In and Out'}.' This explicit guidance helps the model understand the exact structure required.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_029",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What is the primary purpose of using delimiters like ###, ```, {}, or --- in prompts?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To improve model performance",
+      "To distinguish between instruction and context",
+      "To reduce token count",
+      "To increase response creativity"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation explicitly states that delimiters are used 'to distinguish between instruction and context.' They provide clear separation between different parts of the prompt, helping the model understand what's instruction versus content to work with.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_030",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What method is used to create tools for specific data retrieval needs in generative AI applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only using pre-built APIs",
+      "Data extraction and chunking with embedding models and vector stores",
+      "Only manual data collection",
+      "Only database queries"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation describes the process as involving 'splitting documents into manageable chunks, embedding the chunks with a model, and storing them in a vector store' along with using appropriate tools and libraries for data extraction.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_031",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What frameworks are mentioned for managing interactions with language models in generative AI applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only TensorFlow",
+      "LangChain and similar tools for linking components like prompt templates and chains",
+      "Only PyTorch",
+      "Only Scikit-learn"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation describes 'LangChain' as 'a tool designed to manage interactions with language models, facilitating complex applications by linking together various components such as prompt templates, memory, and chains.'",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_032",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What is a key strategy for reducing hallucinations in LLM responses?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Using higher temperature settings",
+      "Constructing better prompts and using augmented context",
+      "Only using the largest models",
+      "Avoiding any external data"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation mentions that reducing hallucinations involves 'constructing better prompts and using augmented context' as well as implementing proper guardrails and evaluation techniques.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_033",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What components are essential for vector databases in generative AI applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only storage capabilities",
+      "Embedding models and vector search endpoints for high-dimensional vectors",
+      "Only querying interfaces",
+      "Only backup systems"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation mentions that 'Vector Databases' are 'essential for storing high-dimensional vectors for efficient retrieval' and that 'Databricks supports integration with Mosaic AI Vector Search, which uses embedding models and vector search endpoints.'",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_034",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What approach is recommended for qualitatively assessing LLM responses?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only automated metrics",
+      "Using evaluation metrics and identifying issues like hallucinations and bias",
+      "Only user feedback",
+      "Only response length analysis"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation emphasizes 'identifying and addressing issues such as hallucinations, bias, and incomplete information' and using 'metrics like context precision, relevancy, recall, and answer correctness to assess performance.'",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_035",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What is the benefit of implementing continuous learning and feedback in RAG systems?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Reduces computational costs",
+      "Allows for iterative improvements based on user interactions and system performance evaluation",
+      "Eliminates the need for human oversight",
+      "Automatically updates model architecture"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation mentions 'implementing a feedback loop in RAG systems allows for iterative improvements based on user interactions and system performance evaluation,' which is crucial for maintaining and improving system performance over time.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_036",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "What technique is used to adjust an LLM's response from baseline to desired output?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only changing model architecture",
+      "Prompt engineering with clear instructions and iterative parameter adjustment",
+      "Only increasing training data",
+      "Only modifying the underlying model weights"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation describes using 'prompt engineering' with 'clear instructions, context, and desired output format' along with 'adjusting parameters like temperature to fine-tune the creativity and focus of responses' through 'iterative testing and refining.'",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_037",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What is the primary benefit of using MLflow's pyfunc flavor for model deployment?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It only works with specific programming languages",
+      "It allows models to be loaded as Python functions for deployment",
+      "It only supports small models",
+      "It eliminates the need for model serialization"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation states that 'MLflow's pyfunc flavor is a versatile model interface for MLflow Python models. It allows models to be loaded as Python functions for deployment.' This flexibility makes it easier to deploy models in various environments.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_038",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What is the purpose of pre-processing in a pyfunc model chain?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only to reduce model size",
+      "Only to format outputs",
+      "To prepare input data before it is fed into the model",
+      "Only to compress data"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The documentation describes pre-processing as 'critical for preparing input data before it is fed into the model.' This step ensures that input data is in the right format and structure for the model to process effectively.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_039",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What method is used to register a model to Unity Catalog using MLflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "mlflow.save_model()",
+      "mlflow.register_model()",
+      "mlflow.log_artifact()",
+      "mlflow.deploy_model()"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation shows code examples using `mlflow.register_model(model_uri=model_uri, name=model_name)` to register a model to Unity Catalog, making it available for versioning, staging, and deployment.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_040",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What is the purpose of the Inference Table in Databricks Model Serving?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only for performance monitoring",
+      "Each request-response is appended to a delta table for monitoring, debugging, and retraining",
+      "Only for error logging",
+      "Only for user feedback collection"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation explicitly states that 'Each request-response in Model Serving is appended to a delta table in Unity Catalog (for monitoring, debugging, retraining/fine tuning)' and 'helps to calculate drift, perplexity calculations.'",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_041",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What is the basic structure of a LangChain chain in Python?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A single model without any additional components",
+      "A sequence including prompt templates, models, and possibly retrievers",
+      "Only retrieval components without any models",
+      "Only database connections"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation shows examples of LangChain implementations that include prompt templates, models, and potentially retrievers or other components arranged in a sequence to process inputs and generate outputs.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_042",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "For deploying a RAG application, what index is recommended for efficient similarity searches?",
+    "question_type": "multiple_choice",
+    "options": [
+      "B-tree index",
+      "Vector Search index",
+      "Hash index",
+      "Bitmap index"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation explicitly recommends using 'Mosaic AI Vector Search to index the vectors' when setting up the retrieval component of a RAG application, as this enables efficient similarity searches.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_043",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What SQL function is mentioned for batch inference in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "AI_QUERY()",
+      "MODEL_PREDICT()",
+      "INFERENCE_BATCH()",
+      "APPLY_MODEL()"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "The documentation specifically mentions using 'SQL using Databricks AI_QUERY()' for batch inference scenarios where data processing occurs at intervals greater than 30 minutes.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_044",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What method is used to parallelize model inference for speed using MLflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "mlflow.parallel_predict()",
+      "mlflow.batch_inference()",
+      "mlflow.pyfunc.spark_udf()",
+      "mlflow.distributed_predict()"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The documentation shows an example using `mlflow.pyfunc.spark_udf()` which creates a user-defined function that can be applied to a Spark DataFrame, enabling parallel processing across cluster nodes for improved speed.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_045",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What components are required to create a basic RAG application?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only an LLM model",
+      "A retriever, embedding model, vector store, and generator",
+      "Only a classifier model",
+      "Only a vector database"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation states that 'A typical RAG (Retrieval-Augmented Generation) application involves setting up a retriever, an embedding model, a vector store, and a generator,' with each component playing a crucial role in the workflow.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_046",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "How does Databricks Model Serving handle requests to a deployed model?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Through batch processing only",
+      "Via a REST API endpoint",
+      "Only through direct database connections",
+      "Only through scheduled jobs"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation mentions using 'Databricks Model Serving to deploy the application and create a REST endpoint for real-time querying,' indicating that deployed models are accessible through REST API endpoints.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_047",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What is the purpose of Unity Catalog in the model deployment workflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only for model performance monitoring",
+      "For governance, access control, and metadata management",
+      "Only for model versioning",
+      "Only for cost optimization"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation states that 'Unity Catalog provides ACLs (Access Control Lists) to secure models' and is used 'for governance and to maintain lineage and metadata of models and data,' showing its role in comprehensive model management.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_048",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What is recommended for serving large models with approximately 10B parameters?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Standard CPU instances",
+      "GPU instances with sufficient RAM (e.g., 40 GB)",
+      "Single-core processors",
+      "Mobile devices"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation explicitly states that 'Large models (~10B parameters = 10^9) at FP32 (32 bit floating precision = 4 byte) precision require significant GPU RAM (10 * 10^9 * 4 ~= 40 GB),' indicating the need for GPU instances with sufficient memory.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_049",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What method is used to query a Vector Search index in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only SQL queries",
+      "REST API or Python SDK",
+      "Only through command-line tools",
+      "Only through batch processing"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation states that you can 'use the provided REST API or Python SDK to query the vector search index,' indicating these are the primary methods for interacting with Vector Search indices.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_050",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Governance",
+    "question_text": "What is the primary purpose of implementing masking techniques in generative AI applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To enhance model performance",
+      "To hide sensitive information during data processing for privacy and compliance",
+      "To reduce computational costs",
+      "To increase response creativity"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation describes masking techniques as being 'used to hide sensitive information during data processing to ensure privacy and compliance with regulations,' such as through tokenization, anonymization, and pseudonymization.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_051",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Governance",
+    "question_text": "What guardrail techniques are recommended to protect against malicious user inputs?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only limiting model access",
+      "Input validation, context-aware filtering, and prompt sanitization",
+      "Only using proprietary models",
+      "Only allowing pre-defined queries"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation specifically recommends 'input validation, context-aware filtering, and prompt sanitization' as guardrail techniques to protect against harmful or malicious inputs and prevent prompt injection attacks.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_052",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Governance",
+    "question_text": "What alternative is suggested for mitigating problematic text in RAG data sources?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only using the newest documents",
+      "Data cleansing techniques like text normalization and filtering offensive terms",
+      "Avoiding all external data sources",
+      "Only using pre-approved responses"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation recommends 'data cleansing' techniques including 'preprocessing steps like text normalization, filtering out offensive terms, and leveraging domain-specific stop words lists' to cleanse data before it's fed into the model.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_053",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Governance",
+    "question_text": "What tool is specifically mentioned for content classification and filtering to ensure safety compliance?",
+    "question_type": "multiple_choice",
+    "options": [
+      "TensorFlow",
+      "Llama Guard",
+      "PyTorch",
+      "Scikit-learn"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation explicitly mentions 'Llama Guard' as 'a tool that can be integrated into AI applications to classify and filter content, ensuring responses adhere to safety and compliance guidelines.'",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_054",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Governance",
+    "question_text": "What is emphasized as important when using legal and licensing requirements for data sources?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only considering the data source size",
+      "Understanding and adhering to legal and licensing requirements to avoid legal risks",
+      "Only focusing on data quality",
+      "Only evaluating technical compatibility"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation emphasizes 'understanding and adhering to the legal and licensing requirements of data sources is crucial to avoid legal risks' and recommends reviewing licenses and consulting with legal teams to ensure compliance.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_055",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "What is described as best practice when using an LLM to evaluate another LLM?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Always using the largest possible model",
+      "Using small rubric scales (like 1-3 or 1-5) and providing diverse examples",
+      "Only evaluating based on response length",
+      "Avoiding any human oversight"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation recommends 'using small rubric scales like 1-3 or 1-5' and 'including diverse examples with detailed justifications for each score' when using LLMs as judges to evaluate other LLMs.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_056",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "What is the difference between offline and online evaluation in LLM systems?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Online evaluation is only for professional users",
+      "Offline evaluation uses benchmark datasets before deployment; online evaluation uses real-time user behavior data",
+      "Offline evaluation is only for small models",
+      "Online evaluation is only used for model training"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation contrasts the two approaches: 'Offline Evaluation is conducted before deployment using curated benchmark datasets' while 'Online Evaluation is conducted post-deployment, collecting real-time user behavior data' to evaluate user responses to the system.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_057",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "What key metrics should be monitored for LLM deployments according to the documentation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only response time",
+      "Latency, throughput, accuracy, resource utilization, plus LLM-specific metrics",
+      "Only error rates",
+      "Only user feedback scores"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation lists various metrics to monitor including 'latency, throughput, accuracy, and resource utilization' as well as LLM-specific metrics like 'context precision, relevancy, and faithfulness' to ensure the quality of generated responses.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_058",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "What types of Lakehouse Monitoring are mentioned in the documentation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only batch monitoring",
+      "Time series, InferenceLog, and Snapshot",
+      "Only streaming monitoring",
+      "Only database monitoring"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation explicitly lists three types of Lakehouse Monitoring: 'Time series' (for time-based datasets), 'InferenceLog' (for model request logs), and 'Snapshot' (for other types of tables).",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_059",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "What is the purpose of inference logging in deployed RAG applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only for error tracking",
+      "To capture detailed logs of requests and responses for analysis, performance monitoring, and improvement",
+      "Only for security auditing",
+      "Only for billing purposes"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation explains that inference logging is used to 'capture detailed logs of inference requests and responses to analyze model behavior and performance in production' and to 'compute key metrics such as latency, accuracy, and relevance.'",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_060",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "How can MLflow be used to evaluate RAG applications?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Only for model training",
+      "For tracking and comparing performance metrics across model versions",
+      "Only for error logging",
+      "Only for data preparation"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The documentation states that 'MLflow supports the evaluation of RAG applications by tracking and comparing performance metrics across different model versions and configurations' and can be used to 'log parameters, metrics, and artifacts.'",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_061",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "Which of the following are valid strategies for managing token limits when building LLM-powered applications?",
+    "question_type": "multiple_select",
+    "options": [
+      "Truncating input text to fit within the context window",
+      "Summarizing retrieved chunks before passing them to the LLM",
+      "Using a model with a larger context window",
+      "Increasing the temperature parameter",
+      "Splitting the task into multiple sequential LLM calls"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Token management is a critical concern in LLM applications. Valid strategies include: truncating input text; summarizing retrieved chunks to reduce token count; using a model with a larger context window; and chaining multiple LLM calls for complex tasks. Increasing temperature affects response creativity/randomness but has no effect on token consumption.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_062",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "What is the key advantage of using overlapping chunks (sliding window chunking) compared to non-overlapping fixed-size chunks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "It reduces the total number of chunks stored",
+      "It ensures that semantically related content split across chunk boundaries is still retrievable",
+      "It decreases embedding computation time",
+      "It eliminates the need for metadata tagging"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Overlapping chunks use a sliding window approach where consecutive chunks share a portion of their content. This ensures that sentences or concepts that fall near a chunk boundary are not lost; they appear in at least one chunk in full context. This improves retrieval quality at the cost of slightly more storage and computation.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_063",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "In the context of Retrieval-Augmented Generation (RAG); what is 'query rewriting' used for?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To shorten the user query before embedding",
+      "To reformulate the user query to improve retrieval relevance from the vector store",
+      "To convert the query into SQL for structured data retrieval",
+      "To translate the query into a different language"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Query rewriting reformulates the user's original query into a form that yields better retrieval results from a vector store. Techniques include HyDE (Hypothetical Document Embeddings) and step-back prompting. The goal is to bridge the vocabulary gap between user queries and indexed document chunks; improving semantic search recall and precision.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_064",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What is the correct way to log a LangChain chain as an MLflow model so it can be deployed via Databricks Model Serving?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use mlflow.tensorflow.log_model()",
+      "Use mlflow.langchain.log_model() with the chain object",
+      "Use mlflow.sklearn.log_model() wrapping the chain",
+      "Use mlflow.onnx.log_model() after exporting the chain"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "MLflow provides a native LangChain integration via mlflow.langchain.log_model(). This flavor handles serialization of LangChain chains; including prompt templates; retrievers; and LLM references. The logged model can then be registered in Unity Catalog and deployed as a Databricks Model Serving endpoint.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_065",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "Which metric specifically measures whether the LLM's answer is grounded in and supported by the retrieved context?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Answer Relevancy",
+      "Faithfulness",
+      "Context Recall",
+      "BLEU Score"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Faithfulness measures whether the generated answer is factually consistent with and supported by the retrieved context documents. A high faithfulness score means the model does not hallucinate content beyond what is provided. Answer Relevancy measures how well the answer addresses the question; while Context Recall measures how much of the relevant information was retrieved.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_066",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Governance",
+    "question_text": "True or False: Unity Catalog in Databricks can be used to enforce access controls on both the vector search indexes and the models registered for generative AI applications.",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "True. Unity Catalog provides a unified governance layer across all data and AI assets in Databricks. This includes Delta tables used for document storage; Vector Search indexes; and models registered in the Model Registry. Fine-grained access controls (ACLs) can be applied to each asset type; enabling organizations to enforce least-privilege access for their generative AI pipelines.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_067",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "Which of the following best describes the difference between fine-tuning and Retrieval-Augmented Generation (RAG) for adapting an LLM to a specific domain?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Fine-tuning updates model weights using domain-specific data; RAG retrieves relevant documents at inference time without updating weights",
+      "Fine-tuning retrieves documents at runtime; RAG permanently updates the model",
+      "Both techniques update model weights",
+      "Neither technique changes the model behavior"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Fine-tuning adjusts model weights by training the base model on domain-specific data; making the knowledge permanent but requiring retraining when data changes. RAG injects relevant external knowledge at inference time without modifying weights; making it easier to keep knowledge current. RAG is preferred when data changes frequently; fine-tuning is preferred when style/format adaptation is needed.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_068",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "Which of the following are recommended best practices when selecting an embedding model for a RAG pipeline?",
+    "question_type": "multiple_select",
+    "options": [
+      "Match the embedding model's maximum context length to your expected chunk size",
+      "Choose an embedding model trained on data similar to your domain",
+      "Use the same embedding model for both indexing and querying",
+      "Maximize embedding dimensionality regardless of retrieval latency requirements",
+      "Evaluate embedding models using retrieval benchmarks such as MTEB"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Best practices for embedding model selection include: ensuring the model's context length accommodates your chunk size; choosing a domain-appropriate model; using the identical model for both indexing and querying (mismatched models cause retrieval failures); and evaluating via benchmarks like MTEB. Blindly maximizing dimensionality increases latency and storage costs without guaranteed quality improvement.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_069",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "What is the purpose of using Databricks Model Serving's 'Provisioned Throughput' mode for Foundation Models?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To reduce model accuracy in exchange for faster responses",
+      "To guarantee a reserved amount of tokens-per-second throughput for predictable production workloads",
+      "To enable model training on live traffic data",
+      "To automatically select the cheapest model based on request volume"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Provisioned Throughput in Databricks Model Serving allocates dedicated compute capacity expressed as tokens per second (TPS). This guarantees consistent latency and throughput for production workloads with predictable traffic. It contrasts with pay-per-token endpoints which may have variable latency under load; making Provisioned Throughput suitable for customer-facing or SLA-bound applications.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_070",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "True or False: When using an LLM as a judge to evaluate another LLM's outputs; positional bias can cause the judge model to favor responses that appear first in the comparison prompt.",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "True. Positional bias is a well-documented phenomenon where LLM judges disproportionately favor the first option presented in a pairwise comparison. Mitigation strategies include swapping the order of responses and averaging scores; using reference-based evaluation with explicit rubrics; and calibrating the judge model with human-annotated examples that correct for this bias.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_071",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Governance",
+    "question_text": "Which of the following techniques help prevent prompt injection attacks in LLM-based applications?",
+    "question_type": "multiple_select",
+    "options": [
+      "Sanitizing and validating all user inputs before passing them to the LLM",
+      "Separating system instructions from user-provided content using clear delimiters",
+      "Using a secondary LLM classifier to detect malicious inputs",
+      "Allowing users to directly modify the system prompt at runtime",
+      "Implementing output filtering to catch any policy violations in the response"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Prompt injection attacks occur when malicious user input overrides system instructions. Defenses include: input sanitization; using delimiters to clearly separate trusted instructions from untrusted user content; using a guard model (such as Llama Guard) to classify inputs; and output filtering. Allowing users to modify the system prompt directly would undermine security entirely.",
+    "difficulty": 5,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_072",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "What is the primary role of a 'router' component in a compound AI system or agentic pipeline?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To balance load across multiple GPU instances",
+      "To direct an incoming query to the most appropriate specialized sub-chain or tool based on query intent",
+      "To compress the prompt before sending it to the LLM",
+      "To cache previously generated responses"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A router in a compound AI system classifies or analyzes an incoming query and dispatches it to the most suitable processing path; such as a specific retrieval chain; a calculator tool; or a code interpreter. This enables specialization and efficiency; allowing the system to handle diverse query types without a single monolithic chain attempting to address all use cases.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_073",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "When using Databricks Mosaic AI Vector Search; what is the difference between a 'Delta Sync' index and a 'Direct Vector Access' index?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Delta Sync indexes support real-time streaming; Direct Vector Access does not",
+      "Delta Sync indexes automatically sync with a source Delta table; Direct Vector Access indexes require manual upsert operations via API",
+      "Both index types behave identically",
+      "Direct Vector Access is only available for unstructured data"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A Delta Sync index automatically keeps the vector index synchronized with changes to a linked Delta table (using incremental updates). A Direct Vector Access index does not have an automatic source table sync; instead the application must explicitly upsert or delete vectors via the Vector Search REST API or SDK. Delta Sync is preferred when the source data changes frequently and automation is desired.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_074",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "Which MLflow feature allows you to define a custom Python class with predict() logic to wrap a RAG chain for deployment?",
+    "question_type": "multiple_choice",
+    "options": [
+      "mlflow.tracking.MlflowClient",
+      "mlflow.pyfunc.PythonModel",
+      "mlflow.models.ModelSignature",
+      "mlflow.data.DatasetSource"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "mlflow.pyfunc.PythonModel is the MLflow abstraction that allows developers to define custom inference logic in Python by subclassing it and implementing the predict() method. This is the standard approach for wrapping complex RAG chains; custom pre/post-processing logic; or multi-model ensembles into a single deployable MLflow model.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_075",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "What is 'context precision' as an evaluation metric in a RAG pipeline?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The percentage of retrieved chunks that are relevant to the query",
+      "The proportion of ground-truth relevant information present in the retrieved context",
+      "The accuracy of the embedding model on a benchmark dataset",
+      "The ratio of correct tokens to total tokens generated"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Context Precision measures what fraction of the retrieved chunks are actually relevant to answering the query (precision = relevant retrieved / total retrieved). A low context precision means the retriever is returning noisy irrelevant chunks that may mislead the generator. It complements Context Recall; which measures how much relevant information was successfully retrieved.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_076",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "When deploying a custom LLM chain using Databricks Model Serving; what file must be included in the logged MLflow model to specify Python package dependencies?",
+    "question_type": "multiple_choice",
+    "options": [
+      "requirements.yaml",
+      "conda.yaml or requirements.txt (specified via pip_requirements or conda_env)",
+      "dependencies.json",
+      "packages.lock"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "MLflow model deployments require dependency specifications so the serving environment can recreate the correct Python environment. This is done by passing pip_requirements (a list or path to requirements.txt) or conda_env (a conda environment specification) when calling mlflow.*. log_model(). Without this; the serving endpoint may fail due to missing packages.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_077",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Governance",
+    "question_text": "What is the primary purpose of 'differential privacy' techniques when preparing training data for fine-tuning foundation models?",
+    "question_type": "multiple_choice",
+    "options": [
+      "To speed up the training process",
+      "To add mathematical noise guarantees that prevent the model from memorizing and leaking individual training examples",
+      "To compress the training dataset",
+      "To balance class distribution in the training set"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Differential privacy adds calibrated statistical noise during training to provide formal mathematical guarantees that the model cannot memorize or reproduce specific training examples. This protects the privacy of individuals whose data is included in the fine-tuning dataset and is particularly important in regulated industries (healthcare; finance) where training data may contain sensitive PII.",
+    "difficulty": 5,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_078",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "Which of the following statements about Reinforcement Learning from Human Feedback (RLHF) is correct?",
+    "question_type": "multiple_choice",
+    "options": [
+      "RLHF trains a reward model from human preference data and uses it to fine-tune the LLM via reinforcement learning",
+      "RLHF only applies to computer vision models",
+      "RLHF eliminates the need for any pre-training of the base model",
+      "RLHF is identical to supervised fine-tuning on labeled data"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "RLHF involves three stages: supervised fine-tuning on demonstration data; training a reward model from human preference comparisons; and then using reinforcement learning (typically PPO) to optimize the LLM's policy against the reward model. This process aligns model outputs with human preferences for helpfulness; harmlessness; and honesty. It is distinct from standard supervised fine-tuning which does not use a reward model.",
+    "difficulty": 5,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_079",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "Which of the following are valid use cases for MLflow Experiment Tracking in a generative AI development workflow?",
+    "question_type": "multiple_select",
+    "options": [
+      "Logging prompt templates as parameters for comparison across runs",
+      "Recording evaluation metrics such as faithfulness and answer relevancy per run",
+      "Storing inference table data from production traffic",
+      "Comparing chunking strategies by logging retrieval quality metrics across experiments",
+      "Automatically retraining the LLM when metrics degrade"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "MLflow Experiment Tracking is used to log and compare parameters (such as prompt templates; chunk size; overlap) and metrics (such as faithfulness; answer relevancy; context precision) across development runs. It supports artifact logging and run comparison. Production inference table data is managed by Databricks Lakehouse Monitoring rather than Experiment Tracking; and MLflow does not natively trigger automatic LLM retraining.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_080",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Governance",
+    "question_text": "What is the recommended approach for handling personally identifiable information (PII) discovered in documents ingested into a RAG pipeline?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Store PII documents without modification and rely on access controls alone",
+      "Apply PII detection and redaction or masking before embedding and indexing the documents",
+      "Delete all documents that contain any PII before ingestion",
+      "Only use PII-free public datasets for RAG applications"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The recommended approach is to apply automated PII detection (using tools such as Presidio or similar NLP-based detectors) followed by redaction or masking prior to embedding and indexing. This ensures PII does not get stored in the vector index or returned to end users in retrieved chunks. Relying solely on access controls is insufficient because the LLM itself could surface PII in generated responses.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_081",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "A data science team built a customer-support chatbot using a large foundation model with a simple prompt: 'Answer the customer question.' During testing; the chatbot frequently produces overly verbose answers; sometimes includes irrelevant product details; and occasionally fabricates warranty terms. Which prompt engineering fix is MOST likely to resolve these issues?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Increase the model's temperature to 1.0 to encourage more creative responses",
+      "Add explicit instructions with role assignment; output length constraints; and a directive to only reference provided context documents",
+      "Switch to a smaller model with fewer parameters",
+      "Remove the system prompt entirely and rely on the user message alone"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The root cause is an under-specified prompt. By assigning a clear role (e.g. 'You are a concise customer-support agent'); adding output length constraints (e.g. 'Respond in at most three sentences'); and instructing the model to only reference supplied context; you reduce verbosity; irrelevant content; and hallucinated warranty terms. Raising temperature would increase randomness and worsen the problem.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_082",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "A financial services company wants to build an AI agent that can answer questions about account balances; initiate wire transfers after manager approval; and cite compliance regulations. The agent must interact with three backend APIs in real time. Which design pattern is MOST appropriate?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A single zero-shot LLM call with all API documentation in the prompt",
+      "A ReAct-style agent with defined tools for each API; structured observations; and iterative reasoning steps",
+      "A static chain that always calls all three APIs in sequence regardless of the query",
+      "A fine-tuned model that has memorized all account balances"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A ReAct (Reasoning + Acting) agent is ideal because it interleaves reasoning steps with tool invocations; allowing the LLM to decide which APIs to call based on the user's query. This handles the dynamic nature of the task — some queries only need balance lookups while others require multi-step approval workflows. A static chain wastes resources calling unnecessary APIs; and memorizing balances is infeasible for live data.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_083",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "A startup must choose a foundation model for an internal code-review assistant. The assistant must understand code in 8 programming languages; handle files up to 15;000 tokens; and run within a limited GPU budget. Which selection criterion should weigh MOST heavily?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The model's performance on general-knowledge benchmarks like MMLU",
+      "The model's context window size and code-specific benchmark scores relative to its parameter count and serving cost",
+      "The number of languages the model can translate between in natural language",
+      "The model's image-understanding capabilities"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "For a code-review assistant the critical factors are (a) sufficient context window to handle 15K-token files; (b) strong code understanding validated by code-specific benchmarks such as HumanEval or MBPP; and (c) cost-effective serving within a limited GPU budget — which favors smaller but code-specialized models. General-knowledge benchmarks and image capabilities are irrelevant to this use case.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_084",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "An engineer is building a question-answering system over technical manuals. For straightforward factual lookups ('What is the torque specification for bolt X?') the system works well; but for complex multi-step reasoning questions ('Compare the maintenance intervals of systems A; B; and C and recommend the most cost-effective schedule') it fails. Which approach should the engineer adopt?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Switch from chain-of-thought prompting to a single zero-shot prompt to simplify the pipeline",
+      "Implement chain-of-thought prompting that instructs the model to break the comparison into explicit reasoning steps before producing a final answer",
+      "Reduce the retrieval context window to return fewer chunks",
+      "Remove the system prompt to give the model more freedom"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Complex multi-step reasoning benefits from chain-of-thought (CoT) prompting; which instructs the model to decompose the problem into intermediate steps (retrieve intervals for each system; compare costs; then recommend). This explicit reasoning structure dramatically improves accuracy on comparison and synthesis tasks. Reducing context or removing guidance would hurt performance on these harder queries.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_085",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Design Applications",
+    "question_text": "A healthcare company deploys an LLM-based assistant that answers patient questions. During a red-team exercise; testers discover the model can be manipulated into providing specific dosage recommendations — which is clinically dangerous. Which guardrail implementation strategy BEST mitigates this risk?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Add a disclaimer at the end of every response stating 'consult your doctor'",
+      "Implement an input/output guardrail layer that detects medical-dosage requests via a classifier and blocks or redirects them before the response reaches the user",
+      "Fine-tune the model on more medical data so its dosage answers become accurate",
+      "Lower the temperature to 0.0 to make responses deterministic"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A dedicated guardrail layer with a topic classifier that intercepts both input and output is the most robust approach. It can detect dosage-related queries and either block them or replace the response with a safe referral message. Disclaimers alone are insufficient for safety-critical domains; fine-tuning does not guarantee correctness for all dosages; and temperature adjustment does not prevent harmful content.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_086",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "A legal team wants to build a RAG system over 500-page contracts. Each contract contains numbered clauses; sub-clauses; and cross-references between sections. The current chunking strategy uses fixed 512-token chunks with no overlap; and retrieval frequently returns partial clauses that miss critical cross-referenced context. Which chunking improvement is MOST effective?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Reduce chunk size to 128 tokens to increase the number of chunks",
+      "Switch to a structure-aware chunking strategy that splits on clause boundaries and includes parent-clause context in each chunk",
+      "Increase chunk size to 4096 tokens to capture entire sections",
+      "Remove chunking entirely and embed each full 500-page contract as one vector"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Structure-aware (hierarchical) chunking that respects clause boundaries ensures each chunk contains a complete legal thought. Including parent-clause context addresses cross-reference issues. Fixed-size chunking ignores document structure and splits mid-clause. Extremely large chunks dilute relevance; and embedding a full 500-page document exceeds embedding model limits and destroys retrieval precision.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_087",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "A team is building a RAG system for a multilingual knowledge base containing documents in English; French; German; and Japanese. They need to select an embedding model. Which selection criterion is MOST important?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Choose the embedding model with the largest output dimension regardless of language support",
+      "Select a multilingual embedding model (e.g.; multilingual-e5-large) that was trained on all four target languages and evaluate it on cross-lingual retrieval benchmarks",
+      "Always use a separate monolingual embedding model per language",
+      "Use a keyword-based TF-IDF model since it handles any language"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A multilingual embedding model trained on all target languages maps semantically similar content from different languages into a shared vector space; enabling cross-lingual retrieval. This is critical when users query in one language but relevant documents exist in another. Separate monolingual models cannot perform cross-lingual matching; and TF-IDF misses semantic similarity.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_088",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "An engineering team ingests PDF technical manuals that contain text paragraphs; specification tables; and circuit diagrams. Their current pipeline extracts only raw text using a basic PDF parser; resulting in garbled table data and completely lost diagram information. Which pipeline redesign MOST comprehensively addresses these issues?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Switch to a different text-only PDF parser with better encoding support",
+      "Implement a multi-modal document processing pipeline that uses table extraction (e.g.; table transformers); OCR for scanned pages; and a vision model to generate text descriptions of diagrams",
+      "Convert all PDFs to plain text and discard tables and diagrams",
+      "Only index the text portions and add a disclaimer that tables are not supported"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A multi-modal pipeline is needed because the documents contain three distinct content types. Table extraction tools preserve structured data; OCR handles scanned content; and vision models (or image captioning) convert diagrams into searchable text descriptions. Discarding tables and diagrams loses critical technical information that users will query.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_089",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "A media company wants to build a search system over a video library. Each video has a transcript; thumbnail images; and metadata tags. The team needs to make all content searchable via natural-language queries. Which approach correctly handles this multi-modal content for embedding and retrieval?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Embed only the transcripts and ignore images and metadata",
+      "Use a multi-modal embedding model (e.g.; CLIP-based) for images and a text embedding model for transcripts; then store both vector types in the same index with metadata filters",
+      "Convert thumbnail images to base64 text and embed them with a text model",
+      "Store only metadata tags and use keyword search"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The correct approach uses purpose-built models for each modality: text embeddings for transcripts and multi-modal embeddings (e.g.; CLIP) for images. Storing both in a unified vector index with metadata filters allows natural-language queries to match across modalities. Encoding images as base64 text produces meaningless text embeddings; and ignoring modalities reduces search coverage.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_090",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Data Preparation",
+    "question_text": "A healthcare RAG pipeline ingests clinical notes that frequently contain patient names; dates of birth; and social security numbers. The team discovers that PII is appearing in retrieved chunks shown to end users. Which pipeline stage should be added; and where?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Add PII redaction as a post-processing step after the LLM generates its final answer",
+      "Add PII detection and redaction as a pre-processing step before chunking and embedding; so PII never enters the vector store",
+      "Add PII detection only at query time to filter out PII from user questions",
+      "Rely on the LLM's instruction-following to avoid repeating PII in answers"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "PII must be detected and redacted before documents are chunked and embedded. This prevents PII from ever being stored in the vector index; eliminating the risk of retrieval surfacing it. Post-generation redaction is fragile because the LLM may rephrase PII in unexpected ways. Query-time filtering only protects against PII in questions; not in source documents. Relying on LLM instructions is unreliable for safety-critical requirements.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_091",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "A developer's RAG pipeline retrieves the correct documents (verified by inspecting the retriever output); but the LLM's final answer frequently contradicts or ignores the retrieved context. Which component of the pipeline is MOST likely causing the issue; and what is the fix?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The embedding model is low quality — replace it with a larger embedding model",
+      "The prompt template for the generation step is poorly constructed — revise it to explicitly instruct the model to base its answer on the provided context and quote relevant passages",
+      "The vector search index has incorrect metadata filters — reconfigure the index",
+      "The chunk size is too large — reduce it to 64 tokens"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Since the retriever returns correct documents; the problem lies in the generation step. A poorly constructed prompt may not sufficiently instruct the model to ground its answer in the retrieved context. Revising the prompt to include explicit instructions like 'Answer ONLY based on the context below' and 'Quote relevant passages' directly addresses the faithfulness issue.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_092",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "A team deploys a RAG application backed by a Databricks Vector Search index using the Delta Sync mode. After updating source documents in the Delta table; users report that search results still return outdated content for several hours. What is the MOST likely cause and resolution?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The embedding model has cached old vectors — restart the embedding model",
+      "The Delta Sync index pipeline has not yet triggered a sync — check the sync status and consider switching to a triggered or continuous sync mode for fresher results",
+      "The LLM is caching previous answers — clear the LLM cache",
+      "The users' browsers are caching old responses — instruct users to clear their cache"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Sync indexes periodically sync changes from the source Delta table. If the sync interval is long; updated documents will not be reflected in search results until the next sync completes. Checking the sync status and configuring a more frequent or continuous sync mode ensures fresher content. The issue is not with LLM caching or browser caching but with the vector index update pipeline.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_093",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "A developer is debugging a LangChain agent that sometimes enters an infinite loop — the agent repeatedly calls the same tool with identical arguments without progressing toward an answer. Which TWO fixes are MOST effective?",
+    "question_type": "multiple_select",
+    "options": [
+      "Add a max_iterations parameter to the agent executor to force termination after a set number of steps",
+      "Remove all tools so the agent can only use its internal knowledge",
+      "Add an output parser that validates tool outputs and injects a 'move on' instruction if the same tool is called more than twice consecutively",
+      "Increase the LLM temperature to 2.0 to add randomness",
+      "Disable all logging to reduce overhead"
+    ],
+    "correct_answers": [
+      0,
+      2
+    ],
+    "explanation": "Setting max_iterations prevents infinite loops by capping the number of reasoning-action cycles. Adding an output parser that detects repeated identical tool calls and modifies the prompt to encourage the agent to try a different approach addresses the root cause. Removing tools defeats the purpose of the agent; extreme temperature causes incoherent outputs; and disabling logging removes debugging visibility.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_094",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Application Development",
+    "question_text": "A developer calls the Databricks Foundation Model API to generate product descriptions and receives intermittent HTTP 429 (rate limit) errors during peak hours. Which strategy BEST ensures reliable operation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Catch 429 errors and immediately retry without any delay",
+      "Implement exponential backoff with jitter on retries and consider provisioned throughput for predictable peak-hour traffic",
+      "Switch to a completely different LLM provider whenever a 429 error occurs",
+      "Reduce the max_tokens parameter to 1 to minimize rate-limit consumption"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "HTTP 429 indicates rate limiting. Exponential backoff with jitter spaces out retries to avoid thundering-herd problems. For predictable peak-hour demand; provisioned throughput on Databricks Model Serving guarantees dedicated capacity. Immediate retries worsen congestion; switching providers is operationally complex; and reducing max_tokens to 1 makes responses useless.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_095",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "A team has developed a RAG chain logged as an MLflow pyfunc model and now needs to deploy it to production on Databricks. The chain must handle real-time user queries with sub-second latency. Which deployment approach is MOST appropriate?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Schedule a Databricks job to run the chain in batch mode every hour",
+      "Deploy the MLflow model to a Databricks Model Serving endpoint configured for real-time inference with GPU-enabled instances",
+      "Export the model as a static ONNX file and serve it from a local laptop",
+      "Deploy the model using only a Databricks notebook with a webhook trigger"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks Model Serving endpoints are purpose-built for real-time inference with auto-scaling; load balancing; and GPU support. Deploying the MLflow pyfunc model to a serving endpoint provides the sub-second latency required. Batch jobs introduce hour-long delays; ONNX export on a laptop is not production-grade; and notebook-based webhook serving lacks reliability and scalability.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_096",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "An e-commerce company's LLM-powered product recommendation chatbot experiences 10x traffic spikes during flash sales. During the last sale; the serving endpoint became overloaded and returned timeout errors. Which scaling configuration change MOST effectively addresses this?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Set a fixed number of replicas equal to the peak traffic expectation at all times",
+      "Configure auto-scaling on the Model Serving endpoint with appropriate min and max replica counts and a scale-to-zero policy for off-peak periods",
+      "Deploy a second identical endpoint and manually switch DNS during sales",
+      "Reduce the model's context window to speed up inference during spikes"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Auto-scaling with configured min/max replicas allows the serving endpoint to dynamically add capacity during traffic spikes and scale down (even to zero) during quiet periods; optimizing both reliability and cost. Fixed peak provisioning wastes resources during normal traffic. Manual DNS switching is error-prone. Reducing context window degrades answer quality.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_097",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Assembling and Deploying Apps",
+    "question_text": "A product team wants to compare two prompt variations for their deployed summarization model to determine which produces higher user satisfaction scores. Both prompts use the same underlying foundation model. Which approach allows a rigorous production comparison?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Run both prompts in a notebook on a sample of 10 inputs and eyeball the results",
+      "Configure a Model Serving endpoint with traffic splitting to route 50% of live traffic to each prompt variant; then analyze user feedback and quality metrics from inference tables",
+      "Deploy only the new prompt and compare results to historical logs from the old prompt",
+      "Ask the LLM itself to judge which prompt is better"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Traffic splitting on a Model Serving endpoint enables a controlled A/B test in production with real user queries. Inference tables capture inputs; outputs; and latency for both variants; enabling rigorous statistical comparison of user satisfaction and quality metrics. Notebook evaluation on 10 samples is not statistically valid; historical comparison introduces confounders; and LLM self-evaluation lacks user-preference signal.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_098",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "A RAG application is in production and the team suspects the LLM is generating answers that are not faithful to the retrieved context. They need to quantify this problem. Which evaluation approach MOST directly measures faithfulness?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Calculate BLEU scores between the generated answer and the retrieved context",
+      "Use an LLM-as-judge evaluation that checks whether every claim in the generated answer is supported by the retrieved context and flags unsupported claims",
+      "Measure the cosine similarity between the answer embedding and the query embedding",
+      "Count the number of tokens in the generated answer"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Faithfulness evaluation requires checking whether the generated answer's claims are grounded in the retrieved context. An LLM-as-judge approach (as used in frameworks like RAGAS or MLflow evaluate) systematically decomposes the answer into individual claims and verifies each against the context. BLEU measures n-gram overlap which does not capture semantic faithfulness; cosine similarity measures relevance not faithfulness; and token count is unrelated.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_099",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "A deployed customer-service bot occasionally generates confident-sounding but factually incorrect answers (hallucinations). The team needs an automated detection strategy. Which combination of techniques is MOST effective?",
+    "question_type": "multiple_select",
+    "options": [
+      "Implement a post-generation self-consistency check that samples multiple answers at low temperature and flags responses where answers diverge significantly",
+      "Add a retrieval-grounding check that verifies each claim against source documents",
+      "Monitor user thumbs-down feedback as the sole detection method",
+      "Log all interactions and periodically review a random sample manually",
+      "Rely entirely on the system prompt instruction 'do not hallucinate'"
+    ],
+    "correct_answers": [
+      0,
+      1
+    ],
+    "explanation": "Self-consistency checking (sampling multiple responses and detecting divergence) catches cases where the model is uncertain but sounds confident. Retrieval-grounding verification ensures claims are supported by source documents. User feedback alone is lagging and incomplete. Manual review does not scale. Prompt instructions are helpful but unreliable as a sole safeguard against hallucination.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "genai_100",
+    "certification_id": "generative_ai_engineer_associate",
+    "topic": "Evaluation and Monitoring",
+    "question_text": "A team has deployed an LLM application on Databricks Model Serving and wants to continuously monitor output quality in production. They observe that quality degrades over time as user query patterns shift. Which Databricks-native monitoring strategy is MOST appropriate?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Manually read a sample of logs every Friday and report issues in a spreadsheet",
+      "Enable inference tables on the serving endpoint to capture all requests and responses; then use Databricks Lakehouse Monitoring to track quality metrics; detect drift; and trigger alerts",
+      "Redeploy the model weekly regardless of whether quality has changed",
+      "Add a feedback button to the UI and only investigate if complaints exceed a threshold"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Inference tables automatically log all serving endpoint inputs and outputs to a Delta table. Databricks Lakehouse Monitoring can then compute quality metrics (e.g.; toxicity; relevance; faithfulness via LLM judge); detect distribution drift in queries or responses; and trigger alerts when metrics degrade. This provides continuous; automated monitoring. Manual weekly reviews are too infrequent; blind redeployment wastes resources; and feedback-only monitoring misses issues users do not report.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  }
+]

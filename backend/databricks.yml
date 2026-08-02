@@ -1,0 +1,61 @@
+bundle:
+  name: certifica
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Deploy via Databricks CLI (Asset Bundle). Alternativa ao notebook de setup
+# (setup/setup_databricks.py), para quem tem a CLI configurada.
+#
+# 1. Configure um profile:  databricks auth login --host <workspace-url> --profile <nome>
+# 2. Ajuste o target abaixo (host + profile) e o backend/app.yaml (Lakebase, LLM, e-mails).
+# 3. Crie o secret scope + jwt_secret e faça:  databricks bundle deploy -t prod -p <nome>
+# ─────────────────────────────────────────────────────────────────────────────
+
+sync:
+  include:
+    - app/**
+    - app.yaml
+    - requirements.txt
+    - seed/**
+    - static/**
+  exclude:
+    - "**/__pycache__"
+    - "**/*.pyc"
+    - ".env"
+    - ".venv/**"
+
+variables:
+  llm_endpoint:
+    description: Serving endpoint (chat) usado pelo app.
+    default: databricks-claude-opus-4-8
+  secret_scope:
+    description: Secret scope com jwt_secret.
+    default: certifica
+
+targets:
+  # Preencha host + profile do seu workspace.
+  prod:
+    mode: production
+    workspace:
+      host: https://<workspace>.cloud.databricks.com
+      # profile: <seu-profile>
+
+resources:
+  apps:
+    certifica:
+      name: certifica
+      description: "Certifica — Multi-tenant hub for Databricks certification prep"
+      source_code_path: .
+      resources:
+        - name: jwt-secret
+          secret:
+            scope: ${var.secret_scope}
+            key: jwt_secret
+            permission: READ
+        # LLM (Foundation Model API) — o app chama serving_endpoints.query com a
+        # identidade dele; precisa de CAN_QUERY no endpoint.
+        - name: llm-endpoint
+          serving_endpoint:
+            name: ${var.llm_endpoint}
+            permission: CAN_QUERY
+        # Auth ao Postgres é por OAuth do service principal (Lakebase); não há
+        # resource 'database' — o acesso de rede ao Lakebase é default.

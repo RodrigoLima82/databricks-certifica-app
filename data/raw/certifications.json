@@ -1,0 +1,196 @@
+[
+  {
+    "id": "data_engineer_associate",
+    "name": "Databricks Certified Data Engineer Associate",
+    "type": "data_engineer",
+    "level": "associate",
+    "description": "Fundamental skills for data engineering on the Databricks platform",
+    "exam_guide_url": "https://www.databricks.com/sites/default/files/2026-05/databricks-certified-data-engineer-associate-exam-guide-may-2026-000.pdf",
+    "topics": [
+      "Data Governance & Quality",
+      "Data Processing & Transformations",
+      "Databricks Intelligence Platform",
+      "Development and Ingestion",
+      "Productionizing Data Pipelines"
+    ],
+    "resources": [
+      {
+        "label": "Página da certificação",
+        "url": "https://www.databricks.com/learn/certification/data-engineer-associate"
+      },
+      {
+        "label": "Docs: Lakeflow Declarative Pipelines (DLT)",
+        "url": "https://docs.databricks.com/aws/en/dlt/"
+      },
+      {
+        "label": "Central de demos Databricks",
+        "url": "https://www.databricks.com/resources/demos"
+      }
+    ]
+  },
+  {
+    "id": "data_engineer_professional",
+    "name": "Databricks Certified Data Engineer Professional",
+    "type": "data_engineer",
+    "level": "professional",
+    "description": "Advanced data engineering skills and architectural design",
+    "exam_guide_url": "https://www.databricks.com/sites/default/files/2025-11/databricks-certified-data-engineer-professional-exam-guide-november-30-2025_0.pdf",
+    "topics": [
+      "Data Modeling",
+      "Data Processing",
+      "Databricks Tooling",
+      "Monitoring and Logging",
+      "Security and Governance",
+      "Testing and Deployment"
+    ],
+    "resources": [
+      {
+        "label": "Página da certificação",
+        "url": "https://www.databricks.com/learn/certification/data-engineer-professional"
+      },
+      {
+        "label": "Docs: Lakeflow Declarative Pipelines (DLT)",
+        "url": "https://docs.databricks.com/aws/en/dlt/"
+      },
+      {
+        "label": "Central de demos Databricks",
+        "url": "https://www.databricks.com/resources/demos"
+      }
+    ]
+  },
+  {
+    "id": "data_analyst_associate",
+    "name": "Databricks Certified Data Analyst Associate",
+    "type": "data_analyst",
+    "level": "associate",
+    "description": "SQL and visualization skills for data analysis",
+    "exam_guide_url": "https://www.databricks.com/sites/default/files/2025-10/databricks-certified-data-analyst-associate-oct-2025.pdf",
+    "topics": [
+      "Analytics Applications",
+      "Data Management",
+      "Data Visualization and Dashboards",
+      "Databricks SQL",
+      "SQL"
+    ],
+    "resources": [
+      {
+        "label": "Página da certificação",
+        "url": "https://www.databricks.com/learn/certification/data-analyst-associate"
+      },
+      {
+        "label": "Docs: Databricks SQL",
+        "url": "https://docs.databricks.com/aws/en/sql/"
+      },
+      {
+        "label": "Demo: LLM batch inference com SQL",
+        "url": "https://www.databricks.com/resources/demos/tutorials/data-warehouse/query-llm-with-dbsql"
+      }
+    ]
+  },
+  {
+    "id": "machine_learning_associate",
+    "name": "Databricks Certified Machine Learning Associate",
+    "type": "machine_learning",
+    "level": "associate",
+    "description": "Fundamental ML engineering on Databricks",
+    "exam_guide_url": "https://www.databricks.com/sites/default/files/2025-02/databricks-certified-machine-learning-associate-exam-guide-1-mar-2025.pdf",
+    "topics": [
+      "Databricks Machine Learning",
+      "ML Workflows",
+      "Model Deployment",
+      "Model Development"
+    ],
+    "resources": [
+      {
+        "label": "Página da certificação",
+        "url": "https://www.databricks.com/learn/certification/machine-learning-associate"
+      },
+      {
+        "label": "Demo: Feature Store & online inference",
+        "url": "https://www.databricks.com/resources/demos/tutorials/data-science-and-ai/feature-store-and-online-inference"
+      },
+      {
+        "label": "Demo: MLOps end-to-end",
+        "url": "https://notebooks.databricks.com/demos/mlops-end2end/index.html"
+      },
+      {
+        "label": "Docs: AutoML",
+        "url": "https://docs.databricks.com/aws/en/machine-learning/automl/"
+      },
+      {
+        "label": "Docs: Machine Learning na Databricks",
+        "url": "https://docs.databricks.com/aws/en/machine-learning/"
+      }
+    ]
+  },
+  {
+    "id": "machine_learning_professional",
+    "name": "Databricks Certified Machine Learning Professional",
+    "type": "machine_learning",
+    "level": "professional",
+    "description": "Advanced ML engineering and MLOps practices",
+    "exam_guide_url": "https://www.databricks.com/sites/default/files/2025-10/databricks-certified-machine-learning-professional-exam-guide-september.pdf",
+    "topics": [
+      "Experimentation",
+      "Model Deployment",
+      "Model Lifecycle Management",
+      "Solution and Data Monitoring"
+    ],
+    "resources": [
+      {
+        "label": "Página da certificação",
+        "url": "https://www.databricks.com/learn/certification/machine-learning-professional"
+      },
+      {
+        "label": "Demo: MLOps end-to-end",
+        "url": "https://notebooks.databricks.com/demos/mlops-end2end/index.html"
+      },
+      {
+        "label": "Demo: Lakehouse Monitoring",
+        "url": "https://www.databricks.com/resources/demos/tutorials/data-science-and-ai/monitor-your-data-quality-with-lakehouse-monitoring"
+      },
+      {
+        "label": "Docs: Feature Store",
+        "url": "https://docs.databricks.com/aws/en/machine-learning/feature-store/"
+      },
+      {
+        "label": "MLflow Docs",
+        "url": "https://mlflow.org/docs/latest/index.html"
+      }
+    ]
+  },
+  {
+    "id": "generative_ai_engineer_associate",
+    "name": "Databricks Certified Generative AI Engineer Associate",
+    "type": "data_scientist",
+    "level": "associate",
+    "description": "Use Databricks to build performant generative AI solutions",
+    "exam_guide_url": "https://www.databricks.com/sites/default/files/2026-03/Databricks-Certified-Generative-AI-Engineer-Associate-Exam-Guide-Mar26.pdf",
+    "topics": [
+      "Application Development",
+      "Assembling and Deploying Apps",
+      "Data Preparation",
+      "Design Applications",
+      "Evaluation and Monitoring",
+      "Governance"
+    ],
+    "resources": [
+      {
+        "label": "Página da certificação",
+        "url": "https://www.databricks.com/learn/certification/genai-engineer-associate"
+      },
+      {
+        "label": "Docs: RAG (Retrieval Augmented Generation)",
+        "url": "https://docs.databricks.com/aws/en/generative-ai/retrieval-augmented-generation.html"
+      },
+      {
+        "label": "Docs: Construir apps GenAI (Agent Framework)",
+        "url": "https://docs.databricks.com/aws/en/generative-ai/agent-framework/build-genai-apps.html"
+      },
+      {
+        "label": "Demo: Deploy do seu LLM chatbot",
+        "url": "https://www.databricks.com/resources/demos/tutorials/data-science-and-ai/lakehouse-ai-deploy-your-llm-chatbot"
+      }
+    ]
+  }
+]

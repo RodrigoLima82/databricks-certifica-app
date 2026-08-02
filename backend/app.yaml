@@ -1,0 +1,60 @@
+command:
+  - sh
+  - -c
+  - uvicorn app.main:app --host 0.0.0.0 --port ${DATABRICKS_APP_PORT:-8080}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TEMPLATE. Preencha os valores marcados <...> para o seu workspace, ou use o
+# notebook setup/setup_databricks.py, que GERA este arquivo automaticamente.
+# ─────────────────────────────────────────────────────────────────────────────
+env:
+  - name: MOCK_MODE
+    value: "false"
+
+  # ── Lakebase (Postgres) via OAuth do service principal do app ──────────────
+  # Sem senha estática: o app gera credencial OAuth em runtime para a instância;
+  # o PGUSER é resolvido automaticamente para o client_id do SP do app.
+  - name: LAKEBASE_INSTANCE_NAME
+    value: "certifica-db"
+  - name: PGHOST
+    value: "<endpoint>.database.<region>.databricks.net"   # read_write_dns da instância
+  - name: PGPORT
+    value: "5432"
+  - name: PGDATABASE
+    value: "databricks_postgres"
+  - name: PGSSLMODE
+    value: "require"
+  - name: PGSCHEMA
+    value: "certifica"
+
+  # ── LLM (Foundation Model API) ─────────────────────────────────────────────
+  # Qualquer chat model do workspace (ex.: databricks-claude-opus-4-8, gpt-oss-120b).
+  - name: LLM_ENDPOINT
+    value: "databricks-claude-opus-4-8"
+
+  # ── Autenticação (JWT) ─────────────────────────────────────────────────────
+  - name: ENABLE_JWT_AUTH
+    value: "true"
+  - name: JWT_SECRET
+    valueFrom: jwt-secret
+  - name: AUTH_HEADER
+    value: "X-App-Auth"
+  - name: SUPERADMIN_EMAILS
+    value: "<seu-email@empresa.com>"
+  - name: SEED_ADMIN_PASSWORD
+    value: "Certifica@2026"
+  - name: PASS_MARK
+    value: "70"
+
+  # ── Primeiro tenant (opcional) ─────────────────────────────────────────────
+  - name: DEFAULT_TENANT_SLUG
+    value: ""
+  - name: DEFAULT_TENANT_NAME
+    value: ""
+
+  # Seed idempotente no primeiro boot (cria schema + banco de questões + superadmin).
+  - name: SEED_ON_STARTUP
+    value: "true"
+
+  - name: CORS_ORIGINS
+    value: "https://*.databricksapps.com"

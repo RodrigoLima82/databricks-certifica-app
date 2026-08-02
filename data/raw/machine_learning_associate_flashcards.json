@@ -1,0 +1,322 @@
+[
+  {
+    "id": "fc_ml_assoc_001",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "front": "What is supervised learning?",
+    "back": "Learning from labeled training data",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_002",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "front": "What is unsupervised learning?",
+    "back": "Finding patterns in unlabeled data",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_003",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "front": "What is the difference between classification and regression?",
+    "back": "Classification predicts categories, regression predicts continuous values",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_004",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "front": "What is overfitting?",
+    "back": "Model learns training data too well and fails on new data",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_005",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "front": "What is underfitting?",
+    "back": "Model is too simple to capture patterns",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_006",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "front": "What is feature engineering?",
+    "back": "Creating new features from existing data",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_007",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "front": "What is normalization?",
+    "back": "Scaling features to similar range, typically 0 to 1",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_008",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "front": "What is standardization?",
+    "back": "Scaling features to mean 0 and standard deviation 1",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_009",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "front": "What is one-hot encoding?",
+    "back": "Converting categorical variables to binary columns",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_010",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "front": "What is train-test split?",
+    "back": "Dividing data into training and testing sets",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_011",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is cross-validation?",
+    "back": "Evaluating model on multiple train-test splits",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_assoc_012",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is k-fold cross-validation?",
+    "back": "Dividing data into k subsets and training k times",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_assoc_013",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is a hyperparameter?",
+    "back": "Parameter set before training, not learned from data",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_014",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is hyperparameter tuning?",
+    "back": "Finding optimal hyperparameters for model",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_015",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is grid search?",
+    "back": "Exhaustively searching hyperparameter combinations",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_assoc_016",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is accuracy?",
+    "back": "Percentage of correct predictions",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_017",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is precision?",
+    "back": "True positives divided by predicted positives",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_018",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is recall?",
+    "back": "True positives divided by actual positives",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_019",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is F1 score?",
+    "back": "Harmonic mean of precision and recall",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_assoc_020",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is AUC-ROC?",
+    "back": "Area under ROC curve measures classification performance",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_assoc_021",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is logistic regression?",
+    "back": "Linear model for binary classification",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_022",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is a decision tree?",
+    "back": "Tree structure that splits data based on features",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_023",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is random forest?",
+    "back": "Ensemble of decision trees",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_024",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is gradient boosting?",
+    "back": "Sequential ensemble that corrects previous errors",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_assoc_025",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Development",
+    "front": "What is k-means clustering?",
+    "back": "Partitions data into k clusters",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_026",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "front": "What is MLlib?",
+    "back": "Spark's machine learning library",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_027",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "front": "What is a Pipeline in MLlib?",
+    "back": "Sequence of transformers and estimators",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_028",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "front": "What is a Transformer?",
+    "back": "Algorithm that transforms data",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_029",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "front": "What is an Estimator?",
+    "back": "Algorithm that fits on data to produce a model",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_030",
+    "certification_id": "machine_learning_associate",
+    "topic": "ML Workflows",
+    "front": "What is Databricks Feature Store?",
+    "back": "Centralized repository for ML features",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_031",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "front": "What is feature serving?",
+    "back": "Making features available for online predictions",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_032",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "front": "What is point-in-time lookup?",
+    "back": "Retrieving feature values as they were at specific time",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_assoc_033",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "front": "What is feature lineage?",
+    "back": "Tracking which features are used in which models",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_assoc_034",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "front": "What is MLflow Model Registry?",
+    "back": "Central repository for managing ML model lifecycle",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_035",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "front": "What are model versions?",
+    "back": "Different iterations of the same model",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_036",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "front": "What is model staging?",
+    "back": "Moving models through Development, Staging, Production",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_037",
+    "certification_id": "machine_learning_associate",
+    "topic": "Model Deployment",
+    "front": "What is model lineage?",
+    "back": "Tracking model provenance and dependencies",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_ml_assoc_038",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "front": "What is AutoML?",
+    "back": "Automated machine learning model selection and tuning",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_039",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "front": "What does Databricks AutoML do?",
+    "back": "Automatically trains and tunes multiple models",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_ml_assoc_040",
+    "certification_id": "machine_learning_associate",
+    "topic": "Databricks Machine Learning",
+    "front": "What is the output of AutoML?",
+    "back": "Notebook with best model and code for reproduction",
+    "difficulty": 2
+  }
+]

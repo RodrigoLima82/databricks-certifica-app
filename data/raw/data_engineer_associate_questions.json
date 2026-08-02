@@ -1,0 +1,1918 @@
+[
+  {
+    "id": "de_assoc_001",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "Which features does Databricks automatically enable for Delta Lake optimization without manual intervention?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Auto Optimize and Auto Compaction",
+      "Manual OPTIMIZE commands only",
+      "Z-Ordering on all columns",
+      "Daily VACUUM operations"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Auto Optimize and Auto Compaction run automatically to maintain optimal file sizes (around 128 MB) and prevent the small file problem that often plagues data lakes. These features work transparently during write operations without requiring manual intervention.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_002",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "What is the primary benefit of the Lakehouse Architecture?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Lower storage costs only",
+      "Combining data warehouse performance with data lake flexibility",
+      "Eliminating the need for SQL",
+      "Supporting only structured data"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Lakehouse Architecture combines the best features of data lakes (low-cost storage and support for diverse data types) and data warehouses (performance and ACID guarantees) into a single platform, providing data warehouse-like performance and reliability on data lake storage.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_003",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "Which compute type should you use for interactive development and ad-hoc analysis?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Job clusters",
+      "SQL Warehouses",
+      "All-purpose clusters",
+      "Serverless compute only"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "All-purpose clusters are designed for interactive development and ad-hoc analysis. They stay running between commands, making them ideal for notebook development where data scientists and engineers run exploratory queries iteratively.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_004",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "What is Photon acceleration particularly effective for?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Storage optimization only",
+      "Heavy computation and aggregations",
+      "Network transfers",
+      "Cluster startup time"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Photon acceleration provides vectorized query execution that can speed up queries by up to 12x. It's particularly effective for queries involving heavy computation, aggregations, joins, and data transformations.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_005",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "For production ETL pipelines with predictable workloads which cluster type is most cost-effective?",
+    "question_type": "multiple_choice",
+    "options": [
+      "All-purpose clusters",
+      "Job clusters",
+      "High-concurrency clusters",
+      "Development clusters"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Job clusters are ephemeral clusters created specifically for running automated workloads. They start when a job begins, run the workload, and terminate automatically upon completion, making them highly cost-effective for scheduled ETL pipelines.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_006",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "Which instance types should you choose for shuffle-heavy operations with large joins?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Memory-optimized instances",
+      "Compute-optimized instances",
+      "Storage-optimized instances with local SSDs",
+      "GPU-accelerated instances"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Storage-optimized clusters with local NVMe SSDs (like AWS i3 or Azure L-series) excel at shuffle-heavy operations like large joins and aggregations, as they can use local SSDs for shuffle data, significantly improving I/O performance.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_007",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "Adaptive Query Execution (AQE) automatically performs which optimization?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Writes Delta files",
+      "Coalesces shuffle partitions based on runtime statistics",
+      "Creates indexes on tables",
+      "Manages cluster scaling"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "AQE dynamically adjusts query plans during execution based on runtime statistics, including coalescing shuffle partitions to reduce the number of tasks, switching join strategies based on actual data sizes, and handling data skew more effectively.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_008",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "What is the key advantage of Serverless compute in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Lower cost for always-on workloads",
+      "Zero cluster startup time with automatic optimization",
+      "Better performance than dedicated clusters",
+      "Unlimited concurrent users"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Serverless compute eliminates infrastructure management overhead while providing instant availability (zero startup time) and automatic optimization. Resources automatically scale based on workload demands and you only pay for actual compute time used.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_009",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "Unity Catalog provides which type of governance?",
+    "question_type": "multiple_choice",
+    "options": [
+      "File-level only",
+      "Database-level only",
+      "Unified governance for all data and AI assets",
+      "Workspace-specific governance only"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Unity Catalog provides a single governance solution for all data and AI assets, offering fine-grained access controls at catalog, schema, table, and even row and column levels, with comprehensive data lineage across the platform.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_010",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "Which optimization does Z-Ordering provide?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Reduces file sizes",
+      "Co-locates related information in the same files",
+      "Increases write speed",
+      "Removes duplicate records"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Z-Ordering co-locates related information in the same set of files, dramatically improving query performance when filtering on specific columns by minimizing the amount of data that needs to be read.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_011",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "Data skipping in Delta Lake works by using what?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Secondary indexes",
+      "File statistics in the transaction log",
+      "Manual partition pruning",
+      "Bloom filters only"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Lake automatically collects statistics about data files, including minimum and maximum values for each column within each file. These statistics are maintained in the Delta Lake transaction log and used to skip entire files that don't contain relevant data.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_012",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "SQL Warehouses are optimized specifically for which workloads?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Machine learning training",
+      "ETL processing",
+      "SQL workloads and BI tools",
+      "Stream processing"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "SQL Warehouses (formerly SQL Endpoints) are optimized specifically for SQL workloads and business intelligence tools, providing instant query results through aggressive caching and query optimization, with automatic scaling based on query load.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_013",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "What is the primary benefit of using Databricks Connect?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Faster cluster startup",
+      "Local development with remote execution",
+      "Automatic code deployment",
+      "Built-in version control"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks Connect enables you to write and execute Spark code on Databricks clusters directly from your local development environment, allowing you to use local IDEs with debugging capabilities while utilizing Databricks' computational power.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_014",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "Which magic command allows you to execute another notebook in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "%python",
+      "%run",
+      "%sql",
+      "%fs"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The %run magic command lets you execute other notebooks, enabling modular development where common functions are stored in separate notebooks and imported as needed.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_015",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "Auto Loader uses which mechanism for near real-time file detection?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Polling intervals only",
+      "Cloud provider notifications (AWS SQS Azure Event Grid)",
+      "Manual triggers",
+      "Database triggers"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "For streaming ingestion, Auto Loader uses cloud provider notifications (like AWS SQS, Azure Event Grid) to detect new files within seconds of arrival, enabling near real-time processing.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_016",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "What does the cloudFiles.schemaLocation option store in Auto Loader?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Data files",
+      "Inferred schema and checkpoint information",
+      "Temporary cache",
+      "Query results"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The cloudFiles.schemaLocation option stores the inferred schema and checkpoint information, enabling schema evolution and exactly-once processing guarantees. This is critical for production use.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_017",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "Which option in Auto Loader captures malformed records without losing data?",
+    "question_type": "multiple_choice",
+    "options": [
+      "ignoreCorruptFiles",
+      "rescuedDataColumn",
+      "maxFileAge",
+      "schemaHints"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The rescuedDataColumn option specifies a column where malformed records that don't match the expected schema are stored as JSON strings, preventing data loss while maintaining pipeline stability.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_018",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "What is the purpose of the display() function in Databricks notebooks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Print to console",
+      "Enhanced visualization for DataFrames",
+      "Debug code",
+      "Export data"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The display() function provides enhanced visualization for DataFrames, including profiling statistics, data distributions, and automatic visualizations with customizable chart types, colors, and aggregations.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_019",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "Which feature allows multiple users to edit the same notebook simultaneously?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Version control",
+      "Real-time collaboration",
+      "Git integration",
+      "Notebook workflows"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Real-time collaboration in Databricks notebooks allows multiple users to edit the same notebook simultaneously, with presence indicators showing who's working where.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_020",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "What does the maxFilesPerTrigger option control in Auto Loader?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Total files to process",
+      "Files processed in each micro-batch",
+      "Maximum file size",
+      "File retention period"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The maxFilesPerTrigger option limits the number of files processed in each micro-batch, helping manage resource utilization and processing latency.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_021",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "Databricks notebooks support which programming languages natively?",
+    "question_type": "multiple_select",
+    "options": [
+      "SQL",
+      "Python",
+      "Java",
+      "Scala",
+      "R",
+      "C++"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Databricks notebooks support SQL, Python, Scala, and R within the same notebook using language magic commands. Java and C++ are not natively supported in notebooks.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_022",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "Auto Loader supports which file formats?",
+    "question_type": "multiple_select",
+    "options": [
+      "JSON",
+      "CSV",
+      "Parquet",
+      "Video files",
+      "Avro",
+      "PDF"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Auto Loader supports JSON, CSV, Parquet, Avro, ORC, Delta, and other data formats. While it can handle binary files, it doesn't process video content directly. PDFs would be handled as binary files.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_023",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "The %debug magic command in notebooks is used for what?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Performance profiling",
+      "Interactive debugging after errors",
+      "Cluster monitoring",
+      "Code formatting"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The %debug magic command can be activated after an error occurs, opening an interactive debugging session where you can examine the stack trace and variable values at the point of failure.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_024",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "Which debugging tool provides task-level metrics in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Notebook debugger",
+      "Spark UI",
+      "Ganglia",
+      "Variable explorer"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Spark UI provides detailed information about job stages, tasks, and executors, including task-level metrics like execution time, shuffle read/write volumes, and spill to disk.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_025",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "What is the Bronze layer in the Medallion Architecture primarily used for?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Business aggregates",
+      "Raw data ingestion in original format",
+      "Cleaned and validated data",
+      "Real-time analytics"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Bronze layer serves as the landing zone for all incoming data, preserving it in its original format with no transformations beyond format conversion, ensuring you can always reprocess from the original data if needed.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_026",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "Which layer in the Medallion Architecture implements data quality checks and deduplication?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Bronze",
+      "Silver",
+      "Gold",
+      "All layers equally"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Silver layer contains validated, deduplicated, and standardized data. It performs data quality checks, removes or quarantines failed records, and implements deduplication logic.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_027",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "What is the primary advantage of Delta Live Tables (DLT) for ETL development?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Lower compute costs",
+      "Declarative pipeline development",
+      "Faster query execution",
+      "Manual optimization control"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "DLT revolutionizes ETL development by providing a declarative framework where you define what the final datasets should look like, and DLT handles execution details, infrastructure, orchestration, and data quality automatically.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_028",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "DLT expectations are used for what purpose?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Performance optimization",
+      "Data quality rules and validation",
+      "Cost management",
+      "Schema evolution"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Expectations are declarative data quality rules that can warn, drop, or fail records based on conditions you define. DLT automatically tracks quality metrics showing how many records pass or fail each expectation.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_029",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "In a MERGE statement which clause handles record updates?",
+    "question_type": "multiple_choice",
+    "options": [
+      "WHEN NOT MATCHED",
+      "WHEN MATCHED",
+      "WHEN DELETED",
+      "INSERT INTO"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "WHEN MATCHED clause in MERGE operations handles updates to existing records based on matching conditions. WHEN NOT MATCHED handles inserts and WHEN MATCHED AND condition THEN DELETE handles deletions.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_030",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "Which PySpark window function would you use to access the previous row's value?",
+    "question_type": "multiple_choice",
+    "options": [
+      "lead()",
+      "lag()",
+      "row_number()",
+      "rank()"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The lag() function in PySpark window operations accesses values from previous rows, while lead() accesses values from following rows. This is essential for time-series analysis and comparing current values to previous periods.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_031",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "What does the Gold layer in Medallion Architecture typically contain?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Raw data",
+      "Cleaned data",
+      "Business-level aggregates and KPIs",
+      "Temporary processing data"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "The Gold layer provides curated, business-ready datasets optimized for specific use cases, including denormalized views, calculated KPIs, metrics, and measures that power dashboards and reports.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_032",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "Which operation in SQL creates a new table from query results?",
+    "question_type": "multiple_choice",
+    "options": [
+      "CREATE TABLE",
+      "INSERT INTO",
+      "CREATE TABLE AS SELECT (CTAS)",
+      "ALTER TABLE"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "CREATE TABLE AS SELECT (CTAS) creates new tables from query results, combining table creation and data population in a single statement.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_033",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "In DLT pipelines what decorator is used to define a table in Python?",
+    "question_type": "multiple_choice",
+    "options": [
+      "@table",
+      "@dlt.table",
+      "@delta.table",
+      "@create_table"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The @dlt.table decorator in Python is used to define datasets in Delta Live Tables pipelines. It can include parameters for comments, partitioning, and table properties.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_034",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "Which DataFrame operation would you use for OLAP-style multi-level aggregations?",
+    "question_type": "multiple_choice",
+    "options": [
+      "groupBy() only",
+      "ROLLUP and CUBE",
+      "pivot()",
+      "window()"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "ROLLUP and CUBE operations generate multiple aggregation levels in single queries, essential for OLAP-style analysis. They create subtotals and grand totals across different dimension combinations.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_035",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "True or False: Views created with CREATE VIEW store the actual data",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Views do not store actual data; they store the query definition. When queried, views execute the underlying query to retrieve current data from the source tables.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_036",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "What is the benefit of using approx_count_distinct() over count_distinct()?",
+    "question_type": "multiple_choice",
+    "options": [
+      "More accurate results",
+      "Trades accuracy for speed",
+      "Uses less memory only",
+      "Works with NULL values"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "approx_count_distinct() uses approximate algorithms that trade perfect accuracy for significantly better performance and lower memory usage, ideal when exact counts aren't required.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_037",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "What is the key difference between Databricks Asset Bundles and traditional deployment?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Faster execution",
+      "Bundle-based deployment treating assets as cohesive units",
+      "Lower costs",
+      "Better performance"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "DAB treats related assets (notebooks, libraries, configurations, job definitions) as a cohesive unit that can be developed, tested, and deployed together, with externalized configuration in YAML files.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_038",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "Where is the bundle configuration defined in Databricks Asset Bundles?",
+    "question_type": "multiple_choice",
+    "options": [
+      "In notebooks",
+      "databricks.yml file",
+      "config.json",
+      "requirements.txt"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The databricks.yml file serves as the manifest that defines the bundle's structure and deployment behavior, containing metadata, variables, environment configurations, and resource definitions.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_039",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "What type of run should you use when only certain tasks failed in a workflow?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Complete rerun",
+      "Repair run",
+      "Retry run",
+      "Manual run"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Repair runs enable efficient recovery without reprocessing successful tasks. Databricks automatically identifies failed and downstream tasks that need to be rerun while maintaining the same job run ID.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_040",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "Which directory contains the main code assets in a Databricks Asset Bundle?",
+    "question_type": "multiple_choice",
+    "options": [
+      "/config",
+      "/src",
+      "/tests",
+      "/databricks"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The src/ directory contains the main code assets including Python modules, SQL files, and notebooks, with libraries and utility functions in separate modules for reusability.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_041",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "What is the primary benefit of serverless compute for production workloads?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Lower costs for 24/7 workloads",
+      "Zero infrastructure management with automatic optimization",
+      "Dedicated resources",
+      "Manual scaling control"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Serverless compute eliminates infrastructure management overhead, provides instant availability, automatic scaling based on workload demands, and automatic performance optimization without configuration effort.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_042",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "In a repair run what happens to the cluster configuration?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Uses the failed cluster",
+      "Inherits from original run but starts fresh clusters",
+      "Creates new configuration",
+      "Uses default settings"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Repair runs inherit the cluster configuration from the original run but start fresh clusters, eliminating any corrupted state while maintaining consistency.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_043",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "What should you analyze in Spark UI to identify data skew?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Executor memory only",
+      "Task duration distribution",
+      "Network I/O",
+      "Cluster events"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Task duration distribution in Spark UI reveals data skew when a few tasks take much longer than others, indicating imbalanced data distribution across partitions.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_044",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "Which deployment pattern is recommended for bundles in production?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Direct to production",
+      "Development → Staging → Production",
+      "Manual deployment only",
+      "Ad-hoc deployment"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Environment promotion should follow a clear path from development to production with automated validation at each stage, using different configurations for each environment defined in databricks.yml.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_045",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "What indicates successful caching in the Spark UI Stages view?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Repeated stages",
+      "Skipped stages",
+      "Failed stages",
+      "Pending stages"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Skipped stages in Spark UI indicate successful caching, while repeated stages suggest missing cache opportunities that could improve performance.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_046",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "Bundle deployment with DAB is performed using which method?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Manual copying",
+      "UI CLI or REST API",
+      "Git push only",
+      "Notebook execution"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Pipelines are deployed through the UI, CLI, or REST API with configuration that specifies target schemas, compute resources, and runtime parameters.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_047",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "True or False: Serverless SQL Warehouses require cluster configuration",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Serverless SQL Warehouses require no cluster configuration - Databricks fully manages the infrastructure including provisioning, scaling, and optimization transparently.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_048",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "What information does the SQL tab in Spark UI provide?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Storage metrics",
+      "Query plans and execution metrics",
+      "Network statistics",
+      "Cluster health"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The SQL tab displays query plans and execution metrics for DataFrame operations, showing parsed logical plans, optimized logical plans, and physical execution strategies.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_049",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "What is the main difference between managed and external tables?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Performance only",
+      "Managed tables control data lifecycle external tables reference data",
+      "Storage format",
+      "Query syntax"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Managed tables give Databricks control over both metadata and data files (dropping the table deletes data), while external tables only manage metadata (dropping the table preserves data files).",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_050",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "Which permission allows users to see objects exist but not read data?",
+    "question_type": "multiple_choice",
+    "options": [
+      "SELECT",
+      "USE",
+      "MODIFY",
+      "CREATE"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The USE permission enables browsing and discovery, allowing users to see what objects exist without being able to read the actual data. SELECT permission is required to read data.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_051",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "In Unity Catalog permissions flow in which direction?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Bottom-up only",
+      "From catalogs to schemas to tables",
+      "Random inheritance",
+      "No inheritance"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Permissions flow from catalogs to schemas to tables, with grants at higher levels automatically applying to child objects. This hierarchical model simplifies permission management.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_052",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "Who can create and manage catalogs in Unity Catalog?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Any user",
+      "Metastore admins",
+      "Table owners",
+      "Data analysts"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Metastore admins manage the Unity Catalog metastore and its global policies, including creating and managing catalogs, the top-level containers for data assets.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_053",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "Where are audit logs stored in Unity Catalog?",
+    "question_type": "multiple_choice",
+    "options": [
+      "External files",
+      "System tables in Delta format",
+      "Log files",
+      "Cloud storage only"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Audit logs are stored in system tables within Unity Catalog (like system.access.audit) in Delta format, making them queryable with SQL and automatically maintained by Databricks.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_054",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "Delta Sharing allows data sharing without what?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Authentication",
+      "Data movement or copying",
+      "Permissions",
+      "Audit logging"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Sharing enables secure data sharing across organizations without data copying or movement. Recipients query data that remains in the provider's environment.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_055",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "What type of access do Delta Sharing recipients have to shared data?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Read-write access",
+      "Read-only access",
+      "Full control",
+      "Delete permissions"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Sharing provides read-only access to recipients. They cannot modify shared data, which is a technical limitation that ensures data integrity and provider control.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_056",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "Data lineage in Unity Catalog captures dependencies at which level?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Table-level only",
+      "Column-level and table-level",
+      "Database-level only",
+      "File-level only"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Unity Catalog tracks both table-level and column-level lineage, showing how individual fields flow and transform through pipelines, essential for impact analysis and compliance.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_057",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "Which statement correctly revokes permissions in Unity Catalog?",
+    "question_type": "multiple_choice",
+    "options": [
+      "DELETE permission FROM user",
+      "REVOKE privilege ON object FROM principal",
+      "REMOVE ACCESS FROM table",
+      "DROP PERMISSION ON schema"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "REVOKE statements remove permissions using the syntax: REVOKE privilege ON object FROM principal. The CASCADE option can revoke dependent grants.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_058",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "What is Lakehouse Federation primarily used for?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Data copying",
+      "Querying external databases without moving data",
+      "File storage",
+      "Cluster management"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Lakehouse Federation enables querying external databases without moving data, essential for hybrid architectures and gradual cloud migrations while maintaining data in source systems.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_059",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "True or False: Account admins have the highest level of control in Databricks",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Account admins hold the highest level of administrative control across the entire Databricks account, managing Unity Catalog metastores, identity federation, and account-level policies.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_060",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "Which costs are most significant when sharing data across different clouds?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Storage costs",
+      "Data transfer and egress costs",
+      "Compute costs only",
+      "Licensing fees"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Data transfer and egress costs represent the most significant expense in cross-cloud sharing, with providers charging substantial fees ($0.08-0.12 per GB) for data leaving their networks.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_061",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "What is the Delta Lake transaction log (_delta_log) used for?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Storing raw data files",
+      "Recording every transaction as ordered JSON entries to maintain ACID properties",
+      "Caching query results",
+      "Managing cluster state"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The Delta Lake transaction log (_delta_log directory) stores every transaction as ordered JSON entries (0000.json; 0001.json etc.) capturing adds; removes; and metadata changes. This ordered log is the foundation of Delta Lake's ACID guarantees and enables time travel.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_062",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "Which statement about Delta Lake ACID transactions is TRUE?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Delta Lake supports only eventual consistency",
+      "Concurrent reads and writes are coordinated using optimistic concurrency control",
+      "Only one writer is allowed at a time",
+      "ACID applies only to batch writes"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Lake uses optimistic concurrency control to coordinate concurrent reads and writes. Writers attempt transactions optimistically and the log is checked for conflicts at commit time; ensuring serializable isolation without blocking readers.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_063",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "True or False: The VACUUM command in Delta Lake permanently removes files that are still referenced by the current table version",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "VACUUM only removes data files that are no longer referenced by any version within the retention threshold (default 7 days). It never removes files referenced by the current version; making it safe to run regularly for storage reclamation.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_064",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "Which Delta Lake feature allows you to query a table as it existed at a prior point in time?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Schema evolution",
+      "Time travel using VERSION AS OF or TIMESTAMP AS OF",
+      "OPTIMIZE with ZORDER",
+      "ANALYZE TABLE"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Lake time travel lets you query historical snapshots using VERSION AS OF <version_number> or TIMESTAMP AS OF '<timestamp>' syntax. The transaction log retains history for the configured retention period; enabling audit; rollback; and reproducibility.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_065",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "Which of the following are valid ways to perform time travel queries on a Delta Lake table?",
+    "question_type": "multiple_select",
+    "options": [
+      "SELECT * FROM table VERSION AS OF 5",
+      "SELECT * FROM table TIMESTAMP AS OF '2024-01-01'",
+      "SELECT * FROM table@v5",
+      "SELECT * FROM table WHERE _commit_version = 5",
+      "RESTORE TABLE table TO VERSION AS OF 5"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Delta Lake supports multiple time travel syntaxes: VERSION AS OF; TIMESTAMP AS OF; and the shorthand @v<version> notation in table references. RESTORE TABLE rolls the table back to a prior version. Filtering on _commit_version is not a valid time travel mechanism.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_066",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "What is the purpose of COPY INTO in Databricks?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Copying files between cloud storage buckets",
+      "Incrementally loading files into a Delta table with idempotent exactly-once semantics",
+      "Replicating tables across workspaces",
+      "Creating table backups"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "COPY INTO provides idempotent incremental file ingestion into Delta tables. It tracks which files have already been loaded so re-running the command is safe; making it ideal for batch file ingestion workflows where files arrive in cloud storage.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_067",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "Which Auto Loader ingestion mode is recommended for very high file volumes with millions of files?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Directory listing mode",
+      "File notification mode",
+      "Batch mode",
+      "Checkpoint mode"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "File notification mode uses cloud provider event services (AWS SQS/SNS; Azure Event Grid) to receive per-file notifications instead of listing the directory. This is far more scalable and efficient for very high file volumes where directory listing would be too slow or costly.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_068",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "When using Auto Loader with schema evolution what happens when a new column is detected?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The stream fails immediately",
+      "The new column is added to the target schema and the stream restarts automatically",
+      "The new column is silently dropped",
+      "A manual schema update is required"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "With cloudFiles.schemaEvolutionMode set to 'addNewColumns' (default); Auto Loader detects new columns; updates the inferred schema stored at cloudFiles.schemaLocation; and restarts the stream automatically to incorporate the schema change without manual intervention.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_069",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "Which of the following are key differences between COPY INTO and Auto Loader?",
+    "question_type": "multiple_select",
+    "options": [
+      "Auto Loader supports streaming; COPY INTO is batch only",
+      "Auto Loader scales better to millions of files",
+      "COPY INTO uses SQL syntax; Auto Loader uses DataFrame API",
+      "Both support exactly-once semantics",
+      "Auto Loader requires a SQL Warehouse"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Auto Loader (Structured Streaming) and COPY INTO both provide exactly-once semantics and incremental ingestion. Key differences: Auto Loader supports streaming micro-batches and scales better to very large file counts using file notifications; while COPY INTO is a SQL-based batch command. Auto Loader does not require a SQL Warehouse.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_070",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "What does the MERGE INTO statement in Delta Lake accomplish?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Creates a new table from a query",
+      "Upserts data by matching source and target rows then applying conditional insert/update/delete actions",
+      "Merges two schemas together",
+      "Combines two clusters"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "MERGE INTO (upsert) matches source rows to target rows using an ON condition; then applies WHEN MATCHED (update/delete) and WHEN NOT MATCHED (insert) clauses. This enables efficient SCD Type 1 updates and CDC patterns without full table rewrites.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_071",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "In Structured Streaming what does the trigger(availableNow=True) option do?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Runs the stream continuously",
+      "Processes all available data in micro-batches then stops; combining streaming semantics with batch cost efficiency",
+      "Triggers only one micro-batch",
+      "Disables checkpointing"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "trigger(availableNow=True) processes all data currently available in the source across one or more micro-batches then gracefully stops the stream. This provides exactly-once Structured Streaming semantics at batch job cost; ideal for scheduled pipelines.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_072",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "Which DLT expectation action drops records that fail data quality rules but does NOT fail the pipeline?",
+    "question_type": "multiple_choice",
+    "options": [
+      "expect()",
+      "expect_or_fail()",
+      "expect_or_drop()",
+      "expect_all()"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "expect_or_drop() silently removes records that violate the expectation and records the drop count in DLT metrics. The pipeline continues processing clean records. expect() logs violations as warnings; expect_or_fail() halts the pipeline on any violation.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_073",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "What is a Streaming Table in Delta Live Tables?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A view that streams data to external systems",
+      "A DLT dataset that processes each record exactly once using append-only semantics",
+      "A table that auto-deletes old records",
+      "A temporary staging table"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Streaming Tables in DLT consume each input record exactly once using append-only incremental processing. They are ideal for ingestion layers and stateful operations. Materialized Views re-compute results from all data on each refresh; while Streaming Tables only process new data.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_074",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "True or False: In PySpark a narrow transformation like map() causes a shuffle across the network",
+    "question_type": "true_false",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Narrow transformations (map; filter; select) operate on data within a single partition and require no data movement across the network. Wide transformations (groupBy; join; distinct) cause shuffles. Understanding this distinction is critical for optimizing Spark job performance.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_075",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "What is the role of a checkpoint location in Structured Streaming?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Storing processed data",
+      "Persisting stream state and progress so the stream can resume exactly where it left off after a failure",
+      "Monitoring stream throughput",
+      "Compressing output files"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "The checkpoint location stores the stream's metadata; offsets; and state to durable storage. On restart after failure; Spark reads the checkpoint to determine exactly which data was last committed and resumes from that point; guaranteeing exactly-once processing end-to-end.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_076",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "In Databricks Workflows which trigger type runs a job on a fixed schedule?",
+    "question_type": "multiple_choice",
+    "options": [
+      "File arrival trigger",
+      "Manual trigger",
+      "Cron-based schedule trigger",
+      "Continuous trigger"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Cron-based schedule triggers run jobs at defined intervals using standard cron syntax (e.g. every hour; every Monday at 8am). File arrival triggers respond to new data; manual triggers require a user or API call; and continuous triggers restart jobs immediately on completion.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_077",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "Which of the following statements about Databricks Workflows task dependencies are correct?",
+    "question_type": "multiple_select",
+    "options": [
+      "Tasks can depend on multiple upstream tasks",
+      "A task only runs if all its upstream dependencies succeed by default",
+      "You can set a task to run only on failure of an upstream task",
+      "All tasks in a workflow must run sequentially",
+      "Workflows support fan-out and fan-in dependency patterns"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "explanation": "Databricks Workflows supports rich DAG-based dependency patterns: tasks can have multiple dependencies; run on success or failure of upstream tasks; and fan-out/fan-in patterns are fully supported. Tasks do NOT have to run sequentially; parallel execution of independent tasks is a key feature.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_078",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "What does the DLT pipeline mode 'Triggered' mean compared to 'Continuous'?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Triggered pipelines run indefinitely; Continuous pipelines run once",
+      "Triggered pipelines process available data then stop; Continuous pipelines run 24/7 with low-latency streaming",
+      "Triggered pipelines are slower than Continuous",
+      "There is no difference"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "In Triggered mode a DLT pipeline processes all available data and then shuts down; suitable for batch workloads with scheduled execution. In Continuous mode the pipeline runs indefinitely processing data with low latency as it arrives; suitable for near-real-time requirements. Triggered mode is generally more cost-effective.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_079",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "What is the three-level namespace used in Unity Catalog?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Database.Table.Column",
+      "Catalog.Schema.Table",
+      "Workspace.Database.Table",
+      "Metastore.Catalog.Schema"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Unity Catalog uses a three-level namespace: catalog.schema.table (e.g. main.sales.orders). Catalogs are the top-level containers; schemas (databases) group related tables; and tables/views are the leaf objects. This hierarchy enables fine-grained access control at each level.",
+    "difficulty": 2,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_080",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "Which Unity Catalog features help enforce data privacy for sensitive columns?",
+    "question_type": "multiple_select",
+    "options": [
+      "Column masking policies",
+      "Row filters",
+      "Dynamic data views only",
+      "Column-level permissions (GRANT SELECT on specific columns)",
+      "Table-level encryption keys"
+    ],
+    "correct_answers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Unity Catalog provides column masking (which replaces sensitive values with masked versions for unauthorized users); row filters (which restrict which rows users can see based on their attributes); and column-level SELECT grants. These work together to enforce fine-grained data privacy without duplicating tables.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_081",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "A data engineering team runs nightly batch ETL jobs that process 500 GB of raw JSON files. The jobs typically complete in 2 hours. Recently; the team noticed cluster startup adds 8 minutes of overhead each night. Which cluster configuration best balances cost and performance for this workload?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use an all-purpose cluster that stays running 24/7",
+      "Use a jobs cluster with instance pools to reduce startup time",
+      "Use a serverless SQL warehouse",
+      "Use a single-node cluster with a large instance type"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Because the workload is a scheduled batch ETL job; a jobs cluster is the right choice over an always-on all-purpose cluster (which wastes money during idle hours). Pairing the jobs cluster with an instance pool pre-warms VMs; cutting startup time from ~8 minutes to ~2 minutes. A SQL warehouse is optimized for BI queries not ETL; and a single-node cluster cannot handle 500 GB efficiently.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_082",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "A team maintains a Delta Lake table that receives thousands of small append operations daily from IoT sensors. Over the past month; query performance has degraded significantly. A data engineer investigates and finds the table's transaction log contains references to over 50;000 small Parquet files. Which action will most directly improve query performance?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Run OPTIMIZE on the table to compact small files",
+      "Increase the cluster size used for queries",
+      "Convert the table from Delta to Parquet format",
+      "Drop and recreate the table with a larger partitioning column"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "The root cause is the small file problem: thousands of tiny Parquet files force the query engine to open many file handles and read many footers. Running OPTIMIZE compacts these small files into larger; optimally-sized files (typically ~1 GB). This dramatically reduces I/O overhead. Increasing cluster size treats the symptom not the cause; converting away from Delta loses ACID benefits; and repartitioning doesn't address existing small files.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_083",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "A data engineer is tuning a pipeline that performs heavy aggregations and joins on a 2 TB dataset stored in Delta Lake. The pipeline currently runs on a standard DBR cluster and takes 4 hours. The engineer wants to evaluate Photon acceleration. Which scenario would benefit most from enabling Photon?",
+    "question_type": "multiple_choice",
+    "options": [
+      "A pipeline that mostly runs Python UDFs for custom string parsing",
+      "A pipeline dominated by SQL-based aggregations; joins; and scans on wide tables",
+      "A pipeline that streams micro-batches from Kafka with minimal transformations",
+      "A pipeline that trains an ML model using scikit-learn on sampled data"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Photon is a C++-based vectorized query engine optimized for SQL-based operations like scans; joins; aggregations; and filters on Delta Lake tables. It accelerates native Spark SQL and DataFrame operations but does NOT accelerate Python UDFs; arbitrary Python libraries like scikit-learn; or workloads with minimal transformation logic. The scenario with heavy SQL aggregations and joins on a large dataset is the ideal candidate.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_084",
+    "certification_id": "data_engineer_associate",
+    "topic": "Databricks Intelligence Platform",
+    "question_text": "A workspace administrator notices that several teams have created all-purpose clusters with wildly different Spark configurations; causing instability and unexpected costs. The admin wants to standardize cluster configurations while still allowing teams to run their workloads. Which approach best achieves this goal?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Revoke all cluster creation permissions and create clusters on behalf of each team",
+      "Define cluster policies that constrain instance types; autoscaling ranges; and Spark configurations; then assign policies to teams",
+      "Ask teams to follow a wiki page with recommended settings",
+      "Migrate all workloads to serverless SQL warehouses"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Cluster policies are the governance mechanism in Databricks workspaces for controlling cluster configurations. Policies let admins define allowable instance types; min/max workers; auto-termination settings; Spark configs; and more. Teams can still create clusters but only within policy constraints. Revoking permissions entirely blocks productivity; a wiki has no enforcement; and SQL warehouses are not suitable for all ETL or ML workloads.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_085",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "A data engineer sets up Auto Loader to ingest CSV files from a cloud storage landing zone. After running successfully for two weeks; the pipeline suddenly fails with a schema mismatch error. Investigation reveals that the upstream team added two new columns to the CSV files without prior notice. Which Auto Loader configuration best handles this situation going forward?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Set cloudFiles.schemaEvolutionMode to addNewColumns so new columns are automatically incorporated",
+      "Disable schema inference entirely and hardcode the schema",
+      "Switch from Auto Loader to a manual COPY INTO command",
+      "Set cloudFiles.schemaEvolutionMode to none and ignore new columns"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Auto Loader supports schema evolution modes that control behavior when new columns appear. Setting schemaEvolutionMode to addNewColumns allows the pipeline to automatically merge new columns into the target table's schema; preventing failures when upstream schemas change. Hardcoding the schema would require manual updates for every change; COPY INTO doesn't offer the same built-in schema evolution; and ignoring columns risks data loss.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_086",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "A company receives daily data dumps from three different vendors: Vendor A sends gzip-compressed CSV files (~10 GB); Vendor B sends nested JSON with arrays (~5 GB); and Vendor C sends Apache Avro files (~20 GB). The data engineer needs to build ingestion pipelines into Delta Lake for all three. Which statement about file format selection for ingestion is correct?",
+    "question_type": "multiple_choice",
+    "options": [
+      "All files should first be converted to Parquet before ingesting into Delta Lake",
+      "Auto Loader natively supports CSV; JSON; and Avro formats; so each vendor's files can be ingested directly",
+      "Only JSON files can be ingested by Auto Loader; CSV and Avro require custom parsers",
+      "Avro files cannot be stored in Delta Lake due to schema incompatibility"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Auto Loader (cloudFiles) natively supports multiple file formats including CSV; JSON; Avro; Parquet; and more. Each vendor's data can be ingested directly into Delta Lake without any intermediate conversion step. Delta Lake stores data as Parquet internally but handles the conversion automatically during write. There is no schema incompatibility between Avro and Delta.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_087",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "A data engineer needs to load a one-time historical backfill of 2 million Parquet files from cloud storage into a Delta Lake table. The files will not receive updates after the initial load. A colleague suggests using Auto Loader; but the engineer is considering COPY INTO instead. Which reasoning correctly supports choosing COPY INTO for this scenario?",
+    "question_type": "multiple_choice",
+    "options": [
+      "COPY INTO is always faster than Auto Loader for any file volume",
+      "COPY INTO is simpler for one-time or infrequent batch loads where the overhead of setting up a checkpoint and streaming infrastructure is unnecessary",
+      "COPY INTO automatically handles schema evolution better than Auto Loader",
+      "Auto Loader cannot read Parquet files"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "COPY INTO is well-suited for one-time or infrequent batch ingestion scenarios. It processes files idempotently (tracking which files have been loaded) without requiring a streaming checkpoint directory. For a one-time historical backfill with no ongoing incremental loads; the simplicity of COPY INTO is an advantage. Auto Loader excels at continuous or frequent incremental ingestion with its file notification and streaming checkpoint capabilities.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_088",
+    "certification_id": "data_engineer_associate",
+    "topic": "Development and Ingestion",
+    "question_text": "A data engineer is ingesting semi-structured JSON data from an external API. Approximately 2% of the records contain malformed JSON (missing closing braces; unexpected characters). The engineer needs to ensure the pipeline does not fail on bad records but also needs to capture the malformed records for later review. Which approach best handles this requirement?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Set the mode option to PERMISSIVE and use the _corrupt_record column to capture bad rows",
+      "Set the mode option to FAILFAST to immediately stop on bad records",
+      "Use DROPMALFORMED mode and write a separate job to find bad records in the source",
+      "Wrap each record parse in a try-catch block using Python UDFs"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Spark's PERMISSIVE mode (the default for JSON) places successfully parsed fields into their respective columns and stores the entire malformed row in a special _corrupt_record column. This allows the pipeline to continue processing good data while preserving bad records for investigation. FAILFAST would crash the pipeline; DROPMALFORMED silently discards bad records making them hard to find; and Python UDF try-catch adds unnecessary complexity.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_089",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "A data engineer writes a MERGE INTO statement to upsert daily sales data into a target Delta table. During testing; they discover that some source records have duplicate keys; causing the MERGE to fail with an error about multiple source rows matching a single target row. Which approach resolves this issue?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Add a WHEN NOT MATCHED BY SOURCE clause",
+      "Deduplicate the source DataFrame before the MERGE by keeping only the latest record per key",
+      "Switch from MERGE to INSERT OVERWRITE",
+      "Increase the cluster size to handle the duplicates"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Lake's MERGE requires that each target row matches at most one source row on the join condition. When the source contains duplicate keys; multiple source rows match the same target row; causing an ambiguity error. The fix is to deduplicate the source (e.g.; using a window function with ROW_NUMBER partitioned by the key and ordered by timestamp descending) before passing it to the MERGE. INSERT OVERWRITE replaces entire partitions which is a different pattern; and cluster size is unrelated.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_090",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "A data engineering team is designing a Delta Live Tables pipeline for their e-commerce platform following the medallion architecture. Raw clickstream events land in bronze; cleaned events go to silver; and business-level aggregates go to gold. The team wants the silver layer to reject records missing a required user_id field. Which DLT feature should they use?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Apply an expectation with @dlt.expect_or_drop('valid_user_id'; 'user_id IS NOT NULL') on the silver table definition",
+      "Add a CHECK constraint on the bronze table",
+      "Use a Python assert statement inside the transformation function",
+      "Create a separate validation pipeline outside of DLT"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "DLT expectations are declarative data quality rules applied directly to table definitions. @dlt.expect_or_drop defines a quality constraint and automatically drops records that violate it; keeping the silver table clean. A CHECK constraint on bronze would reject writes to bronze rather than filter at silver; Python asserts would crash the pipeline on bad data; and a separate validation pipeline adds unnecessary complexity when DLT has built-in quality controls.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_091",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "A data engineer is building a Structured Streaming pipeline that consumes events from a Kafka topic. The Kafka producer occasionally sends duplicate events due to retry logic. The engineer needs to ensure the target Delta table contains no duplicates. Which approach is most appropriate for streaming deduplication?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Use dropDuplicatesWithinWatermark() with a watermark on the event timestamp to remove duplicates within a time window",
+      "Run a batch DISTINCT query on the target table after each micro-batch",
+      "Use the MERGE INTO statement directly inside a streaming query without foreachBatch",
+      "Rely on Kafka's exactly-once semantics to guarantee no duplicates reach the consumer"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "dropDuplicatesWithinWatermark() is the native Structured Streaming operator for deduplication. It uses a watermark to define a bounded time window during which duplicates are tracked in state; making it memory-efficient. Running batch DISTINCT after each write is expensive and creates a race condition. MERGE cannot be used directly in a streaming query without foreachBatch. Kafka's exactly-once semantics do not cover producer-level retries that assign different offsets to the same logical event.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_092",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Processing & Transformations",
+    "question_text": "A ride-sharing company processes trip completion events via Structured Streaming. Events sometimes arrive up to 2 hours late due to driver connectivity issues. The team needs to compute hourly trip counts that include late-arriving data while eventually cleaning up old state. Which configuration correctly handles this requirement?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Set a watermark of 2 hours on the event timestamp and use a window-based aggregation with append output mode",
+      "Do not set a watermark and use complete output mode to recompute all results every micro-batch",
+      "Set a watermark of 0 seconds to process events as they arrive",
+      "Use batch processing with a 2-hour scheduling interval instead of streaming"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "A watermark of 2 hours tells Spark to wait up to 2 hours for late data before finalizing a window's result. Combined with a window aggregation and append output mode; finalized windows are emitted only after the watermark passes them; ensuring late events within the threshold are included. Complete mode without a watermark recomputes everything and never cleans up state; a 0-second watermark drops all late data; and batch processing introduces latency and doesn't handle late arrivals gracefully.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_093",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "A data engineer's nightly Databricks Workflow job fails intermittently at the third task in a five-task DAG. The error logs show 'SparkException: Job aborted due to stage failure' with executor lost messages. The first two tasks (which read small reference tables) always succeed. The third task joins a 500 GB fact table with the reference data. Which is the most likely root cause and fix?",
+    "question_type": "multiple_choice",
+    "options": [
+      "The reference tables have schema changes; fix by pinning the schema",
+      "The executors are running out of memory during the large join; fix by increasing worker instance size or enabling adaptive query execution",
+      "The job token has expired mid-run; fix by extending the token TTL",
+      "The Delta table's transaction log is corrupted; fix by running FSCK REPAIR TABLE"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Executor lost messages during a large join strongly indicate memory pressure: executors are being killed by the cluster manager (YARN/Kubernetes) for exceeding memory limits. The fix involves either choosing larger instance types with more memory; enabling Adaptive Query Execution (AQE) to optimize the join at runtime; or adding broadcast hints if one side is small enough. Schema changes would produce different errors; token expiry would show authentication errors; and transaction log corruption is rare and shows different symptoms.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_094",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "A data engineering team uses Databricks Asset Bundles (DABs) to manage their pipeline deployments across dev; staging; and production environments. A junior engineer asks why DABs are preferred over manually creating jobs through the UI. Which set of benefits correctly describes the advantage of DABs?",
+    "question_type": "multiple_choice",
+    "options": [
+      "DABs automatically optimize query performance across environments",
+      "DABs provide version-controlled; CI/CD-friendly infrastructure-as-code definitions for jobs; pipelines; and cluster configs; enabling reproducible deployments",
+      "DABs eliminate the need for Unity Catalog in multi-environment setups",
+      "DABs replace the need for Delta Live Tables pipelines"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Databricks Asset Bundles define workspace resources (jobs; DLT pipelines; cluster configs) as code in YAML/JSON files stored in version control. This enables code review for infrastructure changes; CI/CD integration for automated deployments; environment-specific overrides (dev/staging/prod); and reproducibility. DABs do not optimize queries; replace Unity Catalog governance; or replace DLT — they orchestrate and deploy these components consistently.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_095",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "A data platform team needs to orchestrate a complex daily workflow: first ingest raw data (Task A); then run two independent transformation jobs in parallel (Tasks B and C); and finally produce aggregated reports (Task D) only after both B and C succeed. Which Databricks Workflows configuration achieves this?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Create four separate workflows; each triggered by a cron schedule with staggered start times",
+      "Create one workflow with a linear chain: A → B → C → D",
+      "Create one workflow where Task D depends on both Task B and Task C; and both B and C depend on Task A",
+      "Run all four tasks as cells in a single notebook"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Databricks Workflows supports DAG-based task dependencies. By setting B and C to both depend on A; they run in parallel after A completes. Setting D to depend on both B and C creates a fan-out/fan-in pattern where D runs only after both parallel tasks succeed. Separate workflows with staggered schedules are fragile and error-prone; a linear chain forces B and C to run sequentially; and a single notebook loses independent failure handling and parallelism.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_096",
+    "certification_id": "data_engineer_associate",
+    "topic": "Productionizing Data Pipelines",
+    "question_text": "A retail company has a DLT pipeline that processes point-of-sale transactions. During business hours (8 AM to 10 PM); transactions arrive continuously and dashboards must reflect data within 5 minutes. Overnight; only batch reconciliation jobs run. The team wants to minimize costs. Which DLT pipeline mode strategy is most appropriate?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Run the pipeline in Continuous mode 24/7",
+      "Run the pipeline in Triggered mode with a 5-minute cron schedule during business hours and a single nightly run for reconciliation",
+      "Run two separate pipelines: one in Continuous mode during business hours and one in Triggered mode overnight",
+      "Use Triggered mode once per day at midnight"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "A Triggered mode pipeline with a frequent (5-minute) cron schedule during business hours provides near-real-time freshness while allowing the cluster to terminate between runs if processing finishes quickly. Overnight; a single triggered run handles reconciliation. Running Continuous 24/7 wastes resources during off-hours. Two separate pipelines add operational complexity. A single daily run violates the 5-minute freshness requirement during business hours.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_097",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "A data analyst reports they can query the table catalog_a.schema_sales.orders but receive an 'Access Denied' error when querying catalog_a.schema_hr.employees. The analyst's group has USE CATALOG on catalog_a and USE SCHEMA on schema_sales. Which Unity Catalog permission is most likely missing?",
+    "question_type": "multiple_choice",
+    "options": [
+      "SELECT on catalog_a.schema_hr.employees",
+      "USE CATALOG on catalog_a",
+      "CREATE TABLE on schema_hr",
+      "MODIFY on catalog_a.schema_sales.orders"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Unity Catalog requires a chain of permissions to access an object: USE CATALOG on the catalog; USE SCHEMA on the schema; and the object-level privilege (e.g.; SELECT). The analyst already has USE CATALOG and can access schema_sales; so the catalog permission is fine. The missing piece is either USE SCHEMA on schema_hr or SELECT on the employees table (or both). Since the error is Access Denied on the specific table; granting SELECT on catalog_a.schema_hr.employees (along with USE SCHEMA on schema_hr) resolves the issue.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_098",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "A pharmaceutical company wants to share anonymized clinical trial results with three external research partners who do not have access to the company's Databricks workspace. The data must be shared securely without copying files to external storage. Which Databricks feature is designed for this use case?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Export the data as CSV files and email them to partners",
+      "Use Delta Sharing to create an open-protocol share that external recipients can access with any compatible client",
+      "Grant the partners direct access to the Unity Catalog metastore",
+      "Publish the data to a public S3 bucket with a presigned URL"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Delta Sharing is an open protocol for secure data sharing that allows external recipients to access shared data without needing a Databricks workspace. The data provider creates a share and recipient objects in Unity Catalog; and recipients use any Delta Sharing-compatible client (Spark; pandas; Power BI; etc.) to read the data. This avoids insecure methods like emailing CSVs or public buckets; and does not require giving external users direct metastore access.",
+    "difficulty": 3,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_099",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "A data governance team discovers that a critical revenue metric in a gold-layer dashboard has been showing incorrect values since last Tuesday. They need to determine which upstream transformation or data source introduced the error. Which Unity Catalog capability is most helpful for this investigation?",
+    "question_type": "multiple_choice",
+    "options": [
+      "Time travel to query the gold table as of last Monday",
+      "Column-level lineage in Unity Catalog to trace the revenue metric back through upstream tables and transformations",
+      "Row-level security policies on the gold table",
+      "Table access audit logs showing who queried the table"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Unity Catalog's column-level lineage tracks how data flows from source tables through transformations to downstream tables and dashboards. By examining the lineage of the revenue metric column; the governance team can trace it back through silver and bronze layers to identify exactly which transformation or source table changed. Time travel shows historical data but not the cause; row-level security is unrelated; and audit logs show access patterns not data flow.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  },
+  {
+    "id": "de_assoc_100",
+    "certification_id": "data_engineer_associate",
+    "topic": "Data Governance & Quality",
+    "question_text": "A healthcare company stores patient records in a Delta Lake table within Unity Catalog. Analysts need to query the table for aggregate reporting; but regulations prohibit them from seeing raw Social Security numbers and dates of birth. The company wants a single table (not separate views per team) with dynamic masking based on user group membership. Which approach meets these requirements?",
+    "question_type": "multiple_select",
+    "options": [
+      "Create column masking functions that return masked values for unauthorized groups and apply them to the SSN and DOB columns",
+      "Create a separate view for each analyst team that excludes sensitive columns",
+      "Use row-level security to hide rows containing SSN values",
+      "Apply dynamic column masking policies in Unity Catalog tied to group membership using SQL functions"
+    ],
+    "correct_answers": [
+      0,
+      3
+    ],
+    "explanation": "Unity Catalog column masking allows administrators to define SQL functions that dynamically transform column values based on the querying user's group membership. When an analyst in a restricted group queries the table; SSN might appear as '***-**-1234' and DOB as null; while privileged users see the real values. This is applied to the single table — no need for separate views per team. Row-level security filters rows; not columns; and separate views create maintenance overhead and data duplication of logic.",
+    "difficulty": 4,
+    "is_ai_generated": false
+  }
+]

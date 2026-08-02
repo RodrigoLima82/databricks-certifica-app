@@ -1,0 +1,322 @@
+[
+  {
+    "id": "fc_da_assoc_001",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "front": "What does the Schema Browser in Databricks SQL display?",
+    "back": "Databases, tables, columns, and data types",
+    "difficulty": 1
+  },
+  {
+    "id": "fc_da_assoc_002",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "front": "What is the primary audience for Databricks SQL?",
+    "back": "Data Analysts and BI Analysts",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_003",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "front": "In the query editor, what does the \"Run\" button do?",
+    "back": "Executes the SQL query",
+    "difficulty": 1
+  },
+  {
+    "id": "fc_da_assoc_004",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "front": "What does QUALIFY filter in SQL queries?",
+    "back": "Rows after window functions",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_da_assoc_005",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "front": "What happens if you query a Delta table without specifying a version?",
+    "back": "Returns the most recent version",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_006",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "front": "How do you reference another database/schema in a query?",
+    "back": "Use database.table notation",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_007",
+    "certification_id": "data_analyst_associate",
+    "topic": "Databricks SQL",
+    "front": "What privilege is needed to create a table?",
+    "back": "CREATE privilege on the schema",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_008",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "front": "What chart type best shows trends over time?",
+    "back": "Line chart",
+    "difficulty": 1
+  },
+  {
+    "id": "fc_da_assoc_009",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "front": "How can analysts share dashboards with editing rights?",
+    "back": "Grant 'Can Edit' permission",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_010",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "front": "What visualization highlights the distribution of a continuous variable?",
+    "back": "Histogram or box plot",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_011",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "front": "What is the purpose of dashboard filters?",
+    "back": "Enable interactive data exploration",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_012",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Visualization and Dashboards",
+    "front": "How often can scheduled dashboard refreshes run?",
+    "back": "As frequently as every hour, or custom intervals",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_013",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What does the PIVOT operation do?",
+    "back": "Rotates rows into columns",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_da_assoc_014",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What SQL function removes leading and trailing spaces?",
+    "back": "TRIM()",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_015",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "How do you combine results from multiple SELECT statements?",
+    "back": "Use UNION or UNION ALL",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_016",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What does COALESCE() return?",
+    "back": "First non-null value in a list",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_017",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What is the difference between RANK() and DENSE_RANK()?",
+    "back": "DENSE_RANK() has no gaps in ranking sequence",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_da_assoc_018",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "front": "What is Unity Catalog?",
+    "back": "Unified governance solution for data and AI assets",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_019",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "front": "What are the three levels in Unity Catalog hierarchy?",
+    "back": "Catalog, Schema, Table",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_020",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "front": "What does GRANT SELECT allow users to do?",
+    "back": "Read data from tables or views",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_021",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "front": "What is Delta Lake?",
+    "back": "Open-source storage layer for data lakes",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_022",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "front": "What does OPTIMIZE do?",
+    "back": "Compacts small files into larger ones",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_023",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "front": "What is Z-ordering?",
+    "back": "Data clustering technique for better query performance",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_da_assoc_024",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "front": "How do you time travel in Delta Lake?",
+    "back": "Use VERSION AS OF or TIMESTAMP AS OF",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_025",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "front": "What does VACUUM do?",
+    "back": "Removes old data files no longer needed",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_026",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "front": "What is query result caching?",
+    "back": "Stores results of identical queries for faster retrieval",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_027",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "front": "What does partition pruning optimize?",
+    "back": "Skips reading irrelevant data partitions",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_da_assoc_028",
+    "certification_id": "data_analyst_associate",
+    "topic": "Analytics Applications",
+    "front": "When should you use broadcast joins?",
+    "back": "When one table is small enough to fit in memory",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_da_assoc_029",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What does CASE WHEN do?",
+    "back": "Evaluates conditions and returns values based on match",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_030",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What is the difference between WHERE and HAVING?",
+    "back": "WHERE filters before grouping, HAVING filters after",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_031",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What does DATE_TRUNC do?",
+    "back": "Truncates timestamp to specified unit",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_032",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What does CONCAT do?",
+    "back": "Combines multiple strings into one",
+    "difficulty": 1
+  },
+  {
+    "id": "fc_da_assoc_033",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What is a window function?",
+    "back": "Performs calculation across set of rows related to current row",
+    "difficulty": 3
+  },
+  {
+    "id": "fc_da_assoc_034",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "front": "What is a constraint in Delta Lake?",
+    "back": "Rule that enforces data quality requirements",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_035",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "front": "What does NOT NULL constraint ensure?",
+    "back": "Column cannot contain null values",
+    "difficulty": 1
+  },
+  {
+    "id": "fc_da_assoc_036",
+    "certification_id": "data_analyst_associate",
+    "topic": "Data Management",
+    "front": "What is a CHECK constraint?",
+    "back": "Validates that column values meet specified condition",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_037",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What does EXPLAIN do?",
+    "back": "Shows query execution plan",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_038",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What is a CTE?",
+    "back": "Common Table Expression - named temporary result set",
+    "difficulty": 2
+  },
+  {
+    "id": "fc_da_assoc_039",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What does DISTINCT do?",
+    "back": "Returns only unique rows",
+    "difficulty": 1
+  },
+  {
+    "id": "fc_da_assoc_040",
+    "certification_id": "data_analyst_associate",
+    "topic": "SQL",
+    "front": "What is the difference between INNER and LEFT JOIN?",
+    "back": "LEFT JOIN includes unmatched rows from left table",
+    "difficulty": 2
+  }
+]
