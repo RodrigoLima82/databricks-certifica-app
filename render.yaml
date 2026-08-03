@@ -1,0 +1,71 @@
+# Render Blueprint — deploy do Certifica (backend FastAPI + SPA React já buildado).
+#
+# Como usar:
+#   1. No Render: New → Blueprint → conecte o repo RodrigoLima82/databricks-certifica-app
+#   2. Render lê este arquivo e cria o Web Service.
+#   3. Preencha as variáveis marcadas como sync:false (secrets) no dashboard.
+#
+# O frontend (backend/static) já vem versionado, então não há build de Node aqui —
+# o backend FastAPI serve o SPA no mesmo domínio (sem CORS).
+services:
+  - type: web
+    name: certifica
+    runtime: python
+    plan: free
+    region: oregon              # troque se quiser (oregon | frankfurt | singapore | ohio | virginia)
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: MOCK_MODE
+        value: "false"
+
+      # ── Lakebase (Postgres) via OAuth do service principal ──────────────────
+      - key: LAKEBASE_INSTANCE_NAME
+        value: certifica-db
+      - key: PGHOST
+        sync: false             # read_write_dns da instância Lakebase
+      - key: PGPORT
+        value: "5432"
+      - key: PGDATABASE
+        value: databricks_postgres
+      - key: PGSSLMODE
+        value: require
+      - key: PGSCHEMA
+        value: certifica
+
+      # ── Databricks (service principal OAuth M2M) — vale p/ Lakebase E LLM ────
+      - key: DATABRICKS_HOST
+        sync: false             # https://<workspace>.azuredatabricks.net (ou .cloud.databricks.com)
+      - key: DATABRICKS_CLIENT_ID
+        sync: false             # client_id do service principal
+      - key: DATABRICKS_CLIENT_SECRET
+        sync: false             # secret OAuth do service principal
+      - key: LLM_ENDPOINT
+        value: databricks-claude-opus-4-8
+
+      # ── Auth (JWT) ──────────────────────────────────────────────────────────
+      - key: ENABLE_JWT_AUTH
+        value: "true"
+      - key: JWT_SECRET
+        generateValue: true     # Render gera um segredo aleatório
+      - key: AUTH_HEADER
+        value: X-App-Auth
+      - key: SUPERADMIN_EMAILS
+        sync: false             # seu e-mail (admin da plataforma)
+      - key: SEED_ADMIN_PASSWORD
+        sync: false             # senha inicial do superadmin
+      - key: PASS_MARK
+        value: "70"
+
+      # ── Seed no primeiro boot (cria schema + banco de questões + superadmin) ─
+      - key: SEED_ON_STARTUP
+        value: "true"
+
+      # Mesmo origin (backend serve o SPA) → CORS nem é acionado. Deixe só a
+      # própria URL do Render (preencha após o 1º deploy, opcional).
+      - key: CORS_ORIGINS
+        sync: false
